@@ -2,335 +2,400 @@
 <html lang="es" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Máscara Iron Wand | CompraConfio — Pago Contra Entrega</title>
-  <meta name="description" content="Máscara Iron Wand con varilla metálica — volumen dramático, cero grumos, resistente al agua. Envío gratis y pago contra entrega en Latinoamérica.">
+  <meta name="description" content="Máscara Iron Wand con varilla metálica: rizo que dura todo el día, volumen dramático y cero grumos. Envío gratis y pago contra entrega en Latinoamérica.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/compraconfio.css">
-  <link rel="stylesheet" href="/css/product-olivia.css">
+  <link rel="stylesheet" href="/css/product.css">
 </head>
-<body class="compraconfio-page product-page" data-country="LATAM" data-lang="es" data-brand="compraconfio" data-snap-pixel="off" data-phone-lenient="on" data-thankyou="/thank-you-compraconfio.html">
+<body data-country="LATAM" data-lang="es" data-brand="compraconfio" data-snap-pixel="off" data-phone-lenient="on" data-thankyou="/thank-you-compraconfio.html">
 
-<div class="page">
-
-  <div class="marquee-wrap" aria-hidden="true">
-    <div class="marquee-track">
-      <span>30 días de garantía</span>
-      <span>Stock limitado de máscara</span>
-      <span>Compra 1 lleva 1 gratis</span>
-      <span>Oferta exclusiva — Compra 2 lleva 2</span>
-      <span>30 días de garantía</span>
-      <span>Stock limitado de máscara</span>
-      <span>Compra 1 lleva 1 gratis</span>
-      <span>Oferta exclusiva — Compra 2 lleva 2</span>
-    </div>
+<div class="announce" aria-hidden="true">
+  <div class="announce-track">
+    <span>30 días de garantía</span>
+    <span>Stock limitado disponible</span>
+    <span>Compra 1 lleva 1 gratis</span>
+    <span>Oferta exclusiva · Compra 2 lleva 2</span>
+    <span>30 días de garantía</span>
+    <span>Stock limitado disponible</span>
+    <span>Compra 1 lleva 1 gratis</span>
+    <span>Oferta exclusiva · Compra 2 lleva 2</span>
   </div>
+</div>
 
-  <header class="site-header">
-    <div class="site-logo">compra<em>confio</em></div>
-    <p class="header-note">¿Preguntas? contacto@compraconfio.shop</p>
-  </header>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="header-link" href="/index.html">← Inicio</a>
+    <a class="brand" href="/index.html">compra<em>confio</em></a>
+    <span class="header-contact">contacto@compraconfio.shop</span>
+  </div>
+</header>
 
-  <section class="gallery" id="heroSection">
-    <div class="gallery-media" id="galleryMedia">
-      <video class="gallery-video" id="galleryVideo" src="/videos/demo-1.mp4" autoplay muted loop playsinline poster="/images/mascara-product.png" aria-label="Demo Máscara Iron Wand"></video>
-      <img class="gallery-main" id="galleryMain" src="/images/mascara-product.png" alt="Máscara Iron Wand" width="900" height="900" hidden>
-    </div>
-    <div class="gallery-thumbs" id="galleryThumbs">
-      <button type="button" class="gallery-thumb is-active" data-type="video" data-src="/videos/demo-1.mp4" aria-label="Video 1"><span class="thumb-play">▶</span></button>
-      <button type="button" class="gallery-thumb" data-type="video" data-src="/videos/demo-2.mp4" aria-label="Video 2"><span class="thumb-play">▶</span></button>
-      <button type="button" class="gallery-thumb" data-type="image" data-src="/images/mascara-product.png" aria-label="Producto"><img src="/images/mascara-product.png" alt=""></button>
-      <button type="button" class="gallery-thumb" data-type="image" data-src="/images/mascara-before-after.png" aria-label="Antes/después"><img src="/images/mascara-before-after.png" alt=""></button>
-    </div>
-  </section>
+<div class="deal-strip">Oferta exclusiva · Compra 2 lleva 2 gratis</div>
 
-  <div class="ob-deal-banner">Oferta exclusiva · Compra 2 lleva 2 gratis</div>
+<main class="product-main">
+  <div class="product-layout">
 
-  <form id="orderForm" action="/thank-you-compraconfio.html" method="GET">
-    <input type="hidden" name="currency" value="GTQ">
-    <input type="hidden" name="source" value="compraconfio-mascara">
-    <input type="hidden" name="color" id="colorInput" value="Negro">
+    <section class="gallery" id="heroSection">
+      <div class="gallery-stage">
+        <video id="stageVideo" src="/videos/demo-1.mp4" autoplay muted loop playsinline poster="/images/mascara-product.png"></video>
+        <img id="stageImage" src="/images/mascara-product.png" alt="Máscara Iron Wand" hidden>
+      </div>
+      <div class="gallery-thumbs">
+        <button type="button" class="thumb thumb-video is-active" data-kind="video" data-src="/videos/demo-1.mp4" aria-label="Video 1">
+          <img src="/images/mascara-product.png" alt="">
+        </button>
+        <button type="button" class="thumb thumb-video" data-kind="video" data-src="/videos/demo-2.mp4" aria-label="Video 2">
+          <img src="/images/mascara-before-after.png" alt="">
+        </button>
+        <button type="button" class="thumb" data-kind="image" data-fit="contain" data-src="/images/mascara-product.png" aria-label="Producto">
+          <img src="/images/mascara-product.png" alt="">
+        </button>
+        <button type="button" class="thumb" data-kind="image" data-src="/images/mascara-before-after.png" aria-label="Antes y después">
+          <img src="/images/mascara-before-after.png" alt="">
+        </button>
+      </div>
+    </section>
 
-    <section class="buy-box">
+    <section class="product-info">
       <h1 class="product-title">Máscara Iron Wand</h1>
 
-      <div class="ob-rating">
-        <span class="ob-stars">★★★★★</span>
-        <span class="ob-rating-text"><strong>4.9</strong> (156 reseñas)</span>
-      </div>
-
-      <div class="ob-rating-bars" aria-hidden="true">
-        <div class="ob-bar-row"><span>5</span><div class="ob-bar-track"><div class="ob-bar-fill" style="width:96%"></div></div><span>150</span></div>
-        <div class="ob-bar-row"><span>4</span><div class="ob-bar-track"><div class="ob-bar-fill" style="width:4%"></div></div><span>6</span></div>
-        <div class="ob-bar-row"><span>3</span><div class="ob-bar-track"><div class="ob-bar-fill" style="width:0%"></div></div><span>0</span></div>
+      <div class="rating-row">
+        <span class="stars">★★★★★</span>
+        <span><strong>4.9</strong></span>
+        <a href="#resenas">156 reseñas</a>
       </div>
 
       <div class="price-row">
-        <span class="price-current" data-selected-price>Q189</span>
-        <span class="price-old"><del data-selected-old-price>Q279</del></span>
-        <span class="price-badge">Ahorra 32%</span>
+        <span class="price-now" id="priceNow">Q189</span>
+        <span class="price-was" id="priceWas">Q279</span>
+        <span class="price-save" id="priceSave">Ahorra 32%</span>
       </div>
 
-      <ul class="ob-perks">
-        <li>💁‍♀️ Rizos que duran todo el día</li>
-        <li>☁️ Sin manchas, sin descamación</li>
+      <ul class="perks">
+        <li>💁‍♀️ Rizo que dura todo el día</li>
+        <li>☁️ Sin manchas ni descamación</li>
         <li>✨ Largo y volumen dramático</li>
       </ul>
 
-      <p class="ob-authentic"><strong>Cuidado con réplicas de plástico</strong> — Nuestra Máscara Iron Wand auténtica solo está disponible en compraconfio.shop.</p>
+      <p class="notice"><strong>Cuidado con las réplicas de plástico.</strong> La Máscara Iron Wand original solo se vende en compraconfio.shop.</p>
 
-      <p class="ob-bundles-title">Ofertas por tiempo limitado</p>
-      <div class="bundle-options ob-bundles" aria-label="Seleccionar oferta">
+      <form id="orderForm" action="/thank-you-compraconfio.html" method="GET">
+        <input type="hidden" name="currency" value="GTQ">
+        <input type="hidden" name="source" value="compraconfio-mascara">
+        <input type="hidden" name="color" id="colorInput" value="Negro">
 
-        <label class="bundle-option ob-bundle is-selected">
-          <input type="radio" name="bundleOption" value="cc-mascara-1" data-product-id="cc-mascara-1" data-product-name="Máscara Iron Wand - 1 unidad" data-price="189" data-old-price="279" data-sticky-offer="Individual — Q189" checked>
-          <div class="ob-bundle-card">
-            <div class="ob-bundle-top">
-              <span class="ob-bundle-name">Individual</span>
-              <span class="ob-bundle-prices"><strong>Q189</strong><del>Q279</del></span>
+        <span class="block-label">Ofertas por tiempo limitado</span>
+        <div class="bundles">
+
+          <label class="bundle bundle-option is-selected">
+            <input type="radio" name="bundleOption" value="cc-mascara-1" data-product-id="cc-mascara-1" data-product-name="Máscara Iron Wand - 1 unidad" data-price="189" data-old-price="279" data-save="32" data-label="Individual" checked>
+            <div class="bundle-card">
+              <div class="bundle-head">
+                <span class="bundle-pick"><span class="radio"></span>Individual</span>
+                <span class="bundle-cost"><strong>Q189</strong><del>Q279</del></span>
+              </div>
+              <div class="bundle-units">
+                <span class="unit-chip"><span class="dot black"></span>#1 Negro o Marrón</span>
+              </div>
             </div>
-            <div class="ob-bundle-colors">
-              <span class="ob-mini-swatch"><span class="black"></span> Negro</span>
-              <span class="ob-mini-swatch"><span class="brown"></span> Marrón</span>
+          </label>
+
+          <label class="bundle bundle-option">
+            <input type="radio" name="bundleOption" value="cc-mascara-2" data-product-id="cc-mascara-2" data-product-name="Máscara Iron Wand - 2 unidades" data-price="289" data-old-price="558" data-save="48" data-label="Compra 1 lleva 1 gratis">
+            <div class="bundle-card">
+              <span class="bundle-flag">Más popular</span>
+              <div class="bundle-head">
+                <span class="bundle-pick"><span class="radio"></span>Compra 1 lleva 1 gratis</span>
+                <span class="bundle-cost"><strong>Q289</strong><del>Q558</del></span>
+              </div>
+              <div class="bundle-units">
+                <span class="unit-chip"><span class="dot black"></span>#1</span>
+                <span class="unit-chip"><span class="dot brown"></span>#2</span>
+              </div>
             </div>
+          </label>
+
+          <label class="bundle bundle-option">
+            <input type="radio" name="bundleOption" value="cc-mascara-3" data-product-id="cc-mascara-3" data-product-name="Máscara Iron Wand - 4 unidades" data-price="369" data-old-price="837" data-save="56" data-label="Compra 2 lleva 2 gratis">
+            <div class="bundle-card">
+              <span class="bundle-flag">Mejor valor</span>
+              <div class="bundle-head">
+                <span class="bundle-pick"><span class="radio"></span>Compra 2 lleva 2 gratis</span>
+                <span class="bundle-cost"><strong>Q369</strong><del>Q837</del></span>
+              </div>
+              <div class="bundle-units">
+                <span class="unit-chip"><span class="dot black"></span>#1</span>
+                <span class="unit-chip"><span class="dot black"></span>#2</span>
+                <span class="unit-chip"><span class="dot brown"></span>#3</span>
+                <span class="unit-chip"><span class="dot brown"></span>#4</span>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <span class="block-label">Color</span>
+        <div class="swatches">
+          <button type="button" class="swatch is-selected" data-color="Negro"><i class="black"></i>Negro</button>
+          <button type="button" class="swatch" data-color="Marrón"><i class="brown"></i>Marrón</button>
+        </div>
+
+        <div class="form-head" id="checkout">
+          <span class="block-label">Tus datos de entrega</span>
+        </div>
+
+        <div class="fields-2">
+          <div class="field"><input type="text" name="name" id="name" placeholder="Nombre completo" required autocomplete="name"></div>
+          <div class="field"><input type="tel" name="phone" id="phone" placeholder="WhatsApp / Teléfono" required autocomplete="tel"></div>
+        </div>
+
+        <div class="fields-2">
+          <div class="field">
+            <select name="country" id="country" required>
+              <option value="" disabled selected>País</option>
+              <option value="Guatemala">Guatemala</option>
+              <option value="México">México</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Perú">Perú</option>
+              <option value="Honduras">Honduras</option>
+              <option value="El Salvador">El Salvador</option>
+              <option value="Costa Rica">Costa Rica</option>
+              <option value="Panamá">Panamá</option>
+              <option value="Nicaragua">Nicaragua</option>
+              <option value="República Dominicana">República Dominicana</option>
+              <option value="Ecuador">Ecuador</option>
+              <option value="Chile">Chile</option>
+              <option value="Argentina">Argentina</option>
+            </select>
           </div>
-        </label>
+          <div class="field"><input type="text" name="city" id="city" placeholder="Ciudad / Municipio" required></div>
+        </div>
 
-        <label class="bundle-option ob-bundle">
-          <input type="radio" name="bundleOption" value="cc-mascara-2" data-product-id="cc-mascara-2" data-product-name="Máscara Iron Wand - 2 unidades" data-price="289" data-old-price="558" data-sticky-offer="Compra 1 lleva 1 — Q289">
-          <div class="ob-bundle-card">
-            <span class="ob-bundle-tag popular">Más popular</span>
-            <div class="ob-bundle-top">
-              <span class="ob-bundle-name">Compra 1 lleva 1 gratis</span>
-              <span class="ob-bundle-prices"><strong>Q289</strong><del>Q558</del></span>
-            </div>
-            <div class="ob-bundle-colors">
-              <span class="ob-mini-swatch"><span class="black"></span> #1 Negro</span>
-              <span class="ob-mini-swatch"><span class="brown"></span> #2 Marrón</span>
-            </div>
-          </div>
-        </label>
+        <div class="field"><input type="text" name="address" id="address" placeholder="Dirección exacta (colonia, zona, calle)" required autocomplete="street-address"></div>
 
-        <label class="bundle-option ob-bundle">
-          <input type="radio" name="bundleOption" value="cc-mascara-3" data-product-id="cc-mascara-3" data-product-name="Máscara Iron Wand - 3 unidades" data-price="369" data-old-price="837" data-sticky-offer="Mejor valor — Q369">
-          <div class="ob-bundle-card">
-            <span class="ob-bundle-tag value">Mejor valor</span>
-            <div class="ob-bundle-top">
-              <span class="ob-bundle-name">3 unidades — ahorro máximo</span>
-              <span class="ob-bundle-prices"><strong>Q369</strong><del>Q837</del></span>
-            </div>
-            <div class="ob-bundle-colors">
-              <span class="ob-mini-swatch"><span class="black"></span> #1</span>
-              <span class="ob-mini-swatch"><span class="black"></span> #2</span>
-              <span class="ob-mini-swatch"><span class="brown"></span> #3</span>
-            </div>
-          </div>
-        </label>
-      </div>
+        <button type="submit" class="btn-buy">Confirmar pedido — Pago contra entrega</button>
+        <p class="pay-note">Pagas en efectivo al recibir · Envío gratis · Confirmación por WhatsApp</p>
 
-      <span class="field-label">Color</span>
-      <div class="color-swatches">
-        <button type="button" class="swatch is-selected" data-color="Negro"><span class="swatch-circle black"></span> Negro</button>
-        <button type="button" class="swatch" data-color="Marrón"><span class="swatch-circle brown"></span> Marrón</button>
-      </div>
+        <div class="guarantee-row">
+          <div><strong>30 días</strong>Garantía</div>
+          <div><strong>Envío</strong>Gratis</div>
+          <div><strong>Pago</strong>Al recibir</div>
+        </div>
+      </form>
 
-      <div class="form-divider" id="checkout">
-        <h3>Tus datos de entrega</h3>
-      </div>
-
-      <div class="form-group"><input type="text" name="name" id="name" placeholder="Nombre completo" required autocomplete="name"></div>
-      <div class="form-group"><input type="tel" name="phone" id="phone" placeholder="WhatsApp / Teléfono" required autocomplete="tel"></div>
-      <div class="form-group">
-        <select name="country" id="country" required>
-          <option value="" disabled selected>País</option>
-          <option value="Guatemala">Guatemala</option>
-          <option value="México">México</option>
-          <option value="Colombia">Colombia</option>
-          <option value="Perú">Perú</option>
-          <option value="Honduras">Honduras</option>
-          <option value="El Salvador">El Salvador</option>
-          <option value="Costa Rica">Costa Rica</option>
-          <option value="Panamá">Panamá</option>
-          <option value="Nicaragua">Nicaragua</option>
-          <option value="República Dominicana">República Dominicana</option>
-          <option value="Ecuador">Ecuador</option>
-          <option value="Chile">Chile</option>
-          <option value="Argentina">Argentina</option>
-        </select>
-      </div>
-      <div class="form-group"><input type="text" name="city" id="city" placeholder="Ciudad / Municipio" required></div>
-      <div class="form-group"><input type="text" name="address" id="address" placeholder="Dirección exacta" required autocomplete="street-address"></div>
-
-      <button type="submit" class="btn-submit">Confirmar pedido — Pago contra entrega</button>
-      <p class="ob-payment-note">💵 Pagas en efectivo solo cuando recibes · Envío gratis</p>
-
-      <div class="ob-inline-testimonial">
-        <img src="/images/mascara-product.png" alt="">
+      <div class="quote">
+        <img src="/images/mascara-before-after.png" alt="">
         <div>
-          <p>Se sienta increíble en mis pestañas, las hace el doble de grandes, les da muchísimo volumen y las riza. ¡Honestamente no hay nada igual!</p>
+          <p>"Se asienta perfecto en mis pestañas, las hace el doble de grandes, les da muchísimo volumen y las riza. ¡No hay nada igual!"</p>
           <cite>— Mónica, Guatemala</cite>
         </div>
       </div>
 
-      <div class="ob-collapsibles">
-        <div class="ob-collapse is-open">
-          <button type="button" class="ob-collapse-btn">30 días de devolución <span>+</span></button>
-          <div class="ob-collapse-body">¿No te encanta? En CompraConfio tienes 30 días para solicitar devolución. Escríbenos a contacto@compraconfio.shop y te ayudamos.</div>
+      <div class="collapse-group">
+        <div class="collapse is-open">
+          <button type="button" class="collapse-btn">Devolución en 30 días <i>+</i></button>
+          <div class="collapse-body">Si no te encanta, tienes 30 días para solicitar la devolución. Escríbenos a contacto@compraconfio.shop y te ayudamos con el proceso.</div>
         </div>
-        <div class="ob-collapse">
-          <button type="button" class="ob-collapse-btn">Información de envío <span>+</span></button>
-          <div class="ob-collapse-body">Los pedidos en Latinoamérica suelen llegar en 3–7 días hábiles según tu país. Te confirmamos por WhatsApp antes de enviar.</div>
+        <div class="collapse">
+          <button type="button" class="collapse-btn">Información de envío <i>+</i></button>
+          <div class="collapse-body">Los pedidos llegan normalmente en 3 a 7 días hábiles según tu país. Te contactamos por WhatsApp antes de enviar para confirmar tu dirección.</div>
+        </div>
+        <div class="collapse">
+          <button type="button" class="collapse-btn">Pago contra entrega <i>+</i></button>
+          <div class="collapse-body">No pagas nada por adelantado. Entregamos en tu domicilio y pagas en efectivo al mensajero cuando recibes tu pedido.</div>
         </div>
       </div>
     </section>
-  </form>
 
-  <section class="ob-content-block">
-    <h2>Volumen dramático</h2>
-    <p>Transforma pestañas finas en un abanico espeso y definido con nuestra Máscara Iron Wand.</p>
-    <img src="/images/mascara-before-after.png" alt="Resultado volumen dramático" loading="lazy">
-    <a href="#checkout" class="link-cta">Pídela ahora →</a>
-  </section>
+  </div>
+</main>
 
-  <section class="ob-content-block">
-    <h2>Look limpio, cero grumos</h2>
-    <p>Disfruta pestañas definidas todo el día. Sin manchas molestas ni grumos.</p>
-    <img src="/images/mascara-product.png" alt="Máscara Iron Wand" loading="lazy">
-    <a href="#checkout" class="link-cta">Pídela ahora →</a>
-  </section>
+<section class="feature">
+  <div class="feature-inner">
+    <div class="feature-media">
+      <img src="/images/mascara-before-after.png" alt="Volumen dramático con Máscara Iron Wand" loading="lazy">
+    </div>
+    <div class="feature-copy">
+      <h2>Volumen dramático</h2>
+      <p>Convierte pestañas finas en un abanico espeso y definido. La varilla metálica envuelve cada pestaña con fibras alargadoras para una mirada amplia y despierta.</p>
+      <a href="#checkout" class="text-link">Pídela ahora</a>
+    </div>
+  </div>
+</section>
 
-  <section class="ob-content-block">
-    <h2>De normal a extraordinario</h2>
-    <p>Mira cómo tus pestañas se transforman con solo unas pasadas.</p>
-    <video src="/videos/demo-2.mp4" controls playsinline preload="metadata" poster="/images/mascara-before-after.png"></video>
-    <a href="#checkout" class="link-cta">Pídela ahora →</a>
-  </section>
+<section class="feature is-reversed">
+  <div class="feature-inner">
+    <div class="feature-media">
+      <img src="/images/mascara-product.png" alt="Varilla metálica Iron Wand" loading="lazy">
+    </div>
+    <div class="feature-copy">
+      <h2>Look limpio, cero grumos</h2>
+      <p>Pestañas definidas durante todo el día. La fórmula tubing no se corre ni deja grumos, y la varilla ultra fina evita manchas en el párpado.</p>
+      <a href="#checkout" class="text-link">Pídela ahora</a>
+    </div>
+  </div>
+</section>
 
-  <section class="section">
+<section class="feature">
+  <div class="feature-inner">
+    <div class="feature-media">
+      <video src="/videos/demo-2.mp4" controls playsinline preload="metadata" poster="/images/mascara-before-after.png"></video>
+    </div>
+    <div class="feature-copy">
+      <h2>De normal a extraordinario</h2>
+      <p>Mira cómo tus pestañas de todos los días se transforman con solo unas pasadas. Resultados visibles desde la primera aplicación.</p>
+      <a href="#checkout" class="text-link">Pídela ahora</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell">
     <h2 class="section-title">Una máscara que vas a amar 💜</h2>
-    <div class="ob-icons-grid">
-      <div class="ob-icon-item">
+    <p class="section-lead">Diseñada para durar todo el día y cuidar tus ojos.</p>
+    <div class="icon-grid">
+      <div class="icon-card">
         <h3>🌱 Vegana y cruelty-free</h3>
-        <p>Diseñada para darte pestañas rizadas y voluminosas, sin ingredientes de origen animal.</p>
+        <p>Sin ingredientes de origen animal y nunca probada en animales.</p>
       </div>
-      <div class="ob-icon-item">
+      <div class="icon-card">
         <h3>💫 Larga duración</h3>
-        <p>Del día a la noche sin problemas. Mantiene el rizo y volumen perfectos.</p>
+        <p>Del día a la noche sin retoques, manteniendo el rizo y el volumen.</p>
       </div>
-      <div class="ob-icon-item">
-        <h3>☁️ Para ojos sensibles</h3>
-        <p>Formulada pensando en la delicadeza del contorno de ojos.</p>
+      <div class="icon-card">
+        <h3>☁️ Apta para ojos sensibles</h3>
+        <p>Formulada para minimizar la irritación en el contorno de ojos.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section">
+<section class="section">
+  <div class="shell">
     <h2 class="section-title">Ve la diferencia en cada pasada</h2>
-    <div class="ob-ugc-scroll">
-      <div class="ob-ugc-card">
+    <p class="section-lead">Clientas reales de Latinoamérica mostrando sus resultados.</p>
+    <div class="ugc-rail">
+      <div class="ugc-item">
         <video src="/videos/demo-1.mp4" controls playsinline preload="metadata" poster="/images/mascara-product.png"></video>
-        <p class="ob-ugc-name">Carla · México</p>
+        <p class="ugc-name">Carla · México</p>
       </div>
-      <div class="ob-ugc-card">
+      <div class="ugc-item">
         <video src="/videos/demo-2.mp4" controls playsinline preload="metadata" poster="/images/mascara-before-after.png"></video>
-        <p class="ob-ugc-name">Valentina · Colombia</p>
+        <p class="ugc-name">Valentina · Colombia</p>
+      </div>
+      <div class="ugc-item">
+        <video src="/videos/demo-1.mp4" controls playsinline preload="metadata" poster="/images/mascara-product.png"></video>
+        <p class="ugc-name">Daniela · Perú</p>
+      </div>
+      <div class="ugc-item">
+        <video src="/videos/demo-2.mp4" controls playsinline preload="metadata" poster="/images/mascara-before-after.png"></video>
+        <p class="ugc-name">Sofía · Guatemala</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="ob-customers-banner">+50,000 clientas satisfechas</div>
+<div class="strip">+50,000 clientas satisfechas</div>
 
-  <section class="section">
-    <div class="ob-featured-reviews">
-      <article class="ob-featured-review">
-        <div class="ob-stars">★★★★★</div>
+<section class="section" id="resenas">
+  <div class="shell">
+    <h2 class="section-title">Lo que dicen nuestras clientas</h2>
+    <p class="section-lead">4.9 de 5 · basado en 156 reseñas</p>
+
+    <div class="review-grid">
+      <article class="review-card">
+        <div class="stars">★★★★★</div>
         <h3>Era muy escéptica</h3>
-        <p>TAN BUENA. Dudaba por la varilla, pero es increíble. Aplica con precisión y llega fácil a las pestañas del rincón interno. Definitivamente volvería a comprar.</p>
+        <p>Dudaba por la varilla, pero es increíble. Aplica con precisión y llega fácil a las pestañas del rincón interno. Volvería a comprarla sin dudar.</p>
         <cite>Erika C.</cite>
       </article>
-      <article class="ob-featured-review">
-        <div class="ob-stars">★★★★★</div>
+      <article class="review-card">
+        <div class="stars">★★★★★</div>
         <h3>De verdad mantiene el rizo</h3>
-        <p>Puede ser la mejor máscara que he usado. El rizo aguanta TODO el día. No hace grumos y separa las pestañas perfectamente.</p>
+        <p>Puede ser la mejor máscara que he usado. El rizo aguanta todo el día, no hace grumos y separa las pestañas perfectamente.</p>
         <cite>Nina M.</cite>
       </article>
-      <article class="ob-featured-review">
-        <div class="ob-stars">★★★★★</div>
+      <article class="review-card">
+        <div class="stars">★★★★★</div>
         <h3>Literalmente no hay nada igual</h3>
-        <p>Riza mis pestañas increíblemente y dura todo el día. Si dudas, pruébala — vale totalmente la pena.</p>
+        <p>Riza mis pestañas increíblemente y dura el día completo. Si estás dudando, pruébala: vale totalmente la pena.</p>
         <cite>Ángela H.</cite>
       </article>
     </div>
 
-    <div class="ob-review-list">
-      <article class="ob-review-item">
-        <div class="ob-review-meta"><strong>Emily B.</strong><span class="ob-verified">✓ Verificada</span></div>
-        <div class="ob-stars">★★★★★</div>
-        <p>Tengo pestañas muy rectas y ninguna máscara las mantenía rizadas hasta ahora. Con Iron Wand se mantienen hermosas todo el día.</p>
+    <div class="review-list">
+      <article class="review-row">
+        <div class="review-meta"><strong>Emily B.</strong><span class="verified">✓ Verificada</span></div>
+        <div class="stars">★★★★★</div>
+        <p>Tengo pestañas muy rectas y ninguna máscara las mantenía arriba. Con Iron Wand se quedan rizadas todo el día.</p>
       </article>
-      <article class="ob-review-item">
-        <div class="ob-review-meta"><strong>Emma</strong><span class="ob-verified">✓ Verificada</span></div>
-        <div class="ob-stars">★★★★★</div>
-        <p>Solo necesité una capa. Sin grumos, gran volumen, y mis pestañas se quedaron rizadas. ¡Increíble!</p>
+      <article class="review-row">
+        <div class="review-meta"><strong>Emma R.</strong><span class="verified">✓ Verificada</span></div>
+        <div class="stars">★★★★★</div>
+        <p>Solo necesité una capa. Se seca rápido, no hace grumos y da un volumen precioso.</p>
       </article>
-      <article class="ob-review-item">
-        <div class="ob-review-meta"><strong>Alexis V.</strong><span class="ob-verified">✓ Verificada</span></div>
-        <div class="ob-stars">★★★★★</div>
-        <p>¡Fabulosa! Mis pestañas parecen extensiones.</p>
+      <article class="review-row">
+        <div class="review-meta"><strong>Alexis V.</strong><span class="verified">✓ Verificada</span></div>
+        <div class="stars">★★★★★</div>
+        <p>¡Fabulosa! Mis pestañas parecen extensiones y el pedido llegó rápido con pago contra entrega.</p>
       </article>
-      <article class="ob-review-item">
-        <div class="ob-review-meta"><strong>Melissa G.</strong><span class="ob-verified">✓ Verificada</span></div>
-        <div class="ob-stars">★★★★★</div>
-        <p>Se sienta increíble, las hace el doble de grandes, mucho volumen y las riza. ¡La amo!</p>
+      <article class="review-row">
+        <div class="review-meta"><strong>Melissa G.</strong><span class="verified">✓ Verificada</span></div>
+        <div class="stars">★★★★★</div>
+        <p>Le da muchísimo volumen y las riza sin esfuerzo. La recomiendo totalmente.</p>
       </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section">
+<section class="section">
+  <div class="shell">
     <h2 class="section-title">Preguntas frecuentes</h2>
-    <div class="faq-list">
-      <div class="faq-item is-open">
-        <button type="button" class="faq-q">¿Es resistente al agua? <span>+</span></button>
-        <div class="faq-a">Sí. Diseñada para resistir lágrimas, lluvia y sudor.</div>
+    <div class="faq collapse-group">
+      <div class="collapse is-open">
+        <button type="button" class="collapse-btn">¿Es resistente al agua? <i>+</i></button>
+        <div class="collapse-body">Sí. La Máscara Iron Wand está diseñada para resistir lágrimas, lluvia y sudor sin correrse.</div>
       </div>
-      <div class="faq-item">
-        <button type="button" class="faq-q">¿Cómo se retira? <span>+</span></button>
-        <div class="faq-a">Mejor con desmaquillante bifásico, o agua tibia con movimientos suaves.</div>
+      <div class="collapse">
+        <button type="button" class="collapse-btn">¿Cuál es la mejor forma de retirarla? <i>+</i></button>
+        <div class="collapse-body">Se retira mejor con un desmaquillante bifásico o aceitoso, aunque cualquier desmaquillante estándar también funciona.</div>
       </div>
-      <div class="faq-item">
-        <button type="button" class="faq-q">¿Qué son esas fibras en la varilla? <span>+</span></button>
-        <div class="faq-a">Son fibras alargadoras que dan volumen extra. Es completamente normal.</div>
+      <div class="collapse">
+        <button type="button" class="collapse-btn">¿Qué son esas fibras pequeñas en la varilla? <i>+</i></button>
+        <div class="collapse-body">Son fibras alargadoras especiales que aportan volumen extra a tus pestañas. Es completamente normal.</div>
       </div>
-      <div class="faq-item">
-        <button type="button" class="faq-q">¿Mantiene el rizo? <span>+</span></button>
-        <div class="faq-a">Sí. Fórmula especial para volumen, largo y rizo que dura todo el día.</div>
+      <div class="collapse">
+        <button type="button" class="collapse-btn">¿Mantiene el rizo de mis pestañas? <i>+</i></button>
+        <div class="collapse-body">Sí. La fórmula está pensada para dar volumen y largo, y además fijar el rizo durante todo el día.</div>
       </div>
-      <div class="faq-item">
-        <button type="button" class="faq-q">¿Cómo funciona pago contra entrega? <span>+</span></button>
-        <div class="faq-a">Pagas en efectivo al recibir. Sin tarjeta, sin riesgo.</div>
+      <div class="collapse">
+        <button type="button" class="collapse-btn">¿Cómo funciona el pago contra entrega? <i>+</i></button>
+        <div class="collapse-body">Pagas en efectivo cuando recibes tu pedido en la puerta de tu casa. Sin tarjeta y sin adelantos.</div>
       </div>
-      <div class="faq-item">
-        <button type="button" class="faq-q">¿Ingredientes? <span>+</span></button>
-        <div class="faq-a">Fórmula de alta calidad, vegana, cruelty-free y apta para ojos sensibles. Isododecane, Trimethylsiloxysilicate, Dextrin Palmitate, CI 77499, Panthenol, entre otros.</div>
+      <div class="collapse">
+        <button type="button" class="collapse-btn">¿A qué países envían? <i>+</i></button>
+        <div class="collapse-body">Guatemala, México, Colombia, Perú, Honduras, El Salvador, Costa Rica, Panamá y más países de Latinoamérica.</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="footer">
-    <p class="footer-brand">compraconfio.shop</p>
-    <ul class="footer-links">
-      <li><a href="mailto:contacto@compraconfio.shop">Contáctanos</a></li>
-    </ul>
-    <p>© 2026 CompraConfio — Latinoamérica</p>
-  </footer>
-</div>
+<footer class="site-footer">
+  <p class="footer-brand">compraconfio.shop</p>
+  <p>Paga solo cuando recibes</p>
+  <ul class="footer-links">
+    <li><a href="mailto:contacto@compraconfio.shop">Contáctanos</a></li>
+    <li><a href="/index.html">Inicio</a></li>
+  </ul>
+  <p>© 2026 CompraConfio — Latinoamérica</p>
+</footer>
 
-<div class="bottom-sticky" id="bottomSticky" aria-hidden="true">
+<div class="sticky-bar" id="bottomSticky" aria-hidden="true">
   <div>
-    <strong class="sticky-price" data-selected-price>Q189</strong>
-    <span data-selected-offer>Individual — Q189</span>
+    <strong id="stickyPrice">Q189</strong>
+    <span id="stickyLabel">Individual</span>
   </div>
   <a href="#checkout">Comprar</a>
 </div>
@@ -338,61 +403,68 @@
 <script src="/js/config.js" defer></script>
 <script src="/js/main.js" defer></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var galleryVideo = document.getElementById('galleryVideo');
-  var galleryMain = document.getElementById('galleryMain');
+document.addEventListener('DOMContentLoaded', function () {
+  var stageVideo = document.getElementById('stageVideo');
+  var stageImage = document.getElementById('stageImage');
 
-  function showGalleryVideo(src) {
-    if (!galleryVideo || !galleryMain) return;
-    galleryMain.hidden = true;
-    galleryVideo.hidden = false;
-    if (galleryVideo.getAttribute('src') !== src) galleryVideo.src = src;
-    galleryVideo.play().catch(function() {});
-  }
-
-  function showGalleryImage(src) {
-    if (!galleryVideo || !galleryMain) return;
-    galleryVideo.pause();
-    galleryVideo.hidden = true;
-    galleryMain.hidden = false;
-    galleryMain.src = src;
-  }
-
-  document.querySelectorAll('.gallery-thumb').forEach(function(thumb) {
-    thumb.addEventListener('click', function() {
-      var type = thumb.dataset.type || 'image';
+  document.querySelectorAll('.thumb').forEach(function (thumb) {
+    thumb.addEventListener('click', function () {
       var src = thumb.dataset.src;
-      if (type === 'video') showGalleryVideo(src);
-      else showGalleryImage(src);
-      document.querySelectorAll('.gallery-thumb').forEach(function(t) { t.classList.remove('is-active'); });
+      if (thumb.dataset.kind === 'video') {
+        stageImage.hidden = true;
+        stageVideo.hidden = false;
+        if (stageVideo.getAttribute('src') !== src) stageVideo.src = src;
+        stageVideo.play().catch(function () {});
+      } else {
+        stageVideo.pause();
+        stageVideo.hidden = true;
+        stageImage.hidden = false;
+        stageImage.src = src;
+        stageImage.classList.toggle('is-contain', thumb.dataset.fit === 'contain');
+      }
+      document.querySelectorAll('.thumb').forEach(function (t) { t.classList.remove('is-active'); });
       thumb.classList.add('is-active');
     });
   });
 
-  document.querySelectorAll('.swatch').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.swatch').forEach(function(b) { b.classList.remove('is-selected'); });
+  var priceNow = document.getElementById('priceNow');
+  var priceWas = document.getElementById('priceWas');
+  var priceSave = document.getElementById('priceSave');
+  var stickyPrice = document.getElementById('stickyPrice');
+  var stickyLabel = document.getElementById('stickyLabel');
+
+  function syncBundle() {
+    var input = document.querySelector('input[name="bundleOption"]:checked');
+    if (!input) return;
+    document.querySelectorAll('.bundle').forEach(function (b) { b.classList.remove('is-selected'); });
+    input.closest('.bundle').classList.add('is-selected');
+    priceNow.textContent = 'Q' + input.dataset.price;
+    priceWas.textContent = 'Q' + input.dataset.oldPrice;
+    priceSave.textContent = 'Ahorra ' + input.dataset.save + '%';
+    stickyPrice.textContent = 'Q' + input.dataset.price;
+    stickyLabel.textContent = input.dataset.label;
+  }
+
+  document.querySelectorAll('input[name="bundleOption"]').forEach(function (input) {
+    input.addEventListener('change', syncBundle);
+  });
+  syncBundle();
+
+  document.querySelectorAll('.swatch').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.swatch').forEach(function (b) { b.classList.remove('is-selected'); });
       btn.classList.add('is-selected');
-      var colorInput = document.getElementById('colorInput');
-      if (colorInput) colorInput.value = btn.dataset.color;
+      document.getElementById('colorInput').value = btn.dataset.color;
     });
   });
 
-  document.querySelectorAll('.faq-q, .ob-collapse-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var item = btn.closest('.faq-item, .ob-collapse');
-      if (!item) return;
+  document.querySelectorAll('.collapse-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.collapse');
       var wasOpen = item.classList.contains('is-open');
-      var group = item.closest('.faq-list, .ob-collapsibles');
-      if (group) group.querySelectorAll('.faq-item, .ob-collapse').forEach(function(i) { i.classList.remove('is-open'); });
+      var group = item.closest('.collapse-group');
+      if (group) group.querySelectorAll('.collapse').forEach(function (i) { i.classList.remove('is-open'); });
       if (!wasOpen) item.classList.add('is-open');
-    });
-  });
-
-  document.querySelectorAll('.ob-bundle input[name="bundleOption"]').forEach(function(input) {
-    input.addEventListener('change', function() {
-      document.querySelectorAll('.ob-bundle').forEach(function(b) { b.classList.remove('is-selected'); });
-      if (input.checked) input.closest('.ob-bundle').classList.add('is-selected');
     });
   });
 });
