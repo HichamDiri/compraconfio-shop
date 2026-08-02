@@ -98,7 +98,7 @@
                 <span class="bundle-cost"><strong>Q189</strong><del>Q279</del></span>
               </div>
               <div class="bundle-units">
-                <span class="unit-chip"><span class="dot black"></span>#1 Negro o Marrón</span>
+                <span class="unit-chip"><span class="dot black"></span>1 unidad · Negro</span>
               </div>
             </div>
           </label>
@@ -112,8 +112,7 @@
                 <span class="bundle-cost"><strong>Q289</strong><del>Q558</del></span>
               </div>
               <div class="bundle-units">
-                <span class="unit-chip"><span class="dot black"></span>#1</span>
-                <span class="unit-chip"><span class="dot brown"></span>#2</span>
+                <span class="unit-chip"><span class="dot black"></span>2 unidades · Negro</span>
               </div>
             </div>
           </label>
@@ -127,19 +126,10 @@
                 <span class="bundle-cost"><strong>Q369</strong><del>Q837</del></span>
               </div>
               <div class="bundle-units">
-                <span class="unit-chip"><span class="dot black"></span>#1</span>
-                <span class="unit-chip"><span class="dot black"></span>#2</span>
-                <span class="unit-chip"><span class="dot brown"></span>#3</span>
-                <span class="unit-chip"><span class="dot brown"></span>#4</span>
+                <span class="unit-chip"><span class="dot black"></span>4 unidades · Negro</span>
               </div>
             </div>
           </label>
-        </div>
-
-        <span class="block-label">Color</span>
-        <div class="swatches">
-          <button type="button" class="swatch is-selected" data-color="Negro"><i class="black"></i>Negro</button>
-          <button type="button" class="swatch" data-color="Marrón"><i class="brown"></i>Marrón</button>
         </div>
 
         <div class="form-head" id="checkout">
@@ -449,14 +439,6 @@ document.addEventListener('DOMContentLoaded', function () {
     input.addEventListener('change', syncBundle);
   });
   syncBundle();
-
-  document.querySelectorAll('.swatch').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      document.querySelectorAll('.swatch').forEach(function (b) { b.classList.remove('is-selected'); });
-      btn.classList.add('is-selected');
-      document.getElementById('colorInput').value = btn.dataset.color;
-    });
-  });
 
   document.querySelectorAll('.collapse-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
