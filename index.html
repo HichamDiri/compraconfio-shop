@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>CompraConfio.shop | Compra con confianza — Pago contra entrega</title>
+  <meta name="description" content="Tienda online en Latinoamérica. Paga solo cuando recibes tu pedido. Envío gratis y pago contra entrega en toda la región.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+  <style>
+    :root{--primary:#1e3a5f;--accent:#059669;--accent-soft:#ecfdf5;--white:#fff;--max-width:480px;--muted:#64748b}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,system-ui,sans-serif;background:#0f172a;color:#222;line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    .page{max-width:var(--max-width);margin:0 auto;background:var(--white);min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.4)}
+    .topbar{background:var(--primary);color:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-size:1.15rem;font-weight:800;letter-spacing:-.02em}
+    .logo span{color:#6ee7b7}
+    .topbar-badge{font-size:.68rem;background:rgba(255,255,255,.12);padding:4px 10px;border-radius:999px;font-weight:600}
+    .announce{background:var(--accent);color:#fff;text-align:center;padding:10px 14px;font-size:.85rem;font-weight:700}
+    .hero{padding:28px 18px 24px;text-align:center;background:linear-gradient(180deg,#f8fafc 0%,#fff 100%)}
+    .hero-icon{width:64px;height:64px;background:var(--accent-soft);border:2px solid #a7f3d0;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 14px}
+    .hero h1{font-size:1.55rem;line-height:1.2;color:var(--primary);margin-bottom:10px;font-weight:800}
+    .hero p{color:var(--muted);font-size:.95rem;margin-bottom:18px;max-width:340px;margin-left:auto;margin-right:auto}
+    .trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px}
+    .trust-item{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:12px 8px;text-align:center;font-size:.72rem;font-weight:600;color:var(--primary)}
+    .trust-item span{display:block;font-size:1.3rem;margin-bottom:4px}
+    .btn-main{display:block;width:100%;padding:16px;background:var(--accent);color:#fff;border-radius:10px;font-weight:800;font-size:1rem;text-align:center;box-shadow:0 8px 24px rgba(5,150,105,.25)}
+    .section{padding:24px 16px;border-top:8px solid #f8fafc}
+    .section h2{font-size:1.15rem;color:var(--primary);margin-bottom:14px;font-weight:800}
+    .products{display:grid;gap:12px}
+    .product-card{display:grid;grid-template-columns:88px 1fr;gap:14px;align-items:center;background:#fff;border:2px solid #e2e8f0;border-radius:14px;padding:14px;transition:border-color .2s}
+    .product-card:hover,.product-card.featured{border-color:var(--accent)}
+    .product-thumb{width:88px;height:88px;background:linear-gradient(135deg,#1e3a5f,#334155);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:2rem}
+    .product-card strong{display:block;font-size:.95rem;color:#111;margin-bottom:4px}
+    .product-card p{font-size:.82rem;color:var(--muted);margin-bottom:6px}
+    .product-price{color:var(--accent);font-weight:800;font-size:1rem}
+    .product-badge{display:inline-block;background:#fef3c7;color:#b45309;font-size:.68rem;font-weight:700;padding:3px 8px;border-radius:999px;margin-bottom:6px}
+    .why-grid{display:grid;gap:10px}
+    .why-item{display:flex;gap:12px;align-items:flex-start;background:#f8fafc;border-radius:10px;padding:14px}
+    .why-item span{font-size:1.4rem;flex-shrink:0}
+    .why-item strong{display:block;font-size:.88rem;color:#111;margin-bottom:2px}
+    .why-item p{font-size:.8rem;color:var(--muted);margin:0}
+    .footer{padding:24px 16px 32px;text-align:center;background:#f8fafc;border-top:1px solid #e2e8f0;font-size:.82rem;color:var(--muted)}
+    .footer-brand{font-weight:800;color:var(--primary);font-size:1.05rem;margin-bottom:6px}
+    .footer-tagline{color:var(--accent);font-weight:600;font-size:.85rem;margin-bottom:12px}
+    .footer-links{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:10px}
+  </style>
+</head>
+<body>
+
+<div class="page">
+  <header class="topbar">
+    <div class="logo">Compra<span>Confio</span></div>
+    <span class="topbar-badge">.shop</span>
+  </header>
+
+  <div class="announce">🌎 Envío GRATIS · Pago CONTRA ENTREGA en Latinoamérica</div>
+
+  <section class="hero">
+    <div class="hero-icon">🛡️</div>
+    <h1>Compra con confianza.<br>Paga solo cuando recibes.</h1>
+    <p>Productos de calidad con entrega a domicilio y pago en efectivo al recibir tu pedido. Sin tarjeta, sin riesgo.</p>
+
+    <div class="trust-row">
+      <div class="trust-item"><span>💵</span>Pago al recibir</div>
+      <div class="trust-item"><span>🚚</span>Envío gratis</div>
+      <div class="trust-item"><span>✅</span>30 días garantía</div>
+    </div>
+
+    <a href="#productos" class="btn-main">Ver productos destacados</a>
+  </section>
+
+  <section class="section" id="productos">
+    <h2>🔥 Productos destacados</h2>
+    <div class="products">
+      <a href="/compraconfio-mascara.html" class="product-card featured">
+        <div class="product-thumb">💄</div>
+        <div>
+          <span class="product-badge">Más vendido</span>
+          <strong>Máscara Iron 3D</strong>
+          <p>Varilla metálica · Sin grumos · Resistente al agua</p>
+          <span class="product-price">Desde Q189 · Pago contra entrega</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>¿Por qué CompraConfio?</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <span>🛡️</span>
+        <div>
+          <strong>Compra sin riesgo</strong>
+          <p>No pagas nada hasta que el producto llegue a tus manos.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <span>📞</span>
+        <div>
+          <strong>Confirmación por WhatsApp</strong>
+          <p>Te contactamos antes de enviar para verificar tu dirección.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <span>🌎</span>
+        <div>
+          <strong>Envíos en Latinoamérica</strong>
+          <p>Guatemala, México, Colombia, Perú y más países de la región.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <span>↩️</span>
+        <div>
+          <strong>Garantía de satisfacción</strong>
+          <p>30 días para devolver si no quedas satisfecho con tu compra.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer-brand">CompraConfio.shop</p>
+    <p class="footer-tagline">Paga solo cuando recibes</p>
+    <ul class="footer-links">
+      <li><a href="mailto:contacto@compraconfio.shop">Contáctanos</a></li>
+      <li><a href="/privacy.html">Privacidad</a></li>
+      <li><a href="/terms.html">Términos</a></li>
+      <li><a href="/refund.html">Devoluciones</a></li>
+    </ul>
+    <p>© 2026 CompraConfio — Tienda online para Latinoamérica</p>
+  </footer>
+</div>
+
+</body>
+</html>
