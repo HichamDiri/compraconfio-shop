@@ -70,7 +70,7 @@
       <div class="order-row"><span>N.° de pedido:</span><strong id="orderNumber">—</strong></div>
       <div class="order-row"><span>Nombre:</span><strong id="customerName">—</strong></div>
       <div class="order-row"><span>Teléfono:</span><strong id="customerPhone">—</strong></div>
-      <div class="order-row"><span>País:</span><strong id="customerCountry">—</strong></div>
+      <div class="order-row"><span>Departamento:</span><strong id="customerCountry">—</strong></div>
       <div class="order-row"><span>Dirección:</span><strong id="customerAddress">—</strong></div>
       <div class="order-row"><span>Monto:</span><strong id="orderPrice">Q189 quetzales</strong></div>
       <div class="order-row"><span>Pago:</span><strong>Contra entrega 💵</strong></div>
@@ -111,7 +111,8 @@
 
     if (p.get('name')) document.getElementById('customerName').textContent = decodeURIComponent(p.get('name'));
     if (p.get('phone')) document.getElementById('customerPhone').textContent = decodeURIComponent(p.get('phone'));
-    if (p.get('country')) document.getElementById('customerCountry').textContent = decodeURIComponent(p.get('country'));
+    var region = p.get('department') || p.get('country');
+    if (region) document.getElementById('customerCountry').textContent = decodeURIComponent(region);
 
     var address = p.get('address') ? decodeURIComponent(p.get('address')) : '';
     var city = p.get('city') ? decodeURIComponent(p.get('city')) : '';

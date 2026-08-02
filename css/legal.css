@@ -1,0 +1,103 @@
+/* CompraConfio — legal / info pages */
+
+.legal-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+.legal-kicker {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.legal-wrap h1 {
+  font-family: var(--serif);
+  font-size: 2.1rem;
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.legal-updated {
+  font-size: 0.8rem;
+  color: var(--muted);
+  padding-bottom: 22px;
+  margin-bottom: 26px;
+  border-bottom: 1px solid var(--line);
+}
+
+.legal-wrap h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 30px 0 10px;
+}
+
+.legal-wrap p,
+.legal-wrap li {
+  font-size: 0.92rem;
+  color: #3a3a3a;
+  line-height: 1.75;
+}
+
+.legal-wrap p { margin-bottom: 12px; }
+
+.legal-wrap ul,
+.legal-wrap ol {
+  margin: 0 0 14px 20px;
+}
+
+.legal-wrap li { margin-bottom: 7px; }
+
+.legal-wrap a { text-decoration: underline; }
+
+.legal-box {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--soft);
+  padding: 18px 20px;
+  margin: 20px 0;
+}
+
+.legal-box p:last-child { margin-bottom: 0; }
+
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6px 0 18px;
+  font-size: 0.9rem;
+}
+
+.legal-table th,
+.legal-table td {
+  text-align: left;
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.legal-table th {
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.legal-back {
+  display: inline-block;
+  margin-top: 34px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 3px;
+}
+
+@media (min-width: 1000px) {
+  .legal-wrap { padding: 60px 20px 80px; }
+  .legal-wrap h1 { font-size: 2.6rem; }
+}
