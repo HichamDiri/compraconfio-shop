@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Máscara Iron 3D | CompraConfio — Pago Contra Entrega</title>
+  <meta name="description" content="Máscara Iron 3D con varilla metálica — sin grumos, resistente al agua. Envío gratis y pago contra entrega en Latinoamérica.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"></noscript>
+  <style>
+    :root{--primary:#1e3a5f;--accent:#059669;--accent-soft:#ecfdf5;--gold:#6ee7b7;--white:#fff;--max-width:480px;--muted:#64748b}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:auto}
+    body{font-family:Inter,system-ui,sans-serif;background:#0f172a;color:#222;line-height:1.55;padding-bottom:78px}
+    img{display:block;width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+    .page{max-width:var(--max-width);margin:0 auto;background:var(--white);min-height:100vh;overflow:hidden}
+    .topbar{background:var(--primary);color:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-size:1rem;font-weight:800}.logo span{color:var(--gold)}
+    .topbar-link{font-size:.78rem;opacity:.85}
+    .announce{background:var(--accent);color:#fff;text-align:center;padding:10px 14px;font-size:.85rem;font-weight:700}
+    .announce span{font-weight:800;text-decoration:underline}
+    .hero{padding:22px 16px 18px;background:linear-gradient(180deg,#f8fafc 0%,#fff 100%);text-align:center}
+    .hero-badge{display:inline-block;background:var(--accent-soft);color:var(--accent);font-size:.72rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-bottom:12px;border:1px solid #a7f3d0}
+    .hero h1{font-size:1.6rem;line-height:1.15;color:var(--primary);margin-bottom:8px;font-weight:800}
+    .hero h1 em{font-style:normal;color:var(--accent)}
+    .hero-sub{color:var(--muted);font-size:.92rem;margin-bottom:16px}
+    .hero-visual{background:linear-gradient(135deg,var(--primary) 0%,#334155 100%);border-radius:16px;padding:28px 20px;margin-bottom:16px;color:#fff;position:relative;overflow:hidden}
+    .hero-visual::after{content:'';position:absolute;top:-40%;right:-20%;width:180px;height:180px;background:radial-gradient(circle,rgba(5,150,105,.35) 0%,transparent 70%);border-radius:50%}
+    .hero-product{font-size:3.2rem;line-height:1;margin-bottom:8px}
+    .hero-product-name{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+    .hero-product-tag{font-size:.8rem;opacity:.8}
+    .hero-price{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:14px}
+    .hero-price del{color:#94a3b8;font-size:.95rem}
+    .hero-price strong{color:var(--accent);font-size:1.6rem;font-weight:800}
+    .hero-benefits{list-style:none;display:grid;gap:8px;text-align:left;margin-bottom:16px}
+    .hero-benefits li{display:flex;gap:10px;align-items:flex-start;font-size:.86rem;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:10px 12px}
+    .hero-benefits li span{flex-shrink:0;font-size:1rem}
+    .btn-cta{display:block;width:100%;padding:16px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:1.02rem;font-weight:800;cursor:pointer;text-align:center;box-shadow:0 8px 24px rgba(5,150,105,.28)}
+    .section{padding:24px 16px;border-top:8px solid #f8fafc}
+    .section-kicker{font-size:.72rem;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+    .section h2{font-size:1.2rem;line-height:1.25;color:var(--primary);margin-bottom:12px;font-weight:800}
+    .section p{color:#475569;font-size:.9rem;margin-bottom:10px}
+    .pain-list{list-style:none;display:grid;gap:10px;margin-top:14px}
+    .pain-list li{background:#fff5f5;border-left:4px solid #ef4444;padding:12px 14px;border-radius:0 10px 10px 0;font-size:.86rem}
+    .tech-grid{display:grid;gap:12px;margin-top:14px}
+    .tech-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px;text-align:center}
+    .tech-card span{font-size:1.8rem;display:block;margin-bottom:6px}
+    .tech-card strong{display:block;font-size:.9rem;margin-bottom:4px;color:var(--primary)}
+    .tech-card p{font-size:.8rem;color:var(--muted);margin:0}
+    .benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+    .benefit-box{background:var(--primary);color:#fff;border-radius:12px;padding:14px 12px;text-align:center}
+    .benefit-box span{font-size:1.4rem;display:block;margin-bottom:6px}
+    .benefit-box strong{display:block;font-size:.8rem;line-height:1.3}
+    .steps{display:grid;gap:12px;margin-top:14px}
+    .step{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start;background:#f8fafc;border-radius:12px;padding:14px;border:1px solid #e2e8f0}
+    .step-num{width:40px;height:40px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem}
+    .step strong{display:block;font-size:.9rem;margin-bottom:4px;color:var(--primary)}
+    .step p{font-size:.8rem;color:var(--muted);margin:0}
+    .reviews{display:grid;gap:10px;margin-top:14px}
+    .review{background:#f8fafc;border-radius:12px;padding:14px;border:1px solid #e2e8f0}
+    .review-stars{color:#f59e0b;font-size:.9rem;margin-bottom:6px}
+    .review p{font-size:.84rem;color:#334155;margin-bottom:8px;font-style:italic}
+    .review cite{font-size:.76rem;color:var(--muted);font-style:normal;font-weight:600}
+    .review-note{font-size:.7rem;color:#94a3b8;margin-top:10px;font-style:italic}
+    .faq{display:grid;gap:10px;margin-top:14px}
+    .faq-item{border:1px solid #e2e8f0;border-radius:10px;padding:14px;background:#fff}
+    .faq-item strong{display:block;font-size:.86rem;margin-bottom:6px;color:var(--primary)}
+    .faq-item p{font-size:.8rem;color:var(--muted);margin:0}
+    .checkout{padding:18px 14px 24px;background:#fff;border-top:10px solid var(--accent-soft)}
+    .checkout-header h2{color:var(--primary);font-size:1.1rem;margin:8px 0 14px;text-align:center}
+    .checkout-price{display:flex;gap:10px;align-items:center;justify-content:center;margin-bottom:8px;padding:12px;border:2px solid #a7f3d0;border-radius:10px;background:#fff}
+    .checkout-price del{color:#94a3b8;font-size:.92rem}
+    .checkout-price strong{color:var(--accent);font-size:1.35rem}
+    .bundle-options{display:grid;gap:10px;margin-bottom:14px}
+    .bundle-option{position:relative;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;border:2px solid #e2e8f0;border-radius:10px;padding:18px 14px 14px;background:#fff;cursor:pointer;text-align:left}
+    .bundle-option input{position:absolute;opacity:0;pointer-events:none}
+    .bundle-option strong{display:block;color:#111;font-size:.92rem;margin-bottom:2px}
+    .bundle-prices{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .bundle-prices span{color:var(--accent);font-weight:700}
+    .bundle-prices del{color:#94a3b8;font-size:.85rem}
+    .bundle-save{background:var(--primary);color:#fff;border-radius:999px;padding:3px 8px;font-size:.68rem;font-style:normal}
+    .bundle-badge{position:absolute;top:-13px;left:14px;background:var(--accent);color:#fff;border-radius:4px;padding:5px 12px;font-size:.72rem;font-weight:700}
+    .bundle-radio{width:20px;height:20px;border:2px solid #cbd5e1;border-radius:50%;background:#fff}
+    .bundle-option.is-selected{border-color:var(--accent);box-shadow:0 8px 18px rgba(5,150,105,.12)}
+    .bundle-option.is-selected .bundle-radio{border-color:var(--accent);box-shadow:inset 0 0 0 5px #fff;background:var(--accent)}
+    .form-group{margin-bottom:10px}
+    .form-group input,.form-group select{width:100%;padding:14px 12px;border:1px solid #cbd5e1;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+    .form-group input:focus,.form-group select:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px rgba(5,150,105,.12)}
+    .btn-submit{width:100%;padding:16px;border:none;border-radius:8px;background:var(--accent);color:#fff;font-size:1.02rem;font-weight:800;cursor:pointer;box-shadow:0 10px 22px rgba(5,150,105,.24)}
+    .checkout-trust{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px;text-align:center;font-size:.7rem;color:var(--primary)}
+    .checkout-trust span{display:block;font-size:1.2rem;margin-bottom:4px}
+    .footer{padding:20px 14px 28px;text-align:center;background:#f8fafc;border-top:1px solid #e2e8f0;font-size:.8rem;color:var(--muted)}
+    .footer-brand{font-weight:800;color:var(--primary);margin-bottom:4px;font-size:1rem}
+    .footer-tagline{color:var(--accent);font-weight:600;font-size:.82rem;margin-bottom:10px}
+    .footer-links{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:8px}
+    .bottom-sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;background:#fff;border-top:1px solid #e2e8f0;box-shadow:0 -8px 24px rgba(0,0,0,.08);max-width:480px;margin:0 auto;transform:translateY(110%);transition:transform .25s ease}
+    .bottom-sticky.is-visible{transform:translateY(0)}
+    .bottom-sticky a{color:#fff;background:var(--accent);padding:12px 18px;border-radius:8px;font-weight:800;white-space:nowrap;font-size:.88rem}
+    .bottom-sticky strong{color:var(--accent);font-size:.88rem;line-height:1.35;display:block}
+    .bottom-sticky span{font-size:.74rem;color:#64748b;line-height:1.35}
+  </style>
+  <link rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+</head>
+<body class="compraconfio-page" data-country="LATAM" data-lang="es" data-brand="compraconfio" data-snap-pixel="off" data-phone-lenient="on" data-thankyou="/thank-you-compraconfio.html">
+
+<div class="page">
+
+  <header class="topbar">
+    <a href="/index.html" class="logo">Compra<span>Confio</span></a>
+    <a href="/index.html" class="topbar-link">← Inicio</a>
+  </header>
+
+  <div class="announce">🌎 Envío <span>GRATIS</span> · Pago <span>CONTRA ENTREGA</span> en Latinoamérica</div>
+
+  <section class="hero" id="heroSection">
+    <span class="hero-badge">✨ Lo más vendido hoy</span>
+    <h1>Pestañas Perfectas <em>Sin Grumos</em> Todo el Día</h1>
+    <p class="hero-sub">Máscara Iron 3D con varilla metálica — la revolución viral que transforma tus pestañas en segundos</p>
+
+    <div class="hero-visual">
+      <div class="hero-product">💄</div>
+      <p class="hero-product-name">Máscara Iron 3D</p>
+      <p class="hero-product-tag">Varilla metálica · Resistente al agua · Sin grumos</p>
+    </div>
+
+    <div class="hero-price">
+      <del data-selected-old-price>Q279</del>
+      <strong data-selected-price>Q189</strong>
+    </div>
+
+    <ul class="hero-benefits">
+      <li><span>✅</span> Varilla de metal ultra fina — aplica sin manchar el párpado</li>
+      <li><span>💧</span> Resistente al agua, sudor y humedad — cero ojos de mapache</li>
+      <li><span>👁️</span> Separa y alarga cada pestaña — look natural o dramático</li>
+      <li><span>⏰</span> Dura hasta 14 horas sin retoques</li>
+      <li><span>🚚</span> Envío gratis + pago al recibir en toda Latinoamérica</li>
+    </ul>
+
+    <a href="#checkout" class="btn-cta">¡Quiero la mía! — Pago contra entrega</a>
+  </section>
+
+  <section class="section">
+    <p class="section-kicker">¿Te suena familiar?</p>
+    <h2>¿Cansada de máscaras que no funcionan?</h2>
+    <ul class="pain-list">
+      <li>Tu máscara deja grumos feos y pegajosos en las pestañas</li>
+      <li>Se corre en el párpado inferior a media tarde — ojos de mapache</li>
+      <li>El rizador no dura ni 2 horas con el calor y la humedad</li>
+      <li>El cepillo grande mancha tu sombra y párpado cada mañana</li>
+      <li>Gastas dinero en productos caros que prometen y no cumplen</li>
+    </ul>
+    <p style="margin-top:14px"><strong>Máscara Iron 3D</strong> fue diseñada para resolver exactamente eso — con tecnología de varilla metálica que separa, alarga y fija el rizo sin esfuerzo.</p>
+  </section>
+
+  <section class="section">
+    <p class="section-kicker">Tecnología</p>
+    <h2>¿Por qué la varilla de metal funciona mejor?</h2>
+    <p>A diferencia de los cepillos tradicionales con cerdas, la varilla metálica ultra fina envuelve cada pestaña individualmente con la fórmula tubing — sin grumos, sin pegajosidad.</p>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <span>🔩</span>
+        <strong>Varilla Iron 0°</strong>
+        <p>Metal ultra delgado que llega hasta las pestañas más cortas del rincón interno</p>
+      </div>
+      <div class="tech-card">
+        <span>🧬</span>
+        <strong>Fórmula Tubing</strong>
+        <p>Envuelve cada pestaña como un tubo — rizo duradero y fácil de retirar con agua tibia</p>
+      </div>
+      <div class="tech-card">
+        <span>💪</span>
+        <strong>Fibras Alargadoras</strong>
+        <p>Alarga y da volumen progresivo — más capas, más impacto</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-kicker">Beneficios</p>
+    <h2>Lo que obtienes con Máscara Iron 3D</h2>
+    <div class="benefits-grid">
+      <div class="benefit-box"><span>👁️</span><strong>Pestañas más largas y definidas</strong></div>
+      <div class="benefit-box"><span>💧</span><strong>100% resistente al agua</strong></div>
+      <div class="benefit-box"><span>✨</span><strong>Cero grumos garantizado</strong></div>
+      <div class="benefit-box"><span>⏰</span><strong>Dura todo el día sin retoques</strong></div>
+      <div class="benefit-box"><span>🎯</span><strong>Aplicación precisa sin manchar</strong></div>
+      <div class="benefit-box"><span>🌿</span><strong>Look natural o dramático — tú decides</strong></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-kicker">Modo de uso</p>
+    <h2>Solo 3 pasos — resultados en minutos</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <strong>Riza tus pestañas (opcional)</strong>
+          <p>Usa un rizador de pestañas para un lift extra. La fórmula fijará el rizo todo el día.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <strong>Aplica de raíz a punta</strong>
+          <p>Pasa la varilla metálica de la base hacia arriba en zigzag. Agrega capas para más volumen.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <strong>¡Listo! Disfruta todo el día</strong>
+          <p>Para retirar: agua tibia + movimientos suaves. La fórmula tubing se desprende fácilmente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-kicker">Opiniones</p>
+    <h2>Lo que dicen nuestras clientas</h2>
+    <div class="reviews">
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <p>"Por fin una máscara que no se corre con el calor. Llevo 10 horas y sigo perfecta."</p>
+        <cite>— María L., Guatemala</cite>
+      </div>
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <p>"La varilla metálica es increíble. Mis pestañas se ven más largas y separadas, cero grumos."</p>
+        <cite>— Ana R., México</cite>
+      </div>
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <p>"Pedí contra entrega sin problema. Llegó rápido y el producto es exactamente como en las fotos."</p>
+        <cite>— Sofía M., Colombia</cite>
+      </div>
+    </div>
+    <p class="review-note">* Testimonios de muestra para fines de marketing. Reemplazar con reseñas verificadas de clientes reales.</p>
+  </section>
+
+  <section class="section">
+    <p class="section-kicker">Preguntas frecuentes</p>
+    <h2>Todo lo que necesitas saber</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <strong>¿Cómo funciona el pago contra entrega?</strong>
+        <p>Pagas en efectivo cuando recibes tu pedido en la puerta de tu casa. Sin tarjeta, sin riesgo.</p>
+      </div>
+      <div class="faq-item">
+        <strong>¿Cuánto tarda el envío?</strong>
+        <p>Depende de tu país: 1-3 días en ciudades principales, 3-7 días en el interior. Te contactamos por WhatsApp para confirmar.</p>
+      </div>
+      <div class="faq-item">
+        <strong>¿Es difícil de quitar?</strong>
+        <p>La fórmula tubing se retira con agua tibia y movimientos suaves. Usa desmaquillante bifásico si lo prefieres.</p>
+      </div>
+      <div class="faq-item">
+        <strong>¿Funciona en pestañas cortas?</strong>
+        <p>Sí — la varilla ultra fina está diseñada específicamente para pestañas cortas y difíciles de alcanzar.</p>
+      </div>
+      <div class="faq-item">
+        <strong>¿Tienen garantía?</strong>
+        <p>Sí — 30 días de satisfacción garantizada. Si no te encanta, te devolvemos tu dinero.</p>
+      </div>
+      <div class="faq-item">
+        <strong>¿A qué países envían?</strong>
+        <p>Guatemala, México, Colombia, Perú, Honduras, El Salvador, Costa Rica, Panamá y más países de Latinoamérica.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="checkout" id="checkout">
+    <div class="checkout-header">
+      <div class="checkout-price">
+        <del data-selected-old-price>Q279</del>
+        <strong data-selected-price>Q189</strong>
+      </div>
+      <h2>Completa tu pedido 👇 — Pago contra entrega</h2>
+    </div>
+
+    <form id="orderForm" action="/thank-you-compraconfio.html" method="GET">
+      <input type="hidden" name="currency" value="GTQ">
+      <input type="hidden" name="source" value="compraconfio-mascara">
+      <div class="bundle-options" aria-label="Seleccionar oferta">
+        <label class="bundle-option is-selected">
+          <span class="bundle-badge">1 unidad</span>
+          <input type="radio" name="bundleOption" value="cc-mascara-1" data-product-id="cc-mascara-1" data-product-name="Máscara Iron 3D - 1 unidad" data-price="189" data-old-price="279" checked>
+          <span>
+            <strong>1 Máscara Iron 3D — Q189</strong>
+            <span class="bundle-prices"><span>Q189</span><del>Q279</del></span>
+          </span>
+          <span class="bundle-radio" aria-hidden="true"></span>
+        </label>
+
+        <label class="bundle-option">
+          <span class="bundle-badge">Oferta especial</span>
+          <input type="radio" name="bundleOption" value="cc-mascara-2" data-product-id="cc-mascara-2" data-product-name="Máscara Iron 3D - 2 unidades" data-price="289" data-old-price="558">
+          <span>
+            <strong>2 Máscaras — Q289</strong>
+            <span class="bundle-prices"><span>Q289</span><del>Q558</del><em class="bundle-save">Ahorra Q269</em></span>
+          </span>
+          <span class="bundle-radio" aria-hidden="true"></span>
+        </label>
+
+        <label class="bundle-option">
+          <span class="bundle-badge">Mejor valor</span>
+          <input type="radio" name="bundleOption" value="cc-mascara-3" data-product-id="cc-mascara-3" data-product-name="Máscara Iron 3D - 3 unidades" data-price="369" data-old-price="837">
+          <span>
+            <strong>3 Máscaras — Q369</strong>
+            <span class="bundle-prices"><span>Q369</span><del>Q837</del><em class="bundle-save">Ahorra Q468</em></span>
+          </span>
+          <span class="bundle-radio" aria-hidden="true"></span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="name" id="name" placeholder="Nombre completo" required autocomplete="name">
+      </div>
+      <div class="form-group">
+        <input type="tel" name="phone" id="phone" placeholder="WhatsApp / Teléfono" required autocomplete="tel">
+      </div>
+      <div class="form-group">
+        <select name="country" id="country" required>
+          <option value="" disabled selected>País</option>
+          <option value="Guatemala">🇬🇹 Guatemala</option>
+          <option value="México">🇲🇽 México</option>
+          <option value="Colombia">🇨🇴 Colombia</option>
+          <option value="Perú">🇵🇪 Perú</option>
+          <option value="Honduras">🇭🇳 Honduras</option>
+          <option value="El Salvador">🇸🇻 El Salvador</option>
+          <option value="Costa Rica">🇨🇷 Costa Rica</option>
+          <option value="Panamá">🇵🇦 Panamá</option>
+          <option value="Nicaragua">🇳🇮 Nicaragua</option>
+          <option value="República Dominicana">🇩🇴 República Dominicana</option>
+          <option value="Ecuador">🇪🇨 Ecuador</option>
+          <option value="Chile">🇨🇱 Chile</option>
+          <option value="Argentina">🇦🇷 Argentina</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="text" name="city" id="city" placeholder="Ciudad / Municipio" required>
+      </div>
+      <div class="form-group">
+        <input type="text" name="address" id="address" placeholder="Dirección exacta (colonia, zona, calle)" required autocomplete="street-address">
+      </div>
+
+      <button type="submit" class="btn-submit">Confirmar pedido — Pago contra entrega</button>
+
+      <div class="checkout-trust">
+        <div><span>💵</span><strong>Pago al<br>recibir</strong></div>
+        <div><span>✅</span><strong>30 días<br>garantía</strong></div>
+        <div><span>🚚</span><strong>Envío<br>gratis</strong></div>
+        <div><span>📞</span><strong>WhatsApp<br>confirmación</strong></div>
+      </div>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p class="footer-brand">CompraConfio.shop</p>
+    <p class="footer-tagline">Paga solo cuando recibes</p>
+    <ul class="footer-links">
+      <li><a href="mailto:contacto@compraconfio.shop">Contáctanos</a></li>
+      <li><a href="/privacy.html">Privacidad</a></li>
+      <li><a href="/terms.html">Términos</a></li>
+      <li><a href="/refund.html">Devoluciones</a></li>
+    </ul>
+    <p>© 2026 CompraConfio — Tienda online para Latinoamérica</p>
+  </footer>
+</div>
+
+<div class="bottom-sticky" id="bottomSticky" aria-hidden="true">
+  <div>
+    <strong>¡Oferta de hoy!</strong>
+    <span>Pago contra entrega</span>
+  </div>
+  <a href="#checkout">Comprar ahora</a>
+</div>
+
+<script src="/js/config.js" defer></script>
+<script src="/js/main.js" defer></script>
+</body>
+</html>

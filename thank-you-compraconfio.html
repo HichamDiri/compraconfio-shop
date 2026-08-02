@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Pedido confirmado! | CompraConfio.shop</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+  <style>
+    :root{--primary:#1e3a5f;--accent:#059669;--max-width:480px;--muted:#64748b}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,system-ui,sans-serif;background:#0f172a;color:#222;line-height:1.5}
+    .page{max-width:var(--max-width);margin:0 auto;background:#fff;min-height:100vh}
+    .thankyou-brandbar{background:var(--primary);color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
+    .thankyou-brandbar strong{font-size:1rem}
+    .thankyou-brandbar strong span{color:#6ee7b7}
+    .thankyou-brandbar span{font-size:.8rem;opacity:.75}
+    .thankyou-content{padding:16px}
+    .thankyou-hero-card{background:linear-gradient(135deg,#ecfdf5,#fff);border-radius:16px;padding:24px 18px;text-align:center;margin-bottom:14px;border:1px solid #a7f3d0}
+    .success-icon{width:56px;height:56px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:800;margin:0 auto 12px}
+    .thankyou-kicker{color:var(--accent);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+    .thankyou-hero-card h1{font-size:1.25rem;margin-bottom:8px;color:var(--primary)}
+    .thankyou-hero-card p{font-size:.88rem;color:#475569}
+    .product-reminder-card{display:grid;grid-template-columns:80px 1fr;gap:14px;align-items:center;background:#f8fafc;border-radius:12px;padding:14px;margin-bottom:14px;border:1px solid #e2e8f0}
+    .product-mini{width:80px;height:80px;background:linear-gradient(135deg,var(--primary),#334155);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:2rem}
+    .product-reminder-card h2{font-size:.92rem;margin-bottom:4px;color:var(--primary)}
+    .product-reminder-card p{font-size:.84rem;margin-bottom:4px}
+    .product-reminder-card span{font-size:.76rem;color:var(--accent);font-weight:600}
+    .order-box,.steps-box{background:#f8fafc;border-radius:12px;padding:16px;margin-bottom:14px;border:1px solid #e2e8f0}
+    .order-box h3,.steps-box h3{font-size:.92rem;margin-bottom:12px;color:var(--primary)}
+    .order-row{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid #e2e8f0;font-size:.84rem}
+    .order-row:last-child{border-bottom:none}
+    .order-row span{color:var(--muted)}
+    .steps-box ol{padding-left:18px;font-size:.84rem;color:#475569}
+    .steps-box li{margin-bottom:8px}
+    .thankyou-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center;font-size:.76rem;margin-bottom:14px;color:var(--primary)}
+    .thankyou-trust span{display:block;font-size:1.2rem;margin-bottom:4px}
+    .footer{padding:20px 14px 28px;text-align:center;background:#f8fafc;border-top:1px solid #e2e8f0;font-size:.8rem;color:var(--muted)}
+    .footer-brand{font-weight:800;color:var(--primary);margin-bottom:4px}
+    .footer-tagline{color:var(--accent);font-weight:600;font-size:.82rem}
+  </style>
+</head>
+<body class="thankyou-page compraconfio-thankyou">
+
+<div class="page">
+  <div class="thankyou-brandbar">
+    <strong>Compra<span>Confio</span></strong>
+    <span>Pedido en confirmación</span>
+  </div>
+
+  <div class="thankyou-content">
+    <section class="thankyou-hero-card">
+      <div class="success-icon">✓</div>
+      <p class="thankyou-kicker">Pedido recibido con éxito</p>
+      <h1>¡Gracias por confiar en CompraConfio!</h1>
+      <p>Nuestro equipo te contactará pronto por WhatsApp para confirmar tu dirección. Recuerda: tu pedido es <strong id="thankyouProductInline">Máscara Iron 3D</strong>.</p>
+    </section>
+
+    <section class="product-reminder-card">
+      <div class="product-mini" id="thankyouProductVisual">💄</div>
+      <div>
+        <h2 id="thankyouProductName">Máscara Iron 3D</h2>
+        <p>Precio final: <strong id="thankyouProductPrice">Q189 quetzales</strong></p>
+        <span>Solo pago contra entrega</span>
+      </div>
+    </section>
+
+    <div class="order-box">
+      <h3>Resumen del pedido</h3>
+      <div class="order-row"><span>N.° de pedido:</span><strong id="orderNumber">—</strong></div>
+      <div class="order-row"><span>Nombre:</span><strong id="customerName">—</strong></div>
+      <div class="order-row"><span>Teléfono:</span><strong id="customerPhone">—</strong></div>
+      <div class="order-row"><span>País:</span><strong id="customerCountry">—</strong></div>
+      <div class="order-row"><span>Dirección:</span><strong id="customerAddress">—</strong></div>
+      <div class="order-row"><span>Monto:</span><strong id="orderPrice">Q189 quetzales</strong></div>
+      <div class="order-row"><span>Pago:</span><strong>Contra entrega 💵</strong></div>
+    </div>
+
+    <div class="steps-box">
+      <h3>¿Qué pasa ahora?</h3>
+      <ol>
+        <li><strong>Confirmación:</strong> Te escribimos por WhatsApp para verificar tu dirección.</li>
+        <li><strong>Preparación:</strong> Tu pedido se prepara y envía después de la confirmación.</li>
+        <li><strong>Entrega:</strong> Recibe tu producto en casa y paga en efectivo al mensajero.</li>
+        <li><strong>Pago:</strong> Solo pagas <span id="stepsPrice">Q189 quetzales</span> al recibir — sin adelantos.</li>
+      </ol>
+    </div>
+
+    <div class="thankyou-trust">
+      <div><span>💵</span><strong>Pago al recibir</strong></div>
+      <div><span>🚚</span><strong>Envío gratis</strong></div>
+      <div><span>✅</span><strong>30 días garantía</strong></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p class="footer-brand">CompraConfio.shop</p>
+    <p class="footer-tagline">Paga solo cuando recibes</p>
+  </footer>
+</div>
+
+<script>
+  (function() {
+    var p = new URLSearchParams(window.location.search);
+    var orderId = p.get('order') || ('CC-' + Date.now().toString().slice(-8));
+    var productName = p.get('productName') ? decodeURIComponent(p.get('productName')) : 'Máscara Iron 3D';
+    var price = p.get('price') || '189';
+    var currency = p.get('currency') || 'GTQ';
+    var currencyLabel = currency === 'GTQ' ? 'quetzales' : currency;
+    var priceLabel = 'Q' + price + ' ' + currencyLabel;
+
+    if (p.get('name')) document.getElementById('customerName').textContent = decodeURIComponent(p.get('name'));
+    if (p.get('phone')) document.getElementById('customerPhone').textContent = decodeURIComponent(p.get('phone'));
+    if (p.get('country')) document.getElementById('customerCountry').textContent = decodeURIComponent(p.get('country'));
+
+    var address = p.get('address') ? decodeURIComponent(p.get('address')) : '';
+    var city = p.get('city') ? decodeURIComponent(p.get('city')) : '';
+    if (city) address = (city + (address ? ', ' + address : ''));
+    if (address) document.getElementById('customerAddress').textContent = address;
+
+    document.getElementById('orderNumber').textContent = orderId;
+    document.getElementById('thankyouProductInline').textContent = productName;
+    document.getElementById('thankyouProductName').textContent = productName;
+    document.getElementById('thankyouProductPrice').textContent = priceLabel;
+    document.getElementById('orderPrice').textContent = priceLabel;
+    document.getElementById('stepsPrice').textContent = priceLabel;
+  })();
+</script>
+</body>
+</html>
