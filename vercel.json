@@ -1,20 +1,23 @@
 {
   "rewrites": [
-    {
-      "source": "/compraconfio-mascara",
-      "destination": "/compraconfio-mascara.html"
-    },
-    {
-      "source": "/compraconfio-mascara/",
-      "destination": "/compraconfio-mascara.html"
-    },
-    {
-      "source": "/thank-you-compraconfio",
-      "destination": "/thank-you-compraconfio.html"
-    },
-    {
-      "source": "/thank-you-compraconfio/",
-      "destination": "/thank-you-compraconfio.html"
-    }
+    { "source": "/compraconfio-mascara", "destination": "/compraconfio-mascara.html" },
+    { "source": "/compraconfio-mascara/", "destination": "/compraconfio-mascara.html" },
+    { "source": "/thank-you-compraconfio", "destination": "/thank-you-compraconfio.html" },
+    { "source": "/thank-you-compraconfio/", "destination": "/thank-you-compraconfio.html" },
+    { "source": "/privacidad", "destination": "/privacidad.html" },
+    { "source": "/privacidad/", "destination": "/privacidad.html" },
+    { "source": "/terminos", "destination": "/terminos.html" },
+    { "source": "/terminos/", "destination": "/terminos.html" },
+    { "source": "/envios", "destination": "/envios.html" },
+    { "source": "/envios/", "destination": "/envios.html" },
+    { "source": "/devoluciones", "destination": "/devoluciones.html" },
+    { "source": "/devoluciones/", "destination": "/devoluciones.html" },
+    { "source": "/contacto", "destination": "/contacto.html" },
+    { "source": "/contacto/", "destination": "/contacto.html" }
+  ],
+  "redirects": [
+    { "source": "/privacy.html", "destination": "/privacidad.html", "permanent": true },
+    { "source": "/terms.html", "destination": "/terminos.html", "permanent": true },
+    { "source": "/refund.html", "destination": "/devoluciones.html", "permanent": true }
   ]
 }
