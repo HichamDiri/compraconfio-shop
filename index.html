@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>CompraConfio.shop | Compra con confianza — Pago contra entrega</title>
+  <meta name="description" content="Tienda online en Latinoamérica. Paga solo cuando recibes tu pedido. Envío gratis y pago contra entrega en toda la región.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/compraconfio.css">
+  <style>
+    .home-hero { padding: 36px 18px 28px; text-align: center; }
+    .home-hero h1 {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .home-hero p { color: var(--muted); font-size: 0.92rem; max-width: 320px; margin: 0 auto 22px; line-height: 1.6; }
+    .product-grid { display: grid; gap: 16px; }
+    .product-tile {
+      display: block;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      overflow: hidden;
+      background: var(--white);
+      transition: box-shadow 0.2s;
+    }
+    .product-tile:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+    .product-tile img { aspect-ratio: 1; object-fit: cover; background: #f3f0ec; }
+    .product-tile-body { padding: 16px; }
+    .product-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--sale);
+      margin-bottom: 6px;
+    }
+    .product-tile h2 {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .product-tile p { font-size: 0.82rem; color: var(--muted); margin-bottom: 10px; }
+    .product-tile-price { font-weight: 700; font-size: 0.95rem; }
+    .why-list { display: grid; gap: 14px; }
+    .why-row {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .why-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .why-num {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      line-height: 1;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+    .why-row strong { display: block; font-size: 0.88rem; margin-bottom: 3px; }
+    .why-row p { font-size: 0.82rem; color: var(--muted); margin: 0; line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee-track">
+      <span>30 días de garantía</span>
+      <span>Pago contra entrega</span>
+      <span>Envío gratis en Latinoamérica</span>
+      <span>Compra con confianza</span>
+      <span>30 días de garantía</span>
+      <span>Pago contra entrega</span>
+      <span>Envío gratis en Latinoamérica</span>
+      <span>Compra con confianza</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="site-logo">compra<em>confio</em></div>
+    <p class="header-note">Paga solo cuando recibes</p>
+  </header>
+
+  <section class="home-hero">
+    <h1>Compra con confianza.<br>Paga al recibir.</h1>
+    <p>Productos seleccionados con entrega a domicilio y pago en efectivo al recibir tu pedido.</p>
+    <a href="#productos" class="btn-primary">Ver productos</a>
+  </section>
+
+  <div class="social-proof">
+    <span>+50,000</span> clientas en Latinoamérica
+  </div>
+
+  <section class="section" id="productos">
+    <h2 class="section-title">Productos destacados</h2>
+    <div class="product-grid">
+      <a href="/compraconfio-mascara.html" class="product-tile">
+        <img src="/images/mascara-product.png" alt="Máscara Iron Wand" loading="lazy">
+        <div class="product-tile-body">
+          <p class="product-tag">Más vendido</p>
+          <h2>Máscara Iron Wand</h2>
+          <p>Varilla metálica · Sin grumos · Resistente al agua</p>
+          <span class="product-tile-price">Desde Q189 · Pago contra entrega</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">¿Por qué CompraConfio?</h2>
+    <div class="why-list">
+      <div class="why-row">
+        <span class="why-num">01</span>
+        <div>
+          <strong>Compra sin riesgo</strong>
+          <p>No pagas nada hasta que el producto llegue a tus manos.</p>
+        </div>
+      </div>
+      <div class="why-row">
+        <span class="why-num">02</span>
+        <div>
+          <strong>Confirmación por WhatsApp</strong>
+          <p>Te contactamos antes de enviar para verificar tu dirección.</p>
+        </div>
+      </div>
+      <div class="why-row">
+        <span class="why-num">03</span>
+        <div>
+          <strong>Envíos en Latinoamérica</strong>
+          <p>Guatemala, México, Colombia, Perú y más países de la región.</p>
+        </div>
+      </div>
+      <div class="why-row">
+        <span class="why-num">04</span>
+        <div>
+          <strong>30 días de garantía</strong>
+          <p>Satisfacción garantizada en cada pedido.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer-brand">compraconfio.shop</p>
+    <ul class="footer-links">
+      <li><a href="mailto:contacto@compraconfio.shop">Contáctanos</a></li>
+      <li><a href="/privacy.html">Privacidad</a></li>
+      <li><a href="/terms.html">Términos</a></li>
+      <li><a href="/refund.html">Devoluciones</a></li>
+    </ul>
+    <p>© 2026 CompraConfio — Latinoamérica</p>
+  </footer>
+</div>
+
+</body>
+</html>

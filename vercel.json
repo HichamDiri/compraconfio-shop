@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/compraconfio-mascara",
+      "destination": "/compraconfio-mascara.html"
+    },
+    {
+      "source": "/compraconfio-mascara/",
+      "destination": "/compraconfio-mascara.html"
+    },
+    {
+      "source": "/thank-you-compraconfio",
+      "destination": "/thank-you-compraconfio.html"
+    },
+    {
+      "source": "/thank-you-compraconfio/",
+      "destination": "/thank-you-compraconfio.html"
+    }
+  ]
+}
