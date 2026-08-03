@@ -1,0 +1,154 @@
+/* CompraConfio — homepage additions (loads after product.css) */
+
+/* Hero banner */
+.hero-banner {
+  display: block;
+  position: relative;
+  background: #f2efeb;
+}
+
+.hero-banner img { width: 100%; height: 100%; object-fit: cover; }
+
+.hero-desktop { display: none; }
+
+.hero-mobile { position: relative; aspect-ratio: 5 / 7; overflow: hidden; }
+
+.hero-mobile::after {
+  content: "";
+  position: absolute;
+  inset: 40% 0 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.72) 45%, rgba(255,255,255,0.96) 100%);
+}
+
+.hero-box {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 22px;
+  z-index: 2;
+  text-align: center;
+}
+
+.hero-kicker {
+  display: inline-block;
+  background: #cbb8e6;
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  margin-bottom: 6px;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.hero-title strong { font-weight: 700; }
+
+.hero-text {
+  font-size: 0.85rem;
+  color: #444;
+  line-height: 1.55;
+  max-width: 320px;
+  margin: 0 auto 16px;
+}
+
+.hero-cta {
+  display: inline-block;
+  background: var(--ink);
+  color: #fff;
+  padding: 13px 26px;
+  border-radius: 3px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+/* Trust badges under hero */
+.trust-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding: 16px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+
+.trust-row strong {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+
+/* Section eyebrow */
+.section-eyebrow {
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+/* Rating summary block */
+.rating-summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 26px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.rating-summary .stars { color: var(--ink); font-size: 1.05rem; }
+
+/* Steps */
+.steps { display: grid; gap: 20px; counter-reset: step; }
+
+.step { display: flex; gap: 14px; align-items: flex-start; }
+
+.step-num {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--muted);
+  flex-shrink: 0;
+  width: 30px;
+}
+
+.step h3 { font-size: 0.95rem; margin-bottom: 4px; }
+.step p { font-size: 0.86rem; color: var(--muted); line-height: 1.6; }
+
+/* UGC images rail (homepage) */
+.ugc-item img {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 4px;
+  background: var(--soft);
+}
+
+@media (min-width: 700px) {
+  .steps { grid-template-columns: repeat(3, 1fr); }
+  .trust-row { padding: 18px; font-size: 0.74rem; }
+}
+
+@media (min-width: 1000px) {
+  .hero-mobile { display: none; }
+  .hero-desktop { display: block; }
+  .hero-desktop img { width: 100%; }
+  .hero-title { font-size: 2.6rem; }
+  .steps { gap: 34px; }
+}
