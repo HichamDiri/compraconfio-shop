@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/product.css?v=20260803f">
-  <link rel="stylesheet" href="/css/home.css?v=20260803f">
+  <link rel="stylesheet" href="/css/product.css?v=20260803g">
+  <link rel="stylesheet" href="/css/home.css?v=20260803g">
 </head>
 <body data-country="GT" data-lang="es" data-brand="compraconfio" data-snap-pixel="off" data-thankyou="/thank-you-compraconfio.html">
 
@@ -195,7 +195,17 @@
           </div>
         </div>
 
-        <div class="field"><input type="text" name="address" id="address" placeholder="Dirección exacta (zona, colonia, calle, casa)" required autocomplete="street-address"></div>
+        <input type="hidden" name="address" id="address">
+
+        <div class="field">
+          <label class="field-label" for="addressLine">📍 Dirección completa y detallada <span class="req">*</span></label>
+          <input type="text" name="addressLine" id="addressLine" placeholder="Calle o avenida, número de casa, apartamento…" required autocomplete="street-address">
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="zone">👉 Nombre de zona o colonia</label>
+          <input type="text" name="zone" id="zone" placeholder="Zona, colonia, aldea o punto de referencia">
+        </div>
 
         <button type="submit" class="btn-buy">Confirmar pedido — Pago contra entrega</button>
         <p class="pay-note">Pagas en efectivo al recibir · Envío gratis a toda Guatemala · Confirmación por WhatsApp</p>
@@ -537,6 +547,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     city.disabled = false;
   });
+
+  var addressLine = document.getElementById('addressLine');
+  var zone = document.getElementById('zone');
+  var address = document.getElementById('address');
+
+  function mergeAddress() {
+    address.value = [addressLine.value.trim(), zone.value.trim()].filter(Boolean).join(', ');
+  }
+
+  [addressLine, zone].forEach(function (input) {
+    input.addEventListener('input', mergeAddress);
+  });
+  document.getElementById('orderForm').addEventListener('submit', mergeAddress, true);
 
   document.querySelectorAll('.collapse-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
