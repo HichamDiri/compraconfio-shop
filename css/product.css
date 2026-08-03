@@ -124,12 +124,12 @@ button { font: inherit; cursor: pointer; }
 
 .product-layout {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 0;
 }
 
 /* Gallery */
-.gallery { background: #fff; }
+.gallery { background: #fff; min-width: 0; }
 
 .gallery-stage {
   position: relative;
@@ -186,7 +186,7 @@ button { font: inherit; cursor: pointer; }
 }
 
 /* Buy column */
-.product-info { padding: 22px 18px 32px; }
+.product-info { padding: 22px 18px 32px; min-width: 0; }
 
 .product-title {
   font-family: var(--serif);
