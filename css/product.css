@@ -424,6 +424,8 @@ button { font: inherit; cursor: pointer; }
 .field input:focus,
 .field select:focus { outline: none; border-color: var(--ink); }
 
+.field select:disabled { color: #a5a19c; background: var(--soft); }
+
 .fields-2 { display: grid; grid-template-columns: 1fr; gap: 0; }
 
 .btn-buy {
