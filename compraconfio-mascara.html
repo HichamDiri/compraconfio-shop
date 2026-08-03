@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/product.css?v=20260803d">
+  <link rel="stylesheet" href="/css/product.css?v=20260803e">
 </head>
 <body data-country="GT" data-lang="es" data-brand="compraconfio" data-snap-pixel="off" data-thankyou="/thank-you-compraconfio.html">
 
@@ -93,101 +93,8 @@
 
       <p class="notice"><strong>Cuidado con las réplicas de plástico.</strong> La Máscara Iron Wand original solo se vende en compraconfio.shop.</p>
 
-      <form id="orderForm" action="/thank-you-compraconfio.html" method="GET">
-        <input type="hidden" name="currency" value="GTQ">
-        <input type="hidden" name="source" value="compraconfio-mascara">
-        <input type="hidden" name="color" id="colorInput" value="Negro">
-
-        <span class="block-label">Ofertas por tiempo limitado</span>
-        <div class="bundles">
-
-          <label class="bundle bundle-option is-selected">
-            <input type="radio" name="bundleOption" value="cc-mascara-1" data-product-id="cc-mascara-1" data-product-name="Máscara Iron Wand - 1 unidad" data-price="189" data-old-price="279" data-save="32" data-label="Individual" checked>
-            <div class="bundle-card">
-              <div class="bundle-head">
-                <span class="bundle-pick"><span class="radio"></span>Individual</span>
-                <span class="bundle-cost"><strong>Q189</strong><del>Q279</del></span>
-              </div>
-              <div class="bundle-units">
-                <span class="unit-chip"><span class="dot black"></span>1 unidad · Negro</span>
-              </div>
-            </div>
-          </label>
-
-          <label class="bundle bundle-option">
-            <input type="radio" name="bundleOption" value="cc-mascara-2" data-product-id="cc-mascara-2" data-product-name="Máscara Iron Wand - 2 unidades" data-price="289" data-old-price="558" data-save="48" data-label="Compra 1 lleva 1 gratis">
-            <div class="bundle-card">
-              <span class="bundle-flag">Más popular</span>
-              <div class="bundle-head">
-                <span class="bundle-pick"><span class="radio"></span>Compra 1 lleva 1 gratis</span>
-                <span class="bundle-cost"><strong>Q289</strong><del>Q558</del></span>
-              </div>
-              <div class="bundle-units">
-                <span class="unit-chip"><span class="dot black"></span>2 unidades · Negro</span>
-              </div>
-            </div>
-          </label>
-
-          <label class="bundle bundle-option">
-            <input type="radio" name="bundleOption" value="cc-mascara-3" data-product-id="cc-mascara-3" data-product-name="Máscara Iron Wand - 4 unidades" data-price="369" data-old-price="837" data-save="56" data-label="Compra 2 lleva 2 gratis">
-            <div class="bundle-card">
-              <span class="bundle-flag">Mejor valor</span>
-              <div class="bundle-head">
-                <span class="bundle-pick"><span class="radio"></span>Compra 2 lleva 2 gratis</span>
-                <span class="bundle-cost"><strong>Q369</strong><del>Q837</del></span>
-              </div>
-              <div class="bundle-units">
-                <span class="unit-chip"><span class="dot black"></span>4 unidades · Negro</span>
-              </div>
-            </div>
-          </label>
-        </div>
-
-        <div class="form-head" id="checkout">
-          <span class="block-label">Tus datos de entrega</span>
-        </div>
-
-        <div class="fields-2">
-          <div class="field"><input type="text" name="name" id="name" placeholder="Nombre completo" required autocomplete="name"></div>
-          <div class="field"><input type="tel" name="phone" id="phone" placeholder="WhatsApp (ej. 5512 3456)" required autocomplete="tel"></div>
-        </div>
-
-        <input type="hidden" name="country" id="country" value="Guatemala">
-
-        <div class="fields-2">
-          <div class="field">
-            <select name="department" id="department" required>
-              <option value="" disabled selected>Departamento</option>
-              <option value="Guatemala">Guatemala</option>
-              <option value="Alta Verapaz">Alta Verapaz</option>
-              <option value="Baja Verapaz">Baja Verapaz</option>
-              <option value="Chimaltenango">Chimaltenango</option>
-              <option value="Chiquimula">Chiquimula</option>
-              <option value="El Progreso">El Progreso</option>
-              <option value="Escuintla">Escuintla</option>
-              <option value="Huehuetenango">Huehuetenango</option>
-              <option value="Izabal">Izabal</option>
-              <option value="Jalapa">Jalapa</option>
-              <option value="Jutiapa">Jutiapa</option>
-              <option value="Petén">Petén</option>
-              <option value="Quetzaltenango">Quetzaltenango</option>
-              <option value="Quiché">Quiché</option>
-              <option value="Retalhuleu">Retalhuleu</option>
-              <option value="Sacatepéquez">Sacatepéquez</option>
-              <option value="San Marcos">San Marcos</option>
-              <option value="Santa Rosa">Santa Rosa</option>
-              <option value="Sololá">Sololá</option>
-              <option value="Suchitepéquez">Suchitepéquez</option>
-              <option value="Totonicapán">Totonicapán</option>
-              <option value="Zacapa">Zacapa</option>
-            </select>
-          </div>
-          <div class="field"><input type="text" name="city" id="city" placeholder="Municipio / Ciudad" required></div>
-        </div>
-
-        <div class="field"><input type="text" name="address" id="address" placeholder="Dirección exacta (zona, colonia, calle, casa)" required autocomplete="street-address"></div>
-
-        <button type="submit" class="btn-buy">Confirmar pedido — Pago contra entrega</button>
+      <div class="buy-actions">
+        <button type="button" class="btn-order js-open-order">¡Hacer mi pedido!</button>
         <p class="pay-note">Pagas en efectivo al recibir · Envío gratis a toda Guatemala · Confirmación por WhatsApp</p>
 
         <div class="guarantee-row">
@@ -195,7 +102,7 @@
           <div><strong>Envío</strong>Gratis</div>
           <div><strong>Pago</strong>Al recibir</div>
         </div>
-      </form>
+      </div>
 
       <div class="quote">
         <img src="/images/monica.png" alt="Mónica, clienta de CompraConfio" loading="lazy">
@@ -232,7 +139,7 @@
     <div class="feature-copy">
       <h2>Volumen dramático</h2>
       <p>Convierte pestañas finas en un abanico espeso y definido. La varilla metálica envuelve cada pestaña con fibras alargadoras para una mirada amplia y despierta.</p>
-      <a href="#checkout" class="text-link">Pídela ahora</a>
+      <button type="button" class="text-link js-open-order">Pídela ahora</button>
     </div>
   </div>
 </section>
@@ -245,7 +152,7 @@
     <div class="feature-copy">
       <h2>Look limpio, cero grumos</h2>
       <p>Pestañas definidas durante todo el día. La fórmula tubing no se corre ni deja grumos, y la varilla ultra fina evita manchas en el párpado.</p>
-      <a href="#checkout" class="text-link">Pídela ahora</a>
+      <button type="button" class="text-link js-open-order">Pídela ahora</button>
     </div>
   </div>
 </section>
@@ -258,7 +165,7 @@
     <div class="feature-copy">
       <h2>De normal a extraordinario</h2>
       <p>Mira cómo tus pestañas de todos los días se transforman con solo unas pasadas. Resultados visibles desde la primera aplicación.</p>
-      <a href="#checkout" class="text-link">Pídela ahora</a>
+      <button type="button" class="text-link js-open-order">Pídela ahora</button>
     </div>
   </div>
 </section>
@@ -352,7 +259,7 @@
           <li>Tienes 30 días desde la entrega para probarla con calma.</li>
           <li>Si no quedas satisfecha, escríbenos y gestionamos tu devolución sin complicaciones.</li>
         </ul>
-        <a href="#checkout" class="text-link">Pídela sin riesgo</a>
+        <button type="button" class="text-link js-open-order">Pídela sin riesgo</button>
         <p class="guarantee-note">Escríbenos a contacto@compraconfio.shop o por WhatsApp y te respondemos el mismo día.</p>
       </div>
     </div>
@@ -442,7 +349,134 @@
     <strong id="stickyPrice">Q189</strong>
     <span id="stickyLabel">Individual</span>
   </div>
-  <a href="#checkout">Comprar</a>
+  <button type="button" class="js-open-order">Comprar</button>
+</div>
+
+<div class="order-modal" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+  <div class="order-backdrop" data-close-order></div>
+  <div class="order-panel">
+    <div class="order-head">
+      <h2 id="orderModalTitle">Completa tu pedido</h2>
+      <button type="button" class="order-close" data-close-order aria-label="Cerrar">&times;</button>
+    </div>
+
+    <div class="order-body">
+      <div class="order-product">
+        <img src="/images/mascara-product.png" alt="">
+        <div>
+          <strong>Máscara Iron Wand</strong>
+          <span>Color negro · Envío gratis</span>
+        </div>
+      </div>
+
+      <form id="orderForm" action="/thank-you-compraconfio.html" method="GET">
+        <input type="hidden" name="currency" value="GTQ">
+        <input type="hidden" name="source" value="compraconfio-mascara">
+        <input type="hidden" name="color" id="colorInput" value="Negro">
+        <input type="hidden" name="country" id="country" value="Guatemala">
+        <input type="hidden" name="name" id="name">
+
+        <span class="block-label">1. Elige tu oferta</span>
+        <div class="bundles">
+
+          <label class="bundle bundle-option is-selected">
+            <input type="radio" name="bundleOption" value="cc-mascara-1" data-product-id="cc-mascara-1" data-product-name="Máscara Iron Wand - 1 unidad" data-price="189" data-old-price="279" data-save="32" data-label="Individual" checked>
+            <div class="bundle-card">
+              <div class="bundle-head">
+                <span class="bundle-pick"><span class="radio"></span>Individual</span>
+                <span class="bundle-cost"><strong>Q189</strong><del>Q279</del></span>
+              </div>
+              <div class="bundle-units">
+                <span class="unit-chip"><span class="dot black"></span>1 unidad · Negro</span>
+              </div>
+            </div>
+          </label>
+
+          <label class="bundle bundle-option">
+            <input type="radio" name="bundleOption" value="cc-mascara-2" data-product-id="cc-mascara-2" data-product-name="Máscara Iron Wand - 2 unidades" data-price="289" data-old-price="558" data-save="48" data-label="Compra 1 lleva 1 gratis">
+            <div class="bundle-card">
+              <span class="bundle-flag">Más popular</span>
+              <div class="bundle-head">
+                <span class="bundle-pick"><span class="radio"></span>Compra 1 lleva 1 gratis</span>
+                <span class="bundle-cost"><strong>Q289</strong><del>Q558</del></span>
+              </div>
+              <div class="bundle-units">
+                <span class="unit-chip"><span class="dot black"></span>2 unidades · Negro</span>
+              </div>
+            </div>
+          </label>
+
+          <label class="bundle bundle-option">
+            <input type="radio" name="bundleOption" value="cc-mascara-3" data-product-id="cc-mascara-3" data-product-name="Máscara Iron Wand - 4 unidades" data-price="369" data-old-price="837" data-save="56" data-label="Compra 2 lleva 2 gratis">
+            <div class="bundle-card">
+              <span class="bundle-flag">Mejor valor</span>
+              <div class="bundle-head">
+                <span class="bundle-pick"><span class="radio"></span>Compra 2 lleva 2 gratis</span>
+                <span class="bundle-cost"><strong>Q369</strong><del>Q837</del></span>
+              </div>
+              <div class="bundle-units">
+                <span class="unit-chip"><span class="dot black"></span>4 unidades · Negro</span>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <div class="form-head">
+          <span class="block-label">2. Tus datos de entrega</span>
+        </div>
+
+        <div class="fields-2">
+          <div class="field"><input type="text" name="firstName" id="firstName" placeholder="Nombre" required autocomplete="given-name"></div>
+          <div class="field"><input type="text" name="lastName" id="lastName" placeholder="Apellidos" required autocomplete="family-name"></div>
+        </div>
+
+        <div class="field"><input type="tel" name="phone" id="phone" placeholder="WhatsApp (ej. 5512 3456)" required autocomplete="tel"></div>
+
+        <div class="fields-2">
+          <div class="field">
+            <select name="department" id="department" required>
+              <option value="" disabled selected>Departamento</option>
+              <option value="Guatemala">Guatemala</option>
+              <option value="Alta Verapaz">Alta Verapaz</option>
+              <option value="Baja Verapaz">Baja Verapaz</option>
+              <option value="Chimaltenango">Chimaltenango</option>
+              <option value="Chiquimula">Chiquimula</option>
+              <option value="El Progreso">El Progreso</option>
+              <option value="Escuintla">Escuintla</option>
+              <option value="Huehuetenango">Huehuetenango</option>
+              <option value="Izabal">Izabal</option>
+              <option value="Jalapa">Jalapa</option>
+              <option value="Jutiapa">Jutiapa</option>
+              <option value="Petén">Petén</option>
+              <option value="Quetzaltenango">Quetzaltenango</option>
+              <option value="Quiché">Quiché</option>
+              <option value="Retalhuleu">Retalhuleu</option>
+              <option value="Sacatepéquez">Sacatepéquez</option>
+              <option value="San Marcos">San Marcos</option>
+              <option value="Santa Rosa">Santa Rosa</option>
+              <option value="Sololá">Sololá</option>
+              <option value="Suchitepéquez">Suchitepéquez</option>
+              <option value="Totonicapán">Totonicapán</option>
+              <option value="Zacapa">Zacapa</option>
+            </select>
+          </div>
+          <div class="field"><input type="text" name="city" id="city" placeholder="Municipio / Ciudad" required></div>
+        </div>
+
+        <div class="field"><input type="text" name="address" id="address" placeholder="Dirección exacta (zona, colonia, calle, casa)" required autocomplete="street-address"></div>
+
+        <div class="order-total">
+          <span>Total a pagar al recibir</span>
+          <strong id="modalTotal">Q189</strong>
+        </div>
+
+        <p class="cod-note">💵 <span><b>Pago contra entrega.</b> No pagas nada ahora: pagas en efectivo cuando el mensajero te entregue el pedido.</span></p>
+
+        <button type="submit" class="btn-buy">Confirmar pedido — Pago contra entrega</button>
+        <p class="pay-note">Envío gratis a toda Guatemala · Te confirmamos por WhatsApp antes de enviar</p>
+      </form>
+    </div>
+  </div>
 </div>
 
 <script src="/js/config.js" defer></script>
@@ -494,6 +528,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var priceSave = document.getElementById('priceSave');
   var stickyPrice = document.getElementById('stickyPrice');
   var stickyLabel = document.getElementById('stickyLabel');
+  var modalTotal = document.getElementById('modalTotal');
 
   function syncBundle() {
     var input = document.querySelector('input[name="bundleOption"]:checked');
@@ -505,7 +540,48 @@ document.addEventListener('DOMContentLoaded', function () {
     priceSave.textContent = 'Ahorra ' + input.dataset.save + '%';
     stickyPrice.textContent = 'Q' + input.dataset.price;
     stickyLabel.textContent = input.dataset.label;
+    modalTotal.textContent = 'Q' + input.dataset.price;
   }
+
+  var modal = document.getElementById('orderModal');
+  var firstName = document.getElementById('firstName');
+  var lastName = document.getElementById('lastName');
+  var fullName = document.getElementById('name');
+  var lastFocused = null;
+
+  function mergeName() {
+    fullName.value = (firstName.value.trim() + ' ' + lastName.value.trim()).trim();
+  }
+
+  function openOrder() {
+    lastFocused = document.activeElement;
+    modal.classList.add('is-open');
+    document.body.classList.add('no-scroll');
+    setTimeout(function () { firstName.focus({ preventScroll: true }); }, 260);
+  }
+
+  function closeOrder() {
+    modal.classList.remove('is-open');
+    document.body.classList.remove('no-scroll');
+    if (lastFocused) lastFocused.focus({ preventScroll: true });
+  }
+
+  document.querySelectorAll('.js-open-order').forEach(function (btn) {
+    btn.addEventListener('click', openOrder);
+  });
+
+  modal.querySelectorAll('[data-close-order]').forEach(function (btn) {
+    btn.addEventListener('click', closeOrder);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeOrder();
+  });
+
+  [firstName, lastName].forEach(function (input) {
+    input.addEventListener('input', mergeName);
+  });
+  document.getElementById('orderForm').addEventListener('submit', mergeName, true);
 
   document.querySelectorAll('input[name="bundleOption"]').forEach(function (input) {
     input.addEventListener('change', syncBundle);
