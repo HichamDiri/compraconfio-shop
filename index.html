@@ -2,164 +2,523 @@
 <html lang="es" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>CompraConfio.shop | Compra con confianza — Pago contra entrega</title>
-  <meta name="description" content="Tienda online en Guatemala. Paga solo cuando recibes tu pedido. Envío gratis y pago contra entrega en todo el país.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CompraConfio | Máscara Iron Wand — Pago contra entrega en Guatemala</title>
+  <meta name="description" content="La Máscara Iron Wand con varilla metálica: rizo que dura todo el día, volumen dramático y cero grumos. Envío gratis a toda Guatemala y pago contra entrega.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/compraconfio.css">
-  <style>
-    .home-hero { padding: 36px 18px 28px; text-align: center; }
-    .home-hero h1 {
-      font-family: var(--serif);
-      font-size: 2rem;
-      font-weight: 500;
-      line-height: 1.2;
-      margin-bottom: 12px;
-    }
-    .home-hero p { color: var(--muted); font-size: 0.92rem; max-width: 320px; margin: 0 auto 22px; line-height: 1.6; }
-    .product-grid { display: grid; gap: 16px; }
-    .product-tile {
-      display: block;
-      border: 1px solid var(--line);
-      border-radius: 2px;
-      overflow: hidden;
-      background: var(--white);
-      transition: box-shadow 0.2s;
-    }
-    .product-tile:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
-    .product-tile img { aspect-ratio: 1; object-fit: cover; background: #f3f0ec; }
-    .product-tile-body { padding: 16px; }
-    .product-tag {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--sale);
-      margin-bottom: 6px;
-    }
-    .product-tile h2 {
-      font-family: var(--serif);
-      font-size: 1.25rem;
-      font-weight: 500;
-      margin-bottom: 6px;
-    }
-    .product-tile p { font-size: 0.82rem; color: var(--muted); margin-bottom: 10px; }
-    .product-tile-price { font-weight: 700; font-size: 0.95rem; }
-    .why-list { display: grid; gap: 14px; }
-    .why-row {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      padding-bottom: 14px;
-      border-bottom: 1px solid var(--line);
-    }
-    .why-row:last-child { border-bottom: none; padding-bottom: 0; }
-    .why-num {
-      font-family: var(--serif);
-      font-size: 1.4rem;
-      line-height: 1;
-      color: var(--muted);
-      flex-shrink: 0;
-    }
-    .why-row strong { display: block; font-size: 0.88rem; margin-bottom: 3px; }
-    .why-row p { font-size: 0.82rem; color: var(--muted); margin: 0; line-height: 1.5; }
-  </style>
+  <link rel="stylesheet" href="/css/product.css">
+  <link rel="stylesheet" href="/css/home.css">
 </head>
-<body>
+<body data-country="GT" data-lang="es" data-brand="compraconfio" data-snap-pixel="off" data-thankyou="/thank-you-compraconfio.html">
 
-<div class="page">
-
-  <div class="marquee-wrap" aria-hidden="true">
-    <div class="marquee-track">
-      <span>30 días de garantía</span>
-      <span>Pago contra entrega</span>
-      <span>Envío gratis en toda Guatemala</span>
-      <span>Compra con confianza</span>
-      <span>30 días de garantía</span>
-      <span>Pago contra entrega</span>
-      <span>Envío gratis en toda Guatemala</span>
-      <span>Compra con confianza</span>
-    </div>
+<div class="announce" aria-hidden="true">
+  <div class="announce-track">
+    <span>30 días de garantía</span>
+    <span>Envío gratis a toda Guatemala</span>
+    <span>Compra 1 lleva 1 gratis</span>
+    <span>Pago contra entrega</span>
+    <span>30 días de garantía</span>
+    <span>Envío gratis a toda Guatemala</span>
+    <span>Compra 1 lleva 1 gratis</span>
+    <span>Pago contra entrega</span>
   </div>
-
-  <header class="site-header">
-    <div class="site-logo">compra<em>confio</em></div>
-    <p class="header-note">Paga solo cuando recibes</p>
-  </header>
-
-  <section class="home-hero">
-    <h1>Compra con confianza.<br>Paga al recibir.</h1>
-    <p>Productos seleccionados con entrega a domicilio y pago en efectivo al recibir tu pedido.</p>
-    <a href="#productos" class="btn-primary">Ver productos</a>
-  </section>
-
-  <div class="social-proof">
-    <span>+50,000</span> clientas satisfechas
-  </div>
-
-  <section class="section" id="productos">
-    <h2 class="section-title">Productos destacados</h2>
-    <div class="product-grid">
-      <a href="/compraconfio-mascara.html" class="product-tile">
-        <img src="/images/mascara-product.png" alt="Máscara Iron Wand" loading="lazy">
-        <div class="product-tile-body">
-          <p class="product-tag">Más vendido</p>
-          <h2>Máscara Iron Wand</h2>
-          <p>Varilla metálica · Sin grumos · Resistente al agua</p>
-          <span class="product-tile-price">Desde Q189 · Pago contra entrega</span>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2 class="section-title">¿Por qué CompraConfio?</h2>
-    <div class="why-list">
-      <div class="why-row">
-        <span class="why-num">01</span>
-        <div>
-          <strong>Compra sin riesgo</strong>
-          <p>No pagas nada hasta que el producto llegue a tus manos.</p>
-        </div>
-      </div>
-      <div class="why-row">
-        <span class="why-num">02</span>
-        <div>
-          <strong>Confirmación por WhatsApp</strong>
-          <p>Te contactamos antes de enviar para verificar tu dirección.</p>
-        </div>
-      </div>
-      <div class="why-row">
-        <span class="why-num">03</span>
-        <div>
-          <strong>Envíos a toda Guatemala</strong>
-          <p>Cobertura en los 22 departamentos, desde la capital hasta el interior.</p>
-        </div>
-      </div>
-      <div class="why-row">
-        <span class="why-num">04</span>
-        <div>
-          <strong>30 días de garantía</strong>
-          <p>Satisfacción garantizada en cada pedido.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <p class="footer-brand">compraconfio.shop</p>
-    <ul class="footer-links">
-      <li><a href="/contacto.html">Contacto</a></li>
-      <li><a href="/privacidad.html">Privacidad</a></li>
-      <li><a href="/terminos.html">Términos</a></li>
-      <li><a href="/envios.html">Envíos</a></li>
-      <li><a href="/devoluciones.html">Devoluciones</a></li>
-    </ul>
-    <p>© 2026 CompraConfio — Guatemala</p>
-  </footer>
 </div>
 
+<header class="site-header">
+  <div class="header-inner">
+    <a class="header-link" href="/compraconfio-mascara">Producto</a>
+    <a class="brand" href="/">compra<em>confio</em></a>
+    <span class="header-contact">contacto@compraconfio.shop</span>
+  </div>
+</header>
+
+<a class="hero-banner" href="#checkout" aria-label="Ver la Máscara Iron Wand">
+  <div class="hero-desktop">
+    <img src="/images/home-hero-desktop.png" alt="Nueva imagen, misma fórmula que amas — Máscara Iron Wand" width="2880" height="960">
+  </div>
+  <div class="hero-mobile">
+    <img src="/images/home-hero-mobile.png" alt="Máscara Iron Wand en la mano">
+    <div class="hero-box">
+      <span class="hero-kicker">Nueva imagen,</span>
+      <p class="hero-title">misma fórmula <strong>que amas</strong></p>
+      <p class="hero-text">Nuestra máscara de pestañas insignia ahora viene en un elegante envase plateado. Moderna, audaz y tan poderosa como siempre.</p>
+      <span class="hero-cta">¡Pruébala hoy!</span>
+    </div>
+  </div>
+</a>
+
+<div class="deal-strip">Oferta exclusiva · Compra 2 lleva 2 gratis</div>
+
+<div class="trust-row">
+  <div><strong>Envío gratis</strong>Toda Guatemala</div>
+  <div><strong>Pago al recibir</strong>En efectivo</div>
+  <div><strong>30 días</strong>De garantía</div>
+</div>
+
+<main class="product-main">
+  <div class="product-layout">
+
+    <section class="gallery" id="heroSection">
+      <div class="gallery-stage">
+        <video id="stageVideo" src="/videos/demo-1.mp4" autoplay muted loop playsinline poster="/images/mascara-product.png"></video>
+        <img id="stageImage" src="/images/mascara-product.png" alt="Máscara Iron Wand" hidden>
+      </div>
+      <div class="gallery-thumbs">
+        <button type="button" class="thumb thumb-video is-active" data-kind="video" data-src="/videos/demo-1.mp4" aria-label="Video 1">
+          <img src="/images/mascara-product.png" alt="">
+        </button>
+        <button type="button" class="thumb thumb-video" data-kind="video" data-src="/videos/demo-2.mp4" aria-label="Video 2">
+          <img src="/images/mascara-before-after.png" alt="">
+        </button>
+        <button type="button" class="thumb" data-kind="image" data-fit="contain" data-src="/images/mascara-product.png" aria-label="Producto">
+          <img src="/images/mascara-product.png" alt="">
+        </button>
+        <button type="button" class="thumb" data-kind="image" data-src="/images/home-apply.png" aria-label="Aplicación">
+          <img src="/images/home-apply.png" alt="">
+        </button>
+        <button type="button" class="thumb" data-kind="image" data-src="/images/home-natural.png" aria-label="Resultado natural">
+          <img src="/images/home-natural.png" alt="">
+        </button>
+        <button type="button" class="thumb" data-kind="image" data-src="/images/mascara-before-after.png" aria-label="Antes y después">
+          <img src="/images/mascara-before-after.png" alt="">
+        </button>
+      </div>
+    </section>
+
+    <section class="product-info">
+      <h1 class="product-title">Máscara Iron Wand</h1>
+
+      <div class="rating-row">
+        <span class="stars">★★★★★</span>
+        <span><strong>4.9</strong></span>
+        <a href="#resenas">156 reseñas</a>
+      </div>
+
+      <div class="price-row">
+        <span class="price-now" id="priceNow">Q189</span>
+        <span class="price-was" id="priceWas">Q279</span>
+        <span class="price-save" id="priceSave">Ahorra 32%</span>
+      </div>
+
+      <ul class="perks">
+        <li>💁‍♀️ Rizo que dura todo el día</li>
+        <li>☁️ Sin manchas ni descamación</li>
+        <li>✨ Largo y volumen dramático</li>
+      </ul>
+
+      <p class="notice"><strong>Cuidado con las réplicas de plástico.</strong> La Máscara Iron Wand original solo se vende en compraconfio.shop.</p>
+
+      <form id="orderForm" action="/thank-you-compraconfio.html" method="GET">
+        <input type="hidden" name="currency" value="GTQ">
+        <input type="hidden" name="source" value="compraconfio-home">
+        <input type="hidden" name="color" id="colorInput" value="Negro">
+
+        <span class="block-label">Ofertas por tiempo limitado</span>
+        <div class="bundles">
+
+          <label class="bundle bundle-option is-selected">
+            <input type="radio" name="bundleOption" value="cc-mascara-1" data-product-id="cc-mascara-1" data-product-name="Máscara Iron Wand - 1 unidad" data-price="189" data-old-price="279" data-save="32" data-label="Individual" checked>
+            <div class="bundle-card">
+              <div class="bundle-head">
+                <span class="bundle-pick"><span class="radio"></span>Individual</span>
+                <span class="bundle-cost"><strong>Q189</strong><del>Q279</del></span>
+              </div>
+              <div class="bundle-units">
+                <span class="unit-chip"><span class="dot black"></span>1 unidad · Negro</span>
+              </div>
+            </div>
+          </label>
+
+          <label class="bundle bundle-option">
+            <input type="radio" name="bundleOption" value="cc-mascara-2" data-product-id="cc-mascara-2" data-product-name="Máscara Iron Wand - 2 unidades" data-price="289" data-old-price="558" data-save="48" data-label="Compra 1 lleva 1 gratis">
+            <div class="bundle-card">
+              <span class="bundle-flag">Más popular</span>
+              <div class="bundle-head">
+                <span class="bundle-pick"><span class="radio"></span>Compra 1 lleva 1 gratis</span>
+                <span class="bundle-cost"><strong>Q289</strong><del>Q558</del></span>
+              </div>
+              <div class="bundle-units">
+                <span class="unit-chip"><span class="dot black"></span>2 unidades · Negro</span>
+              </div>
+            </div>
+          </label>
+
+          <label class="bundle bundle-option">
+            <input type="radio" name="bundleOption" value="cc-mascara-3" data-product-id="cc-mascara-3" data-product-name="Máscara Iron Wand - 4 unidades" data-price="369" data-old-price="837" data-save="56" data-label="Compra 2 lleva 2 gratis">
+            <div class="bundle-card">
+              <span class="bundle-flag">Mejor valor</span>
+              <div class="bundle-head">
+                <span class="bundle-pick"><span class="radio"></span>Compra 2 lleva 2 gratis</span>
+                <span class="bundle-cost"><strong>Q369</strong><del>Q837</del></span>
+              </div>
+              <div class="bundle-units">
+                <span class="unit-chip"><span class="dot black"></span>4 unidades · Negro</span>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <div class="form-head" id="checkout">
+          <span class="block-label">Tus datos de entrega</span>
+        </div>
+
+        <div class="fields-2">
+          <div class="field"><input type="text" name="name" id="name" placeholder="Nombre completo" required autocomplete="name"></div>
+          <div class="field"><input type="tel" name="phone" id="phone" placeholder="WhatsApp (ej. 5512 3456)" required autocomplete="tel"></div>
+        </div>
+
+        <input type="hidden" name="country" id="country" value="Guatemala">
+
+        <div class="fields-2">
+          <div class="field">
+            <select name="department" id="department" required>
+              <option value="" disabled selected>Departamento</option>
+              <option value="Guatemala">Guatemala</option>
+              <option value="Alta Verapaz">Alta Verapaz</option>
+              <option value="Baja Verapaz">Baja Verapaz</option>
+              <option value="Chimaltenango">Chimaltenango</option>
+              <option value="Chiquimula">Chiquimula</option>
+              <option value="El Progreso">El Progreso</option>
+              <option value="Escuintla">Escuintla</option>
+              <option value="Huehuetenango">Huehuetenango</option>
+              <option value="Izabal">Izabal</option>
+              <option value="Jalapa">Jalapa</option>
+              <option value="Jutiapa">Jutiapa</option>
+              <option value="Petén">Petén</option>
+              <option value="Quetzaltenango">Quetzaltenango</option>
+              <option value="Quiché">Quiché</option>
+              <option value="Retalhuleu">Retalhuleu</option>
+              <option value="Sacatepéquez">Sacatepéquez</option>
+              <option value="San Marcos">San Marcos</option>
+              <option value="Santa Rosa">Santa Rosa</option>
+              <option value="Sololá">Sololá</option>
+              <option value="Suchitepéquez">Suchitepéquez</option>
+              <option value="Totonicapán">Totonicapán</option>
+              <option value="Zacapa">Zacapa</option>
+            </select>
+          </div>
+          <div class="field"><input type="text" name="city" id="city" placeholder="Municipio / Ciudad" required></div>
+        </div>
+
+        <div class="field"><input type="text" name="address" id="address" placeholder="Dirección exacta (zona, colonia, calle, casa)" required autocomplete="street-address"></div>
+
+        <button type="submit" class="btn-buy">Confirmar pedido — Pago contra entrega</button>
+        <p class="pay-note">Pagas en efectivo al recibir · Envío gratis a toda Guatemala · Confirmación por WhatsApp</p>
+
+        <div class="guarantee-row">
+          <div><strong>30 días</strong>Garantía</div>
+          <div><strong>Envío</strong>Gratis</div>
+          <div><strong>Pago</strong>Al recibir</div>
+        </div>
+      </form>
+
+      <div class="quote">
+        <img src="/images/monica.png" alt="Mónica, clienta de CompraConfio" loading="lazy">
+        <div>
+          <p>"Se asienta perfecto en mis pestañas, las hace el doble de grandes, les da muchísimo volumen y las riza. ¡No hay nada igual!"</p>
+          <cite>— Mónica, Ciudad de Guatemala</cite>
+        </div>
+      </div>
+
+      <div class="collapse-group">
+        <div class="collapse is-open">
+          <button type="button" class="collapse-btn">Devolución en 30 días <i>+</i></button>
+          <div class="collapse-body">Si no te encanta, tienes 30 días para solicitar la devolución. Escríbenos a contacto@compraconfio.shop y te ayudamos con el proceso.</div>
+        </div>
+        <div class="collapse">
+          <button type="button" class="collapse-btn">Información de envío <i>+</i></button>
+          <div class="collapse-body">Enviamos a todos los departamentos de Guatemala. En la capital y zonas cercanas entregamos en 24 a 48 horas; en el interior, entre 2 y 5 días hábiles. Te contactamos por WhatsApp antes de enviar.</div>
+        </div>
+        <div class="collapse">
+          <button type="button" class="collapse-btn">Pago contra entrega <i>+</i></button>
+          <div class="collapse-body">No pagas nada por adelantado. Entregamos en tu domicilio y pagas en efectivo al mensajero cuando recibes tu pedido.</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<section class="section">
+  <div class="shell">
+    <p class="section-eyebrow">Resultados reales</p>
+    <h2 class="section-title">Mira la diferencia en cada pasada…</h2>
+    <p class="section-lead">Clientas reales, sin filtros ni extensiones.</p>
+    <div class="ugc-rail">
+      <div class="ugc-item">
+        <video src="/videos/demo-1.mp4" autoplay muted loop playsinline preload="metadata" poster="/images/mascara-product.png"></video>
+        <p class="ugc-name">Andrea · Mixco</p>
+      </div>
+      <div class="ugc-item">
+        <img src="/images/home-apply.png" alt="Aplicación de la Máscara Iron Wand" loading="lazy">
+        <p class="ugc-name">Lucía · Antigua</p>
+      </div>
+      <div class="ugc-item">
+        <video src="/videos/demo-2.mp4" autoplay muted loop playsinline preload="metadata" poster="/images/mascara-before-after.png"></video>
+        <p class="ugc-name">Karla · Villa Nueva</p>
+      </div>
+      <div class="ugc-item">
+        <img src="/images/home-natural.png" alt="Pestañas con acabado natural" loading="lazy">
+        <p class="ugc-name">Daniela · Escuintla</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">+50,000 clientas satisfechas</div>
+
+<section class="feature">
+  <div class="feature-inner">
+    <div class="feature-media">
+      <img src="/images/home-apply.png" alt="Aplicando la Máscara Iron Wand con la varilla metálica" loading="lazy">
+    </div>
+    <div class="feature-copy">
+      <h2>Volumen dramático</h2>
+      <p>Convierte pestañas finas en un abanico espeso y definido. La varilla metálica envuelve cada pestaña con fibras alargadoras para una mirada amplia y despierta.</p>
+      <a href="#checkout" class="text-link">Pídela ahora</a>
+    </div>
+  </div>
+</section>
+
+<section class="feature is-reversed">
+  <div class="feature-inner">
+    <div class="feature-media">
+      <img src="/images/home-natural.png" alt="Pestañas definidas sin grumos" loading="lazy">
+    </div>
+    <div class="feature-copy">
+      <h2>Look limpio, cero grumos</h2>
+      <p>Pestañas definidas durante todo el día. La fórmula tubing no se corre ni deja grumos, y la varilla ultra fina evita manchas en el párpado.</p>
+      <a href="#checkout" class="text-link">Pídela ahora</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell">
+    <h2 class="section-title">Una máscara que vas a amar 💜</h2>
+    <p class="section-lead">Diseñada para durar todo el día y cuidar tus ojos.</p>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <h3>🌱 Vegana y cruelty-free</h3>
+        <p>Sin ingredientes de origen animal y nunca probada en animales.</p>
+      </div>
+      <div class="icon-card">
+        <h3>💫 Larga duración</h3>
+        <p>Del día a la noche sin retoques, manteniendo el rizo y el volumen.</p>
+      </div>
+      <div class="icon-card">
+        <h3>☁️ Apta para ojos sensibles</h3>
+        <p>Formulada para minimizar la irritación en el contorno de ojos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell">
+    <p class="section-eyebrow">Así de fácil</p>
+    <h2 class="section-title">Comprar con confianza</h2>
+    <p class="section-lead">Sin tarjeta, sin adelantos y sin riesgo.</p>
+    <div class="steps">
+      <div class="step">
+        <span class="step-num">01</span>
+        <div>
+          <h3>Haz tu pedido</h3>
+          <p>Elige tu oferta y déjanos tu nombre, WhatsApp y dirección. Toma menos de un minuto.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">02</span>
+        <div>
+          <h3>Confirmamos por WhatsApp</h3>
+          <p>Te escribimos para verificar tu dirección antes de enviar el paquete.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">03</span>
+        <div>
+          <h3>Pagas al recibir</h3>
+          <p>El mensajero llega a tu casa y pagas en efectivo cuando el producto está en tus manos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="resenas">
+  <div class="shell">
+    <h2 class="section-title">Lo que dicen nuestras clientas</h2>
+    <div class="rating-summary">
+      <span class="stars">★★★★★</span>
+      <span>4.9 de 5 · 156 reseñas verificadas</span>
+    </div>
+
+    <div class="review-grid">
+      <article class="review-card">
+        <img src="/images/review-1.png" alt="Resultado real de una clienta" loading="lazy">
+        <div class="stars">★★★★★</div>
+        <h3>No pesa nada en mis pestañas</h3>
+        <p>Tengo pestañas muy finas y esta es la única máscara que no las apelmaza y mantiene el rizo del rizador. No hace grumos y, al no tener cerdas, puedes acercarte muchísimo a la línea del párpado.</p>
+        <cite>Erika C. · Ciudad de Guatemala</cite>
+      </article>
+      <article class="review-card">
+        <img src="/images/review-2.png" alt="Pestañas con acabado natural" loading="lazy">
+        <div class="stars">★★★★★</div>
+        <h3>Perfecta si eres principiante</h3>
+        <p>Soy nueva en el mundo del maquillaje y buscaba algo que no se viera "demasiado". ¡Este producto es perfecto! Le da a mis pestañas un acabado natural precioso que dura todo el día.</p>
+        <cite>Nina M. · Quetzaltenango</cite>
+      </article>
+      <article class="review-card">
+        <img src="/images/review-3.png" alt="Pestañas largas y definidas" loading="lazy">
+        <div class="stars">★★★★★</div>
+        <h3>"Mis pestañas, pero mejor"</h3>
+        <p>Buscaba ese efecto de "mis pestañas pero mejor" y esta máscara es exactamente eso. Para los días de maquillaje natural es PERFECTA.</p>
+        <cite>Ángela H. · Escuintla</cite>
+      </article>
+    </div>
+
+    <div class="review-list">
+      <article class="review-row">
+        <div class="review-meta"><strong>Emily B.</strong><span class="verified">✓ Verificada</span></div>
+        <div class="stars">★★★★★</div>
+        <p>Tengo pestañas muy rectas y ninguna máscara las mantenía arriba. Con Iron Wand se quedan rizadas todo el día.</p>
+      </article>
+      <article class="review-row">
+        <div class="review-meta"><strong>Emma R.</strong><span class="verified">✓ Verificada</span></div>
+        <div class="stars">★★★★★</div>
+        <p>Solo necesité una capa. Se seca rápido, no hace grumos y da un volumen precioso.</p>
+      </article>
+      <article class="review-row">
+        <div class="review-meta"><strong>Alexis V.</strong><span class="verified">✓ Verificada</span></div>
+        <div class="stars">★★★★★</div>
+        <p>¡Fabulosa! Mis pestañas parecen extensiones y el pedido llegó rápido con pago contra entrega.</p>
+      </article>
+      <article class="review-row">
+        <div class="review-meta"><strong>Melissa G.</strong><span class="verified">✓ Verificada</span></div>
+        <div class="stars">★★★★★</div>
+        <p>Le da muchísimo volumen y las riza sin esfuerzo. La recomiendo totalmente.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell">
+    <h2 class="section-title">Preguntas frecuentes</h2>
+    <div class="faq collapse-group">
+      <div class="collapse is-open">
+        <button type="button" class="collapse-btn">¿Cómo funciona el pago contra entrega? <i>+</i></button>
+        <div class="collapse-body">Pagas en efectivo cuando recibes tu pedido en la puerta de tu casa. Sin tarjeta y sin adelantos.</div>
+      </div>
+      <div class="collapse">
+        <button type="button" class="collapse-btn">¿A qué lugares envían? <i>+</i></button>
+        <div class="collapse-body">Enviamos únicamente dentro de Guatemala, a los 22 departamentos: Guatemala, Sacatepéquez, Escuintla, Quetzaltenango, Alta y Baja Verapaz, Petén, Izabal, San Marcos, Huehuetenango y todos los demás.</div>
+      </div>
+      <div class="collapse">
+        <button type="button" class="collapse-btn">¿Cuánto tarda en llegar mi pedido? <i>+</i></button>
+        <div class="collapse-body">En Ciudad de Guatemala y municipios cercanos, entre 24 y 48 horas. En el interior del país, de 2 a 5 días hábiles. Te avisamos por WhatsApp cuando tu paquete sale a reparto.</div>
+      </div>
+      <div class="collapse">
+        <button type="button" class="collapse-btn">¿Es resistente al agua? <i>+</i></button>
+        <div class="collapse-body">Sí. La Máscara Iron Wand está diseñada para resistir lágrimas, lluvia y sudor sin correrse.</div>
+      </div>
+      <div class="collapse">
+        <button type="button" class="collapse-btn">¿Mantiene el rizo de mis pestañas? <i>+</i></button>
+        <div class="collapse-body">Sí. La fórmula está pensada para dar volumen y largo, y además fijar el rizo durante todo el día.</div>
+      </div>
+      <div class="collapse">
+        <button type="button" class="collapse-btn">¿Cómo funciona la garantía de 30 días? <i>+</i></button>
+        <div class="collapse-body">Si no quedas satisfecha, escríbenos a contacto@compraconfio.shop dentro de los 30 días posteriores a recibir tu pedido y te ayudamos con la devolución.</div>
+      </div>
+    </div>
+    <p class="section-lead" style="margin-top:22px;"><a class="text-link" href="/compraconfio-mascara">Ver todas las preguntas</a></p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p class="footer-brand">compraconfio.shop</p>
+  <p>Paga solo cuando recibes · Envíos a toda Guatemala</p>
+  <ul class="footer-links">
+    <li><a href="/compraconfio-mascara">Producto</a></li>
+    <li><a href="/contacto">Contacto</a></li>
+    <li><a href="/privacidad">Privacidad</a></li>
+    <li><a href="/terminos">Términos</a></li>
+    <li><a href="/envios">Envíos</a></li>
+    <li><a href="/devoluciones">Devoluciones</a></li>
+  </ul>
+  <p>© 2026 CompraConfio — Guatemala</p>
+</footer>
+
+<div class="sticky-bar" id="bottomSticky" aria-hidden="true">
+  <div>
+    <strong id="stickyPrice">Q189</strong>
+    <span id="stickyLabel">Individual</span>
+  </div>
+  <a href="#checkout">Comprar</a>
+</div>
+
+<script src="/js/config.js" defer></script>
+<script src="/js/main.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var stageVideo = document.getElementById('stageVideo');
+  var stageImage = document.getElementById('stageImage');
+
+  document.querySelectorAll('.thumb').forEach(function (thumb) {
+    thumb.addEventListener('click', function () {
+      var src = thumb.dataset.src;
+      if (thumb.dataset.kind === 'video') {
+        stageImage.hidden = true;
+        stageVideo.hidden = false;
+        if (stageVideo.getAttribute('src') !== src) stageVideo.src = src;
+        stageVideo.play().catch(function () {});
+      } else {
+        stageVideo.pause();
+        stageVideo.hidden = true;
+        stageImage.hidden = false;
+        stageImage.src = src;
+        stageImage.classList.toggle('is-contain', thumb.dataset.fit === 'contain');
+      }
+      document.querySelectorAll('.thumb').forEach(function (t) { t.classList.remove('is-active'); });
+      thumb.classList.add('is-active');
+    });
+  });
+
+  var priceNow = document.getElementById('priceNow');
+  var priceWas = document.getElementById('priceWas');
+  var priceSave = document.getElementById('priceSave');
+  var stickyPrice = document.getElementById('stickyPrice');
+  var stickyLabel = document.getElementById('stickyLabel');
+
+  function syncBundle() {
+    var input = document.querySelector('input[name="bundleOption"]:checked');
+    if (!input) return;
+    document.querySelectorAll('.bundle').forEach(function (b) { b.classList.remove('is-selected'); });
+    input.closest('.bundle').classList.add('is-selected');
+    priceNow.textContent = 'Q' + input.dataset.price;
+    priceWas.textContent = 'Q' + input.dataset.oldPrice;
+    priceSave.textContent = 'Ahorra ' + input.dataset.save + '%';
+    stickyPrice.textContent = 'Q' + input.dataset.price;
+    stickyLabel.textContent = input.dataset.label;
+  }
+
+  document.querySelectorAll('input[name="bundleOption"]').forEach(function (input) {
+    input.addEventListener('change', syncBundle);
+  });
+  syncBundle();
+
+  document.querySelectorAll('.collapse-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.collapse');
+      var wasOpen = item.classList.contains('is-open');
+      var group = item.closest('.collapse-group');
+      if (group) group.querySelectorAll('.collapse').forEach(function (i) { i.classList.remove('is-open'); });
+      if (!wasOpen) item.classList.add('is-open');
+    });
+  });
+});
+</script>
 </body>
 </html>
