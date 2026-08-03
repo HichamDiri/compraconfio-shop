@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/product.css?v=20260803g">
+  <link rel="stylesheet" href="/css/product.css?v=20260803h">
 </head>
 <body data-country="GT" data-lang="es" data-brand="compraconfio" data-snap-pixel="off" data-thankyou="/thank-you-compraconfio.html">
 
@@ -456,9 +456,35 @@
           <input type="text" name="zone" id="zone" placeholder="Zona, colonia, aldea o punto de referencia">
         </div>
 
-        <div class="order-total">
-          <span>Total a pagar al recibir</span>
-          <strong id="modalTotal">Q189</strong>
+        <div class="form-head">
+          <span class="block-label">🚚 3. Elige tu método de envío</span>
+        </div>
+
+        <input type="hidden" name="shipping" id="shippingCost" value="0">
+        <input type="hidden" name="total" id="orderTotal" value="189">
+
+        <div class="ship-options">
+          <label class="ship is-selected">
+            <input type="radio" name="shippingMethod" value="Envío gratis" data-cost="0" checked>
+            <span class="radio"></span>
+            <span class="ship-copy"><strong>Envío gratis</strong></span>
+            <span class="ship-cost">Gratis</span>
+          </label>
+          <label class="ship">
+            <input type="radio" name="shippingMethod" value="Envío extra rápido" data-cost="25">
+            <span class="radio"></span>
+            <span class="ship-copy">
+              <strong>⚡ Envío extra rápido</strong>
+              <em>Tu paquete se empaca y despacha en menos de 24 horas</em>
+            </span>
+            <span class="ship-cost">Q25</span>
+          </label>
+        </div>
+
+        <div class="order-summary">
+          <div class="sum-row"><span>Subtotal</span><strong id="sumSubtotal">Q189</strong></div>
+          <div class="sum-row"><span>Envío</span><strong id="sumShipping">Gratis</strong></div>
+          <div class="sum-row is-total"><span>Total a pagar al recibir</span><strong id="sumTotal">Q189</strong></div>
         </div>
 
         <p class="cod-note">💵 <span><b>Pago contra entrega.</b> No pagas nada ahora: pagas en efectivo cuando el mensajero te entregue el pedido.</span></p>
@@ -520,19 +546,38 @@ document.addEventListener('DOMContentLoaded', function () {
   var priceSave = document.getElementById('priceSave');
   var stickyPrice = document.getElementById('stickyPrice');
   var stickyLabel = document.getElementById('stickyLabel');
-  var modalTotal = document.getElementById('modalTotal');
+  var sumSubtotal = document.getElementById('sumSubtotal');
+  var sumShipping = document.getElementById('sumShipping');
+  var sumTotal = document.getElementById('sumTotal');
+  var shippingCost = document.getElementById('shippingCost');
+  var orderTotal = document.getElementById('orderTotal');
 
-  function syncBundle() {
-    var input = document.querySelector('input[name="bundleOption"]:checked');
-    if (!input) return;
+  function syncOrder() {
+    var bundle = document.querySelector('input[name="bundleOption"]:checked');
+    var shipping = document.querySelector('input[name="shippingMethod"]:checked');
+    if (!bundle || !shipping) return;
+
     document.querySelectorAll('.bundle').forEach(function (b) { b.classList.remove('is-selected'); });
-    input.closest('.bundle').classList.add('is-selected');
-    priceNow.textContent = 'Q' + input.dataset.price;
-    priceWas.textContent = 'Q' + input.dataset.oldPrice;
-    priceSave.textContent = 'Ahorra ' + input.dataset.save + '%';
-    stickyPrice.textContent = 'Q' + input.dataset.price;
-    stickyLabel.textContent = input.dataset.label;
-    modalTotal.textContent = 'Q' + input.dataset.price;
+    bundle.closest('.bundle').classList.add('is-selected');
+    document.querySelectorAll('.ship').forEach(function (s) { s.classList.remove('is-selected'); });
+    shipping.closest('.ship').classList.add('is-selected');
+
+    var subtotal = Number(bundle.dataset.price);
+    var ship = Number(shipping.dataset.cost);
+    var total = subtotal + ship;
+
+    priceNow.textContent = 'Q' + subtotal;
+    priceWas.textContent = 'Q' + bundle.dataset.oldPrice;
+    priceSave.textContent = 'Ahorra ' + bundle.dataset.save + '%';
+    stickyPrice.textContent = 'Q' + subtotal;
+    stickyLabel.textContent = bundle.dataset.label;
+
+    sumSubtotal.textContent = 'Q' + subtotal;
+    sumShipping.textContent = ship ? 'Q' + ship : 'Gratis';
+    sumTotal.textContent = 'Q' + total;
+
+    shippingCost.value = String(ship);
+    orderTotal.value = String(total);
   }
 
   var department = document.getElementById('department');
@@ -598,10 +643,10 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   document.getElementById('orderForm').addEventListener('submit', mergeFields, true);
 
-  document.querySelectorAll('input[name="bundleOption"]').forEach(function (input) {
-    input.addEventListener('change', syncBundle);
+  document.querySelectorAll('input[name="bundleOption"], input[name="shippingMethod"]').forEach(function (input) {
+    input.addEventListener('change', syncOrder);
   });
-  syncBundle();
+  syncOrder();
 
   document.querySelectorAll('.collapse-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
