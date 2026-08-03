@@ -4,7 +4,7 @@
 .hero-banner {
   display: block;
   position: relative;
-  background: #f2efeb;
+  background: #e8e4e3;
 }
 
 .hero-banner img { width: 100%; height: 100%; object-fit: cover; }
@@ -91,8 +91,10 @@
 
 @media (min-width: 1000px) {
   .hero-mobile { display: none; }
-  .hero-desktop { display: block; }
-  .hero-desktop img { width: 100%; }
+  /* Banner artwork is 1024px wide; capping it keeps the text sharp instead of
+     upscaling it across the whole window. The band colour matches the artwork edges. */
+  .hero-desktop { display: block; max-width: 1180px; margin: 0 auto; }
+  .hero-desktop img { width: 100%; height: auto; }
   .hero-title { font-size: 2.6rem; }
   .steps { gap: 34px; }
 }
