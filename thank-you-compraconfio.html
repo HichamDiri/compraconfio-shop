@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/compraconfio.css?v=20260803g">
+  <link rel="stylesheet" href="/css/compraconfio.css?v=20260803h">
   <style>
     body { padding-bottom: 0; }
     .thankyou-brandbar{background:#111;color:#fff;padding:18px 16px;text-align:center}
@@ -72,7 +72,8 @@
       <div class="order-row"><span>Teléfono:</span><strong id="customerPhone">—</strong></div>
       <div class="order-row"><span>Departamento:</span><strong id="customerCountry">—</strong></div>
       <div class="order-row"><span>Dirección:</span><strong id="customerAddress">—</strong></div>
-      <div class="order-row"><span>Monto:</span><strong id="orderPrice">Q189 quetzales</strong></div>
+      <div class="order-row" id="shippingRow" hidden><span>Envío:</span><strong id="orderShipping">Gratis</strong></div>
+      <div class="order-row"><span>Monto a pagar:</span><strong id="orderPrice">Q189 quetzales</strong></div>
       <div class="order-row"><span>Pago:</span><strong>Contra entrega 💵</strong></div>
     </div>
 
@@ -108,6 +109,16 @@
     var currency = p.get('currency') || 'GTQ';
     var currencyLabel = currency === 'GTQ' ? 'quetzales' : currency;
     var priceLabel = 'Q' + price + ' ' + currencyLabel;
+    var shipping = Number(p.get('shipping') || 0);
+    var total = p.get('total') || price;
+    var totalLabel = 'Q' + total + ' ' + currencyLabel;
+
+    if (p.get('shippingMethod')) {
+      document.getElementById('shippingRow').hidden = false;
+      document.getElementById('orderShipping').textContent = shipping
+        ? 'Q' + shipping + ' (extra rápido)'
+        : 'Gratis';
+    }
 
     if (p.get('name')) document.getElementById('customerName').textContent = decodeURIComponent(p.get('name'));
     if (p.get('phone')) document.getElementById('customerPhone').textContent = decodeURIComponent(p.get('phone'));
@@ -123,8 +134,8 @@
     document.getElementById('thankyouProductInline').textContent = productName;
     document.getElementById('thankyouProductName').textContent = productName;
     document.getElementById('thankyouProductPrice').textContent = priceLabel;
-    document.getElementById('orderPrice').textContent = priceLabel;
-    document.getElementById('stepsPrice').textContent = priceLabel;
+    document.getElementById('orderPrice').textContent = totalLabel;
+    document.getElementById('stepsPrice').textContent = totalLabel;
   })();
 </script>
 </body>

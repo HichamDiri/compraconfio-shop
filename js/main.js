@@ -554,6 +554,14 @@ document.addEventListener('DOMContentLoaded', function() {
       department: departmentValue,
       source: String(formData.get('source') || 'fakhralkhaleej-funnel').trim()
     };
+
+    var shippingMethodValue = String(formData.get('shippingMethod') || '').trim();
+    if (shippingMethodValue) {
+      payload.shippingMethod = shippingMethodValue;
+      payload.shipping = String(formData.get('shipping') || '0').trim();
+      payload.total = String(formData.get('total') || selection.price).trim();
+    }
+
     var redirected = false;
 
     try {
