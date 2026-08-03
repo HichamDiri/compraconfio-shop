@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/product.css?v=20260803e">
-  <link rel="stylesheet" href="/css/home.css?v=20260803e">
+  <link rel="stylesheet" href="/css/product.css?v=20260803f">
+  <link rel="stylesheet" href="/css/home.css?v=20260803f">
 </head>
 <body data-country="GT" data-lang="es" data-brand="compraconfio" data-snap-pixel="off" data-thankyou="/thank-you-compraconfio.html">
 
@@ -185,32 +185,14 @@
         <div class="fields-2">
           <div class="field">
             <select name="department" id="department" required>
-              <option value="" disabled selected>Departamento</option>
-              <option value="Guatemala">Guatemala</option>
-              <option value="Alta Verapaz">Alta Verapaz</option>
-              <option value="Baja Verapaz">Baja Verapaz</option>
-              <option value="Chimaltenango">Chimaltenango</option>
-              <option value="Chiquimula">Chiquimula</option>
-              <option value="El Progreso">El Progreso</option>
-              <option value="Escuintla">Escuintla</option>
-              <option value="Huehuetenango">Huehuetenango</option>
-              <option value="Izabal">Izabal</option>
-              <option value="Jalapa">Jalapa</option>
-              <option value="Jutiapa">Jutiapa</option>
-              <option value="Petén">Petén</option>
-              <option value="Quetzaltenango">Quetzaltenango</option>
-              <option value="Quiché">Quiché</option>
-              <option value="Retalhuleu">Retalhuleu</option>
-              <option value="Sacatepéquez">Sacatepéquez</option>
-              <option value="San Marcos">San Marcos</option>
-              <option value="Santa Rosa">Santa Rosa</option>
-              <option value="Sololá">Sololá</option>
-              <option value="Suchitepéquez">Suchitepéquez</option>
-              <option value="Totonicapán">Totonicapán</option>
-              <option value="Zacapa">Zacapa</option>
+              <option value="" disabled selected>Selecciona tu departamento</option>
             </select>
           </div>
-          <div class="field"><input type="text" name="city" id="city" placeholder="Municipio / Ciudad" required></div>
+          <div class="field">
+            <select name="city" id="city" required disabled>
+              <option value="" disabled selected>Selecciona tu municipio</option>
+            </select>
+          </div>
         </div>
 
         <div class="field"><input type="text" name="address" id="address" placeholder="Dirección exacta (zona, colonia, calle, casa)" required autocomplete="street-address"></div>
@@ -471,6 +453,7 @@
 </div>
 
 <script src="/js/config.js" defer></script>
+<script src="/js/gt-locations.js?v=1" defer></script>
 <script src="/js/main.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -536,6 +519,24 @@ document.addEventListener('DOMContentLoaded', function () {
     input.addEventListener('change', syncBundle);
   });
   syncBundle();
+
+  var department = document.getElementById('department');
+  var city = document.getElementById('city');
+  var municipios = window.GT_MUNICIPIOS || {};
+
+  Object.keys(municipios).forEach(function (name) {
+    department.appendChild(new Option(name, name));
+  });
+
+  department.addEventListener('change', function () {
+    city.innerHTML = '';
+    city.appendChild(new Option('Selecciona tu municipio', '', true, true));
+    city.firstChild.disabled = true;
+    (municipios[department.value] || []).forEach(function (name) {
+      city.appendChild(new Option(name, name));
+    });
+    city.disabled = false;
+  });
 
   document.querySelectorAll('.collapse-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
