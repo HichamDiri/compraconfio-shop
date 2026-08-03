@@ -135,17 +135,50 @@ button { font: inherit; cursor: pointer; }
   position: relative;
   background: #f2efeb;
   aspect-ratio: 1;
-  overflow: hidden;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
-.gallery-stage img,
-.gallery-stage video {
+.gallery-stage::-webkit-scrollbar { display: none; }
+
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+.slide img,
+.slide video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.gallery-stage img.is-contain { object-fit: contain; background: #fff; padding: 6%; }
+.slide img.is-contain { object-fit: contain; background: #fff; padding: 6%; }
+
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 0 0;
+}
+
+.gallery-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d7d3ce;
+  transition: background 0.15s;
+}
+
+.gallery-dots span.is-active { background: var(--ink); }
 
 .gallery-thumbs {
   display: flex;
