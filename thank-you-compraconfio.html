@@ -53,13 +53,13 @@
       <div class="success-icon">✓</div>
       <p class="thankyou-kicker">Pedido recibido con éxito</p>
       <h1>¡Gracias por confiar en CompraConfio!</h1>
-      <p>Nuestro equipo te contactará pronto por WhatsApp para confirmar tu dirección. Recuerda: tu pedido es <strong id="thankyouProductInline">Máscara Iron Wand</strong>.</p>
+      <p>Nuestro equipo te contactará pronto por WhatsApp para confirmar tu dirección. Recuerda: tu pedido es <strong id="thankyouProductInline">Máscara Varita de Hierro</strong>.</p>
     </section>
 
     <section class="product-reminder-card">
-      <img class="product-mini" id="thankyouProductVisual" src="/images/mascara-product.png" alt="Máscara Iron Wand" width="80" height="80" style="width:80px;height:80px;object-fit:cover;border-radius:2px">
+      <img class="product-mini" id="thankyouProductVisual" src="/images/mascara-product.png" alt="Máscara Varita de Hierro" width="80" height="80" style="width:80px;height:80px;object-fit:cover;border-radius:2px">
       <div>
-        <h2 id="thankyouProductName">Máscara Iron Wand</h2>
+        <h2 id="thankyouProductName">Máscara Varita de Hierro</h2>
         <p>Precio final: <strong id="thankyouProductPrice">Q189 quetzales</strong></p>
         <span>Solo pago contra entrega</span>
       </div>
@@ -104,7 +104,7 @@
   (function() {
     var p = new URLSearchParams(window.location.search);
     var orderId = p.get('order') || ('CC-' + Date.now().toString().slice(-8));
-    var productName = p.get('productName') ? decodeURIComponent(p.get('productName')) : 'Máscara Iron Wand';
+    var productName = p.get('productName') ? decodeURIComponent(p.get('productName')) : 'Máscara Varita de Hierro';
     var price = p.get('price') || '189';
     var currency = p.get('currency') || 'GTQ';
     var currencyLabel = currency === 'GTQ' ? 'quetzales' : currency;
