@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/product.css?v=20260803b">
-  <link rel="stylesheet" href="/css/home.css?v=20260803b">
+  <link rel="stylesheet" href="/css/product.css?v=20260803c">
+  <link rel="stylesheet" href="/css/home.css?v=20260803c">
 </head>
 <body data-country="GT" data-lang="es" data-brand="compraconfio" data-snap-pixel="off" data-thankyou="/thank-you-compraconfio.html">
 
@@ -55,27 +55,44 @@
   <div class="product-layout">
 
     <section class="gallery" id="heroSection">
-      <div class="gallery-stage">
-        <video id="stageVideo" src="/videos/demo-1.mp4" autoplay muted loop playsinline poster="/images/mascara-product.png"></video>
-        <img id="stageImage" src="/images/mascara-product.png" alt="Máscara Iron Wand" hidden>
+      <div class="gallery-stage" id="galleryTrack">
+        <div class="slide">
+          <video src="/videos/demo-1.mp4" autoplay muted loop playsinline poster="/images/mascara-product.png"></video>
+        </div>
+        <div class="slide">
+          <video src="/videos/demo-2.mp4" muted loop playsinline preload="metadata" poster="/images/mascara-before-after.png"></video>
+        </div>
+        <div class="slide">
+          <img class="is-contain" src="/images/mascara-product.png" alt="Máscara Iron Wand" loading="lazy">
+        </div>
+        <div class="slide">
+          <img src="/images/home-apply.png" alt="Aplicación de la Máscara Iron Wand" loading="lazy">
+        </div>
+        <div class="slide">
+          <img src="/images/home-natural.png" alt="Pestañas con acabado natural" loading="lazy">
+        </div>
+        <div class="slide">
+          <img src="/images/mascara-before-after.png" alt="Pestañas antes y después" loading="lazy">
+        </div>
       </div>
+      <div class="gallery-dots" id="galleryDots" aria-hidden="true"></div>
       <div class="gallery-thumbs">
-        <button type="button" class="thumb thumb-video is-active" data-kind="video" data-src="/videos/demo-1.mp4" aria-label="Video 1">
+        <button type="button" class="thumb thumb-video is-active" aria-label="Video 1">
           <img src="/images/mascara-product.png" alt="">
         </button>
-        <button type="button" class="thumb thumb-video" data-kind="video" data-src="/videos/demo-2.mp4" aria-label="Video 2">
+        <button type="button" class="thumb thumb-video" aria-label="Video 2">
           <img src="/images/mascara-before-after.png" alt="">
         </button>
-        <button type="button" class="thumb" data-kind="image" data-fit="contain" data-src="/images/mascara-product.png" aria-label="Producto">
+        <button type="button" class="thumb" aria-label="Producto">
           <img src="/images/mascara-product.png" alt="">
         </button>
-        <button type="button" class="thumb" data-kind="image" data-src="/images/home-apply.png" aria-label="Aplicación">
+        <button type="button" class="thumb" aria-label="Aplicación">
           <img src="/images/home-apply.png" alt="">
         </button>
-        <button type="button" class="thumb" data-kind="image" data-src="/images/home-natural.png" aria-label="Resultado natural">
+        <button type="button" class="thumb" aria-label="Resultado natural">
           <img src="/images/home-natural.png" alt="">
         </button>
-        <button type="button" class="thumb" data-kind="image" data-src="/images/mascara-before-after.png" aria-label="Antes y después">
+        <button type="button" class="thumb" aria-label="Antes y después">
           <img src="/images/mascara-before-after.png" alt="">
         </button>
       </div>
@@ -457,28 +474,45 @@
 <script src="/js/main.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  var stageVideo = document.getElementById('stageVideo');
-  var stageImage = document.getElementById('stageImage');
+  var track = document.getElementById('galleryTrack');
+  var dots = document.getElementById('galleryDots');
+  var thumbs = Array.prototype.slice.call(document.querySelectorAll('.thumb'));
 
-  document.querySelectorAll('.thumb').forEach(function (thumb) {
-    thumb.addEventListener('click', function () {
-      var src = thumb.dataset.src;
-      if (thumb.dataset.kind === 'video') {
-        stageImage.hidden = true;
-        stageVideo.hidden = false;
-        if (stageVideo.getAttribute('src') !== src) stageVideo.src = src;
-        stageVideo.play().catch(function () {});
-      } else {
-        stageVideo.pause();
-        stageVideo.hidden = true;
-        stageImage.hidden = false;
-        stageImage.src = src;
-        stageImage.classList.toggle('is-contain', thumb.dataset.fit === 'contain');
-      }
-      document.querySelectorAll('.thumb').forEach(function (t) { t.classList.remove('is-active'); });
-      thumb.classList.add('is-active');
+  if (track) {
+    var slides = Array.prototype.slice.call(track.querySelectorAll('.slide'));
+    var current = -1;
+
+    slides.forEach(function () { dots.appendChild(document.createElement('span')); });
+
+    function setActive(index) {
+      if (index === current || index < 0 || index >= slides.length) return;
+      current = index;
+      thumbs.forEach(function (t, i) { t.classList.toggle('is-active', i === index); });
+      Array.prototype.forEach.call(dots.children, function (d, i) { d.classList.toggle('is-active', i === index); });
+      slides.forEach(function (slide, i) {
+        var video = slide.querySelector('video');
+        if (!video) return;
+        if (i === index) { video.play().catch(function () {}); } else { video.pause(); }
+      });
+    }
+
+    thumbs.forEach(function (thumb, i) {
+      thumb.addEventListener('click', function () {
+        track.scrollTo({ left: track.clientWidth * i, behavior: 'smooth' });
+        setActive(i);
+      });
     });
-  });
+
+    var scrollTimer;
+    track.addEventListener('scroll', function () {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(function () {
+        setActive(Math.round(track.scrollLeft / track.clientWidth));
+      }, 60);
+    }, { passive: true });
+
+    setActive(0);
+  }
 
   var priceNow = document.getElementById('priceNow');
   var priceWas = document.getElementById('priceWas');
