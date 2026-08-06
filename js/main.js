@@ -210,33 +210,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  document.querySelectorAll('.js-open-order').forEach(function(button) {
-    button.addEventListener('click', function() {
-      var snapshot = getTrackingSnapshot();
-      trackTikTok('InitiateCheckout', {
-        content_id: snapshot.productId || 'cc-mascara-1',
-        content_type: 'product',
-        content_name: snapshot.contentName || 'Máscara Varita de Hierro',
-        value: snapshot.price || 299,
-        currency: snapshot.currency || 'GTQ'
-      });
+  var checkoutTracked = false;
+
+  function fireInitiateCheckoutOnce() {
+    if (checkoutTracked) return;
+    checkoutTracked = true;
+    var snapshot = getTrackingSnapshot(form);
+    trackTikTok('InitiateCheckout', {
+      content_id: snapshot.productId || 'cc-mascara-1',
+      content_type: 'product',
+      content_name: snapshot.contentName || 'Máscara Varita de Hierro',
+      value: snapshot.price || 299,
+      currency: snapshot.currency || 'GTQ'
     });
+  }
+
+  document.querySelectorAll('.js-open-order').forEach(function(button) {
+    button.addEventListener('click', fireInitiateCheckoutOnce);
   });
 
   if (form) {
-    var checkoutTracked = false;
-    form.addEventListener('focusin', function() {
-      if (checkoutTracked) return;
-      checkoutTracked = true;
-      var snapshot = getTrackingSnapshot(form);
-      trackTikTok('InitiateCheckout', {
-        content_id: snapshot.productId || 'cc-mascara-1',
-        content_type: 'product',
-        content_name: snapshot.contentName || 'Máscara Varita de Hierro',
-        value: snapshot.price || 299,
-        currency: snapshot.currency || 'GTQ'
-      });
-    });
+    form.addEventListener('focusin', fireInitiateCheckoutOnce);
   }
 
   window.addEventListener('load', function() {
