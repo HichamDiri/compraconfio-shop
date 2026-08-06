@@ -48,6 +48,10 @@ function doGet() {
 }
 
 function parsePayload_(e) {
+  if (e && e.parameter && e.parameter.payload) {
+    return JSON.parse(String(e.parameter.payload));
+  }
+
   if (!e || !e.postData || !e.postData.contents) {
     throw new Error('Missing POST body');
   }
@@ -55,10 +59,14 @@ function parsePayload_(e) {
   var raw = e.postData.contents;
   var parsed;
 
-  if (e.postData.type === 'application/json') {
+  if (e.postData.type === 'application/json' || e.postData.type === 'text/plain') {
     parsed = JSON.parse(raw);
-  } else if (raw.indexOf('payload=') === 0) {
-    parsed = JSON.parse(decodeURIComponent(raw.replace(/^payload=/, '').replace(/\+/g, ' ')));
+  } else if (raw.indexOf('payload=') >= 0) {
+    var match = raw.match(/(?:^|&)payload=([^&]*)/);
+    if (!match) {
+      throw new Error('Missing payload field');
+    }
+    parsed = JSON.parse(decodeURIComponent(match[1].replace(/\+/g, ' ')));
   } else {
     parsed = JSON.parse(raw);
   }
