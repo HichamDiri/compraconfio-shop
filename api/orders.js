@@ -2,6 +2,18 @@ const GOOGLE_SHEETS_URL =
   process.env.GOOGLE_SHEETS_URL ||
   'https://script.google.com/macros/s/AKfycbx__S60obOiYJB7dqlBNMqIvaxTIzY2pafz92tsgYX9G7tpGZvMQYur-N664u787IZVHw/exec';
 
+function readPayload(req) {
+  if (!req.body) return {};
+  if (typeof req.body === 'string') {
+    try {
+      return JSON.parse(req.body);
+    } catch (error) {
+      return {};
+    }
+  }
+  return req.body;
+}
+
 module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -16,33 +28,37 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const payload = req.body || {};
-    const body = new URLSearchParams();
-    body.append('payload', JSON.stringify(payload));
+    const payload = readPayload(req);
+    const encoded = new URLSearchParams();
+    encoded.append('payload', JSON.stringify(payload));
 
     const response = await fetch(GOOGLE_SHEETS_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: body.toString(),
+      body: encoded.toString(),
       redirect: 'follow'
     });
 
     const text = await response.text();
-    let result;
+    let result = null;
 
     try {
       result = JSON.parse(text);
     } catch (error) {
-      result = {
-        ok: response.ok,
-        message: text.slice(0, 300) || 'Unexpected Google Sheets response'
-      };
+      return res.status(502).json({
+        ok: false,
+        message: 'Google Sheets returned an unexpected response',
+        detail: text.slice(0, 300),
+        status: response.status
+      });
     }
 
     if (!response.ok || !result.ok) {
       return res.status(502).json({
         ok: false,
-        message: result.message || 'Google Sheets rejected the order'
+        message: result.message || 'Google Sheets rejected the order',
+        detail: text.slice(0, 300),
+        status: response.status
       });
     }
 
