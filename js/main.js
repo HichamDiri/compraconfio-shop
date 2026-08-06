@@ -615,37 +615,19 @@ document.addEventListener('DOMContentLoaded', function() {
       payload.total = String(formData.get('total') || selection.price).trim();
     }
 
-    var redirected = false;
-
     try {
       if (submitButton) {
         submitButton.disabled = true;
         submitButton.textContent = isSpanishPage() ? 'Confirmando pedido...' : 'جاري تأكيد الطلب...';
       }
 
-      var fastRedirect = null;
-      if (!window.GOOGLE_SHEETS_URL) {
-        fastRedirect = setTimeout(function() {
-          redirected = true;
-          goToThankYou(payload, payload.orderId);
-        }, 700);
-      }
-
-      var response = await submitOrder(payload);
-      if (fastRedirect) {
-        clearTimeout(fastRedirect);
-      }
-
-      var result = response;
+      var result = await submitOrder(payload);
       if (!result || !result.ok) {
         throw new Error(result.message || (isSpanishPage() ? 'No se pudo enviar el pedido' : 'تعذر إرسال الطلب'));
       }
 
-      if (!redirected) {
-        goToThankYou(payload, result.order && result.order.id ? result.order.id : payload.orderId);
-      }
+      goToThankYou(payload, result.order && result.order.id ? result.order.id : payload.orderId);
     } catch (error) {
-      if (redirected) return;
       alert(error.message || (isSpanishPage() ? 'Ocurrió un error, intenta de nuevo' : 'حدث خطأ، يرجى المحاولة مرة أخرى'));
       if (submitButton) {
         submitButton.disabled = false;
