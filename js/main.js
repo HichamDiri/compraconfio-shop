@@ -484,9 +484,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var body = new URLSearchParams();
     body.append('payload', JSON.stringify(payload));
 
+    if (typeof navigator.sendBeacon === 'function' && navigator.sendBeacon(url, body)) {
+      return Promise.resolve({ ok: true, order: { id: payload.orderId } });
+    }
+
     return fetch(url, {
       method: 'POST',
       mode: 'no-cors',
+      keepalive: true,
       body: body
     }).then(function() {
       return { ok: true, order: { id: payload.orderId } };
@@ -618,13 +623,18 @@ document.addEventListener('DOMContentLoaded', function() {
         submitButton.textContent = isSpanishPage() ? 'Confirmando pedido...' : 'جاري تأكيد الطلب...';
       }
 
-      var fastRedirect = setTimeout(function() {
-        redirected = true;
-        goToThankYou(payload, payload.orderId);
-      }, 700);
+      var fastRedirect = null;
+      if (!window.GOOGLE_SHEETS_URL) {
+        fastRedirect = setTimeout(function() {
+          redirected = true;
+          goToThankYou(payload, payload.orderId);
+        }, 700);
+      }
 
       var response = await submitOrder(payload);
-      clearTimeout(fastRedirect);
+      if (fastRedirect) {
+        clearTimeout(fastRedirect);
+      }
 
       var result = response;
       if (!result || !result.ok) {
