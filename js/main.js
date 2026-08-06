@@ -118,6 +118,29 @@ document.addEventListener('DOMContentLoaded', function() {
     window.ttq.page();
   }
 
+  function trackTikTok(eventName, params) {
+    if (!window.ttq || typeof window.ttq.track !== 'function') return;
+    window.ttq.track(eventName, params || {});
+  }
+
+  function getTrackingSnapshot(formEl) {
+    var trackingForm = formEl || document.getElementById('orderForm');
+    var trackingData = trackingForm ? new FormData(trackingForm) : null;
+    var selectedBundle = trackingForm ? trackingForm.querySelector('input[name="bundleOption"]:checked') : null;
+    return {
+      productId: selectedBundle
+        ? String(selectedBundle.dataset.productId || selectedBundle.value || '').trim()
+        : String(trackingData ? trackingData.get('productId') || '' : '').trim(),
+      price: selectedBundle
+        ? Number(selectedBundle.dataset.price || 0)
+        : Number(trackingData ? trackingData.get('price') || 0 : 0),
+      currency: String(trackingData ? trackingData.get('currency') || 'GTQ' : 'GTQ').trim(),
+      contentName: selectedBundle
+        ? String(selectedBundle.dataset.productName || '').trim()
+        : ''
+    };
+  }
+
   function loadTracking() {
     (function(c, a) {
       c[a] = c[a] || function() {
@@ -129,16 +152,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var fbPixelId = document.body && document.body.dataset.fbPixelId
       ? document.body.dataset.fbPixelId
       : '';
-    var trackingForm = document.getElementById('orderForm');
-    var trackingData = trackingForm ? new FormData(trackingForm) : null;
-    var selectedBundle = trackingForm ? trackingForm.querySelector('input[name="bundleOption"]:checked') : null;
-    var trackingProductId = selectedBundle
-      ? String(selectedBundle.dataset.productId || selectedBundle.value || 'anti-cellulite-massager').trim()
-      : String(trackingData ? trackingData.get('productId') || 'anti-cellulite-massager' : 'anti-cellulite-massager').trim();
-    var trackingPrice = selectedBundle
-      ? Number(selectedBundle.dataset.price || 199)
-      : Number(trackingData ? trackingData.get('price') || 199 : 199);
-    var trackingCurrency = String(trackingData ? trackingData.get('currency') || 'SAR' : 'SAR').trim();
+    var snapshot = getTrackingSnapshot();
+    var trackingProductId = snapshot.productId || 'cc-mascara-1';
+    var trackingPrice = snapshot.price || 299;
+    var trackingCurrency = snapshot.currency || 'GTQ';
 
     if (fbPixelId) {
       if (!window.fbq) {
@@ -148,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.fbq('track', 'ViewContent', {
           content_ids: [trackingProductId],
           content_type: 'product',
-          value: trackingPrice || 199,
+          value: trackingPrice,
           currency: trackingCurrency
         });
       }
@@ -173,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
       window.snaptr('track', 'VIEW_CONTENT', {
         item_ids: [trackingProductId],
         item_category: 'beauty',
-        price: trackingPrice || 199,
+        price: trackingPrice,
         currency: trackingCurrency
       });
     }
@@ -183,15 +200,43 @@ document.addEventListener('DOMContentLoaded', function() {
       : '';
     if (tiktokPixelId) {
       initTikTokPixel(tiktokPixelId);
-      if (window.ttq) {
-        window.ttq.track('ViewContent', {
-          content_id: trackingProductId,
-          content_type: 'product',
-          value: trackingPrice || 199,
-          currency: trackingCurrency
-        });
-      }
+      trackTikTok('ViewContent', {
+        content_id: trackingProductId,
+        content_type: 'product',
+        content_name: snapshot.contentName || 'Máscara Varita de Hierro',
+        value: trackingPrice,
+        currency: trackingCurrency
+      });
     }
+  }
+
+  document.querySelectorAll('.js-open-order').forEach(function(button) {
+    button.addEventListener('click', function() {
+      var snapshot = getTrackingSnapshot();
+      trackTikTok('InitiateCheckout', {
+        content_id: snapshot.productId || 'cc-mascara-1',
+        content_type: 'product',
+        content_name: snapshot.contentName || 'Máscara Varita de Hierro',
+        value: snapshot.price || 299,
+        currency: snapshot.currency || 'GTQ'
+      });
+    });
+  });
+
+  if (form) {
+    var checkoutTracked = false;
+    form.addEventListener('focusin', function() {
+      if (checkoutTracked) return;
+      checkoutTracked = true;
+      var snapshot = getTrackingSnapshot(form);
+      trackTikTok('InitiateCheckout', {
+        content_id: snapshot.productId || 'cc-mascara-1',
+        content_type: 'product',
+        content_name: snapshot.contentName || 'Máscara Varita de Hierro',
+        value: snapshot.price || 299,
+        currency: snapshot.currency || 'GTQ'
+      });
+    });
   }
 
   window.addEventListener('load', function() {
@@ -620,6 +665,14 @@ document.addEventListener('DOMContentLoaded', function() {
         submitButton.disabled = true;
         submitButton.textContent = isSpanishPage() ? 'Confirmando pedido...' : 'جاري تأكيد الطلب...';
       }
+
+      trackTikTok('PlaceAnOrder', {
+        content_id: payload.productId,
+        content_type: 'product',
+        content_name: payload.productName,
+        value: Number(payload.total || payload.price || 0),
+        currency: payload.currency || 'GTQ'
+      });
 
       var result = await submitOrder(payload);
       if (!result || !result.ok) {
