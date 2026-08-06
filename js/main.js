@@ -476,6 +476,38 @@ document.addEventListener('DOMContentLoaded', function() {
     window.location.href = getThankYouPath() + '?' + params.toString();
   }
 
+  function hasOrderEndpoint() {
+    return Boolean(window.GOOGLE_SHEETS_URL || window.ORDER_API_URL);
+  }
+
+  function submitToGoogleSheets(url, payload) {
+    var body = new URLSearchParams();
+    body.append('payload', JSON.stringify(payload));
+
+    return fetch(url, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: body
+    }).then(function() {
+      return { ok: true, order: { id: payload.orderId } };
+    });
+  }
+
+  function submitOrder(payload) {
+    if (window.GOOGLE_SHEETS_URL) {
+      return submitToGoogleSheets(window.GOOGLE_SHEETS_URL, payload);
+    }
+
+    return fetch(window.ORDER_API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true,
+      body: JSON.stringify(payload)
+    }).then(function(response) {
+      return response.json();
+    });
+  }
+
   form.addEventListener('submit', async function(e) {
     var phone = document.getElementById('phone');
     var submitButton = form.querySelector('button[type="submit"]');
@@ -519,7 +551,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     phone.value = normalizedPhone;
 
-    if (!window.ORDER_API_URL) {
+    if (!hasOrderEndpoint()) {
       return;
     }
 
@@ -527,10 +559,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var formData = new FormData(form);
     var selection = getProductSelection(formData);
+    var selectedBundle = getSelectedBundle();
     var addressValue = String(formData.get('address') || '').trim();
+    var addressLineValue = String(formData.get('addressLine') || '').trim();
+    var zoneValue = String(formData.get('zone') || '').trim();
     var departmentValue = String(formData.get('department') || '').trim();
     var cityValue = String(formData.get('city') || '').trim();
     var countryValue = String(formData.get('country') || '').trim();
+    var firstNameValue = String(formData.get('firstName') || '').trim();
+    var lastNameValue = String(formData.get('lastName') || '').trim();
+    var nameValue = String(formData.get('name') || '').trim();
+    if (!nameValue && (firstNameValue || lastNameValue)) {
+      nameValue = (firstNameValue + ' ' + lastNameValue).trim();
+    }
     if (cityValue) {
       addressValue = cityValue + (addressValue ? ', ' + addressValue : '');
     }
@@ -546,13 +587,20 @@ document.addEventListener('DOMContentLoaded', function() {
       productName: selection.productName,
       price: selection.price,
       currency: selection.currency,
-      name: String(formData.get('name') || '').trim(),
+      name: nameValue,
+      firstName: firstNameValue,
+      lastName: lastNameValue,
       phone: normalizedPhone,
       address: addressValue,
+      addressLine: addressLineValue,
+      zone: zoneValue,
       city: cityValue,
       country: countryValue,
       department: departmentValue,
-      source: String(formData.get('source') || 'fakhralkhaleej-funnel').trim()
+      bundleLabel: selectedBundle ? String(selectedBundle.dataset.label || '').trim() : '',
+      color: String(formData.get('color') || '').trim(),
+      createdAt: new Date().toISOString(),
+      source: String(formData.get('source') || 'compraconfio').trim()
     };
 
     var shippingMethodValue = String(formData.get('shippingMethod') || '').trim();
@@ -575,16 +623,11 @@ document.addEventListener('DOMContentLoaded', function() {
         goToThankYou(payload, payload.orderId);
       }, 700);
 
-      var response = await fetch(window.ORDER_API_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        keepalive: true,
-        body: JSON.stringify(payload)
-      });
+      var response = await submitOrder(payload);
       clearTimeout(fastRedirect);
 
-      var result = await response.json();
-      if (!response.ok || !result.ok) {
+      var result = response;
+      if (!result || !result.ok) {
         throw new Error(result.message || (isSpanishPage() ? 'No se pudo enviar el pedido' : 'تعذر إرسال الطلب'));
       }
 
