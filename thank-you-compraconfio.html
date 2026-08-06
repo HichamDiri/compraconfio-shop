@@ -60,7 +60,7 @@
       <img class="product-mini" id="thankyouProductVisual" src="/images/mascara-product.png" alt="Máscara Varita de Hierro" width="80" height="80" style="width:80px;height:80px;object-fit:cover;border-radius:2px">
       <div>
         <h2 id="thankyouProductName">Máscara Varita de Hierro</h2>
-        <p>Precio final: <strong id="thankyouProductPrice">Q189 quetzales</strong></p>
+        <p>Precio final: <strong id="thankyouProductPrice">Q299 quetzales</strong></p>
         <span>Solo pago contra entrega</span>
       </div>
     </section>
@@ -73,7 +73,7 @@
       <div class="order-row"><span>Departamento:</span><strong id="customerCountry">—</strong></div>
       <div class="order-row"><span>Dirección:</span><strong id="customerAddress">—</strong></div>
       <div class="order-row" id="shippingRow" hidden><span>Envío:</span><strong id="orderShipping">Gratis</strong></div>
-      <div class="order-row"><span>Monto a pagar:</span><strong id="orderPrice">Q189 quetzales</strong></div>
+      <div class="order-row"><span>Monto a pagar:</span><strong id="orderPrice">Q299 quetzales</strong></div>
       <div class="order-row"><span>Pago:</span><strong>Contra entrega 💵</strong></div>
     </div>
 
@@ -83,7 +83,7 @@
         <li><strong>Confirmación:</strong> Te escribimos por WhatsApp para verificar tu dirección.</li>
         <li><strong>Preparación:</strong> Tu pedido se prepara y envía después de la confirmación.</li>
         <li><strong>Entrega:</strong> Recibe tu producto en casa y paga en efectivo al mensajero.</li>
-        <li><strong>Pago:</strong> Solo pagas <span id="stepsPrice">Q189 quetzales</span> al recibir — sin adelantos.</li>
+        <li><strong>Pago:</strong> Solo pagas <span id="stepsPrice">Q299 quetzales</span> al recibir — sin adelantos.</li>
       </ol>
     </div>
 
@@ -105,7 +105,7 @@
     var p = new URLSearchParams(window.location.search);
     var orderId = p.get('order') || ('CC-' + Date.now().toString().slice(-8));
     var productName = p.get('productName') ? decodeURIComponent(p.get('productName')) : 'Máscara Varita de Hierro';
-    var price = p.get('price') || '189';
+    var price = p.get('price') || '299';
     var currency = p.get('currency') || 'GTQ';
     var currencyLabel = currency === 'GTQ' ? 'quetzales' : currency;
     var priceLabel = 'Q' + price + ' ' + currencyLabel;
