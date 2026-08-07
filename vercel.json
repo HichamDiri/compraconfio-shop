@@ -1,7 +1,7 @@
 {
   "rewrites": [
-    { "source": "/compraconfio-mascara", "destination": "/compraconfio-mascara.html" },
-    { "source": "/compraconfio-mascara/", "destination": "/compraconfio-mascara.html" },
+    { "source": "/latine-mascara", "destination": "/latine-mascara.html" },
+    { "source": "/latine-mascara/", "destination": "/latine-mascara.html" },
     { "source": "/thank-you-compraconfio", "destination": "/thank-you-compraconfio.html" },
     { "source": "/thank-you-compraconfio/", "destination": "/thank-you-compraconfio.html" },
     { "source": "/privacidad", "destination": "/privacidad.html" },
@@ -16,7 +16,9 @@
     { "source": "/contacto/", "destination": "/contacto.html" }
   ],
   "redirects": [
-    { "source": "/privacy.html", "destination": "/privacidad.html", "permanent": true },
+    { "source": "/compraconfio-mascara", "destination": "/latine-mascara", "permanent": true },
+    { "source": "/compraconfio-mascara/", "destination": "/latine-mascara", "permanent": true },
+    { "source": "/compraconfio-mascara.html", "destination": "/latine-mascara", "permanent": true },
     { "source": "/terms.html", "destination": "/terminos.html", "permanent": true },
     { "source": "/refund.html", "destination": "/devoluciones.html", "permanent": true }
   ]
