@@ -40,7 +40,7 @@
     .footer-tagline{color:var(--accent);font-weight:600;font-size:.82rem}
   </style>
 </head>
-<body class="thankyou-page compraconfio-thankyou" data-tiktok-pixel-id="D9R55UJC77UA78AD3LAG">
+<body class="thankyou-page compraconfio-thankyou" data-tiktok-pixel-id="CTGOEI3C77U22OFG0S3G">
 
 <div class="page">
   <div class="thankyou-brandbar">
@@ -101,39 +101,10 @@
 </div>
 
 <script>
-  !function (w, d, t) {
-    w.TiktokAnalyticsObject = t;
-    var ttq = w[t] = w[t] || [];
-    ttq.methods = ['page', 'track', 'identify', 'instances', 'debug', 'on', 'off', 'once', 'ready', 'alias', 'group', 'enableCookie', 'disableCookie', 'holdConsent', 'revokeConsent', 'grantConsent'];
-    ttq.setAndDefer = function (target, method) {
-      target[method] = function () {
-        target.push([method].concat(Array.prototype.slice.call(arguments, 0)));
-      };
-    };
-    for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
-    ttq.load = function (id, options) {
-      var src = 'https://analytics.tiktok.com/i18n/pixel/events.js';
-      ttq._i = ttq._i || {};
-      ttq._i[id] = [];
-      ttq._i[id]._u = src;
-      ttq._t = ttq._t || {};
-      ttq._t[id] = +new Date();
-      ttq._o = ttq._o || {};
-      ttq._o[id] = options || {};
-      var script = d.createElement('script');
-      script.type = 'text/javascript';
-      script.async = true;
-      script.src = src + '?sdkid=' + id + '&lib=' + t;
-      var firstScript = d.getElementsByTagName('script')[0];
-      firstScript.parentNode.insertBefore(script, firstScript);
-    };
-  }(window, document, 'ttq');
-
   (function() {
     var p = new URLSearchParams(window.location.search);
     var orderId = p.get('order') || ('CC-' + Date.now().toString().slice(-8));
     var productName = p.get('productName') ? decodeURIComponent(p.get('productName')) : 'Máscara Varita de Hierro';
-    var productId = p.get('productId') || 'cc-mascara-1';
     var price = p.get('price') || '299';
     var currency = p.get('currency') || 'GTQ';
     var currencyLabel = currency === 'GTQ' ? 'quetzales' : currency;
@@ -141,7 +112,6 @@
     var shipping = Number(p.get('shipping') || 0);
     var total = p.get('total') || price;
     var totalLabel = 'Q' + total + ' ' + currencyLabel;
-    var pixelId = document.body.dataset.tiktokPixelId || 'D9R55UJC77UA78AD3LAG';
 
     if (p.get('shippingMethod')) {
       document.getElementById('shippingRow').hidden = false;
@@ -166,6 +136,37 @@
     document.getElementById('thankyouProductPrice').textContent = priceLabel;
     document.getElementById('orderPrice').textContent = totalLabel;
     document.getElementById('stepsPrice').textContent = totalLabel;
+
+    var pixelId = document.body.dataset.tiktokPixelId || 'CTGOEI3C77U22OFG0S3G';
+    var productId = p.get('productId') || 'cc-mascara-1';
+
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject = t;
+      var ttq = w[t] = w[t] || [];
+      ttq.methods = ['page', 'track', 'identify', 'instances', 'debug', 'on', 'off', 'once', 'ready', 'alias', 'group', 'enableCookie', 'disableCookie', 'holdConsent', 'revokeConsent', 'grantConsent'];
+      ttq.setAndDefer = function (target, method) {
+        target[method] = function () {
+          target.push([method].concat(Array.prototype.slice.call(arguments, 0)));
+        };
+      };
+      for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
+      ttq.load = function (id, options) {
+        var src = 'https://analytics.tiktok.com/i18n/pixel/events.js';
+        ttq._i = ttq._i || {};
+        ttq._i[id] = [];
+        ttq._i[id]._u = src;
+        ttq._t = ttq._t || {};
+        ttq._t[id] = +new Date();
+        ttq._o = ttq._o || {};
+        ttq._o[id] = options || {};
+        var script = d.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src = src + '?sdkid=' + id + '&lib=' + t;
+        var firstScript = d.getElementsByTagName('script')[0];
+        firstScript.parentNode.insertBefore(script, firstScript);
+      };
+    }(window, document, 'ttq');
 
     ttq.load(pixelId);
     ttq.page();

@@ -660,14 +660,6 @@ document.addEventListener('DOMContentLoaded', function() {
         submitButton.textContent = isSpanishPage() ? 'Confirmando pedido...' : 'جاري تأكيد الطلب...';
       }
 
-      trackTikTok('PlaceAnOrder', {
-        content_id: payload.productId,
-        content_type: 'product',
-        content_name: payload.productName,
-        value: Number(payload.total || payload.price || 0),
-        currency: payload.currency || 'GTQ'
-      });
-
       var result = await submitOrder(payload);
       if (!result || !result.ok) {
         throw new Error(result.message || (isSpanishPage() ? 'No se pudo enviar el pedido' : 'تعذر إرسال الطلب'));
