@@ -161,3 +161,19 @@ body[data-product="tape"] .spec-banner img {
 body[data-product="tape"] .dot.yellow {
   background: var(--tape-yellow);
 }
+
+body[data-product="tape"] .review-card {
+  border-color: var(--tape-line);
+}
+
+@media (min-width: 640px) {
+  body[data-product="tape"] .review-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1004px) {
+  body[data-product="tape"] .review-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
