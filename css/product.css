@@ -548,7 +548,12 @@ button { font: inherit; cursor: pointer; }
   padding: 38px 0;
 }
 
-.feature-inner { display: grid; gap: 18px; align-items: center; }
+.feature-inner {
+  display: grid;
+  gap: 18px;
+  align-items: center;
+  padding: 0 18px;
+}
 
 .feature-media img,
 .feature-media video {
