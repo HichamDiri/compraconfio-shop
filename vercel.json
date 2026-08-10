@@ -2,6 +2,8 @@
   "rewrites": [
     { "source": "/latine-mascara", "destination": "/latine-mascara.html" },
     { "source": "/latine-mascara/", "destination": "/latine-mascara.html" },
+    { "source": "/cinta-doble-cara", "destination": "/cinta-doble-cara.html" },
+    { "source": "/cinta-doble-cara/", "destination": "/cinta-doble-cara.html" },
     { "source": "/thank-you-compraconfio", "destination": "/thank-you-compraconfio.html" },
     { "source": "/thank-you-compraconfio/", "destination": "/thank-you-compraconfio.html" },
     { "source": "/privacidad", "destination": "/privacidad.html" },
