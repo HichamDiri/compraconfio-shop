@@ -1,0 +1,131 @@
+/* CompraConfio — Cactox V-Lifting Band */
+:root {
+  --cactox-green: #6faa2e;
+  --cactox-green-deep: #4d7a1a;
+  --cactox-lime: #d4ed9a;
+  --cactox-soft: #f4f9ec;
+  --cactox-line: #c8ddb0;
+}
+
+body[data-product="cactox"] .announce {
+  background: var(--cactox-green-deep);
+}
+
+body[data-product="cactox"] .deal-strip {
+  background: var(--cactox-green);
+  color: #fff;
+  font-weight: 700;
+}
+
+body[data-product="cactox"] .price-now,
+body[data-product="cactox"] .price-save,
+body[data-product="cactox"] .bundle-flag,
+body[data-product="cactox"] .btn-order,
+body[data-product="cactox"] .btn-buy,
+body[data-product="cactox"] .sticky-bar .js-open-order,
+body[data-product="cactox"] .ship.is-selected .radio,
+body[data-product="cactox"] .bundle.is-selected .radio {
+  background: var(--cactox-green);
+  color: #fff;
+  border-color: var(--cactox-green);
+}
+
+body[data-product="cactox"] .btn-order:hover,
+body[data-product="cactox"] .btn-buy:hover,
+body[data-product="cactox"] .sticky-bar .js-open-order:hover {
+  background: var(--cactox-green-deep);
+}
+
+body[data-product="cactox"] .price-save {
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.78rem;
+}
+
+body[data-product="cactox"] .bundle.is-selected .bundle-card,
+body[data-product="cactox"] .ship.is-selected {
+  border-color: var(--cactox-green);
+  background: var(--cactox-soft);
+}
+
+body[data-product="cactox"] .notice {
+  background: var(--cactox-soft);
+  border-left: 3px solid var(--cactox-green);
+}
+
+body[data-product="cactox"] .guarantee {
+  background: var(--cactox-soft);
+  border-top: 1px solid var(--cactox-line);
+}
+
+body[data-product="cactox"] .hero-lead {
+  font-size: 0.94rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+body[data-product="cactox"] .dot.green {
+  background: var(--cactox-green);
+}
+
+body[data-product="cactox"] .pain-grid {
+  display: grid;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+@media (min-width: 720px) {
+  body[data-product="cactox"] .pain-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+body[data-product="cactox"] .pain-card {
+  border: 1px solid var(--cactox-line);
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+body[data-product="cactox"] .pain-card strong {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+body[data-product="cactox"] .pain-card p {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+body[data-product="cactox"] .info-banner {
+  margin: 0;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+body[data-product="cactox"] .info-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+body[data-product="cactox"] .review-note {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 18px;
+  line-height: 1.55;
+}
+
+body[data-product="cactox"] .review-row p {
+  font-style: italic;
+}
+
+body[data-product="cactox"] .slide video {
+  object-fit: cover;
+  background: #111;
+}
