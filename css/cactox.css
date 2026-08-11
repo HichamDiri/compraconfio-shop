@@ -77,6 +77,46 @@ body[data-product="cactox"] .dot.green {
   background: var(--cactox-green);
 }
 
+body[data-product="cactox"] .story-flow .story-step:first-child {
+  border-top: none;
+}
+
+body[data-product="cactox"] .story-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cactox-green-deep);
+  margin-bottom: 8px;
+}
+
+body[data-product="cactox"] .story-tip {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  background: var(--cactox-soft);
+  border-left: 3px solid var(--cactox-green);
+  border-radius: 0 6px 6px 0;
+}
+
+body[data-product="cactox"] .media-placeholder {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--cactox-line);
+  border-radius: 8px;
+  background: var(--cactox-soft);
+  color: var(--cactox-green-deep);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: 24px;
+}
+
 body[data-product="cactox"] .pain-grid {
   display: grid;
   gap: 14px;
