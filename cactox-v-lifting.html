@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/product.css?v=20260811a">
-  <link rel="stylesheet" href="/css/cactox.css?v=20260811h">
+  <link rel="stylesheet" href="/css/cactox.css?v=20260811i">
 </head>
 <body data-country="GT" data-lang="es" data-brand="compraconfio" data-product="cactox" data-snap-pixel="off" data-tiktok-pixel-id="CTGOEI3C77U22OFG0S3G" data-thankyou="/thank-you-compraconfio.html">
 
@@ -217,7 +217,9 @@
 
     <div class="review-grid">
       <article class="review-card">
-        <img src="/images/cactox-review-6.png" alt="Comparación antes y después del contorno facial" loading="lazy">
+        <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
+          <img src="/images/cactox-review-6.png" alt="Comparación antes y después del contorno facial" loading="lazy">
+        </button>
         <div class="stars">★★★★★</div>
         <p>"Hice fotos de antes y después y se ve la diferencia. Consejo: recortá un poquito donde van las orejas para que no apriete tanto."</p>
         <cite>— Rasha</cite>
@@ -225,8 +227,12 @@
 
       <article class="review-card review-card--duo">
         <div class="review-duo">
-          <img src="/images/cactox-review-4.png" alt="Perfil de mentón y mandíbula sin la banda" loading="lazy">
-          <img src="/images/cactox-review-3.png" alt="Contorno de mandíbula con la banda puesta" loading="lazy">
+          <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
+            <img src="/images/cactox-review-4.png" alt="Perfil de mentón y mandíbula sin la banda" loading="lazy">
+          </button>
+          <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
+            <img src="/images/cactox-review-3.png" alt="Contorno de mandíbula con la banda puesta" loading="lazy">
+          </button>
         </div>
         <div class="stars">★★★★★</div>
         <p>"Al principio no creía. Bajé mucho de peso y me quedó la mandíbula caída. Con una sola vez ya se notó — hay que ser constante para que se mantenga."</p>
@@ -234,35 +240,45 @@
       </article>
 
       <article class="review-card">
-        <img src="/images/cactox-review-1.png" alt="Banda Cactox puesta en casa, vista del mentón" loading="lazy">
+        <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
+          <img src="/images/cactox-review-1.png" alt="Banda Cactox puesta en casa, vista del mentón" loading="lazy">
+        </button>
         <div class="stars">★★★★★</div>
         <p>"Le queda bien incluso a mandíbulas anchas. En 30 minutos ya se siente el efecto."</p>
         <cite>— Kristy</cite>
       </article>
 
       <article class="review-card">
-        <img src="/images/cactox-review-2.png" alt="Perfil lateral con la banda V-Lifting" loading="lazy">
+        <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
+          <img src="/images/cactox-review-2.png" alt="Perfil lateral con la banda V-Lifting" loading="lazy">
+        </button>
         <div class="stars">★★★★★</div>
         <p>"Llevo unas semanas usándola por la noche. La mandíbula se ve más definida y la piel del mentón queda más firme y fresca."</p>
         <cite>— Annette</cite>
       </article>
 
       <article class="review-card">
-        <img src="/images/cactox-review-7.png" alt="Vista desde abajo de la banda en el mentón" loading="lazy">
+        <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
+          <img src="/images/cactox-review-7.png" alt="Vista desde abajo de la banda en el mentón" loading="lazy">
+        </button>
         <div class="stars">★★★★★</div>
         <p>"El efecto frío es lo que más me gusta. Estirala bien hasta la oreja y, si aprieta, hacé un corte ahí — queda mucho más cómodo."</p>
         <cite>— Candie</cite>
       </article>
 
       <article class="review-card">
-        <img src="/images/cactox-review-8.png" alt="Caja Cactox Cooling V-Up Mask recibida" loading="lazy">
+        <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
+          <img src="/images/cactox-review-8.png" alt="Caja Cactox Cooling V-Up Mask recibida" loading="lazy">
+        </button>
         <div class="stars">★★★★★</div>
         <p>"De verdad ayuda a mejorar la papada. Me gustó mucho, la recomiendo."</p>
         <cite>— Cleudys</cite>
       </article>
 
       <article class="review-card">
-        <img src="/images/cactox-review-5.png" alt="Bandas y caja abiertas sobre la mesa" loading="lazy">
+        <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
+          <img src="/images/cactox-review-5.png" alt="Bandas y caja abiertas sobre la mesa" loading="lazy">
+        </button>
         <div class="stars">★★★★★</div>
         <p>"Muy buena, de verdad se siente la diferencia. Sigo usándola sin parar."</p>
         <cite>— Cinthya</cite>
@@ -367,6 +383,19 @@
     <span id="stickyLabel">1 Caja</span>
   </div>
   <button type="button" class="js-open-order">Quiero probarla</button>
+</div>
+
+<div class="review-lightbox" id="reviewLightbox" role="dialog" aria-modal="true" aria-label="Foto de reseña ampliada" hidden>
+  <div class="review-lightbox-backdrop" data-close-lightbox></div>
+  <div class="review-lightbox-panel">
+    <button type="button" class="review-lightbox-close" data-close-lightbox aria-label="Cerrar">&times;</button>
+    <button type="button" class="review-lightbox-nav is-prev" id="reviewLightboxPrev" aria-label="Foto anterior">&#8249;</button>
+    <figure class="review-lightbox-figure">
+      <img id="reviewLightboxImg" src="" alt="">
+      <figcaption id="reviewLightboxCount"></figcaption>
+    </figure>
+    <button type="button" class="review-lightbox-nav is-next" id="reviewLightboxNext" aria-label="Foto siguiente">&#8250;</button>
+  </div>
 </div>
 
 <div class="order-modal" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
@@ -668,6 +697,70 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!wasOpen) item.classList.add('is-open');
     });
   });
+
+  var lightbox = document.getElementById('reviewLightbox');
+  var lightboxImg = document.getElementById('reviewLightboxImg');
+  var lightboxCount = document.getElementById('reviewLightboxCount');
+  var lightboxPrev = document.getElementById('reviewLightboxPrev');
+  var lightboxNext = document.getElementById('reviewLightboxNext');
+  var lightboxClose = lightbox ? lightbox.querySelector('.review-lightbox-close') : null;
+  var reviewPhotos = Array.prototype.slice.call(document.querySelectorAll('#resenas .js-review-photo img'));
+  var lightboxIndex = 0;
+  var lightboxLastFocused = null;
+
+  function showLightboxPhoto(index) {
+    if (!reviewPhotos.length) return;
+    lightboxIndex = (index + reviewPhotos.length) % reviewPhotos.length;
+    var photo = reviewPhotos[lightboxIndex];
+    lightboxImg.src = photo.src;
+    lightboxImg.alt = photo.alt;
+    lightboxCount.textContent = (lightboxIndex + 1) + ' / ' + reviewPhotos.length;
+    lightboxPrev.disabled = reviewPhotos.length <= 1;
+    lightboxNext.disabled = reviewPhotos.length <= 1;
+  }
+
+  function openLightbox(index) {
+    if (!lightbox || !reviewPhotos.length) return;
+    lightboxLastFocused = document.activeElement;
+    showLightboxPhoto(index);
+    lightbox.hidden = false;
+    lightbox.classList.add('is-open');
+    document.body.classList.add('no-scroll');
+    if (lightboxClose) lightboxClose.focus({ preventScroll: true });
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('is-open');
+    lightbox.hidden = true;
+    lightboxImg.removeAttribute('src');
+    if (!modal.classList.contains('is-open')) document.body.classList.remove('no-scroll');
+    if (lightboxLastFocused) lightboxLastFocused.focus({ preventScroll: true });
+  }
+
+  if (lightbox) {
+    document.querySelectorAll('#resenas .js-review-photo').forEach(function (btn, index) {
+      btn.addEventListener('click', function () { openLightbox(index); });
+    });
+
+    lightbox.querySelectorAll('[data-close-lightbox]').forEach(function (btn) {
+      btn.addEventListener('click', closeLightbox);
+    });
+
+    lightboxPrev.addEventListener('click', function () { showLightboxPhoto(lightboxIndex - 1); });
+    lightboxNext.addEventListener('click', function () { showLightboxPhoto(lightboxIndex + 1); });
+
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showLightboxPhoto(lightboxIndex - 1);
+      if (e.key === 'ArrowRight') showLightboxPhoto(lightboxIndex + 1);
+    });
+  }
 });
 </script>
 </body>
