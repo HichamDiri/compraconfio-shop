@@ -162,6 +162,80 @@ body[data-product="tape"] .dot.yellow {
   background: var(--tape-yellow);
 }
 
+body[data-product="tape"] .hero-hook {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--tape-yellow-deep);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+body[data-product="tape"] .hero-lead {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+body[data-product="tape"] .hero-shipping {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin: 8px 0 14px;
+}
+
+body[data-product="tape"] .hero-cod {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+body[data-product="tape"] .perks li {
+  font-size: 0.88rem;
+}
+
+body[data-product="tape"] .use-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 14px;
+  margin-top: 8px;
+}
+
+body[data-product="tape"] .use-list li {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  padding: 10px 12px;
+  border: 1px solid var(--tape-line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+@media (min-width: 720px) {
+  body[data-product="tape"] .use-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+body[data-product="tape"] .bundle-save {
+  margin: 0;
+  padding: 0 14px 12px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--ok);
+}
+
+body[data-product="tape"] .bundle-trust {
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin: -6px 0 18px;
+  color: var(--ink);
+}
+
 body[data-product="tape"] .review-card {
   border-color: var(--tape-line);
 }
