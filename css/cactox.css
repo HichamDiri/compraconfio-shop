@@ -129,3 +129,46 @@ body[data-product="cactox"] .slide video {
   object-fit: cover;
   background: #111;
 }
+
+body[data-product="cactox"] .ugc-rail {
+  align-items: stretch;
+}
+
+body[data-product="cactox"] .ugc-card {
+  flex: 0 0 72%;
+  scroll-snap-align: start;
+  border: 1px solid var(--cactox-line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+@media (min-width: 720px) {
+  body[data-product="cactox"] .ugc-card {
+    flex: 0 0 280px;
+  }
+}
+
+body[data-product="cactox"] .ugc-card video {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  display: block;
+  background: #111;
+}
+
+body[data-product="cactox"] .ugc-quote {
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: #333;
+  padding: 12px 14px 6px;
+  margin: 0;
+  font-style: italic;
+}
+
+body[data-product="cactox"] .ugc-card .ugc-name {
+  padding: 0 14px 14px;
+  margin-top: 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}

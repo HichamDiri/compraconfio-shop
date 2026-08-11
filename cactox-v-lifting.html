@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/product.css?v=20260811a">
-  <link rel="stylesheet" href="/css/cactox.css?v=20260811a">
+  <link rel="stylesheet" href="/css/cactox.css?v=20260811b">
 </head>
 <body data-country="GT" data-lang="es" data-brand="compraconfio" data-product="cactox" data-snap-pixel="off" data-tiktok-pixel-id="CTGOEI3C77U22OFG0S3G" data-thankyou="/thank-you-compraconfio.html">
 
@@ -42,25 +42,13 @@
     <section class="gallery" id="heroSection">
       <div class="gallery-stage" id="galleryTrack">
         <div class="slide">
-          <video src="/videos/cactox-1.mp4" muted playsinline loop autoplay preload="metadata" poster="/images/cactox-hero.png"></video>
-        </div>
-        <div class="slide">
           <img class="is-contain" src="/images/cactox-hero.png" alt="Cactox V-Lifting Band — caja con 4 bandas de mentón">
-        </div>
-        <div class="slide">
-          <video src="/videos/cactox-2.mp4" muted playsinline loop preload="metadata" poster="/images/cactox-benefits.png"></video>
         </div>
         <div class="slide">
           <img src="/images/cactox-benefits.png" alt="Beneficios: define mandíbula, reduce papada, efecto lifting" loading="lazy">
         </div>
         <div class="slide">
-          <video src="/videos/cactox-3.mp4" muted playsinline loop preload="metadata" poster="/images/cactox-ingredient.png"></video>
-        </div>
-        <div class="slide">
           <img src="/images/cactox-ingredient.png" alt="Cactox Elixir — suero de nopal con efecto refrescante" loading="lazy">
-        </div>
-        <div class="slide">
-          <video src="/videos/cactox-4.mp4" muted playsinline loop preload="metadata" poster="/images/cactox-results.png"></video>
         </div>
         <div class="slide">
           <img src="/images/cactox-results.png" alt="Resultados visibles en mandíbula y mentón" loading="lazy">
@@ -77,13 +65,9 @@
       </div>
       <div class="gallery-dots" id="galleryDots" aria-hidden="true"></div>
       <div class="gallery-thumbs">
-        <button type="button" class="thumb thumb-video is-active" aria-label="Video 1"><img src="/images/cactox-hero.png" alt=""></button>
-        <button type="button" class="thumb" aria-label="Producto"><img src="/images/cactox-hero.png" alt=""></button>
-        <button type="button" class="thumb thumb-video" aria-label="Video 2"><img src="/images/cactox-benefits.png" alt=""></button>
+        <button type="button" class="thumb is-active" aria-label="Producto"><img src="/images/cactox-hero.png" alt=""></button>
         <button type="button" class="thumb" aria-label="Beneficios"><img src="/images/cactox-benefits.png" alt=""></button>
-        <button type="button" class="thumb thumb-video" aria-label="Video 3"><img src="/images/cactox-ingredient.png" alt=""></button>
         <button type="button" class="thumb" aria-label="Ingredientes"><img src="/images/cactox-ingredient.png" alt=""></button>
-        <button type="button" class="thumb thumb-video" aria-label="Video 4"><img src="/images/cactox-results.png" alt=""></button>
         <button type="button" class="thumb" aria-label="Resultados"><img src="/images/cactox-results.png" alt=""></button>
         <button type="button" class="thumb" aria-label="Fórmula"><img src="/images/cactox-special.png" alt=""></button>
         <button type="button" class="thumb" aria-label="Modo de uso"><img src="/images/cactox-howto.png" alt=""></button>
@@ -211,6 +195,35 @@
 </div>
 
 <div class="strip">Envío gratis · Pago contra entrega · Garantía de 30 días</div>
+
+<section class="section" id="video-testimonials">
+  <div class="shell">
+    <h2 class="section-title">Clientas que ya la probaron</h2>
+    <p class="section-lead">Videos reales de uso — desliza para ver más.</p>
+    <div class="ugc-rail">
+      <article class="ugc-card">
+        <video src="/videos/cactox-1.mp4" muted playsinline loop autoplay preload="metadata" poster="/images/cactox-hero.png"></video>
+        <p class="ugc-quote">"Me encanta lo refrescante que se siente. Mi cara se ve menos hinchada después de usarla."</p>
+        <p class="ugc-name">María · Ciudad de Guatemala</p>
+      </article>
+      <article class="ugc-card">
+        <video src="/videos/cactox-2.mp4" muted playsinline loop autoplay preload="metadata" poster="/images/cactox-benefits.png"></video>
+        <p class="ugc-quote">"Ya es parte de mi rutina nocturna. Se queda en su lugar y la mandíbula se siente más definida."</p>
+        <p class="ugc-name">Ana · Mixco</p>
+      </article>
+      <article class="ugc-card">
+        <video src="/videos/cactox-3.mp4" muted playsinline loop autoplay preload="metadata" poster="/images/cactox-ingredient.png"></video>
+        <p class="ugc-quote">"Al principio dudaba, pero sí noté menos hinchazón. El efecto frío es lo que más me gusta."</p>
+        <p class="ugc-name">Lucía · Antigua Guatemala</p>
+      </article>
+      <article class="ugc-card">
+        <video src="/videos/cactox-4.mp4" muted playsinline loop autoplay preload="metadata" poster="/images/cactox-results.png"></video>
+        <p class="ugc-quote">"La uso cuando me levanto con la cara inflada. Deja la piel suave y el perfil más marcado."</p>
+        <p class="ugc-name">Sofía · Quetzaltenango</p>
+      </article>
+    </div>
+  </div>
+</section>
 
 <section class="section" id="resenas">
   <div class="shell">
@@ -466,21 +479,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var dots = document.getElementById('galleryDots');
   var thumbs = Array.prototype.slice.call(document.querySelectorAll('.thumb'));
 
-  function syncVideos(index) {
-    if (!track) return;
-    var slides = track.querySelectorAll('.slide');
-    Array.prototype.forEach.call(slides, function (slide, i) {
-      var video = slide.querySelector('video');
-      if (!video) return;
-      if (i === index) {
-        video.muted = true;
-        video.play().catch(function () {});
-      } else {
-        video.pause();
-      }
-    });
-  }
-
   if (track) {
     var slides = Array.prototype.slice.call(track.querySelectorAll('.slide'));
     var current = -1;
@@ -492,7 +490,6 @@ document.addEventListener('DOMContentLoaded', function () {
       current = index;
       thumbs.forEach(function (t, i) { t.classList.toggle('is-active', i === index); });
       Array.prototype.forEach.call(dots.children, function (d, i) { d.classList.toggle('is-active', i === index); });
-      syncVideos(index);
     }
 
     thumbs.forEach(function (thumb, i) {
