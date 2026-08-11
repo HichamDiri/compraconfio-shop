@@ -162,6 +162,14 @@ body[data-product="tape"] .dot.yellow {
   background: var(--tape-yellow);
 }
 
+body[data-product="tape"] .product-name {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
 body[data-product="tape"] .hero-hook {
   font-size: 0.78rem;
   font-weight: 800;
