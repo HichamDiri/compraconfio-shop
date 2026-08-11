@@ -184,6 +184,21 @@ body[data-product="cactox"] .review-card p {
   font-style: normal;
 }
 
+body[data-product="cactox"] .review-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--cactox-line);
+}
+
+body[data-product="cactox"] .review-duo img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
 @media (min-width: 640px) {
   body[data-product="cactox"] .review-grid {
     grid-template-columns: repeat(2, 1fr);
