@@ -166,6 +166,16 @@ body[data-product="tape"] .review-card {
   border-color: var(--tape-line);
 }
 
+body[data-product="tape"] .review-card h3 {
+  padding: 16px 20px 0;
+  margin-bottom: 6px;
+}
+
+body[data-product="tape"] .review-card p {
+  padding: 0 20px 20px;
+  margin-bottom: 0;
+}
+
 @media (min-width: 640px) {
   body[data-product="tape"] .review-grid {
     grid-template-columns: repeat(2, 1fr);
