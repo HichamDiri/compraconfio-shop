@@ -58,6 +58,14 @@ body[data-product="cactox"] .guarantee {
   border-top: 1px solid var(--cactox-line);
 }
 
+body[data-product="cactox"] .hero-hook {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
 body[data-product="cactox"] .hero-lead {
   font-size: 0.94rem;
   color: var(--muted);
