@@ -169,8 +169,31 @@ body[data-product="cactox"] .review-note {
   line-height: 1.55;
 }
 
-body[data-product="cactox"] .review-row p {
-  font-style: italic;
+body[data-product="cactox"] .review-card {
+  border-color: var(--cactox-line);
+}
+
+body[data-product="cactox"] .review-card h3 {
+  padding: 16px 20px 0;
+  margin-bottom: 6px;
+}
+
+body[data-product="cactox"] .review-card p {
+  padding: 0 20px 20px;
+  margin-bottom: 0;
+  font-style: normal;
+}
+
+@media (min-width: 640px) {
+  body[data-product="cactox"] .review-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1004px) {
+  body[data-product="cactox"] .review-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 body[data-product="cactox"] .slide video {
