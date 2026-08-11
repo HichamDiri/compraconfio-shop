@@ -173,15 +173,47 @@ body[data-product="cactox"] .review-card {
   border-color: var(--cactox-line);
 }
 
-body[data-product="cactox"] .review-card h3 {
+body[data-product="cactox"] .review-card .stars {
   padding: 16px 20px 0;
-  margin-bottom: 6px;
+  color: var(--cactox-green-deep);
 }
 
 body[data-product="cactox"] .review-card p {
+  padding: 8px 20px 0;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+body[data-product="cactox"] .review-card cite {
   padding: 0 20px 20px;
-  margin-bottom: 0;
+  margin-top: auto;
+  font-size: 0.78rem;
   font-style: normal;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+body[data-product="cactox"] .review-list {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--cactox-line);
+}
+
+body[data-product="cactox"] .review-row cite {
+  display: block;
+  font-size: 0.78rem;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+body[data-product="cactox"] .review-row .stars {
+  color: var(--cactox-green-deep);
+}
+
+body[data-product="cactox"] .review-row p {
+  font-style: italic;
 }
 
 body[data-product="cactox"] .review-duo {
