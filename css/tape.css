@@ -58,6 +58,16 @@ body[data-product="tape"] .notice {
   border-left: 3px solid var(--tape-yellow);
 }
 
+body[data-product="tape"] .hero-quote {
+  margin-top: 18px;
+  border: 1px solid var(--tape-line);
+  background: var(--tape-soft);
+}
+
+body[data-product="tape"] .hero-quote img {
+  object-fit: cover;
+}
+
 body[data-product="tape"] .guarantee {
   background: var(--tape-soft);
   border-top: 1px solid var(--tape-line);
