@@ -491,7 +491,16 @@ body[data-product="deoxyribose"] .review-card .stars {
 body[data-product="deoxyribose"] .review-card p {
   padding: 8px 20px 0;
   margin-bottom: 10px;
-  font-style: italic;
+  font-style: normal;
+}
+
+body[data-product="deoxyribose"] .review-row p {
+  font-style: normal;
+}
+
+body[data-product="deoxyribose"] .review-row-long p {
+  font-size: 0.84rem;
+  line-height: 1.65;
 }
 
 body[data-product="deoxyribose"] .review-card cite {
