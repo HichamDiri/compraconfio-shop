@@ -12,12 +12,6 @@ body[data-product="deoxyribose"] .announce {
   background: var(--deoxy-navy-deep);
 }
 
-body[data-product="deoxyribose"] .deal-strip {
-  background: var(--deoxy-navy);
-  color: #fff;
-  font-weight: 700;
-}
-
 body[data-product="deoxyribose"] .price-now,
 body[data-product="deoxyribose"] .price-save,
 body[data-product="deoxyribose"] .bundle-flag,
