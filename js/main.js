@@ -195,18 +195,20 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
 
-    var tiktokPixelId = document.body && document.body.dataset.tiktokPixelId
-      ? document.body.dataset.tiktokPixelId
-      : '';
-    if (tiktokPixelId) {
-      initTikTokPixel(tiktokPixelId);
-      trackTikTok('ViewContent', {
-        content_id: trackingProductId,
-        content_type: 'product',
-        content_name: snapshot.contentName || 'Máscara Varita de Hierro',
-        value: trackingPrice,
-        currency: trackingCurrency
-      });
+    if (document.body && document.body.dataset.tiktokPixel !== 'off') {
+      var tiktokPixelId = document.body && document.body.dataset.tiktokPixelId
+        ? document.body.dataset.tiktokPixelId
+        : '';
+      if (tiktokPixelId) {
+        initTikTokPixel(tiktokPixelId);
+        trackTikTok('ViewContent', {
+          content_id: trackingProductId,
+          content_type: 'product',
+          content_name: snapshot.contentName || 'Máscara Varita de Hierro',
+          value: trackingPrice,
+          currency: trackingCurrency
+        });
+      }
     }
   }
 
