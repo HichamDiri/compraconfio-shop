@@ -11,7 +11,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/product.css?v=20260817a">
-  <link rel="stylesheet" href="/css/purple-mouthwash.css?v=20260817b">
+  <link rel="stylesheet" href="/css/purple-mouthwash.css?v=20260817c">
 </head>
 <body data-country="GT" data-lang="es" data-brand="compraconfio" data-product="purple-mouthwash" data-snap-pixel="off" data-tiktok-pixel-id="CTGOEI3C77U22OFG0S3G" data-thankyou="/thank-you-compraconfio.html">
 
@@ -170,10 +170,24 @@
         <button type="button" class="text-link js-open-order">Quiero probarlo</button>
       </div>
       <div class="promo-media">
-        <picture>
-          <source type="image/webp" srcset="/images/purple-smile-ba.webp">
-          <img src="/images/purple-smile-ba.png" alt="Antes y después — sonrisa más blanca con enjuague bucal morado" width="1024" height="411" loading="lazy" decoding="async">
-        </picture>
+        <div class="ba-compare" data-ba-compare>
+          <div class="ba-compare__inner" style="--pos: 50">
+            <picture>
+              <source type="image/webp" srcset="/images/purple-smile-after.webp">
+              <img class="ba-compare__after" src="/images/purple-smile-after.png" alt="Después — dientes más blancos" width="1024" height="411" loading="lazy" decoding="async">
+            </picture>
+            <div class="ba-compare__before" aria-hidden="true">
+              <picture>
+                <source type="image/webp" srcset="/images/purple-smile-before.webp">
+                <img src="/images/purple-smile-before.png" alt="" width="1024" height="411" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <span class="ba-compare__label is-before">Antes</span>
+            <span class="ba-compare__label is-after">Después</span>
+            <div class="ba-compare__divider" aria-hidden="true"><span class="ba-compare__knob"></span></div>
+            <input class="ba-compare__range" type="range" min="1" max="99" value="50" aria-label="Comparar antes y después">
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -803,6 +817,19 @@ document.addEventListener('DOMContentLoaded', function () {
       if (e.key === 'ArrowLeft') showLightboxPhoto(lightboxIndex - 1);
       if (e.key === 'ArrowRight') showLightboxPhoto(lightboxIndex + 1);
     });
+  }
+
+  var baCompare = document.querySelector('[data-ba-compare]');
+  if (baCompare) {
+    var baInner = baCompare.querySelector('.ba-compare__inner');
+    var baRange = baCompare.querySelector('.ba-compare__range');
+    function setBaPos(value) {
+      var pos = Math.max(0, Math.min(100, Number(value)));
+      baInner.style.setProperty('--pos', pos);
+      baRange.value = String(pos);
+    }
+    baRange.addEventListener('input', function () { setBaPos(baRange.value); });
+    setBaPos(baRange.value);
   }
 
   var lazyVideos = Array.prototype.slice.call(document.querySelectorAll('.js-lazy-video[data-src]'));
