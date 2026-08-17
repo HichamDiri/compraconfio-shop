@@ -1,0 +1,277 @@
+/* CompraConfio — Deoxyribose Scalp Serum (hombres) */
+:root {
+  --deoxy-navy: #1a2b4a;
+  --deoxy-navy-deep: #0f1a2e;
+  --deoxy-blue: #2d6cdf;
+  --deoxy-soft: #eef3fb;
+  --deoxy-line: #c5d4ea;
+  --deoxy-mint: #5ec4b6;
+}
+
+body[data-product="deoxyribose"] .announce {
+  background: var(--deoxy-navy-deep);
+}
+
+body[data-product="deoxyribose"] .deal-strip {
+  background: var(--deoxy-navy);
+  color: #fff;
+  font-weight: 700;
+}
+
+body[data-product="deoxyribose"] .price-now,
+body[data-product="deoxyribose"] .price-save,
+body[data-product="deoxyribose"] .bundle-flag,
+body[data-product="deoxyribose"] .btn-order,
+body[data-product="deoxyribose"] .btn-buy,
+body[data-product="deoxyribose"] .sticky-bar .js-open-order,
+body[data-product="deoxyribose"] .ship.is-selected .radio,
+body[data-product="deoxyribose"] .bundle.is-selected .radio {
+  background: var(--deoxy-blue);
+  color: #fff;
+  border-color: var(--deoxy-blue);
+}
+
+body[data-product="deoxyribose"] .btn-order:hover,
+body[data-product="deoxyribose"] .btn-buy:hover,
+body[data-product="deoxyribose"] .sticky-bar .js-open-order:hover {
+  background: var(--deoxy-navy);
+}
+
+body[data-product="deoxyribose"] .price-save {
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.78rem;
+}
+
+body[data-product="deoxyribose"] .bundle.is-selected .bundle-card,
+body[data-product="deoxyribose"] .ship.is-selected {
+  border-color: var(--deoxy-blue);
+  background: var(--deoxy-soft);
+}
+
+body[data-product="deoxyribose"] .notice {
+  background: var(--deoxy-soft);
+  border-left: 3px solid var(--deoxy-blue);
+}
+
+body[data-product="deoxyribose"] .guarantee {
+  background: var(--deoxy-soft);
+  border-top: 1px solid var(--deoxy-line);
+}
+
+body[data-product="deoxyribose"] .hero-hook {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+body[data-product="deoxyribose"] .hero-lead {
+  font-size: 0.94rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+body[data-product="deoxyribose"] .hero-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--deoxy-blue);
+  background: var(--deoxy-soft);
+  border: 1px solid var(--deoxy-line);
+  border-radius: 999px;
+  padding: 6px 12px;
+  margin-bottom: 12px;
+}
+
+body[data-product="deoxyribose"] .dot.blue {
+  background: var(--deoxy-blue);
+}
+
+body[data-product="deoxyribose"] .media-placeholder {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 2px dashed var(--deoxy-line);
+  border-radius: 8px;
+  background: var(--deoxy-soft);
+  color: var(--deoxy-navy);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 24px;
+  min-height: 280px;
+}
+
+body[data-product="deoxyribose"] .media-placeholder span {
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: var(--muted);
+  max-width: 220px;
+  line-height: 1.45;
+}
+
+body[data-product="deoxyribose"] .gallery-stage .slide .media-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border-radius: 0;
+}
+
+body[data-product="deoxyribose"] .thumb .media-placeholder {
+  min-height: 48px;
+  aspect-ratio: 1;
+  padding: 4px;
+  font-size: 0.6rem;
+  border-width: 1px;
+}
+
+body[data-product="deoxyribose"] .story-flow .story-step:first-child {
+  border-top: none;
+}
+
+body[data-product="deoxyribose"] .story-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--deoxy-navy);
+  margin-bottom: 8px;
+}
+
+body[data-product="deoxyribose"] .story-tip {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  background: var(--deoxy-soft);
+  border-left: 3px solid var(--deoxy-blue);
+  border-radius: 0 6px 6px 0;
+}
+
+body[data-product="deoxyribose"] .timeline-grid {
+  display: grid;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+@media (min-width: 720px) {
+  body[data-product="deoxyribose"] .timeline-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+body[data-product="deoxyribose"] .timeline-card {
+  border: 1px solid var(--deoxy-line);
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+body[data-product="deoxyribose"] .timeline-card strong {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--deoxy-blue);
+  margin-bottom: 6px;
+}
+
+body[data-product="deoxyribose"] .timeline-card h3 {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+body[data-product="deoxyribose"] .timeline-card p {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+body[data-product="deoxyribose"] .ingredient-list {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+body[data-product="deoxyribose"] .ingredient-list li {
+  font-size: 0.86rem;
+  color: #333;
+  line-height: 1.5;
+  padding-left: 18px;
+  position: relative;
+}
+
+body[data-product="deoxyribose"] .ingredient-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--deoxy-blue);
+  font-weight: 700;
+}
+
+body[data-product="deoxyribose"] .review-list {
+  margin-top: 0;
+}
+
+body[data-product="deoxyribose"] .review-row .stars {
+  color: var(--deoxy-navy);
+}
+
+body[data-product="deoxyribose"] .review-row p {
+  font-style: italic;
+}
+
+body[data-product="deoxyribose"] .review-row cite {
+  display: block;
+  font-size: 0.78rem;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+body[data-product="deoxyribose"] .compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+  margin-top: 12px;
+}
+
+body[data-product="deoxyribose"] .compare-table th,
+body[data-product="deoxyribose"] .compare-table td {
+  border: 1px solid var(--deoxy-line);
+  padding: 10px 12px;
+  text-align: left;
+}
+
+body[data-product="deoxyribose"] .compare-table th {
+  background: var(--deoxy-soft);
+  font-weight: 700;
+}
+
+body[data-product="deoxyribose"] .compare-table .is-yes {
+  color: var(--deoxy-blue);
+  font-weight: 700;
+}
+
+body[data-product="deoxyribose"] .order-product .media-placeholder {
+  width: 54px;
+  height: 54px;
+  min-height: 54px;
+  padding: 6px;
+  font-size: 0.55rem;
+}
