@@ -517,19 +517,12 @@ body[data-product="deoxyribose"] .compare-heading {
 
 body[data-product="deoxyribose"] .compare-wrap {
   position: relative;
-  padding: 18px 0;
+  padding: 16px 0;
+  overflow: visible;
 }
 
 body[data-product="deoxyribose"] .compare-pill {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: calc(60% + 3px);
-  width: calc(20% - 6px);
-  background: var(--deoxy-navy);
-  border-radius: 12px;
-  z-index: 0;
-  pointer-events: none;
+  display: none;
 }
 
 body[data-product="deoxyribose"] .compare-grid {
@@ -537,14 +530,14 @@ body[data-product="deoxyribose"] .compare-grid {
   z-index: 1;
   border: 1px solid var(--deoxy-line);
   border-radius: 10px;
-  overflow: hidden;
-  background: #fff;
+  overflow: visible;
+  background: transparent;
 }
 
 body[data-product="deoxyribose"] .compare-row {
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
-  border-bottom: 1px solid var(--deoxy-line);
+  grid-template-columns: 2.15fr 1fr 0.85fr;
+  border-bottom: none;
 }
 
 body[data-product="deoxyribose"] .compare-row:last-child {
@@ -556,27 +549,47 @@ body[data-product="deoxyribose"] .compare-cell {
   align-items: center;
   min-height: 52px;
   padding: 12px 14px;
+  background: #fff;
 }
 
 body[data-product="deoxyribose"] .compare-feature {
   font-size: 0.88rem;
   line-height: 1.45;
   border-right: 1px solid var(--deoxy-line);
+  border-bottom: 1px solid var(--deoxy-line);
 }
 
 body[data-product="deoxyribose"] .compare-row-head .compare-feature {
   min-height: 44px;
+  border-top-left-radius: 10px;
+}
+
+body[data-product="deoxyribose"] .compare-row:last-child .compare-feature {
+  border-bottom: none;
+  border-bottom-left-radius: 10px;
+}
+
+body[data-product="deoxyribose"] .compare-brand,
+body[data-product="deoxyribose"] .compare-yes {
+  background: var(--deoxy-navy);
 }
 
 body[data-product="deoxyribose"] .compare-brand {
   justify-content: center;
   text-align: center;
   border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  position: relative;
+  top: -14px;
+  margin-bottom: -14px;
+  padding-top: 22px;
+  min-height: 62px;
 }
 
 body[data-product="deoxyribose"] .compare-brand-mark {
   font-family: var(--serif);
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: lowercase;
@@ -594,6 +607,8 @@ body[data-product="deoxyribose"] .compare-others-head {
   text-align: center;
   font-size: 0.88rem;
   font-weight: 700;
+  border-bottom: 1px solid var(--deoxy-line);
+  border-top-right-radius: 10px;
 }
 
 body[data-product="deoxyribose"] .compare-yes {
@@ -601,6 +616,14 @@ body[data-product="deoxyribose"] .compare-yes {
   font-size: 1.2rem;
   font-weight: 700;
   color: #16a34a;
+  border-bottom: none;
+}
+
+body[data-product="deoxyribose"] .compare-row:last-child .compare-yes {
+  border-radius: 0 0 12px 12px;
+  position: relative;
+  bottom: -14px;
+  padding-bottom: 22px;
 }
 
 body[data-product="deoxyribose"] .compare-no {
@@ -609,6 +632,16 @@ body[data-product="deoxyribose"] .compare-no {
   font-weight: 600;
   color: #111;
   border-left: 1px solid var(--deoxy-line);
+  border-bottom: 1px solid var(--deoxy-line);
+}
+
+body[data-product="deoxyribose"] .compare-row-head .compare-no {
+  border-top-right-radius: 10px;
+}
+
+body[data-product="deoxyribose"] .compare-row:last-child .compare-no {
+  border-bottom: none;
+  border-bottom-right-radius: 10px;
 }
 
 @media (min-width: 900px) {
@@ -629,7 +662,7 @@ body[data-product="deoxyribose"] .compare-no {
   }
 
   body[data-product="deoxyribose"] .compare-brand-mark {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   body[data-product="deoxyribose"] .compare-others-head {
