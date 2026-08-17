@@ -13,7 +13,13 @@
       ]
     },
     {
-      "source": "/deoxyribose-serum/",
+      "source": "/purple-mouthwash",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/purple-mouthwash/",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
@@ -52,6 +58,8 @@
     { "source": "/cactox-v-lifting/", "destination": "/cactox-v-lifting.html" },
     { "source": "/deoxyribose-serum", "destination": "/deoxyribose-serum.html" },
     { "source": "/deoxyribose-serum/", "destination": "/deoxyribose-serum.html" },
+    { "source": "/purple-mouthwash", "destination": "/purple-mouthwash.html" },
+    { "source": "/purple-mouthwash/", "destination": "/purple-mouthwash.html" },
     { "source": "/thank-you-compraconfio", "destination": "/thank-you-compraconfio.html" },
     { "source": "/thank-you-compraconfio/", "destination": "/thank-you-compraconfio.html" },
     { "source": "/privacidad", "destination": "/privacidad.html" },
