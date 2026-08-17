@@ -860,14 +860,6 @@ body[data-product="deoxyribose"] .compare-grid > .compare-cell:nth-last-child(1)
   }
 }
 
-body[data-product="deoxyribose"] .order-product .media-placeholder {
-  width: 54px;
-  height: 54px;
-  min-height: 54px;
-  padding: 6px;
-  font-size: 0.55rem;
-}
-
 body[data-product="deoxyribose"] .section-testimonials {
   border-top: 1px solid var(--deoxy-line);
   padding-top: 28px;
