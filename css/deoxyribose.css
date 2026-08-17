@@ -474,7 +474,194 @@ body[data-product="deoxyribose"] .ingredient-list li::before {
 }
 
 body[data-product="deoxyribose"] .review-list {
-  margin-top: 0;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--deoxy-line);
+}
+
+body[data-product="deoxyribose"] .review-card {
+  border-color: var(--deoxy-line);
+}
+
+body[data-product="deoxyribose"] .review-card .stars {
+  padding: 16px 20px 0;
+  color: var(--deoxy-navy);
+}
+
+body[data-product="deoxyribose"] .review-card p {
+  padding: 8px 20px 0;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+body[data-product="deoxyribose"] .review-card cite {
+  padding: 0 20px 20px;
+  margin-top: auto;
+  font-size: 0.78rem;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+body[data-product="deoxyribose"] .review-photo-btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+  position: relative;
+}
+
+body[data-product="deoxyribose"] .review-photo-btn img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+  background: #eef3fb;
+}
+
+body[data-product="deoxyribose"] .review-photo-btn::after {
+  content: "⤢";
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #333;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+body[data-product="deoxyribose"] .review-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 130;
+  align-items: center;
+  justify-content: center;
+}
+
+body[data-product="deoxyribose"] .review-lightbox.is-open {
+  display: flex;
+}
+
+body[data-product="deoxyribose"] .review-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+body[data-product="deoxyribose"] .review-lightbox-panel {
+  position: relative;
+  z-index: 1;
+  width: min(94vw, 760px);
+  max-height: 92vh;
+  padding: 52px 48px;
+}
+
+body[data-product="deoxyribose"] .review-lightbox-figure {
+  margin: 0;
+}
+
+body[data-product="deoxyribose"] .review-lightbox-figure img {
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+  background: #111;
+}
+
+body[data-product="deoxyribose"] .review-lightbox-figure figcaption {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+body[data-product="deoxyribose"] .review-lightbox-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+body[data-product="deoxyribose"] .review-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+body[data-product="deoxyribose"] .review-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+body[data-product="deoxyribose"] .review-lightbox-nav:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+body[data-product="deoxyribose"] .review-lightbox-nav:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+body[data-product="deoxyribose"] .review-lightbox-nav.is-prev {
+  left: 0;
+}
+
+body[data-product="deoxyribose"] .review-lightbox-nav.is-next {
+  right: 0;
+}
+
+@media (max-width: 640px) {
+  body[data-product="deoxyribose"] .review-lightbox-panel {
+    padding: 44px 36px;
+  }
+
+  body[data-product="deoxyribose"] .review-lightbox-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 640px) {
+  body[data-product="deoxyribose"] .review-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1004px) {
+  body[data-product="deoxyribose"] .review-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 body[data-product="deoxyribose"] .review-row .stars {
