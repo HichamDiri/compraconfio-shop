@@ -945,7 +945,8 @@ body[data-product="purple-mouthwash"] .promo-inner {
   align-items: center;
 }
 
-body[data-product="purple-mouthwash"] .promo-media video {
+body[data-product="purple-mouthwash"] .promo-media video,
+body[data-product="purple-mouthwash"] .promo-media img {
   width: 100%;
   border-radius: 8px;
   background: #111;
