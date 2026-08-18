@@ -1131,10 +1131,12 @@ body[data-product="voyage-nova"] .own-room-icon {
   color: var(--ink);
 }
 
+body[data-product="voyage-nova"] .own-room-icon img,
 body[data-product="voyage-nova"] .own-room-icon svg {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
+  display: block;
 }
 
 body[data-product="voyage-nova"] .own-room-cta {
