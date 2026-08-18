@@ -25,6 +25,18 @@
       ]
     },
     {
+      "source": "/voyage-nova",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/voyage-nova/",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
       "source": "/images/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
@@ -60,6 +72,8 @@
     { "source": "/deoxyribose-serum/", "destination": "/deoxyribose-serum.html" },
     { "source": "/purple-mouthwash", "destination": "/purple-mouthwash.html" },
     { "source": "/purple-mouthwash/", "destination": "/purple-mouthwash.html" },
+    { "source": "/voyage-nova", "destination": "/voyage-nova.html" },
+    { "source": "/voyage-nova/", "destination": "/voyage-nova.html" },
     { "source": "/thank-you-compraconfio", "destination": "/thank-you-compraconfio.html" },
     { "source": "/thank-you-compraconfio/", "destination": "/thank-you-compraconfio.html" },
     { "source": "/privacidad", "destination": "/privacidad.html" },

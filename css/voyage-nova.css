@@ -1,0 +1,254 @@
+/* CompraConfio — Voyage Nova Eau de Parfum */
+:root {
+  --voyage-wine: #5c1a2e;
+  --voyage-wine-deep: #3d0f1f;
+  --voyage-rose: #c45c7a;
+  --voyage-gold: #b8860b;
+  --voyage-soft: #fdf6f8;
+  --voyage-line: #f0d4dc;
+  --voyage-blush: #fce7ef;
+}
+
+body[data-product="voyage-nova"] .announce {
+  background: var(--voyage-wine-deep);
+}
+
+body[data-product="voyage-nova"] .price-now,
+body[data-product="voyage-nova"] .price-save,
+body[data-product="voyage-nova"] .bundle-flag,
+body[data-product="voyage-nova"] .btn-order,
+body[data-product="voyage-nova"] .btn-buy,
+body[data-product="voyage-nova"] .sticky-bar .js-open-order,
+body[data-product="voyage-nova"] .ship.is-selected .radio,
+body[data-product="voyage-nova"] .bundle.is-selected .radio {
+  background: var(--voyage-rose);
+  color: #fff;
+  border-color: var(--voyage-rose);
+}
+
+body[data-product="voyage-nova"] .btn-order:hover,
+body[data-product="voyage-nova"] .btn-buy:hover,
+body[data-product="voyage-nova"] .sticky-bar .js-open-order:hover {
+  background: var(--voyage-wine);
+}
+
+body[data-product="voyage-nova"] .price-save {
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.78rem;
+}
+
+body[data-product="voyage-nova"] .bundle.is-selected .bundle-card,
+body[data-product="voyage-nova"] .ship.is-selected {
+  border-color: var(--voyage-rose);
+  background: var(--voyage-soft);
+}
+
+body[data-product="voyage-nova"] .notice {
+  background: var(--voyage-soft);
+  border-left: 3px solid var(--voyage-rose);
+}
+
+body[data-product="voyage-nova"] .guarantee {
+  background: var(--voyage-soft);
+  border-top: 1px solid var(--voyage-line);
+}
+
+body[data-product="voyage-nova"] .dot.blue {
+  background: var(--voyage-rose);
+}
+
+body[data-product="voyage-nova"] .section-title {
+  font-weight: 700;
+}
+
+/* Notes pyramid */
+body[data-product="voyage-nova"] .section-notes {
+  border-top: 1px solid var(--voyage-line);
+  padding-top: 32px;
+  padding-bottom: 32px;
+  background: var(--voyage-soft);
+}
+
+body[data-product="voyage-nova"] .notes-inner {
+  display: grid;
+  gap: 28px;
+}
+
+body[data-product="voyage-nova"] .notes-lead {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 8px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+body[data-product="voyage-nova"] .notes-grid {
+  display: grid;
+  gap: 14px;
+}
+
+body[data-product="voyage-nova"] .note-card {
+  background: #fff;
+  border: 1px solid var(--voyage-line);
+  border-radius: 12px;
+  padding: 20px 18px;
+  text-align: center;
+}
+
+body[data-product="voyage-nova"] .note-tier {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--voyage-rose);
+  background: var(--voyage-blush);
+  border-radius: 999px;
+  padding: 5px 12px;
+  margin-bottom: 10px;
+}
+
+body[data-product="voyage-nova"] .note-card h3 {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+
+body[data-product="voyage-nova"] .note-card p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+body[data-product="voyage-nova"] .note-card.is-base {
+  border-color: var(--voyage-wine);
+  background: linear-gradient(180deg, #fff 0%, var(--voyage-soft) 100%);
+}
+
+/* Feature sections (shared layout) */
+body[data-product="voyage-nova"] .section-feature {
+  border-top: 1px solid var(--voyage-line);
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+body[data-product="voyage-nova"] .feature-inner {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+}
+
+body[data-product="voyage-nova"] .feature-copy .section-title {
+  text-align: left;
+  font-size: 1.75rem;
+  margin-bottom: 14px;
+}
+
+body[data-product="voyage-nova"] .feature-copy p {
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0 0 12px;
+}
+
+body[data-product="voyage-nova"] .feature-copy p:last-child {
+  margin-bottom: 0;
+}
+
+body[data-product="voyage-nova"] .feature-media img,
+body[data-product="voyage-nova"] .feature-media picture {
+  display: block;
+  width: 100%;
+}
+
+body[data-product="voyage-nova"] .feature-media img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  background: var(--voyage-soft);
+}
+
+body[data-product="voyage-nova"] .apply-steps {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+body[data-product="voyage-nova"] .apply-steps li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+  align-items: start;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+body[data-product="voyage-nova"] .apply-steps span {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--voyage-rose);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body[data-product="voyage-nova"] .occasion-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+body[data-product="voyage-nova"] .occasion-tags span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--voyage-wine);
+  background: var(--voyage-blush);
+  border: 1px solid var(--voyage-line);
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+
+@media (min-width: 768px) {
+  body[data-product="voyage-nova"] .feature-copy .section-title {
+    font-size: 2.15rem;
+  }
+
+  body[data-product="voyage-nova"] .notes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  body[data-product="voyage-nova"] .feature-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  body[data-product="voyage-nova"] .feature-inner.is-reverse .feature-copy {
+    order: 2;
+  }
+
+  body[data-product="voyage-nova"] .feature-inner.is-reverse .feature-media {
+    order: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  body[data-product="voyage-nova"] .feature-inner .feature-copy {
+    order: 1;
+  }
+
+  body[data-product="voyage-nova"] .feature-inner .feature-media {
+    order: 2;
+  }
+}
