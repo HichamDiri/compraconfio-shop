@@ -1218,6 +1218,7 @@ body[data-product="voyage-nova"] .own-room-media video {
 
   body[data-product="voyage-nova"] .own-room-feature h3 {
     font-size: 1.24rem;
+    font-weight: 700;
   }
 
   body[data-product="voyage-nova"] .own-room-feature p {
