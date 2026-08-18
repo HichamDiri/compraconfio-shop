@@ -1083,7 +1083,7 @@ body[data-product="voyage-nova"] .own-room-inner {
 body[data-product="voyage-nova"] .own-room-title {
   font-family: var(--serif);
   font-size: clamp(2.1rem, 5vw, 2.85rem);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.1;
   margin: 0 0 32px;
   color: var(--ink);
@@ -1091,6 +1091,7 @@ body[data-product="voyage-nova"] .own-room-title {
 
 body[data-product="voyage-nova"] .own-room-title em {
   font-style: italic;
+  font-weight: 700;
   color: var(--voyage-wine);
 }
 
@@ -1107,7 +1108,7 @@ body[data-product="voyage-nova"] .own-room-feature {
 body[data-product="voyage-nova"] .own-room-feature h3 {
   font-family: var(--serif);
   font-size: 1.18rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.25;
   margin: 0 0 10px;
 }
