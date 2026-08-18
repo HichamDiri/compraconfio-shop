@@ -1087,13 +1087,29 @@ body[data-product="purple-mouthwash"] .section-sensitivity {
 body[data-product="purple-mouthwash"] .sensitivity-inner {
   display: grid;
   gap: 24px;
-  align-items: center;
+  align-items: start;
+}
+
+body[data-product="purple-mouthwash"] .sensitivity-media {
+  width: min(100%, 420px);
+  margin-inline: auto;
+  aspect-ratio: 1 / 1;
+}
+
+body[data-product="purple-mouthwash"] .sensitivity-media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 body[data-product="purple-mouthwash"] .sensitivity-media img {
   width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
   border-radius: 8px;
   display: block;
+  background: transparent;
 }
 
 body[data-product="purple-mouthwash"] .sensitivity-copy .section-title {
@@ -1111,8 +1127,16 @@ body[data-product="purple-mouthwash"] .sensitivity-copy p {
 
 @media (min-width: 900px) {
   body[data-product="purple-mouthwash"] .sensitivity-inner {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr min(42vw, 420px);
     gap: 36px;
+    align-items: center;
+  }
+
+  body[data-product="purple-mouthwash"] .sensitivity-media {
+    width: 100%;
+    max-width: 420px;
+    justify-self: end;
+    margin-inline: 0;
   }
 
   body[data-product="purple-mouthwash"] .sensitivity-copy .section-title {
