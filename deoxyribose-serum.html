@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" type="image/webp" href="/images/deoxy-hero-1.webp" fetchpriority="high">
+  <link rel="preload" as="video" href="/videos/deoxy-1.mp4" type="video/mp4">
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/product.css?v=20260817a">
@@ -152,10 +153,10 @@
     <p class="section-lead">Videos reales de uso — desliza para ver más.</p>
     <div class="ugc-rail">
       <article class="ugc-card">
-        <video class="js-lazy-video" data-src="/videos/deoxy-1.mp4" muted playsinline loop autoplay preload="none" poster="/images/deoxy-hero-2-thumb.webp"></video>
+        <video class="js-lazy-video" src="/videos/deoxy-1.mp4" muted playsinline loop autoplay preload="auto" poster="/images/deoxy-hero-2-thumb.webp"></video>
       </article>
       <article class="ugc-card">
-        <video class="js-lazy-video" data-src="/videos/deoxy-2.mp4" muted playsinline loop autoplay preload="none" poster="/images/deoxy-hero-1-thumb.webp"></video>
+        <video class="js-lazy-video" src="/videos/deoxy-2.mp4" muted playsinline loop autoplay preload="metadata" poster="/images/deoxy-hero-1-thumb.webp"></video>
       </article>
       <article class="ugc-card">
         <video class="js-lazy-video" data-src="/videos/deoxy-3.mp4" muted playsinline loop autoplay preload="none" poster="/images/deoxy-hero-6-thumb.webp"></video>
@@ -609,7 +610,7 @@
 
 <script src="/js/config.js?v=20260806c" defer></script>
 <script src="/js/gt-locations.js?v=1" defer></script>
-<script src="/js/main.js?v=20260817a" defer></script>
+<script src="/js/main.js?v=20260818c" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var track = document.getElementById('galleryTrack');
@@ -825,29 +826,6 @@ document.addEventListener('DOMContentLoaded', function () {
       if (e.key === 'ArrowLeft') showLightboxPhoto(lightboxIndex - 1);
       if (e.key === 'ArrowRight') showLightboxPhoto(lightboxIndex + 1);
     });
-  }
-
-  var lazyVideos = Array.prototype.slice.call(document.querySelectorAll('.js-lazy-video[data-src]'));
-  if (lazyVideos.length) {
-    function loadLazyVideo(video) {
-      if (!video.dataset.src) return;
-      video.src = video.dataset.src;
-      video.removeAttribute('data-src');
-      video.load();
-      if (video.autoplay) video.play().catch(function () {});
-    }
-    if ('IntersectionObserver' in window) {
-      var videoObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          loadLazyVideo(entry.target);
-          videoObserver.unobserve(entry.target);
-        });
-      }, { rootMargin: '240px 0px' });
-      lazyVideos.forEach(function (video) { videoObserver.observe(video); });
-    } else {
-      lazyVideos.forEach(loadLazyVideo);
-    }
   }
 });
 </script>
