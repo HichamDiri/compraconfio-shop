@@ -1077,3 +1077,45 @@ body[data-product="purple-mouthwash"] .promo-copy p {
     font-size: 1.75rem;
   }
 }
+
+body[data-product="purple-mouthwash"] .section-sensitivity {
+  border-top: 1px solid var(--purple-line);
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+body[data-product="purple-mouthwash"] .sensitivity-inner {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+}
+
+body[data-product="purple-mouthwash"] .sensitivity-media img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+body[data-product="purple-mouthwash"] .sensitivity-copy .section-title {
+  text-align: left;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+body[data-product="purple-mouthwash"] .sensitivity-copy p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 900px) {
+  body[data-product="purple-mouthwash"] .sensitivity-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  body[data-product="purple-mouthwash"] .sensitivity-copy .section-title {
+    font-size: 1.75rem;
+  }
+}
