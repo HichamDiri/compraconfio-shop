@@ -1056,7 +1056,9 @@ body[data-product="purple-mouthwash"] .ba-compare__range {
 
 body[data-product="purple-mouthwash"] .promo-copy .section-title {
   text-align: left;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.25;
   margin-bottom: 12px;
 }
 
@@ -1074,7 +1076,7 @@ body[data-product="purple-mouthwash"] .promo-copy p {
   }
 
   body[data-product="purple-mouthwash"] .promo-copy .section-title {
-    font-size: 1.75rem;
+    font-size: 2.15rem;
   }
 }
 
@@ -1114,7 +1116,9 @@ body[data-product="purple-mouthwash"] .sensitivity-media img {
 
 body[data-product="purple-mouthwash"] .sensitivity-copy .section-title {
   text-align: left;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.25;
   margin-bottom: 12px;
 }
 
@@ -1140,7 +1144,7 @@ body[data-product="purple-mouthwash"] .sensitivity-copy p {
   }
 
   body[data-product="purple-mouthwash"] .sensitivity-copy .section-title {
-    font-size: 1.75rem;
+    font-size: 2.15rem;
   }
 }
 
@@ -1180,7 +1184,9 @@ body[data-product="purple-mouthwash"] .fresh-media img {
 
 body[data-product="purple-mouthwash"] .fresh-copy .section-title {
   text-align: left;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.25;
   margin-bottom: 12px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -1208,6 +1214,6 @@ body[data-product="purple-mouthwash"] .fresh-copy p {
   }
 
   body[data-product="purple-mouthwash"] .fresh-copy .section-title {
-    font-size: 1.75rem;
+    font-size: 2.15rem;
   }
 }
