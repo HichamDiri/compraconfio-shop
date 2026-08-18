@@ -244,6 +244,30 @@ body[data-product="deoxyribose"] .ba-slot .media-placeholder {
   border-radius: 8px;
 }
 
+@media (max-width: 899px) {
+  body[data-product="deoxyribose"] .before-after-card {
+    padding: 10px;
+  }
+
+  body[data-product="deoxyribose"] .before-after-grid {
+    gap: 8px;
+  }
+
+  body[data-product="deoxyribose"] .ba-slot {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  body[data-product="deoxyribose"] .ba-slot img {
+    aspect-ratio: auto;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
 body[data-product="deoxyribose"] .journey-timeline {
   position: relative;
   display: grid;
