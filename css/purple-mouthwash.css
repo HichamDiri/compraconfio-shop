@@ -1091,7 +1091,7 @@ body[data-product="purple-mouthwash"] .sensitivity-inner {
 }
 
 body[data-product="purple-mouthwash"] .sensitivity-media {
-  width: min(100%, 420px);
+  width: min(100%, 520px);
   margin-inline: auto;
   aspect-ratio: 1 / 1;
 }
@@ -1127,15 +1127,15 @@ body[data-product="purple-mouthwash"] .sensitivity-copy p {
 
 @media (min-width: 900px) {
   body[data-product="purple-mouthwash"] .sensitivity-inner {
-    grid-template-columns: 1fr min(42vw, 420px);
-    gap: 36px;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
     align-items: center;
   }
 
   body[data-product="purple-mouthwash"] .sensitivity-media {
     width: 100%;
-    max-width: 420px;
-    justify-self: end;
+    max-width: none;
+    justify-self: stretch;
     margin-inline: 0;
   }
 
