@@ -1133,10 +1133,11 @@ body[data-product="voyage-nova"] .own-room-icon {
 
 body[data-product="voyage-nova"] .own-room-icon img,
 body[data-product="voyage-nova"] .own-room-icon svg {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
   display: block;
+  object-fit: contain;
 }
 
 body[data-product="voyage-nova"] .own-room-cta {
