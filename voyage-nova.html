@@ -91,27 +91,27 @@
       <p class="vn-bundle-label">Elige tu oferta</p>
       <div class="vn-bundle-list" id="vnHeroBundles">
         <label class="vn-bundle-opt">
-          <input type="radio" name="heroBundle" value="cc-voyage-1" data-price="299" data-old="441" data-label="Compra 1" checked>
+          <input type="radio" name="heroBundle" value="cc-voyage-1" data-price="299" data-old="441" data-label="1 Frasco" checked>
           <span class="vn-bundle-card">
             <span class="vn-bundle-radio"></span>
-            <span class="vn-bundle-name">Compra 1</span>
+            <span class="vn-bundle-name">1 Frasco</span>
             <span class="vn-bundle-price">Q299<del>Q441</del></span>
           </span>
         </label>
         <label class="vn-bundle-opt">
-          <input type="radio" name="heroBundle" value="cc-voyage-2" data-price="399" data-old="1190" data-label="Compra 2, llévate 1 gratis">
+          <input type="radio" name="heroBundle" value="cc-voyage-2" data-price="399" data-old="770" data-label="2 Frascos">
           <span class="vn-bundle-card">
             <span class="vn-bundle-radio"></span>
-            <span class="vn-bundle-name">Compra 2, llévate 1 gratis</span>
-            <span class="vn-bundle-price">Q399<del>Q1190</del></span>
+            <span class="vn-bundle-name">2 Frascos</span>
+            <span class="vn-bundle-price">Q399<del>Q770</del></span>
           </span>
         </label>
         <label class="vn-bundle-opt">
-          <input type="radio" name="heroBundle" value="cc-voyage-3" data-price="599" data-old="1990" data-label="Compra 3, llévate 2 gratis">
+          <input type="radio" name="heroBundle" value="cc-voyage-3" data-price="599" data-old="1158" data-label="3 Frascos">
           <span class="vn-bundle-card">
             <span class="vn-bundle-radio"></span>
-            <span class="vn-bundle-name">Compra 3, llévate 2 gratis</span>
-            <span class="vn-bundle-price">Q599<del>Q1990</del></span>
+            <span class="vn-bundle-name">3 Frascos</span>
+            <span class="vn-bundle-price">Q599<del>Q1158</del></span>
           </span>
         </label>
       </div>
@@ -482,7 +482,7 @@
 <div class="sticky-bar" id="bottomSticky" aria-hidden="true">
   <div>
     <strong id="stickyPrice">Q299</strong>
-    <span id="stickyLabel">Compra 1</span>
+    <span id="stickyLabel">1 Frasco</span>
   </div>
   <button type="button" class="js-open-order">Reservar ahora</button>
 </div>
@@ -494,6 +494,7 @@
       <h2 id="orderModalTitle">Reserva tu pedido</h2>
       <button type="button" class="order-close" data-close-order aria-label="Cerrar">&times;</button>
     </div>
+
     <div class="order-body">
       <div class="order-product">
         <img src="/images/voyage-hero-1-thumb.webp" alt="Voyage Nova" width="54" height="54" decoding="async">
@@ -502,6 +503,7 @@
           <span>50 ml · Envío gratis</span>
         </div>
       </div>
+
       <form id="orderForm" action="/thank-you-compraconfio.html" method="GET">
         <input type="hidden" name="currency" value="GTQ">
         <input type="hidden" name="source" value="voyage-nova">
@@ -511,69 +513,91 @@
 
         <span class="block-label">1. Elige tu oferta</span>
         <div class="bundles">
+
           <label class="bundle bundle-option is-selected">
-            <input type="radio" name="bundleOption" value="cc-voyage-1" data-product-id="cc-voyage-1" data-product-name="Voyage Nova - Compra 1" data-price="299" data-old-price="441" data-save="32" data-label="Compra 1" checked>
+            <input type="radio" name="bundleOption" value="cc-voyage-1" data-product-id="cc-voyage-1" data-product-name="Voyage Nova - 1 frasco" data-price="299" data-old-price="441" data-save="32" data-label="1 Frasco" checked>
             <div class="bundle-card">
               <div class="bundle-head">
-                <span class="bundle-pick"><span class="radio"></span>Compra 1</span>
+                <span class="bundle-pick"><span class="radio"></span>1 Frasco</span>
                 <span class="bundle-cost"><strong>Q299</strong><del>Q441</del></span>
               </div>
-              <div class="bundle-units"><span class="unit-chip"><span class="dot blue"></span>1 frasco · 50 ml</span></div>
+              <div class="bundle-units">
+                <span class="unit-chip"><span class="dot blue"></span>50 ml EDP</span>
+              </div>
             </div>
           </label>
+
           <label class="bundle bundle-option">
-            <input type="radio" name="bundleOption" value="cc-voyage-2" data-product-id="cc-voyage-2" data-product-name="Voyage Nova - Compra 2 llévate 1 gratis" data-price="399" data-old-price="1190" data-save="66" data-label="Compra 2, llévate 1 gratis">
+            <input type="radio" name="bundleOption" value="cc-voyage-2" data-product-id="cc-voyage-2" data-product-name="Voyage Nova - 2 frascos" data-price="399" data-old-price="770" data-save="48" data-label="2 Frascos">
             <div class="bundle-card">
               <span class="bundle-flag">Más popular</span>
               <div class="bundle-head">
-                <span class="bundle-pick"><span class="radio"></span>Compra 2, llévate 1 gratis</span>
-                <span class="bundle-cost"><strong>Q399</strong><del>Q1190</del></span>
+                <span class="bundle-pick"><span class="radio"></span>2 Frascos</span>
+                <span class="bundle-cost"><strong>Q399</strong><del>Q770</del></span>
               </div>
-              <div class="bundle-units"><span class="unit-chip"><span class="dot blue"></span>3 frascos · 150 ml</span></div>
+              <div class="bundle-units">
+                <span class="unit-chip"><span class="dot blue"></span>100 ml total</span>
+              </div>
             </div>
           </label>
+
           <label class="bundle bundle-option">
-            <input type="radio" name="bundleOption" value="cc-voyage-3" data-product-id="cc-voyage-3" data-product-name="Voyage Nova - Compra 3 llévate 2 gratis" data-price="599" data-old-price="1990" data-save="70" data-label="Compra 3, llévate 2 gratis">
+            <input type="radio" name="bundleOption" value="cc-voyage-3" data-product-id="cc-voyage-3" data-product-name="Voyage Nova - 3 frascos" data-price="599" data-old-price="1158" data-save="48" data-label="3 Frascos">
             <div class="bundle-card">
               <span class="bundle-flag">Mejor valor</span>
               <div class="bundle-head">
-                <span class="bundle-pick"><span class="radio"></span>Compra 3, llévate 2 gratis</span>
-                <span class="bundle-cost"><strong>Q599</strong><del>Q1990</del></span>
+                <span class="bundle-pick"><span class="radio"></span>3 Frascos</span>
+                <span class="bundle-cost"><strong>Q599</strong><del>Q1158</del></span>
               </div>
-              <div class="bundle-units"><span class="unit-chip"><span class="dot blue"></span>5 frascos · 250 ml</span></div>
+              <div class="bundle-units">
+                <span class="unit-chip"><span class="dot blue"></span>150 ml total</span>
+              </div>
             </div>
           </label>
         </div>
 
-        <div class="form-head"><span class="block-label">2. Tus datos de entrega</span></div>
+        <div class="form-head">
+          <span class="block-label">2. Tus datos de entrega</span>
+        </div>
+
         <div class="fields-2">
           <div class="field"><input type="text" name="firstName" id="firstName" placeholder="Nombre" required autocomplete="given-name"></div>
           <div class="field"><input type="text" name="lastName" id="lastName" placeholder="Apellidos" required autocomplete="family-name"></div>
         </div>
+
         <div class="field"><input type="tel" name="phone" id="phone" placeholder="WhatsApp (ej. 5512 3456)" required autocomplete="tel"></div>
+
         <div class="field">
           <select name="department" id="department" required>
             <option value="" disabled selected>Selecciona tu departamento</option>
           </select>
         </div>
+
         <div class="field">
           <select name="city" id="city" required disabled>
             <option value="" disabled selected>Selecciona tu municipio</option>
           </select>
         </div>
+
         <input type="hidden" name="address" id="address">
+
         <div class="field">
-          <label class="field-label" for="addressLine">📍 Dirección completa <span class="req">*</span></label>
-          <input type="text" name="addressLine" id="addressLine" placeholder="Calle, número, apartamento…" required autocomplete="street-address">
-        </div>
-        <div class="field">
-          <label class="field-label" for="zone">👉 Zona o colonia</label>
-          <input type="text" name="zone" id="zone" placeholder="Zona, colonia o referencia">
+          <label class="field-label" for="addressLine">📍 Dirección completa y detallada <span class="req">*</span></label>
+          <input type="text" name="addressLine" id="addressLine" placeholder="Calle o avenida, número de casa, apartamento…" required autocomplete="street-address">
         </div>
 
-        <div class="form-head"><span class="block-label">🚚 3. Método de envío</span></div>
+        <div class="field">
+          <label class="field-label" for="zone">👉 Nombre de zona o colonia</label>
+          <input type="text" name="zone" id="zone" placeholder="Zona, colonia, aldea o punto de referencia">
+        </div>
+
+        <div class="form-head">
+          <span class="block-label">🚚 3. Elige tu método de envío</span>
+        </div>
+
         <input type="hidden" name="shipping" id="shippingCost" value="0">
         <input type="hidden" name="total" id="orderTotal" value="299">
+
         <div class="ship-options">
           <label class="ship is-selected">
             <input type="radio" name="shippingMethod" value="Envío gratis" data-cost="0" checked>
@@ -584,7 +608,10 @@
           <label class="ship">
             <input type="radio" name="shippingMethod" value="Envío extra rápido" data-cost="25">
             <span class="radio"></span>
-            <span class="ship-copy"><strong>⚡ Envío extra rápido</strong><em>Despacho en menos de 24 h</em></span>
+            <span class="ship-copy">
+              <strong>⚡ Envío extra rápido</strong>
+              <em>Tu paquete se empaca y despacha en menos de 24 horas</em>
+            </span>
             <span class="ship-cost">Q25</span>
           </label>
         </div>
@@ -592,10 +619,13 @@
         <div class="order-summary">
           <div class="sum-row"><span>Subtotal</span><strong id="sumSubtotal">Q299</strong></div>
           <div class="sum-row"><span>Envío</span><strong id="sumShipping">Gratis</strong></div>
-          <div class="sum-row is-total"><span>Total al recibir</span><strong id="sumTotal">Q299</strong></div>
+          <div class="sum-row is-total"><span>Total a pagar al recibir</span><strong id="sumTotal">Q299</strong></div>
         </div>
-        <p class="cod-note">💵 <span><b>Pago contra entrega.</b> Pagas en efectivo al recibir.</span></p>
-        <button type="submit" class="btn-buy">Confirmar reserva</button>
+
+        <p class="cod-note">💵 <span><b>Pago contra entrega.</b> No pagas nada ahora — pagas en efectivo cuando recibas tu pedido en casa.</span></p>
+
+        <button type="submit" class="btn-buy">Confirmar reserva — Pago al recibir</button>
+        <p class="pay-note">Envío gratis a toda Guatemala · Te confirmamos por teléfono o WhatsApp</p>
       </form>
     </div>
   </div>
@@ -627,8 +657,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  var heroBundles = document.querySelectorAll('input[name="heroBundle"]');
-  var modalBundles = document.querySelectorAll('input[name="bundleOption"]');
   var stickyPrice = document.getElementById('stickyPrice');
   var stickyLabel = document.getElementById('stickyLabel');
   var sumSubtotal = document.getElementById('sumSubtotal');
@@ -636,28 +664,41 @@ document.addEventListener('DOMContentLoaded', function () {
   var sumTotal = document.getElementById('sumTotal');
   var shippingCost = document.getElementById('shippingCost');
   var orderTotal = document.getElementById('orderTotal');
+  var heroBundles = document.querySelectorAll('input[name="heroBundle"]');
+  var modalBundles = document.querySelectorAll('input[name="bundleOption"]');
 
-  function syncBundles(fromHero) {
+  function syncOrder(fromHero) {
     var heroChecked = document.querySelector('input[name="heroBundle"]:checked');
-    var modalChecked = document.querySelector('input[name="bundleOption"]:checked');
+    var bundle = document.querySelector('input[name="bundleOption"]:checked');
+    var shipping = document.querySelector('input[name="shippingMethod"]:checked');
+    if (!bundle || !shipping) return;
+
     if (fromHero && heroChecked) {
       modalBundles.forEach(function (r) {
         r.checked = r.value === heroChecked.value;
         r.closest('.bundle').classList.toggle('is-selected', r.checked);
       });
-    } else if (modalChecked) {
+      bundle = heroChecked.value ? document.querySelector('input[name="bundleOption"]:checked') : bundle;
+    } else if (bundle) {
       heroBundles.forEach(function (r) {
-        r.checked = r.value === modalChecked.value;
+        r.checked = r.value === bundle.value;
       });
     }
-    var active = document.querySelector('input[name="bundleOption"]:checked');
-    var shipping = document.querySelector('input[name="shippingMethod"]:checked');
-    if (!active || !shipping) return;
-    var subtotal = Number(active.dataset.price);
+
+    bundle = document.querySelector('input[name="bundleOption"]:checked');
+    if (!bundle) return;
+
+    document.querySelectorAll('.bundle').forEach(function (b) { b.classList.remove('is-selected'); });
+    bundle.closest('.bundle').classList.add('is-selected');
+    document.querySelectorAll('.ship').forEach(function (s) { s.classList.remove('is-selected'); });
+    shipping.closest('.ship').classList.add('is-selected');
+
+    var subtotal = Number(bundle.dataset.price);
     var ship = Number(shipping.dataset.cost);
     var total = subtotal + ship;
+
     stickyPrice.textContent = 'Q' + subtotal;
-    stickyLabel.textContent = active.dataset.label;
+    stickyLabel.textContent = bundle.dataset.label;
     sumSubtotal.textContent = 'Q' + subtotal;
     sumShipping.textContent = ship ? 'Q' + ship : 'Gratis';
     sumTotal.textContent = 'Q' + total;
@@ -665,37 +706,75 @@ document.addEventListener('DOMContentLoaded', function () {
     orderTotal.value = String(total);
   }
 
-  heroBundles.forEach(function (r) { r.addEventListener('change', function () { syncBundles(true); }); });
-  modalBundles.forEach(function (r) { r.addEventListener('change', function () { syncBundles(false); }); });
-  document.querySelectorAll('input[name="shippingMethod"]').forEach(function (r) {
-    r.addEventListener('change', function () { syncBundles(false); });
+  heroBundles.forEach(function (r) { r.addEventListener('change', function () { syncOrder(true); }); });
+
+  var department = document.getElementById('department');
+  var city = document.getElementById('city');
+  var municipios = window.GT_MUNICIPIOS || {};
+
+  Object.keys(municipios).forEach(function (name) {
+    department.appendChild(new Option(name, name));
   });
-  syncBundles(true);
+
+  department.addEventListener('change', function () {
+    city.innerHTML = '';
+    city.appendChild(new Option('Selecciona tu municipio', '', true, true));
+    city.firstChild.disabled = true;
+    (municipios[department.value] || []).forEach(function (name) {
+      city.appendChild(new Option(name, name));
+    });
+    city.disabled = false;
+  });
 
   var modal = document.getElementById('orderModal');
-  var openBtns = Array.prototype.slice.call(document.querySelectorAll('.js-open-order'));
-  var closeBtns = Array.prototype.slice.call(document.querySelectorAll('[data-close-order]'));
-  var lastFocused;
+  var firstName = document.getElementById('firstName');
+  var lastName = document.getElementById('lastName');
+  var fullName = document.getElementById('name');
+  var lastFocused = null;
+  var addressLine = document.getElementById('addressLine');
+  var zone = document.getElementById('zone');
+  var address = document.getElementById('address');
 
-  function openModal() {
-    syncBundles(true);
+  function mergeFields() {
+    fullName.value = (firstName.value.trim() + ' ' + lastName.value.trim()).trim();
+    address.value = [addressLine.value.trim(), zone.value.trim()].filter(Boolean).join(', ');
+  }
+
+  function openOrder() {
+    syncOrder(true);
     lastFocused = document.activeElement;
     modal.classList.add('is-open');
     document.body.classList.add('no-scroll');
-    modal.querySelector('.order-close').focus({ preventScroll: true });
+    setTimeout(function () { firstName.focus({ preventScroll: true }); }, 260);
   }
 
-  function closeModal() {
+  function closeOrder() {
     modal.classList.remove('is-open');
     document.body.classList.remove('no-scroll');
     if (lastFocused) lastFocused.focus({ preventScroll: true });
   }
 
-  openBtns.forEach(function (b) { b.addEventListener('click', openModal); });
-  closeBtns.forEach(function (b) { b.addEventListener('click', closeModal); });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+  document.querySelectorAll('.js-open-order').forEach(function (btn) {
+    btn.addEventListener('click', openOrder);
   });
+
+  modal.querySelectorAll('[data-close-order]').forEach(function (btn) {
+    btn.addEventListener('click', closeOrder);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeOrder();
+  });
+
+  [firstName, lastName, addressLine, zone].forEach(function (input) {
+    input.addEventListener('input', mergeFields);
+  });
+  document.getElementById('orderForm').addEventListener('submit', mergeFields, true);
+
+  document.querySelectorAll('input[name="bundleOption"], input[name="shippingMethod"]').forEach(function (input) {
+    input.addEventListener('change', function () { syncOrder(false); });
+  });
+  syncOrder(true);
 
   document.querySelectorAll('.vn-accordions .vn-acc-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
@@ -756,29 +835,6 @@ document.addEventListener('DOMContentLoaded', function () {
       if (left > 0) requestAnimationFrame(tick);
     }
     tick();
-  }
-
-  var department = document.getElementById('department');
-  var city = document.getElementById('city');
-  var municipios = window.GT_MUNICIPIOS || {};
-  if (department && city) {
-    Object.keys(municipios).sort().forEach(function (dept) {
-      var opt = document.createElement('option');
-      opt.value = dept;
-      opt.textContent = dept;
-      department.appendChild(opt);
-    });
-    department.addEventListener('change', function () {
-      city.innerHTML = '<option value="" disabled selected>Selecciona tu municipio</option>';
-      city.disabled = !department.value;
-      if (!department.value) return;
-      (municipios[department.value] || []).sort().forEach(function (mun) {
-        var opt = document.createElement('option');
-        opt.value = mun;
-        opt.textContent = mun;
-        city.appendChild(opt);
-      });
-    });
   }
 });
 </script>
