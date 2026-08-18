@@ -942,7 +942,15 @@ body[data-product="purple-mouthwash"] .section-promo {
 body[data-product="purple-mouthwash"] .promo-inner {
   display: grid;
   gap: 24px;
-  align-items: center;
+  align-items: start;
+}
+
+body[data-product="purple-mouthwash"] .promo-copy {
+  order: 1;
+}
+
+body[data-product="purple-mouthwash"] .promo-media {
+  order: 2;
 }
 
 body[data-product="purple-mouthwash"] .promo-media video,
@@ -1092,7 +1100,12 @@ body[data-product="purple-mouthwash"] .sensitivity-inner {
   align-items: start;
 }
 
+body[data-product="purple-mouthwash"] .sensitivity-copy {
+  order: 1;
+}
+
 body[data-product="purple-mouthwash"] .sensitivity-media {
+  order: 2;
   width: min(100%, 520px);
   margin-inline: auto;
   aspect-ratio: 1 / 1;
@@ -1136,7 +1149,12 @@ body[data-product="purple-mouthwash"] .sensitivity-copy p {
     align-items: center;
   }
 
+  body[data-product="purple-mouthwash"] .sensitivity-copy {
+    order: 2;
+  }
+
   body[data-product="purple-mouthwash"] .sensitivity-media {
+    order: 1;
     width: 100%;
     max-width: none;
     justify-self: stretch;
@@ -1160,7 +1178,12 @@ body[data-product="purple-mouthwash"] .fresh-inner {
   align-items: start;
 }
 
+body[data-product="purple-mouthwash"] .fresh-copy {
+  order: 1;
+}
+
 body[data-product="purple-mouthwash"] .fresh-media {
+  order: 2;
   width: min(100%, 520px);
   margin-inline: auto;
   aspect-ratio: 1 / 1;
