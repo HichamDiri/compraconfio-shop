@@ -1240,3 +1240,83 @@ body[data-product="purple-mouthwash"] .fresh-copy p {
     font-size: 2.15rem;
   }
 }
+
+body[data-product="purple-mouthwash"] .section-sachets {
+  border-top: 1px solid var(--purple-line);
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+body[data-product="purple-mouthwash"] .sachets-inner {
+  display: grid;
+  gap: 24px;
+  align-items: start;
+}
+
+body[data-product="purple-mouthwash"] .sachets-copy {
+  order: 1;
+}
+
+body[data-product="purple-mouthwash"] .sachets-media {
+  order: 2;
+  width: min(100%, 520px);
+  margin-inline: auto;
+  aspect-ratio: 1 / 1;
+}
+
+body[data-product="purple-mouthwash"] .sachets-media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+body[data-product="purple-mouthwash"] .sachets-media img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+  background: transparent;
+}
+
+body[data-product="purple-mouthwash"] .sachets-copy .section-title {
+  text-align: left;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+body[data-product="purple-mouthwash"] .sachets-copy p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 900px) {
+  body[data-product="purple-mouthwash"] .sachets-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  body[data-product="purple-mouthwash"] .sachets-copy {
+    order: 2;
+  }
+
+  body[data-product="purple-mouthwash"] .sachets-media {
+    order: 1;
+    width: 100%;
+    max-width: none;
+    justify-self: stretch;
+    margin-inline: 0;
+  }
+
+  body[data-product="purple-mouthwash"] .sachets-copy .section-title {
+    font-size: 2.15rem;
+  }
+}
