@@ -1065,3 +1065,134 @@ body[data-product="voyage-nova"] .promo-copy p {
     font-size: 1.75rem;
   }
 }
+
+/* Own the room — feature + video */
+body[data-product="voyage-nova"] .section-own-room {
+  background: var(--voyage-soft);
+  border-top: 1px solid var(--voyage-line);
+  border-bottom: 1px solid var(--voyage-line);
+  padding-top: 44px;
+  padding-bottom: 44px;
+}
+
+body[data-product="voyage-nova"] .own-room-inner {
+  display: grid;
+  gap: 32px;
+  align-items: center;
+}
+
+body[data-product="voyage-nova"] .own-room-title {
+  font-family: var(--serif);
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0 0 24px;
+  color: var(--ink);
+}
+
+body[data-product="voyage-nova"] .own-room-title em {
+  font-style: italic;
+  color: var(--voyage-wine);
+}
+
+body[data-product="voyage-nova"] .own-room-features {
+  display: grid;
+  gap: 22px 28px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body[data-product="voyage-nova"] .own-room-feature h3 {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 6px;
+}
+
+body[data-product="voyage-nova"] .own-room-feature p {
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+body[data-product="voyage-nova"] .own-room-icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin-bottom: 10px;
+  color: var(--voyage-wine);
+}
+
+body[data-product="voyage-nova"] .own-room-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+body[data-product="voyage-nova"] .own-room-cta {
+  margin-top: 28px;
+}
+
+body[data-product="voyage-nova"] .btn-own-room {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 320px;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  background: #111;
+  color: #fff;
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+body[data-product="voyage-nova"] .btn-own-room:hover {
+  opacity: 0.88;
+}
+
+body[data-product="voyage-nova"] .own-room-guarantee {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+body[data-product="voyage-nova"] .own-room-guarantee svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--voyage-wine);
+}
+
+body[data-product="voyage-nova"] .own-room-media video {
+  width: 100%;
+  border-radius: 10px;
+  background: #111;
+  display: block;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+@media (min-width: 900px) {
+  body[data-product="voyage-nova"] .own-room-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  body[data-product="voyage-nova"] .own-room-title {
+    font-size: 2.35rem;
+  }
+}
+
+@media (max-width: 560px) {
+  body[data-product="voyage-nova"] .own-room-features {
+    grid-template-columns: 1fr;
+  }
+}
