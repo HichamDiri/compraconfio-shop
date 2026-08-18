@@ -869,18 +869,93 @@ body[data-product="deoxyribose"] .compare-grid > .compare-cell:nth-last-child(1)
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 899px) {
+  body[data-product="deoxyribose"] .compare-wrap {
+    padding: 8px 0;
+  }
+
+  body[data-product="deoxyribose"] .compare-pill {
+    display: none;
+  }
+
+  body[data-product="deoxyribose"] .compare-grid {
+    grid-template-columns: minmax(0, 1.55fr) minmax(104px, 1.05fr) minmax(48px, 0.7fr);
+  }
+
+  body[data-product="deoxyribose"] .compare-cell {
+    min-height: 46px;
+    padding: 10px 8px;
+  }
+
   body[data-product="deoxyribose"] .compare-feature {
-    font-size: 0.8rem;
-    padding: 10px 12px;
+    font-size: 0.78rem;
+    line-height: 1.35;
+    padding: 10px;
+  }
+
+  body[data-product="deoxyribose"] .compare-brand,
+  body[data-product="deoxyribose"] .compare-yes {
+    background: var(--deoxy-navy);
+    border-left: none;
+    border-right: none;
+  }
+
+  body[data-product="deoxyribose"] .compare-brand {
+    min-height: 52px;
+    padding: 10px 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-top-right-radius: 0;
+  }
+
+  body[data-product="deoxyribose"] .compare-grid > .compare-cell.compare-brand {
+    border-radius: 10px 10px 0 0;
+  }
+
+  body[data-product="deoxyribose"] .compare-yes {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  body[data-product="deoxyribose"] .compare-grid > .compare-cell.compare-yes:nth-last-child(2) {
+    border-bottom: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 
   body[data-product="deoxyribose"] .compare-brand-mark {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
   }
 
   body[data-product="deoxyribose"] .compare-others-head {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
+    line-height: 1.25;
+    padding: 10px 6px;
+  }
+
+  body[data-product="deoxyribose"] .compare-yes,
+  body[data-product="deoxyribose"] .compare-no {
+    font-size: 1rem;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+@media (max-width: 520px) {
+  body[data-product="deoxyribose"] .compare-grid {
+    grid-template-columns: minmax(0, 1.45fr) minmax(92px, 1fr) minmax(42px, 0.65fr);
+  }
+
+  body[data-product="deoxyribose"] .compare-feature {
+    font-size: 0.74rem;
+    padding: 9px 8px;
+  }
+
+  body[data-product="deoxyribose"] .compare-brand-mark {
+    font-size: 0.88rem;
+  }
+
+  body[data-product="deoxyribose"] .compare-others-head {
+    font-size: 0.68rem;
   }
 }
 
