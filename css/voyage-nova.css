@@ -1,254 +1,861 @@
-/* CompraConfio — Voyage Nova Eau de Parfum */
+/* Voyage Nova — Velloria-style landing (CompraConfio checkout) */
 :root {
-  --voyage-wine: #5c1a2e;
-  --voyage-wine-deep: #3d0f1f;
-  --voyage-rose: #c45c7a;
-  --voyage-gold: #b8860b;
-  --voyage-soft: #fdf6f8;
-  --voyage-line: #f0d4dc;
-  --voyage-blush: #fce7ef;
+  --vn-ink: #111;
+  --vn-muted: #666;
+  --vn-line: #ececec;
+  --vn-pink: #fce8ef;
+  --vn-pink-deep: #f5d0de;
+  --vn-rose: #c45c7a;
+  --vn-red: #d93025;
+  --vn-green: #16a34a;
+  --vn-black: #0a0a0a;
+  --vn-shell: 1180px;
+  --vn-serif: "Cormorant Garamond", Georgia, serif;
+  --vn-sans: "DM Sans", system-ui, sans-serif;
 }
 
-body[data-product="voyage-nova"] .announce {
-  background: var(--voyage-wine-deep);
+body[data-product="voyage-nova"] {
+  padding-bottom: 72px;
+  font-family: var(--vn-sans);
+  color: var(--vn-ink);
 }
 
-body[data-product="voyage-nova"] .price-now,
-body[data-product="voyage-nova"] .price-save,
-body[data-product="voyage-nova"] .bundle-flag,
-body[data-product="voyage-nova"] .btn-order,
-body[data-product="voyage-nova"] .btn-buy,
-body[data-product="voyage-nova"] .sticky-bar .js-open-order,
-body[data-product="voyage-nova"] .ship.is-selected .radio,
-body[data-product="voyage-nova"] .bundle.is-selected .radio {
-  background: var(--voyage-rose);
+body[data-product="voyage-nova"] .announce,
+body[data-product="voyage-nova"] .site-header:not(.vn-header) {
+  display: none;
+}
+
+/* Trust bar */
+.vn-trust-bar {
+  background: var(--vn-black);
   color: #fff;
-  border-color: var(--voyage-rose);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: 10px 16px;
 }
 
-body[data-product="voyage-nova"] .btn-order:hover,
-body[data-product="voyage-nova"] .btn-buy:hover,
-body[data-product="voyage-nova"] .sticky-bar .js-open-order:hover {
-  background: var(--voyage-wine);
+.vn-trust-bar span + span::before {
+  content: "✦";
+  margin: 0 14px;
+  opacity: 0.45;
 }
 
-body[data-product="voyage-nova"] .price-save {
-  border-radius: 4px;
-  padding: 4px 8px;
-  font-size: 0.78rem;
+/* Header */
+.vn-header {
+  border-bottom: 1px solid var(--vn-line);
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
-body[data-product="voyage-nova"] .bundle.is-selected .bundle-card,
-body[data-product="voyage-nova"] .ship.is-selected {
-  border-color: var(--voyage-rose);
-  background: var(--voyage-soft);
+.vn-header-inner {
+  max-width: var(--vn-shell);
+  margin: 0 auto;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
-body[data-product="voyage-nova"] .notice {
-  background: var(--voyage-soft);
-  border-left: 3px solid var(--voyage-rose);
+.vn-logo {
+  flex: 1;
+  text-align: center;
+  font-family: var(--vn-serif);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
-body[data-product="voyage-nova"] .guarantee {
-  background: var(--voyage-soft);
-  border-top: 1px solid var(--voyage-line);
+.vn-nav {
+  display: none;
+  gap: 22px;
+  font-size: 0.88rem;
+  font-weight: 500;
 }
 
-body[data-product="voyage-nova"] .dot.blue {
-  background: var(--voyage-rose);
+.vn-nav a:hover { opacity: 0.65; }
+
+.vn-header-link {
+  font-size: 0.82rem;
+  color: var(--vn-muted);
+  white-space: nowrap;
 }
 
-body[data-product="voyage-nova"] .section-title {
-  font-weight: 700;
-}
-
-/* Notes pyramid */
-body[data-product="voyage-nova"] .section-notes {
-  border-top: 1px solid var(--voyage-line);
-  padding-top: 32px;
-  padding-bottom: 32px;
-  background: var(--voyage-soft);
-}
-
-body[data-product="voyage-nova"] .notes-inner {
+/* Hero */
+.vn-hero {
+  max-width: var(--vn-shell);
+  margin: 0 auto;
+  padding: 24px 18px 40px;
   display: grid;
   gap: 28px;
 }
 
-body[data-product="voyage-nova"] .notes-lead {
+.vn-gallery-main {
+  background: #fafafa;
+  border: 1px solid var(--vn-line);
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.vn-gallery-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+}
+
+.vn-gallery-thumbs {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.vn-gallery-thumbs button {
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 0;
+  background: #fff;
+}
+
+.vn-gallery-thumbs button.is-active {
+  border-color: var(--vn-ink);
+}
+
+.vn-gallery-thumbs img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Buy column */
+.vn-rating {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  margin-bottom: 12px;
+}
+
+.vn-stars { color: var(--vn-green); letter-spacing: 1px; }
+
+.vn-title {
+  font-size: clamp(1.65rem, 4vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.vn-bullets {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.vn-bullets li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.vn-bullets li::before {
+  content: "✓";
+  color: var(--vn-red);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Urgency box */
+.vn-urgency {
+  background: var(--vn-pink);
+  border: 1px solid var(--vn-pink-deep);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+}
+
+.vn-urgency-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.vn-urgency-badge {
+  background: var(--vn-red);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 999px;
+  margin-left: auto;
+}
+
+.vn-stock-meter {
+  position: relative;
+  height: 6px;
+  background: #fff;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.vn-stock-meter span {
+  position: absolute;
+  left: 4%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  background: var(--vn-red);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0,0,0,.2);
+}
+
+.vn-stock-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--vn-muted);
+  margin-bottom: 10px;
+}
+
+.vn-viewers {
+  font-size: 0.78rem;
+  color: var(--vn-green);
+  font-weight: 600;
+}
+
+.vn-viewers::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--vn-green);
+  border-radius: 50%;
+  margin-right: 6px;
+  animation: vn-pulse 1.5s infinite;
+}
+
+@keyframes vn-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Bundles hero */
+.vn-bundle-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.vn-bundle-list {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.vn-bundle-opt {
+  display: block;
+  cursor: pointer;
+}
+
+.vn-bundle-opt input { position: absolute; opacity: 0; pointer-events: none; }
+
+.vn-bundle-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 2px solid var(--vn-line);
+  border-radius: 10px;
+  background: #fff;
+  transition: border-color .15s, background .15s;
+}
+
+.vn-bundle-opt input:checked + .vn-bundle-card {
+  border-color: var(--vn-pink-deep);
+  background: var(--vn-pink);
+}
+
+.vn-bundle-radio {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.vn-bundle-opt input:checked + .vn-bundle-card .vn-bundle-radio {
+  border-color: var(--vn-ink);
+}
+
+.vn-bundle-opt input:checked + .vn-bundle-card .vn-bundle-radio::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background: var(--vn-ink);
+  border-radius: 50%;
+}
+
+.vn-bundle-name {
+  flex: 1;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.vn-bundle-price {
+  text-align: right;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.vn-bundle-price del {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--vn-muted);
+}
+
+.vn-ship-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  margin-bottom: 14px;
+  padding: 0 2px;
+}
+
+.vn-ship-row strong { font-weight: 700; }
+
+.vn-cta-main {
+  width: 100%;
+  background: var(--vn-black);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 16px 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.vn-cta-main:hover { background: #222; }
+
+.vn-trust-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 18px;
   text-align: center;
-  max-width: 640px;
-  margin: 0 auto 8px;
-  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.vn-trust-row strong {
+  display: block;
+  font-size: 0.78rem;
+  margin-bottom: 2px;
+}
+
+.vn-warning {
+  margin-top: 18px;
+  padding: 14px 16px;
+  background: #fff8f0;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.vn-warning strong {
+  display: block;
+  color: var(--vn-red);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+/* Mini review carousel */
+.vn-mini-reviews {
+  margin-top: 20px;
+  border-top: 1px solid var(--vn-line);
+  padding-top: 18px;
+}
+
+.vn-mini-track {
+  display: flex;
+  transition: transform .35s ease;
+}
+
+.vn-mini-slide {
+  flex: 0 0 100%;
+  padding: 0 4px;
+  text-align: center;
+}
+
+.vn-mini-slide p {
+  font-size: 0.88rem;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.vn-mini-slide cite {
+  font-style: normal;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.vn-mini-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.vn-mini-nav button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--vn-line);
+  border-radius: 50%;
+  background: #fff;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.vn-mini-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.vn-mini-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: #ddd;
+  padding: 0;
+}
+
+.vn-mini-dots button.is-active { background: var(--vn-ink); }
+
+/* Accordions */
+.vn-accordions {
+  max-width: var(--vn-shell);
+  margin: 0 auto;
+  padding: 0 18px 40px;
+  border-top: 1px solid var(--vn-line);
+}
+
+.vn-acc {
+  border-bottom: 1px solid var(--vn-line);
+}
+
+.vn-acc-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 0;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.vn-acc-btn span:last-child {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--vn-muted);
+}
+
+.vn-acc-body {
+  display: none;
+  padding: 0 0 18px;
+  font-size: 0.92rem;
+  color: var(--vn-muted);
   line-height: 1.65;
 }
 
-body[data-product="voyage-nova"] .notes-grid {
+.vn-acc.is-open .vn-acc-body { display: block; }
+
+.vn-acc-body ul, .vn-acc-body ol {
+  margin: 10px 0 10px 18px;
+}
+
+.vn-acc-body li { margin-bottom: 6px; }
+
+/* Content sections */
+.vn-section {
+  padding: 48px 18px;
+}
+
+.vn-section.is-soft { background: #fafafa; }
+
+.vn-section.is-pink { background: var(--vn-pink); }
+
+.vn-section-inner {
+  max-width: var(--vn-shell);
+  margin: 0 auto;
+}
+
+.vn-section h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.vn-section-lead {
+  text-align: center;
+  color: var(--vn-muted);
+  max-width: 640px;
+  margin: 0 auto 28px;
+  line-height: 1.6;
+}
+
+/* Video rail */
+.vn-video-grid {
   display: grid;
   gap: 14px;
 }
 
-body[data-product="voyage-nova"] .note-card {
-  background: #fff;
-  border: 1px solid var(--voyage-line);
+.vn-video-card {
   border-radius: 12px;
-  padding: 20px 18px;
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 9 / 16;
+  max-height: 420px;
+}
+
+.vn-video-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Testimonial cards */
+.vn-cards {
+  display: grid;
+  gap: 16px;
+}
+
+.vn-card {
+  background: #fff;
+  border: 1px solid var(--vn-line);
+  border-radius: 12px;
+  padding: 22px 20px;
   text-align: center;
 }
 
-body[data-product="voyage-nova"] .note-tier {
-  display: inline-block;
-  font-size: 0.68rem;
+.vn-card .stars { color: var(--vn-green); margin-bottom: 10px; }
+
+.vn-card blockquote {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+
+.vn-card cite {
+  font-style: normal;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--vn-muted);
+}
+
+.vn-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.vn-tags span {
+  font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--voyage-rose);
-  background: var(--voyage-blush);
-  border-radius: 999px;
-  padding: 5px 12px;
-  margin-bottom: 10px;
+  background: var(--vn-pink);
+  padding: 4px 8px;
+  border-radius: 4px;
 }
 
-body[data-product="voyage-nova"] .note-card h3 {
-  font-family: var(--serif);
-  font-size: 1.35rem;
-  font-weight: 500;
+/* Feature grid */
+.vn-features {
+  display: grid;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.vn-feature {
+  text-align: center;
+  padding: 20px 16px;
+}
+
+.vn-feature h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
   margin-bottom: 8px;
-  line-height: 1.25;
 }
 
-body[data-product="voyage-nova"] .note-card p {
-  font-size: 0.92rem;
-  color: var(--muted);
-  line-height: 1.6;
-  margin: 0;
-}
-
-body[data-product="voyage-nova"] .note-card.is-base {
-  border-color: var(--voyage-wine);
-  background: linear-gradient(180deg, #fff 0%, var(--voyage-soft) 100%);
-}
-
-/* Feature sections (shared layout) */
-body[data-product="voyage-nova"] .section-feature {
-  border-top: 1px solid var(--voyage-line);
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
-
-body[data-product="voyage-nova"] .feature-inner {
-  display: grid;
-  gap: 24px;
-  align-items: center;
-}
-
-body[data-product="voyage-nova"] .feature-copy .section-title {
-  text-align: left;
-  font-size: 1.75rem;
-  margin-bottom: 14px;
-}
-
-body[data-product="voyage-nova"] .feature-copy p {
-  color: var(--muted);
-  line-height: 1.65;
-  margin: 0 0 12px;
-}
-
-body[data-product="voyage-nova"] .feature-copy p:last-child {
-  margin-bottom: 0;
-}
-
-body[data-product="voyage-nova"] .feature-media img,
-body[data-product="voyage-nova"] .feature-media picture {
-  display: block;
-  width: 100%;
-}
-
-body[data-product="voyage-nova"] .feature-media img {
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 12px;
-  background: var(--voyage-soft);
-}
-
-body[data-product="voyage-nova"] .apply-steps {
-  margin: 16px 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 10px;
-}
-
-body[data-product="voyage-nova"] .apply-steps li {
-  display: grid;
-  grid-template-columns: 28px 1fr;
-  gap: 10px;
-  align-items: start;
-  font-size: 0.92rem;
-  color: var(--muted);
+.vn-feature p {
+  font-size: 0.88rem;
+  color: var(--vn-muted);
   line-height: 1.55;
 }
 
-body[data-product="voyage-nova"] .apply-steps span {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--voyage-rose);
+/* Ingredient duo */
+.vn-duo {
+  display: grid;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.vn-duo-card {
+  background: #fff;
+  border: 1px solid var(--vn-line);
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.vn-duo-card h3 {
+  font-family: var(--vn-serif);
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.vn-duo-card p {
+  font-size: 0.88rem;
+  color: var(--vn-muted);
+}
+
+/* Compare table */
+.vn-compare-wrap {
+  overflow-x: auto;
+  margin-top: 24px;
+}
+
+.vn-compare {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.vn-compare th,
+.vn-compare td {
+  border: 1px solid var(--vn-line);
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.vn-compare th {
+  background: var(--vn-black);
   color: #fff;
-  font-size: 0.78rem;
   font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-body[data-product="voyage-nova"] .occasion-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 14px;
+.vn-compare td:first-child { font-weight: 600; }
+
+.vn-yes { color: var(--vn-green); font-weight: 700; }
+.vn-no { color: var(--vn-red); font-weight: 700; }
+
+/* Review grid bottom */
+.vn-review-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
 }
 
-body[data-product="voyage-nova"] .occasion-tags span {
-  font-size: 0.78rem;
+.vn-review-item {
+  background: #fff;
+  border: 1px solid var(--vn-line);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.vn-review-item .score {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--vn-green);
+  margin-bottom: 6px;
+}
+
+.vn-review-item h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.vn-review-item p {
+  font-size: 0.88rem;
+  color: var(--vn-muted);
+  line-height: 1.55;
+}
+
+/* Final CTA block */
+.vn-final-cta {
+  text-align: center;
+  padding: 48px 18px;
+  background: linear-gradient(180deg, var(--vn-pink) 0%, #fff 100%);
+}
+
+.vn-final-cta h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  margin-bottom: 10px;
+}
+
+.vn-final-cta p {
+  color: var(--vn-muted);
+  margin-bottom: 8px;
+}
+
+.vn-countdown {
+  font-size: 0.88rem;
   font-weight: 600;
-  color: var(--voyage-wine);
-  background: var(--voyage-blush);
-  border: 1px solid var(--voyage-line);
+  margin: 16px 0 20px;
+  color: var(--vn-ink);
+}
+
+.vn-cta-secondary {
+  display: inline-block;
+  background: var(--vn-black);
+  color: #fff;
+  border: none;
   border-radius: 999px;
-  padding: 6px 12px;
+  padding: 14px 32px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.vn-cta-note {
+  font-size: 0.78rem;
+  color: var(--vn-muted);
+}
+
+/* Section CTA */
+.vn-section-cta {
+  text-align: center;
+  margin-top: 28px;
+}
+
+.vn-section-cta .vn-cta-secondary { margin-bottom: 8px; }
+
+.vn-guarantee-line {
+  font-size: 0.78rem;
+  color: var(--vn-muted);
+}
+
+/* FAQ */
+.vn-faq { max-width: 760px; margin: 0 auto; }
+
+/* CompraConfio overrides */
+body[data-product="voyage-nova"] .btn-order,
+body[data-product="voyage-nova"] .btn-buy,
+body[data-product="voyage-nova"] .sticky-bar .js-open-order,
+body[data-product="voyage-nova"] .bundle-flag,
+body[data-product="voyage-nova"] .price-now,
+body[data-product="voyage-nova"] .price-save {
+  background: var(--vn-black);
+  border-color: var(--vn-black);
+  color: #fff;
+}
+
+body[data-product="voyage-nova"] .bundle.is-selected .bundle-card,
+body[data-product="voyage-nova"] .ship.is-selected {
+  border-color: var(--vn-pink-deep);
+  background: var(--vn-pink);
+}
+
+body[data-product="voyage-nova"] .sticky-bar {
+  background: #fff;
+  border-top: 1px solid var(--vn-line);
+}
+
+body[data-product="voyage-nova"] .site-footer {
+  border-top: 1px solid var(--vn-line);
+  padding: 28px 18px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--vn-muted);
 }
 
 @media (min-width: 768px) {
-  body[data-product="voyage-nova"] .feature-copy .section-title {
-    font-size: 2.15rem;
-  }
+  .vn-nav { display: flex; }
 
-  body[data-product="voyage-nova"] .notes-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-  }
-
-  body[data-product="voyage-nova"] .feature-inner {
+  .vn-hero {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
+    align-items: start;
   }
 
-  body[data-product="voyage-nova"] .feature-inner.is-reverse .feature-copy {
-    order: 2;
+  .vn-gallery-thumbs button {
+    flex: 0 0 72px;
+    width: 72px;
+    height: 72px;
   }
 
-  body[data-product="voyage-nova"] .feature-inner.is-reverse .feature-media {
-    order: 1;
+  .vn-video-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .vn-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vn-features {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .vn-duo {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .vn-review-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 767px) {
-  body[data-product="voyage-nova"] .feature-inner .feature-copy {
-    order: 1;
-  }
-
-  body[data-product="voyage-nova"] .feature-inner .feature-media {
-    order: 2;
+@media (min-width: 1024px) {
+  .vn-cards.vn-cards--4 {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
