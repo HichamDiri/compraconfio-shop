@@ -777,8 +777,12 @@ body[data-product="voyage-nova"] .compare-head img {
   width: auto;
   max-width: 100%;
   height: auto;
-  max-height: 130px;
+  max-height: 150px;
   object-fit: contain;
+}
+
+body[data-product="voyage-nova"] .compare-col-us .compare-head img {
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.22));
 }
 
 body[data-product="voyage-nova"] .compare-brand-name {
