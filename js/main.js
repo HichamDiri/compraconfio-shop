@@ -79,50 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.fbq('track', 'PageView');
   }
 
-  function initTikTokPixel(pixelId) {
-    if (!pixelId) return;
-
-    if (!window.ttq) {
-      !function(w, d, t) {
-        w.TiktokAnalyticsObject = t;
-        var ttq = w[t] = w[t] || [];
-        ttq.methods = ['page', 'track', 'identify', 'instances', 'debug', 'on', 'off', 'once', 'ready', 'alias', 'group', 'enableCookie', 'disableCookie', 'holdConsent', 'revokeConsent', 'grantConsent'];
-        ttq.setAndDefer = function(target, method) {
-          target[method] = function() {
-            target.push([method].concat(Array.prototype.slice.call(arguments, 0)));
-          };
-        };
-        for (var i = 0; i < ttq.methods.length; i++) {
-          ttq.setAndDefer(ttq, ttq.methods[i]);
-        }
-        ttq.load = function(id, options) {
-          var src = 'https://analytics.tiktok.com/i18n/pixel/events.js';
-          ttq._i = ttq._i || {};
-          ttq._i[id] = [];
-          ttq._i[id]._u = src;
-          ttq._t = ttq._t || {};
-          ttq._t[id] = +new Date();
-          ttq._o = ttq._o || {};
-          ttq._o[id] = options || {};
-          var script = d.createElement('script');
-          script.type = 'text/javascript';
-          script.async = true;
-          script.src = src + '?sdkid=' + id + '&lib=' + t;
-          var firstScript = d.getElementsByTagName('script')[0];
-          firstScript.parentNode.insertBefore(script, firstScript);
-        };
-      }(window, document, 'ttq');
-    }
-
-    window.ttq.load(pixelId);
-    window.ttq.page();
-  }
-
-  function trackTikTok(eventName, params) {
-    if (!window.ttq || typeof window.ttq.track !== 'function') return;
-    window.ttq.track(eventName, params || {});
-  }
-
   function getTrackingSnapshot(formEl) {
     var trackingForm = formEl || document.getElementById('orderForm');
     var trackingData = trackingForm ? new FormData(trackingForm) : null;
@@ -194,45 +150,6 @@ document.addEventListener('DOMContentLoaded', function() {
         currency: trackingCurrency
       });
     }
-
-    if (document.body && document.body.dataset.tiktokPixel !== 'off') {
-      var tiktokPixelId = document.body && document.body.dataset.tiktokPixelId
-        ? document.body.dataset.tiktokPixelId
-        : '';
-      if (tiktokPixelId) {
-        initTikTokPixel(tiktokPixelId);
-        trackTikTok('ViewContent', {
-          content_id: trackingProductId,
-          content_type: 'product',
-          content_name: snapshot.contentName || 'Máscara Varita de Hierro',
-          value: trackingPrice,
-          currency: trackingCurrency
-        });
-      }
-    }
-  }
-
-  var checkoutTracked = false;
-
-  function fireInitiateCheckoutOnce() {
-    if (checkoutTracked) return;
-    checkoutTracked = true;
-    var snapshot = getTrackingSnapshot(form);
-    trackTikTok('InitiateCheckout', {
-      content_id: snapshot.productId || 'cc-mascara-1',
-      content_type: 'product',
-      content_name: snapshot.contentName || 'Máscara Varita de Hierro',
-      value: snapshot.price || 299,
-      currency: snapshot.currency || 'GTQ'
-    });
-  }
-
-  document.querySelectorAll('.js-open-order').forEach(function(button) {
-    button.addEventListener('click', fireInitiateCheckoutOnce);
-  });
-
-  if (form) {
-    form.addEventListener('focusin', fireInitiateCheckoutOnce);
   }
 
   window.addEventListener('load', function() {
