@@ -93,8 +93,59 @@ document.addEventListener('DOMContentLoaded', function() {
       currency: String(trackingData ? trackingData.get('currency') || 'GTQ' : 'GTQ').trim(),
       contentName: selectedBundle
         ? String(selectedBundle.dataset.productName || '').trim()
-        : ''
+        : String(trackingData ? trackingData.get('productName') || '' : '').trim()
     };
+  }
+
+  function getFbPixelId() {
+    return document.body && document.body.dataset.fbPixelId
+      ? document.body.dataset.fbPixelId
+      : '';
+  }
+
+  function getInitiateCheckoutDedupeKey() {
+    var product = document.body && document.body.dataset.product
+      ? document.body.dataset.product
+      : window.location.pathname;
+    return 'fb_initiate_checkout_' + product;
+  }
+
+  function trackFacebookInitiateCheckout() {
+    var fbPixelId = getFbPixelId();
+    if (!fbPixelId) return;
+
+    var dedupeKey = getInitiateCheckoutDedupeKey();
+    if (sessionStorage.getItem(dedupeKey)) return;
+
+    if (!window.fbq) {
+      initFacebookPixel(fbPixelId);
+    }
+    if (!window.fbq) return;
+
+    var snapshot = getTrackingSnapshot();
+    var productId = snapshot.productId;
+    var price = snapshot.price || 0;
+    var currency = snapshot.currency || 'GTQ';
+    var contentName = snapshot.contentName;
+    var trackingForm = document.getElementById('orderForm');
+    var totalEl = trackingForm
+      ? (trackingForm.querySelector('#orderTotal') || trackingForm.querySelector('[name="total"]'))
+      : null;
+    var checkoutValue = totalEl ? Number(totalEl.value || 0) : price;
+    if (!checkoutValue) checkoutValue = price;
+
+    if (!checkoutValue && !productId) return;
+
+    window.fbq('track', 'InitiateCheckout', {
+      content_ids: productId ? [productId] : [],
+      content_name: contentName,
+      content_type: 'product',
+      value: checkoutValue,
+      currency: currency,
+      num_items: 1
+    });
+
+    sessionStorage.setItem(dedupeKey, '1');
   }
 
   function loadTracking() {
@@ -519,6 +570,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     phone.value = normalizedPhone;
+    trackFacebookInitiateCheckout();
 
     if (!hasOrderEndpoint()) {
       return;
@@ -645,4 +697,9 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   initLazyVideos();
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.js-open-order')) return;
+    trackFacebookInitiateCheckout();
+  }, true);
 });
