@@ -81,30 +81,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function blockTikTokLandingPageView() {
     if (!window.ttq || window.ttq.__landingPageViewBlocked) return;
+    if (typeof window.ttq.track !== 'function') return;
 
-    var ttq = window.ttq;
-    var innerPush = ttq.push;
-
-    ttq.push = function() {
-      var args = Array.prototype.slice.call(arguments);
-      if (args.length === 1 && Array.isArray(args[0])) {
-        var queued = args[0];
-        if (queued[0] === 'track' && String(queued[1] || '').toLowerCase() === 'landingpageview') {
-          return args.length;
-        }
-      }
-      return innerPush.apply(ttq, arguments);
+    var originalTrack = window.ttq.track;
+    window.ttq.track = function(eventName, params, options) {
+      if (String(eventName || '').toLowerCase() === 'landingpageview') return;
+      return originalTrack.apply(this, arguments);
     };
 
-    if (typeof ttq.track === 'function') {
-      var originalTrack = ttq.track;
-      ttq.track = function(eventName, params, options) {
-        if (String(eventName || '').toLowerCase() === 'landingpageview') return;
-        return originalTrack.call(ttq, eventName, params, options);
-      };
+    window.ttq.__landingPageViewBlocked = true;
+  }
+
+  function runWhenTikTokReady(callback) {
+    if (!window.ttq) {
+      callback();
+      return;
     }
 
-    ttq.__landingPageViewBlocked = true;
+    var finished = false;
+    function done() {
+      if (finished) return;
+      finished = true;
+      callback();
+    }
+
+    if (typeof window.ttq.ready === 'function') {
+      window.ttq.ready(done);
+    } else {
+      done();
+    }
+
+    setTimeout(done, 1500);
   }
 
   function initTikTokPixel(pixelId) {
@@ -142,17 +149,11 @@ document.addEventListener('DOMContentLoaded', function() {
       }(window, document, 'ttq');
     }
 
-    blockTikTokLandingPageView();
-
     if (!window.__tiktokPixelLoaded) {
       window.ttq.load(pixelId);
       window.ttq.page();
       window.__tiktokPixelLoaded = true;
-      if (typeof window.ttq.ready === 'function') {
-        window.ttq.ready(function() {
-          blockTikTokLandingPageView();
-        });
-      }
+      runWhenTikTokReady(blockTikTokLandingPageView);
     }
   }
 
@@ -272,17 +273,15 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     function fireInitiateCheckout() {
+      if (tiktokCheckoutTracked) return;
       blockTikTokLandingPageView();
-      trackTikTok('InitiateCheckout', payload);
-      tiktokCheckoutTracked = true;
+      if (window.ttq && typeof window.ttq.track === 'function') {
+        window.ttq.track('InitiateCheckout', payload);
+        tiktokCheckoutTracked = true;
+      }
     }
 
-    if (window.ttq && typeof window.ttq.ready === 'function') {
-      window.ttq.ready(fireInitiateCheckout);
-      return;
-    }
-
-    fireInitiateCheckout();
+    runWhenTikTokReady(fireInitiateCheckout);
   }
 
   function bindCheckoutTracking() {
@@ -297,6 +296,20 @@ document.addEventListener('DOMContentLoaded', function() {
       checkoutForm.addEventListener('focusin', function() {
         trackFacebookInitiateCheckout();
         trackTikTokInitiateCheckout();
+      });
+    }
+
+    var orderModal = document.getElementById('orderModal');
+    if (orderModal) {
+      var modalObserver = new MutationObserver(function() {
+        if (orderModal.classList.contains('is-open')) {
+          trackFacebookInitiateCheckout();
+          trackTikTokInitiateCheckout();
+        }
+      });
+      modalObserver.observe(orderModal, {
+        attributes: true,
+        attributeFilter: ['class']
       });
     }
   }
