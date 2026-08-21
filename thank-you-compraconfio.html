@@ -130,6 +130,45 @@
     if (city) address = (city + (address ? ', ' + address : ''));
     if (address) document.getElementById('customerAddress').textContent = address;
 
+    var productId = p.get('productId') || p.get('bundleOption') || '';
+    var source = p.get('source') || '';
+    var productImages = {
+      'cc-cactox': '/images/cactox-hero.png',
+      'cc-voyage': '/images/voyage-hero-1.png',
+      'cc-purple': '/images/purple-hero-1.png',
+      'cc-deoxy': '/images/deoxy-hero-1.png',
+      'cc-tape': '/images/tape-roll.png',
+      'cc-mascara': '/images/mascara-product.png'
+    };
+    var sourceImages = {
+      'cactox-v-lifting': '/images/cactox-hero.png',
+      'voyage-nova': '/images/voyage-hero-1.png',
+      'purple-mouthwash': '/images/purple-hero-1.png',
+      'deoxyribose-serum': '/images/deoxy-hero-1.png',
+      'cinta-doble-cara': '/images/tape-roll.png',
+      'latine-mascara': '/images/mascara-product.png',
+      'compraconfio-home': '/images/mascara-product.png'
+    };
+    var productImage = '/images/mascara-product.png';
+
+    Object.keys(productImages).some(function(prefix) {
+      if (productId.indexOf(prefix) === 0) {
+        productImage = productImages[prefix];
+        return true;
+      }
+      return false;
+    });
+
+    if (productImage === '/images/mascara-product.png' && sourceImages[source]) {
+      productImage = sourceImages[source];
+    }
+
+    var productVisual = document.getElementById('thankyouProductVisual');
+    if (productVisual) {
+      productVisual.src = productImage;
+      productVisual.alt = productName;
+    }
+
     document.getElementById('orderNumber').textContent = orderId;
     document.getElementById('thankyouProductInline').textContent = productName;
     document.getElementById('thankyouProductName').textContent = productName;
@@ -141,7 +180,6 @@
     if (!fbPixelId && p.get('source') === 'cactox-v-lifting') {
       fbPixelId = '2185887538653556';
     }
-    var productId = p.get('productId') || p.get('bundleOption') || '';
     var purchaseValue = Number(total) || Number(price) || 0;
 
     if (fbPixelId && orderId && purchaseValue > 0) {
