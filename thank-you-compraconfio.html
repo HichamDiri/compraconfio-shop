@@ -218,26 +218,13 @@
 
         (function blockLandingPageView() {
           if (!window.ttq || window.ttq.__landingPageViewBlocked) return;
-          var ttq = window.ttq;
-          var innerPush = ttq.push;
-          ttq.push = function() {
-            var args = Array.prototype.slice.call(arguments);
-            if (args.length === 1 && Array.isArray(args[0])) {
-              var queued = args[0];
-              if (queued[0] === 'track' && String(queued[1] || '').toLowerCase() === 'landingpageview') {
-                return args.length;
-              }
-            }
-            return innerPush.apply(ttq, arguments);
+          if (typeof window.ttq.track !== 'function') return;
+          var originalTrack = window.ttq.track;
+          window.ttq.track = function(eventName, params, options) {
+            if (String(eventName || '').toLowerCase() === 'landingpageview') return;
+            return originalTrack.apply(this, arguments);
           };
-          if (typeof ttq.track === 'function') {
-            var originalTrack = ttq.track;
-            ttq.track = function(eventName, params, options) {
-              if (String(eventName || '').toLowerCase() === 'landingpageview') return;
-              return originalTrack.call(ttq, eventName, params, options);
-            };
-          }
-          ttq.__landingPageViewBlocked = true;
+          window.ttq.__landingPageViewBlocked = true;
         })();
 
         ttq.load(tiktokPixelId);
