@@ -79,6 +79,59 @@ document.addEventListener('DOMContentLoaded', function() {
     window.fbq('track', 'PageView');
   }
 
+  function initTikTokPixel(pixelId) {
+    if (!pixelId) return;
+
+    if (!window.ttq) {
+      !function(w, d, t) {
+        w.TiktokAnalyticsObject = t;
+        var ttq = w[t] = w[t] || [];
+        ttq.methods = ['page', 'track', 'identify', 'instances', 'debug', 'on', 'off', 'once', 'ready', 'alias', 'group', 'enableCookie', 'disableCookie', 'holdConsent', 'revokeConsent', 'grantConsent'];
+        ttq.setAndDefer = function(target, method) {
+          target[method] = function() {
+            target.push([method].concat(Array.prototype.slice.call(arguments, 0)));
+          };
+        };
+        for (var i = 0; i < ttq.methods.length; i++) {
+          ttq.setAndDefer(ttq, ttq.methods[i]);
+        }
+        ttq.load = function(id, options) {
+          var src = 'https://analytics.tiktok.com/i18n/pixel/events.js';
+          ttq._i = ttq._i || {};
+          ttq._i[id] = [];
+          ttq._i[id]._u = src;
+          ttq._t = ttq._t || {};
+          ttq._t[id] = +new Date();
+          ttq._o = ttq._o || {};
+          ttq._o[id] = options || {};
+          var script = d.createElement('script');
+          script.type = 'text/javascript';
+          script.async = true;
+          script.src = src + '?sdkid=' + id + '&lib=' + t;
+          var firstScript = d.getElementsByTagName('script')[0];
+          firstScript.parentNode.insertBefore(script, firstScript);
+        };
+      }(window, document, 'ttq');
+    }
+
+    if (!window.__tiktokPixelLoaded) {
+      window.ttq.load(pixelId);
+      window.ttq.page();
+      window.__tiktokPixelLoaded = true;
+    }
+  }
+
+  function trackTikTok(eventName, params) {
+    if (!window.ttq || typeof window.ttq.track !== 'function') return;
+    window.ttq.track(eventName, params || {});
+  }
+
+  function getTikTokPixelId() {
+    return document.body && document.body.dataset.tiktokPixelId
+      ? document.body.dataset.tiktokPixelId
+      : '';
+  }
+
   function getTrackingSnapshot(formEl) {
     var trackingForm = formEl || document.getElementById('orderForm');
     var trackingData = trackingForm ? new FormData(trackingForm) : null;
@@ -148,6 +201,47 @@ document.addEventListener('DOMContentLoaded', function() {
     sessionStorage.setItem(dedupeKey, '1');
   }
 
+  function getTikTokInitiateCheckoutDedupeKey() {
+    var product = document.body && document.body.dataset.product
+      ? document.body.dataset.product
+      : window.location.pathname;
+    return 'tt_initiate_checkout_' + product;
+  }
+
+  function trackTikTokInitiateCheckout() {
+    var tiktokPixelId = getTikTokPixelId();
+    if (!tiktokPixelId) return;
+
+    var dedupeKey = getTikTokInitiateCheckoutDedupeKey();
+    if (sessionStorage.getItem(dedupeKey)) return;
+
+    initTikTokPixel(tiktokPixelId);
+
+    var snapshot = getTrackingSnapshot();
+    var productId = snapshot.productId;
+    var price = snapshot.price || 0;
+    var currency = snapshot.currency || 'GTQ';
+    var contentName = snapshot.contentName;
+    var trackingForm = document.getElementById('orderForm');
+    var totalEl = trackingForm
+      ? (trackingForm.querySelector('#orderTotal') || trackingForm.querySelector('[name="total"]'))
+      : null;
+    var checkoutValue = totalEl ? Number(totalEl.value || 0) : price;
+    if (!checkoutValue) checkoutValue = price;
+
+    if (!checkoutValue && !productId) return;
+
+    trackTikTok('InitiateCheckout', {
+      content_id: productId,
+      content_type: 'product',
+      content_name: contentName,
+      value: checkoutValue,
+      currency: currency
+    });
+
+    sessionStorage.setItem(dedupeKey, '1');
+  }
+
   function loadTracking() {
     (function(c, a) {
       c[a] = c[a] || function() {
@@ -176,6 +270,18 @@ document.addEventListener('DOMContentLoaded', function() {
           currency: trackingCurrency
         });
       }
+    }
+
+    var tiktokPixelId = getTikTokPixelId();
+    if (tiktokPixelId) {
+      initTikTokPixel(tiktokPixelId);
+      trackTikTok('ViewContent', {
+        content_id: trackingProductId,
+        content_type: 'product',
+        content_name: snapshot.contentName || '',
+        value: trackingPrice,
+        currency: trackingCurrency
+      });
     }
 
     if (document.body && document.body.dataset.snapPixel !== 'off') {
@@ -488,6 +594,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (fbPixelId) {
       params.set('fbPixelId', fbPixelId);
     }
+    var tiktokPixelId = document.body && document.body.dataset.tiktokPixelId
+      ? document.body.dataset.tiktokPixelId
+      : '';
+    if (tiktokPixelId) {
+      params.set('tiktokPixelId', tiktokPixelId);
+    }
     window.location.href = getThankYouPath() + '?' + params.toString();
   }
 
@@ -571,6 +683,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     phone.value = normalizedPhone;
     trackFacebookInitiateCheckout();
+    trackTikTokInitiateCheckout();
 
     if (!hasOrderEndpoint()) {
       return;
@@ -701,5 +814,6 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('click', function(e) {
     if (!e.target.closest('.js-open-order')) return;
     trackFacebookInitiateCheckout();
+    trackTikTokInitiateCheckout();
   }, true);
 });
