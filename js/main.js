@@ -431,6 +431,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     params.set('order', orderId);
+    var fbPixelId = document.body && document.body.dataset.fbPixelId
+      ? document.body.dataset.fbPixelId
+      : '';
+    if (fbPixelId) {
+      params.set('fbPixelId', fbPixelId);
+    }
     window.location.href = getThankYouPath() + '?' + params.toString();
   }
 
