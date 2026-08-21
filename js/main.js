@@ -148,6 +148,11 @@ document.addEventListener('DOMContentLoaded', function() {
       window.ttq.load(pixelId);
       window.ttq.page();
       window.__tiktokPixelLoaded = true;
+      if (typeof window.ttq.ready === 'function') {
+        window.ttq.ready(function() {
+          blockTikTokLandingPageView();
+        });
+      }
     }
   }
 
@@ -231,19 +236,11 @@ document.addEventListener('DOMContentLoaded', function() {
     sessionStorage.setItem(dedupeKey, '1');
   }
 
-  function getTikTokInitiateCheckoutDedupeKey() {
-    var product = document.body && document.body.dataset.product
-      ? document.body.dataset.product
-      : window.location.pathname;
-    return 'tt_initiate_checkout_' + product;
-  }
+  var tiktokCheckoutTracked = false;
 
   function trackTikTokInitiateCheckout() {
     var tiktokPixelId = getTikTokPixelId();
-    if (!tiktokPixelId) return;
-
-    var dedupeKey = getTikTokInitiateCheckoutDedupeKey();
-    if (sessionStorage.getItem(dedupeKey)) return;
+    if (!tiktokPixelId || tiktokCheckoutTracked) return;
 
     initTikTokPixel(tiktokPixelId);
 
@@ -261,16 +258,50 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (!checkoutValue && !productId) return;
 
-    trackTikTok('InitiateCheckout', {
-      content_id: productId,
+    var payload = {
+      contents: [{
+        content_id: productId || '',
+        content_type: 'product',
+        content_name: contentName
+      }],
+      content_id: productId || '',
       content_type: 'product',
       content_name: contentName,
       value: checkoutValue,
       currency: currency
-    });
+    };
 
-    sessionStorage.setItem(dedupeKey, '1');
+    function fireInitiateCheckout() {
+      blockTikTokLandingPageView();
+      trackTikTok('InitiateCheckout', payload);
+      tiktokCheckoutTracked = true;
+    }
+
+    if (window.ttq && typeof window.ttq.ready === 'function') {
+      window.ttq.ready(fireInitiateCheckout);
+      return;
+    }
+
+    fireInitiateCheckout();
   }
+
+  function bindCheckoutTracking() {
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.js-open-order')) return;
+      trackFacebookInitiateCheckout();
+      trackTikTokInitiateCheckout();
+    }, true);
+
+    var checkoutForm = document.getElementById('orderForm');
+    if (checkoutForm) {
+      checkoutForm.addEventListener('focusin', function() {
+        trackFacebookInitiateCheckout();
+        trackTikTokInitiateCheckout();
+      });
+    }
+  }
+
+  bindCheckoutTracking();
 
   function loadTracking() {
     (function(c, a) {
@@ -840,10 +871,4 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   initLazyVideos();
-
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.js-open-order')) return;
-    trackFacebookInitiateCheckout();
-    trackTikTokInitiateCheckout();
-  }, true);
 });
