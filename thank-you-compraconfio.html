@@ -136,6 +136,47 @@
     document.getElementById('thankyouProductPrice').textContent = priceLabel;
     document.getElementById('orderPrice').textContent = totalLabel;
     document.getElementById('stepsPrice').textContent = totalLabel;
+
+    var fbPixelId = p.get('fbPixelId') || '';
+    if (!fbPixelId && p.get('source') === 'cactox-v-lifting') {
+      fbPixelId = '2185887538653556';
+    }
+    var productId = p.get('productId') || p.get('bundleOption') || '';
+    var purchaseValue = Number(total) || Number(price) || 0;
+
+    if (fbPixelId && orderId && purchaseValue > 0) {
+      var dedupeKey = 'fb_purchase_' + orderId;
+      if (!sessionStorage.getItem(dedupeKey)) {
+        sessionStorage.setItem(dedupeKey, '1');
+
+        (function(f, b, e, v, n, t, s) {
+          if (f.fbq) return;
+          n = f.fbq = function() {
+            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+          };
+          if (!f._fbq) f._fbq = n;
+          n.push = n;
+          n.loaded = true;
+          n.version = '2.0';
+          n.queue = [];
+          t = b.createElement(e);
+          t.async = true;
+          t.src = v;
+          s = b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t, s);
+        })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+        window.fbq('init', fbPixelId);
+        window.fbq('track', 'PageView');
+        window.fbq('track', 'Purchase', {
+          content_ids: productId ? [productId] : [],
+          content_name: productName,
+          content_type: 'product',
+          value: purchaseValue,
+          currency: currency
+        }, { eventID: orderId });
+      }
+    }
   })();
 </script>
 </body>
