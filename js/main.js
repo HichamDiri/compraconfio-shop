@@ -116,7 +116,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (!window.__tiktokPixelLoaded) {
       window.ttq.load(pixelId);
-      window.ttq.page();
       window.__tiktokPixelLoaded = true;
     }
   }
