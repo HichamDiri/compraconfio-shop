@@ -177,6 +177,9 @@
     document.getElementById('stepsPrice').textContent = totalLabel;
 
     var fbPixelId = p.get('fbPixelId') || '';
+    if (!fbPixelId && p.get('source') === 'cinta-doble-cara') {
+      fbPixelId = '1092975236389352';
+    }
     var tiktokPixelId = p.get('tiktokPixelId') || '';
     if (!tiktokPixelId && p.get('source') === 'cactox-v-lifting') {
       tiktokPixelId = 'DA46KJ3C77U8UMTFN63G';
