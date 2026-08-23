@@ -62,8 +62,6 @@
     }
   ],
   "rewrites": [
-    { "source": "/latine-mascara", "destination": "/latine-mascara.html" },
-    { "source": "/latine-mascara/", "destination": "/latine-mascara.html" },
     { "source": "/cinta-doble-cara", "destination": "/cinta-doble-cara.html" },
     { "source": "/cinta-doble-cara/", "destination": "/cinta-doble-cara.html" },
     { "source": "/cactox-v-lifting", "destination": "/cactox-v-lifting.html" },
@@ -88,9 +86,11 @@
     { "source": "/contacto/", "destination": "/contacto.html" }
   ],
   "redirects": [
-    { "source": "/compraconfio-mascara", "destination": "/latine-mascara", "permanent": true },
-    { "source": "/compraconfio-mascara/", "destination": "/latine-mascara", "permanent": true },
-    { "source": "/compraconfio-mascara.html", "destination": "/latine-mascara", "permanent": true },
+    { "source": "/compraconfio-mascara", "destination": "/", "permanent": true },
+    { "source": "/compraconfio-mascara/", "destination": "/", "permanent": true },
+    { "source": "/compraconfio-mascara.html", "destination": "/", "permanent": true },
+    { "source": "/latine-mascara", "destination": "/", "permanent": true },
+    { "source": "/latine-mascara/", "destination": "/", "permanent": true },
     { "source": "/terms.html", "destination": "/terminos.html", "permanent": true },
     { "source": "/refund.html", "destination": "/devoluciones.html", "permanent": true }
   ]
