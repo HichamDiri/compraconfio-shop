@@ -133,7 +133,6 @@
     var productId = p.get('productId') || p.get('bundleOption') || '';
     var source = p.get('source') || '';
     var productImages = {
-      'cc-cactox': '/images/cactox-hero.png?v=20260822a',
       'cc-voyage': '/images/voyage-hero-1.png',
       'cc-purple': '/images/purple-hero-1.png',
       'cc-deoxy': '/images/deoxy-hero-1.png',
@@ -142,7 +141,6 @@
       'cc-mascara': '/images/mascara-product.png'
     };
     var sourceImages = {
-      'cactox-v-lifting': '/images/cactox-hero.png?v=20260822a',
       'voyage-nova': '/images/voyage-hero-1.png',
       'purple-mouthwash': '/images/purple-hero-1.png',
       'deoxyribose-serum': '/images/deoxy-hero-1.png',
@@ -183,7 +181,7 @@
       fbPixelId = '1092975236389352';
     }
     var tiktokPixelId = p.get('tiktokPixelId') || '';
-    if (!tiktokPixelId && p.get('source') === 'cactox-v-lifting') {
+    if (!tiktokPixelId && p.get('source') === 'deoxyribose-serum') {
       tiktokPixelId = 'DA46KJ3C77U8UMTFN63G';
     }
     var purchaseValue = Number(total) || Number(price) || 0;

@@ -76,8 +76,6 @@
   "rewrites": [
     { "source": "/cinta-doble-cara", "destination": "/cinta-doble-cara.html" },
     { "source": "/cinta-doble-cara/", "destination": "/cinta-doble-cara.html" },
-    { "source": "/cactox-v-lifting", "destination": "/cactox-v-lifting.html" },
-    { "source": "/cactox-v-lifting/", "destination": "/cactox-v-lifting.html" },
     { "source": "/nattokinase", "destination": "/nattokinase.html" },
     { "source": "/nattokinase/", "destination": "/nattokinase.html" },
     { "source": "/nattokinasa", "destination": "/nattokinase.html" },
@@ -107,6 +105,9 @@
     { "source": "/compraconfio-mascara.html", "destination": "/", "permanent": true },
     { "source": "/latine-mascara", "destination": "/", "permanent": true },
     { "source": "/latine-mascara/", "destination": "/", "permanent": true },
+    { "source": "/cactox-v-lifting", "destination": "/", "permanent": true },
+    { "source": "/cactox-v-lifting/", "destination": "/", "permanent": true },
+    { "source": "/cactox-v-lifting.html", "destination": "/", "permanent": true },
     { "source": "/terms.html", "destination": "/terminos.html", "permanent": true },
     { "source": "/refund.html", "destination": "/devoluciones.html", "permanent": true }
   ]
