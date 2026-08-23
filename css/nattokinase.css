@@ -682,35 +682,35 @@ body[data-product="natto"] .origin-quote cite {
 }
 
 /* ---------- Reviews ---------- */
-body[data-product="natto"] .review-card { border-color: var(--natto-line); }
+body[data-product="natto"] .review-card { border-color: var(--natto-line); background: #fff; }
 body[data-product="natto"] .review-card .stars,
 body[data-product="natto"] .review-row .stars { color: var(--natto-gold); }
-body[data-product="natto"] .review-card p,
-body[data-product="natto"] .review-row p { font-style: italic; }
+body[data-product="natto"] .review-card p { font-style: italic; }
 
-body[data-product="natto"] .review-card cite,
-body[data-product="natto"] .review-row cite {
+body[data-product="natto"] .review-card cite {
   display: block;
   font-size: 0.78rem;
   font-style: normal;
   font-weight: 700;
   color: var(--muted);
-  margin-top: 6px;
 }
 
-body[data-product="natto"] .review-card {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
+body[data-product="natto"] .review-photo-btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
 }
 
-body[data-product="natto"] .review-card > .stars,
-body[data-product="natto"] .review-card p,
-body[data-product="natto"] .review-card cite { padding: 0; }
-
-body[data-product="natto"] .review-card > .stars { margin-top: 0; }
-body[data-product="natto"] .review-card cite { margin-top: auto; }
-
+body[data-product="natto"] .review-photo-btn img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  background: #f5f2ef;
+}
 body[data-product="natto"] .review-badge {
   display: inline-block;
   font-size: 0.64rem;
