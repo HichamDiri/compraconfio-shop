@@ -888,6 +888,36 @@ body[data-product="natto"] .disclaimer p {
 
 body[data-product="natto"] .disclaimer strong { color: #444; }
 
+body[data-product="natto"] .story-step--solo .feature-inner {
+  grid-template-columns: 1fr;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+body[data-product="natto"] .story-step--solo .feature-copy h2 {
+  font-size: 1.45rem;
+}
+
+body[data-product="natto"] .order-product--solo {
+  display: block;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  border: 1px solid var(--natto-line);
+  border-radius: 8px;
+  background: var(--natto-soft);
+}
+
+body[data-product="natto"] .order-product--solo strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+body[data-product="natto"] .order-product--solo span {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
 /* ---------- Image placeholder (until real photos are uploaded) ---------- */
 body[data-product="natto"] .img-placeholder {
   display: flex;
