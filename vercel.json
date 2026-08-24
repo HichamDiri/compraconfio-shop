@@ -49,6 +49,18 @@
       ]
     },
     {
+      "source": "/pdrn-reedle-shot",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/pdrn-reedle-shot/",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
       "source": "/images/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
@@ -82,6 +94,10 @@
     { "source": "/nattokinasa/", "destination": "/nattokinase.html" },
     { "source": "/deoxyribose-serum", "destination": "/deoxyribose-serum.html" },
     { "source": "/deoxyribose-serum/", "destination": "/deoxyribose-serum.html" },
+    { "source": "/pdrn-reedle-shot", "destination": "/pdrn-reedle-shot.html" },
+    { "source": "/pdrn-reedle-shot/", "destination": "/pdrn-reedle-shot.html" },
+    { "source": "/pdrn", "destination": "/pdrn-reedle-shot.html" },
+    { "source": "/pdrn/", "destination": "/pdrn-reedle-shot.html" },
     { "source": "/purple-mouthwash", "destination": "/purple-mouthwash.html" },
     { "source": "/purple-mouthwash/", "destination": "/purple-mouthwash.html" },
     { "source": "/voyage-nova", "destination": "/voyage-nova.html" },
@@ -108,9 +124,6 @@
     { "source": "/cactox-v-lifting", "destination": "/", "permanent": true },
     { "source": "/cactox-v-lifting/", "destination": "/", "permanent": true },
     { "source": "/cactox-v-lifting.html", "destination": "/", "permanent": true },
-    { "source": "/pdrn-reedle-shot", "destination": "/", "permanent": true },
-    { "source": "/pdrn-reedle-shot/", "destination": "/", "permanent": true },
-    { "source": "/pdrn-reedle-shot.html", "destination": "/", "permanent": true },
     { "source": "/terms.html", "destination": "/terminos.html", "permanent": true },
     { "source": "/refund.html", "destination": "/devoluciones.html", "permanent": true }
   ]
