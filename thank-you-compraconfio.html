@@ -179,6 +179,9 @@
     if (!tiktokPixelId && p.get('source') === 'deoxyribose-serum') {
       tiktokPixelId = 'DA46KJ3C77U8UMTFN63G';
     }
+    if (!tiktokPixelId && p.get('source') === 'purple-mouthwash') {
+      tiktokPixelId = 'DA46KJ3C77U8UMTFN63G';
+    }
     var purchaseValue = Number(total) || Number(price) || 0;
 
     if (tiktokPixelId && orderId && purchaseValue > 0) {
