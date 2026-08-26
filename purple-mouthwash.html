@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" type="image/webp" href="/images/purple-hero-1.webp" fetchpriority="high">
-  <link rel="preload" as="video" href="/videos/purple-1.mp4" type="video/mp4">
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/product.css?v=20260817a">
@@ -150,10 +149,10 @@
     <p class="section-lead">Videos reales de uso — desliza para ver más.</p>
     <div class="ugc-rail">
       <article class="ugc-card">
-        <video class="js-lazy-video" src="/videos/purple-1.mp4" muted playsinline loop autoplay preload="auto" poster="/images/purple-hero-1-thumb.webp"></video>
+        <video class="js-lazy-video" data-src="/videos/purple-1.mp4" muted playsinline loop autoplay preload="none" poster="/images/purple-hero-1-thumb.webp"></video>
       </article>
       <article class="ugc-card">
-        <video class="js-lazy-video" src="/videos/purple-2.mp4" muted playsinline loop autoplay preload="metadata" poster="/images/purple-hero-3-thumb.webp"></video>
+        <video class="js-lazy-video" data-src="/videos/purple-2.mp4" muted playsinline loop autoplay preload="none" poster="/images/purple-hero-3-thumb.webp"></video>
       </article>
       <article class="ugc-card">
         <video class="js-lazy-video" data-src="/videos/purple-3.mp4" muted playsinline loop autoplay preload="none" poster="/images/purple-hero-5-thumb.webp"></video>
@@ -585,7 +584,7 @@
 
 <script src="/js/config.js?v=20260806c" defer></script>
 <script src="/js/gt-locations.js?v=1" defer></script>
-<script src="/js/main.js?v=20260822a" defer></script>
+<script src="/js/main.js?v=20260826a" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var track = document.getElementById('galleryTrack');

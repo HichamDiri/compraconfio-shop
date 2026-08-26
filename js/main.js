@@ -79,17 +79,15 @@ document.addEventListener('DOMContentLoaded', function() {
     window.fbq('track', 'PageView');
   }
 
-  function blockTikTokLandingPageView() {
-    if (!window.ttq || window.ttq.__landingPageViewBlocked) return;
-    if (typeof window.ttq.track !== 'function') return;
+  function trackTikTokLandingPageView() {
+    if (window.__tiktokLpvTracked) return;
 
-    var originalTrack = window.ttq.track;
-    window.ttq.track = function(eventName, params, options) {
-      if (String(eventName || '').toLowerCase() === 'landingpageview') return;
-      return originalTrack.apply(this, arguments);
-    };
-
-    window.ttq.__landingPageViewBlocked = true;
+    runWhenTikTokReady(function() {
+      if (window.__tiktokLpvTracked) return;
+      if (!window.ttq || typeof window.ttq.track !== 'function') return;
+      window.ttq.track('LandingPageView');
+      window.__tiktokLpvTracked = true;
+    });
   }
 
   function runWhenTikTokReady(callback) {
@@ -153,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
       window.ttq.load(pixelId);
       window.ttq.page();
       window.__tiktokPixelLoaded = true;
-      runWhenTikTokReady(blockTikTokLandingPageView);
+      trackTikTokLandingPageView();
     }
   }
 
@@ -274,7 +272,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function fireInitiateCheckout() {
       if (tiktokCheckoutTracked) return;
-      blockTikTokLandingPageView();
       if (window.ttq && typeof window.ttq.track === 'function') {
         window.ttq.track('InitiateCheckout', payload);
         tiktokCheckoutTracked = true;
@@ -315,6 +312,11 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   bindCheckoutTracking();
+
+  var earlyTikTokPixelId = getTikTokPixelId();
+  if (earlyTikTokPixelId) {
+    initTikTokPixel(earlyTikTokPixelId);
+  }
 
   function loadTracking() {
     (function(c, l, a, r, i, t, y) {
@@ -867,24 +869,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     var ugcVideos = Array.prototype.slice.call(document.querySelectorAll('#video-testimonials .ugc-rail .js-lazy-video'));
-    ugcVideos.slice(0, 2).forEach(startVideo);
-
+    var eagerVideos = ugcVideos.filter(function (video) { return !video.dataset.src; });
     var lazyVideos = Array.prototype.slice.call(document.querySelectorAll('.js-lazy-video[data-src]'));
-    if (!lazyVideos.length) return;
 
-    if ('IntersectionObserver' in window) {
-      var videoObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          startVideo(entry.target);
-          videoObserver.unobserve(entry.target);
-        });
-      }, { rootMargin: '800px 0px', threshold: 0.01 });
-      lazyVideos.forEach(function (video) { videoObserver.observe(video); });
-      return;
+    function observeVideos(videos) {
+      if (!videos.length) return;
+
+      if ('IntersectionObserver' in window) {
+        var videoObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            startVideo(entry.target);
+            videoObserver.unobserve(entry.target);
+          });
+        }, { rootMargin: '240px 0px', threshold: 0.01 });
+        videos.forEach(function (video) { videoObserver.observe(video); });
+        return;
+      }
+
+      videos.forEach(startVideo);
     }
 
-    lazyVideos.forEach(startVideo);
+    observeVideos(lazyVideos.concat(eagerVideos));
   }
 
   initLazyVideos();
