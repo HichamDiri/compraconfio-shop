@@ -551,6 +551,44 @@ document.addEventListener('DOMContentLoaded', function () {
   var addressLine = document.getElementById('addressLine');
   var zone = document.getElementById('zone');
   var address = document.getElementById('address');
+  var priceNow = document.getElementById('priceNow');
+  var priceWas = document.getElementById('priceWas');
+  var priceSave = document.getElementById('priceSave');
+  var stickyPrice = document.getElementById('stickyPrice');
+  var stickyLabel = document.getElementById('stickyLabel');
+  var sumSubtotal = document.getElementById('sumSubtotal');
+  var sumShipping = document.getElementById('sumShipping');
+  var sumTotal = document.getElementById('sumTotal');
+  var shippingCost = document.getElementById('shippingCost');
+  var orderTotal = document.getElementById('orderTotal');
+
+  function syncOrder() {
+    var bundle = document.querySelector('input[name="bundleOption"]:checked');
+    var shipping = document.querySelector('input[name="shippingMethod"]:checked');
+    if (!bundle || !shipping) return;
+
+    document.querySelectorAll('.bundle').forEach(function (b) { b.classList.remove('is-selected'); });
+    bundle.closest('.bundle').classList.add('is-selected');
+    document.querySelectorAll('.ship').forEach(function (s) { s.classList.remove('is-selected'); });
+    shipping.closest('.ship').classList.add('is-selected');
+
+    var subtotal = Number(bundle.dataset.price);
+    var ship = Number(shipping.dataset.cost);
+    var total = subtotal + ship;
+
+    priceNow.textContent = 'Q' + subtotal;
+    priceWas.textContent = 'Q' + bundle.dataset.oldPrice;
+    priceSave.textContent = 'Ahorra ' + bundle.dataset.save + '%';
+    stickyPrice.textContent = 'Q' + subtotal;
+    stickyLabel.textContent = bundle.dataset.label;
+
+    sumSubtotal.textContent = 'Q' + subtotal;
+    sumShipping.textContent = ship ? 'Q' + ship : 'Gratis';
+    sumTotal.textContent = 'Q' + total;
+
+    shippingCost.value = String(ship);
+    orderTotal.value = String(total);
+  }
 
   function mergeFields() {
     fullName.value = (firstName.value.trim() + ' ' + lastName.value.trim()).trim();
