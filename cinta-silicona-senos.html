@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/product.css?v=20260817a">
-  <link rel="stylesheet" href="/css/cinta-silicona.css?v=20260826b">
+  <link rel="stylesheet" href="/css/cinta-silicona.css?v=20260826c">
 </head>
 <body data-country="GT" data-lang="es" data-brand="compraconfio" data-product="cinta-silicona" data-snap-pixel="off" data-thankyou="/thank-you-compraconfio.html">
 
@@ -139,24 +139,6 @@
   </div>
 </section>
 
-<section class="steps-section">
-  <div class="shell">
-    <div class="steps-layout">
-      <div>
-        <h2 class="reason-block-title">Cómo funciona</h2>
-        <ol class="steps-list">
-          <li><strong>Piel limpia y seca.</strong> Sin crema ni aceite antes de aplicar.</li>
-          <li><strong>Aplica y ajusta.</strong> Ve despegando el respaldo poco a poco mientras acomodás el tape a la forma que querés — podés reposicionar hasta que quede perfecto.</li>
-          <li><strong>Presioná 5 segundos y listo.</strong> Ya podés ponerte el vestido con la sujeción lista para durar toda la noche.</li>
-        </ol>
-      </div>
-      <div class="content-media content-media--portrait">
-        <div class="media-placeholder"><span>Cómo funciona — sube silicone-howto.png</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="section">
   <div class="shell">
     <h2 class="section-title">Tu kit incluye</h2>
@@ -242,6 +224,56 @@
     </div>
 
     <div class="ways-dots" id="waysDots" aria-hidden="true"></div>
+  </div>
+</section>
+
+<section class="apply-section" id="como-aplicarla">
+  <div class="shell">
+    <h2 class="apply-header">Cómo aplicarla</h2>
+
+    <div class="apply-track" id="applyTrack" role="region" aria-label="Pasos para aplicar la cinta">
+      <article class="apply-card">
+        <div class="apply-card__photo">
+          <img src="/images/silicone-apply-1.jpg?v=20260826a" alt="Prepará la piel — tiras de silicona en distintos tonos" width="800" height="800" loading="lazy" decoding="async">
+        </div>
+        <div class="apply-card__body">
+          <h3 class="apply-card__title">Paso 1: Prepará la piel</h3>
+          <p class="apply-card__desc">Empezá con la piel limpia y seca, sin crema, aceite ni humectante.</p>
+        </div>
+      </article>
+
+      <article class="apply-card">
+        <div class="apply-card__photo">
+          <img src="/images/silicone-apply-2.jpg?v=20260826a" alt="Aplicá la cinta despegando el respaldo poco a poco" width="800" height="800" loading="lazy" decoding="async">
+        </div>
+        <div class="apply-card__body">
+          <h3 class="apply-card__title">Paso 2: Aplicá y levantá</h3>
+          <p class="apply-card__desc">Despegá una parte del respaldo y aplicá la tira. Seguí quitando el respaldo mientras presionás la cinta en su lugar.</p>
+        </div>
+      </article>
+
+      <article class="apply-card">
+        <div class="apply-card__photo">
+          <img src="/images/silicone-apply-3.jpg?v=20260826a" alt="Presioná la cinta 5 segundos para fijarla" width="800" height="800" loading="lazy" decoding="async">
+        </div>
+        <div class="apply-card__body">
+          <h3 class="apply-card__title">Paso 3: Fijá</h3>
+          <p class="apply-card__desc">Una vez aplicada, presioná y sostené 5 segundos para una adherencia óptima.</p>
+        </div>
+      </article>
+
+      <article class="apply-card">
+        <div class="apply-card__photo">
+          <img src="/images/silicone-apply-4.jpg?v=20260826a" alt="Combiná tiras en capas para el soporte ideal" width="800" height="800" loading="lazy" decoding="async">
+        </div>
+        <div class="apply-card__body">
+          <h3 class="apply-card__title">Paso 4: Capas según necesites</h3>
+          <p class="apply-card__desc">Aplicá primero una tira larga, luego capas más cortas para la forma y el soporte que busques.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="apply-dots" id="applyDots" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -621,6 +653,51 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 60);
     }, { passive: true });
     setWaysActive(0);
+  }
+
+  var applyTrack = document.getElementById('applyTrack');
+  var applyDots = document.getElementById('applyDots');
+  if (applyTrack && applyDots) {
+    var applyCards = Array.prototype.slice.call(applyTrack.querySelectorAll('.apply-card'));
+    var applyCurrent = 0;
+    applyCards.forEach(function () { applyDots.appendChild(document.createElement('button')); });
+    var applyDotBtns = Array.prototype.slice.call(applyDots.children);
+
+    function setApplyActive(index) {
+      if (index < 0 || index >= applyCards.length) return;
+      applyCurrent = index;
+      applyDotBtns.forEach(function (dot, i) {
+        dot.classList.toggle('is-active', i === index);
+        dot.setAttribute('aria-label', 'Paso ' + (i + 1));
+      });
+    }
+
+    applyDotBtns.forEach(function (dot, i) {
+      dot.type = 'button';
+      dot.className = 'apply-dot';
+      dot.addEventListener('click', function () {
+        var card = applyCards[i];
+        if (!card) return;
+        applyTrack.scrollTo({ left: card.offsetLeft - applyTrack.offsetLeft, behavior: 'smooth' });
+        setApplyActive(i);
+      });
+    });
+
+    var applyTimer;
+    applyTrack.addEventListener('scroll', function () {
+      clearTimeout(applyTimer);
+      applyTimer = setTimeout(function () {
+        var center = applyTrack.scrollLeft + applyTrack.clientWidth * 0.35;
+        var nearest = 0;
+        var best = Infinity;
+        applyCards.forEach(function (card, i) {
+          var dist = Math.abs(card.offsetLeft - applyTrack.offsetLeft - center);
+          if (dist < best) { best = dist; nearest = i; }
+        });
+        setApplyActive(nearest);
+      }, 60);
+    }, { passive: true });
+    setApplyActive(0);
   }
 });
 </script>
