@@ -1,0 +1,293 @@
+/* CompraConfio — Cinta de Silicona Reutilizable para Senos */
+:root {
+  --silicone-ink: #3d2c2e;
+  --silicone-rose: #b76e79;
+  --silicone-rose-deep: #9a5560;
+  --silicone-blush: #faf5f2;
+  --silicone-line: #ead9d2;
+  --silicone-gold: #c9a962;
+}
+
+body[data-product="cinta-silicona"] .announce {
+  background: var(--silicone-ink);
+}
+
+body[data-product="cinta-silicona"] .price-now,
+body[data-product="cinta-silicona"] .price-save,
+body[data-product="cinta-silicona"] .bundle-flag,
+body[data-product="cinta-silicona"] .btn-order,
+body[data-product="cinta-silicona"] .btn-buy,
+body[data-product="cinta-silicona"] .sticky-bar .js-open-order,
+body[data-product="cinta-silicona"] .ship.is-selected .radio,
+body[data-product="cinta-silicona"] .bundle.is-selected .radio {
+  background: var(--silicone-rose);
+  color: #fff;
+  border-color: var(--silicone-rose);
+}
+
+body[data-product="cinta-silicona"] .btn-order:hover,
+body[data-product="cinta-silicona"] .btn-buy:hover,
+body[data-product="cinta-silicona"] .sticky-bar .js-open-order:hover {
+  background: var(--silicone-rose-deep);
+}
+
+body[data-product="cinta-silicona"] .price-save {
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.78rem;
+}
+
+body[data-product="cinta-silicona"] .bundle.is-selected .bundle-card,
+body[data-product="cinta-silicona"] .ship.is-selected {
+  border-color: var(--silicone-rose);
+  background: var(--silicone-blush);
+}
+
+body[data-product="cinta-silicona"] .notice {
+  background: var(--silicone-blush);
+  border-left: 3px solid var(--silicone-rose);
+}
+
+body[data-product="cinta-silicona"] .dot.rose { background: var(--silicone-rose); }
+
+body[data-product="cinta-silicona"] .hero-hook {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+body[data-product="cinta-silicona"] .hero-lead {
+  font-size: 0.94rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+body[data-product="cinta-silicona"] .perks li::marker { color: var(--silicone-rose); }
+
+body[data-product="cinta-silicona"] .media-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: linear-gradient(145deg, #faf5f2 0%, #f0e4dc 100%);
+  border: 1px dashed var(--silicone-line);
+  border-radius: 8px;
+  color: #9a8580;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+body[data-product="cinta-silicona"] .media-placeholder span {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  max-width: 220px;
+}
+
+body[data-product="cinta-silicona"] .gallery-stage .media-placeholder {
+  aspect-ratio: 1;
+  min-height: 280px;
+}
+
+body[data-product="cinta-silicona"] .thumb .media-placeholder {
+  aspect-ratio: 1;
+  min-height: 48px;
+  padding: 8px;
+  font-size: 0;
+}
+
+body[data-product="cinta-silicona"] .thumb .media-placeholder span { display: none; }
+
+body[data-product="cinta-silicona"] .content-media .media-placeholder {
+  aspect-ratio: 4 / 5;
+}
+
+body[data-product="cinta-silicona"] .content-media--square .media-placeholder {
+  aspect-ratio: 1;
+}
+
+body[data-product="cinta-silicona"] .content-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+body[data-product="cinta-silicona"] .reason-block {
+  padding: 46px 0;
+  background: #fff;
+}
+
+body[data-product="cinta-silicona"] .reason-block.is-soft {
+  background: var(--silicone-blush);
+  border-top: 1px solid var(--silicone-line);
+  border-bottom: 1px solid var(--silicone-line);
+}
+
+body[data-product="cinta-silicona"] .reason-block-inner {
+  display: grid;
+  gap: 28px;
+  align-items: center;
+}
+
+@media (min-width: 820px) {
+  body[data-product="cinta-silicona"] .reason-block-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  body[data-product="cinta-silicona"] .reason-block--reverse .reason-block-inner {
+    direction: rtl;
+  }
+
+  body[data-product="cinta-silicona"] .reason-block--reverse .reason-block-copy,
+  body[data-product="cinta-silicona"] .reason-block--reverse .reason-block-media {
+    direction: ltr;
+  }
+}
+
+body[data-product="cinta-silicona"] .reason-block-title {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.22;
+  margin-bottom: 14px;
+}
+
+body[data-product="cinta-silicona"] .reason-block-lead {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+
+body[data-product="cinta-silicona"] .reason-block-copy p {
+  font-size: 0.96rem;
+  line-height: 1.75;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+body[data-product="cinta-silicona"] .steps-section {
+  padding: 46px 0;
+  background: #fff;
+}
+
+body[data-product="cinta-silicona"] .steps-layout {
+  display: grid;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (min-width: 820px) {
+  body[data-product="cinta-silicona"] .steps-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+body[data-product="cinta-silicona"] .steps-list {
+  list-style: none;
+  counter-reset: step;
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+body[data-product="cinta-silicona"] .steps-list li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 44px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #333;
+}
+
+body[data-product="cinta-silicona"] .steps-list li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--silicone-rose);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body[data-product="cinta-silicona"] .spec-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 720px) {
+  body[data-product="cinta-silicona"] .spec-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+body[data-product="cinta-silicona"] .spec-card {
+  border: 1px solid var(--silicone-line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 18px 14px;
+  text-align: center;
+}
+
+body[data-product="cinta-silicona"] .spec-card strong {
+  display: block;
+  font-size: 0.88rem;
+  margin-bottom: 6px;
+  color: var(--silicone-ink);
+}
+
+body[data-product="cinta-silicona"] .spec-card span {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+body[data-product="cinta-silicona"] .review-card {
+  border-color: var(--silicone-line);
+}
+
+body[data-product="cinta-silicona"] .review-card .stars {
+  color: var(--silicone-gold);
+}
+
+body[data-product="cinta-silicona"] .order-product .media-placeholder {
+  width: 54px;
+  height: 54px;
+  min-height: 54px;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+body[data-product="cinta-silicona"] .review-grid {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 720px) {
+  body[data-product="cinta-silicona"] .review-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+body[data-product="cinta-silicona"] .review-card cite {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.82rem;
+  font-style: normal;
+  color: var(--muted);
+}
