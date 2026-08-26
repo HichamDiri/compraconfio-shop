@@ -291,3 +291,185 @@ body[data-product="cinta-silicona"] .review-card cite {
   font-style: normal;
   color: var(--muted);
 }
+
+/* ── 5 formas de usarla ── */
+body[data-product="cinta-silicona"] .ways-section {
+  padding: 46px 0 52px;
+  background: #fef4f4;
+  border-top: 1px solid var(--silicone-line);
+  border-bottom: 1px solid var(--silicone-line);
+}
+
+body[data-product="cinta-silicona"] .ways-header {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--silicone-rose-deep);
+  margin: 0 0 12px;
+}
+
+body[data-product="cinta-silicona"] .ways-lead {
+  max-width: 680px;
+  margin: 0 auto 32px;
+  text-align: center;
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: var(--silicone-rose-deep);
+}
+
+body[data-product="cinta-silicona"] .ways-track {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+body[data-product="cinta-silicona"] .ways-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body[data-product="cinta-silicona"] .ways-card__photo {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  margin-bottom: 10px;
+}
+
+body[data-product="cinta-silicona"] .ways-card__photo > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+body[data-product="cinta-silicona"] .ways-card__icon {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(61, 44, 46, 0.12);
+}
+
+body[data-product="cinta-silicona"] .ways-card__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body[data-product="cinta-silicona"] .ways-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0 2px 4px;
+}
+
+body[data-product="cinta-silicona"] .ways-card__badge {
+  display: inline-block;
+  width: fit-content;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: #fce4e8;
+  color: var(--silicone-rose);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+body[data-product="cinta-silicona"] .ways-card__title {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--silicone-rose-deep);
+}
+
+body[data-product="cinta-silicona"] .ways-card__mix {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--silicone-rose);
+}
+
+body[data-product="cinta-silicona"] .ways-card__desc {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--silicone-rose-deep);
+}
+
+body[data-product="cinta-silicona"] .ways-dots {
+  display: none;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+body[data-product="cinta-silicona"] .ways-dot {
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  background: #d4a0aa;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+body[data-product="cinta-silicona"] .ways-dot.is-active {
+  background: var(--silicone-rose-deep);
+  transform: scale(1.15);
+}
+
+@media (min-width: 1024px) {
+  body[data-product="cinta-silicona"] .ways-section {
+    padding: 64px 0;
+  }
+
+  body[data-product="cinta-silicona"] .ways-header {
+    font-size: 2.15rem;
+  }
+
+  body[data-product="cinta-silicona"] .ways-lead {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 1023px) {
+  body[data-product="cinta-silicona"] .ways-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0;
+    margin: 0 -16px;
+    padding: 0 16px;
+  }
+
+  body[data-product="cinta-silicona"] .ways-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  body[data-product="cinta-silicona"] .ways-card {
+    flex: 0 0 72%;
+    scroll-snap-align: start;
+    margin-right: 12px;
+  }
+
+  body[data-product="cinta-silicona"] .ways-dots {
+    display: flex;
+  }
+}

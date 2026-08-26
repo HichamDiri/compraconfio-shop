@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/product.css?v=20260817a">
-  <link rel="stylesheet" href="/css/cinta-silicona.css?v=20260826a">
+  <link rel="stylesheet" href="/css/cinta-silicona.css?v=20260826b">
 </head>
 <body data-country="GT" data-lang="es" data-brand="compraconfio" data-product="cinta-silicona" data-snap-pixel="off" data-thankyou="/thank-you-compraconfio.html">
 
@@ -166,6 +166,82 @@
       <article class="spec-card"><strong>Reutilizable</strong><span>Hasta 3 usos por tira con cuidado adecuado</span></article>
       <article class="spec-card"><strong>Piel sensible</strong><span>Probada dermatológicamente · silicona no tóxica</span></article>
     </div>
+  </div>
+</section>
+
+<section class="ways-section" id="formas-de-usar">
+  <div class="shell">
+    <h2 class="ways-header">5 formas de usarla</h2>
+    <p class="ways-lead">La cinta viene en tres longitudes precortadas: <strong>corta (15 cm)</strong>, <strong>mediana (23 cm)</strong> y <strong>larga (30 cm)</strong>. Según tu talla y el soporte que busques, podés combinar cada tamaño de forma distinta.</p>
+
+    <div class="ways-track" id="waysTrack" role="region" aria-label="5 formas de usar la cinta">
+      <article class="ways-card">
+        <div class="ways-card__photo">
+          <img src="/images/silicone-way-1.jpg?v=20260826w" alt="Escote bajo con blusa blanca" width="567" height="756" loading="lazy" decoding="async">
+          <span class="ways-card__icon"><img src="/images/silicone-way-icon-1.png?v=20260826w" alt="" width="80" height="94" loading="lazy" decoding="async"></span>
+        </div>
+        <div class="ways-card__body">
+          <span class="ways-card__badge">La Socialite</span>
+          <p class="ways-card__title">Ideal para escotes bajos</p>
+          <p class="ways-card__mix">2 medianas + 2 largas</p>
+          <p class="ways-card__desc">Lift y separación para escotes abiertos.</p>
+        </div>
+      </article>
+
+      <article class="ways-card">
+        <div class="ways-card__photo">
+          <img src="/images/silicone-way-2.jpg?v=20260826w" alt="Escote pronunciado con vestido lila" width="567" height="756" loading="lazy" decoding="async">
+          <span class="ways-card__icon"><img src="/images/silicone-way-icon-2.png?v=20260826w" alt="" width="80" height="75" loading="lazy" decoding="async"></span>
+        </div>
+        <div class="ways-card__body">
+          <span class="ways-card__badge">La Bomba</span>
+          <p class="ways-card__title">Ideal para escote marcado</p>
+          <p class="ways-card__mix">2 cortas + 2 medianas + 2 largas</p>
+          <p class="ways-card__desc">Realza el escote en vestidos con escote profundo.</p>
+        </div>
+      </article>
+
+      <article class="ways-card">
+        <div class="ways-card__photo">
+          <img src="/images/silicone-way-3.jpg?v=20260826w" alt="Vestido sin tirantes color naranja" width="567" height="756" loading="lazy" decoding="async">
+          <span class="ways-card__icon"><img src="/images/silicone-way-icon-3.png?v=20260826w" alt="" width="80" height="89" loading="lazy" decoding="async"></span>
+        </div>
+        <div class="ways-card__body">
+          <span class="ways-card__badge">La Audaz</span>
+          <p class="ways-card__title">Ideal para sin tirantes</p>
+          <p class="ways-card__mix">2 largas</p>
+          <p class="ways-card__desc">Soporte seguro sin tiras visibles.</p>
+        </div>
+      </article>
+
+      <article class="ways-card">
+        <div class="ways-card__photo">
+          <img src="/images/silicone-way-4.jpg?v=20260826w" alt="Top halter con soporte extra" width="567" height="756" loading="lazy" decoding="async">
+          <span class="ways-card__icon"><img src="/images/silicone-way-icon-4.png?v=20260826w" alt="" width="80" height="80" loading="lazy" decoding="async"></span>
+        </div>
+        <div class="ways-card__body">
+          <span class="ways-card__badge">Mega Lift</span>
+          <p class="ways-card__title">Ideal para soporte extra</p>
+          <p class="ways-card__mix">2 cortas + 2 medianas + 2 largas</p>
+          <p class="ways-card__desc">Máximo lift y sujeción para busto generoso.</p>
+        </div>
+      </article>
+
+      <article class="ways-card">
+        <div class="ways-card__photo">
+          <img src="/images/silicone-way-5.jpg?v=20260826w" alt="Vestido entallado color rosa" width="567" height="756" loading="lazy" decoding="async">
+          <span class="ways-card__icon"><img src="/images/silicone-way-icon-5.png?v=20260826w" alt="" width="80" height="88" loading="lazy" decoding="async"></span>
+        </div>
+        <div class="ways-card__body">
+          <span class="ways-card__badge">La Sirena</span>
+          <p class="ways-card__title">Ideal para vestidos entallados</p>
+          <p class="ways-card__mix">2 cortas + 2 medianas</p>
+          <p class="ways-card__desc">Lift personalizado para curvas naturales.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="ways-dots" id="waysDots" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -501,6 +577,51 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!wasOpen) item.classList.add('is-open');
     });
   });
+
+  var waysTrack = document.getElementById('waysTrack');
+  var waysDots = document.getElementById('waysDots');
+  if (waysTrack && waysDots) {
+    var waysCards = Array.prototype.slice.call(waysTrack.querySelectorAll('.ways-card'));
+    var waysCurrent = 0;
+    waysCards.forEach(function () { waysDots.appendChild(document.createElement('button')); });
+    var waysDotBtns = Array.prototype.slice.call(waysDots.children);
+
+    function setWaysActive(index) {
+      if (index < 0 || index >= waysCards.length) return;
+      waysCurrent = index;
+      waysDotBtns.forEach(function (dot, i) {
+        dot.classList.toggle('is-active', i === index);
+        dot.setAttribute('aria-label', 'Forma ' + (i + 1));
+      });
+    }
+
+    waysDotBtns.forEach(function (dot, i) {
+      dot.type = 'button';
+      dot.className = 'ways-dot';
+      dot.addEventListener('click', function () {
+        var card = waysCards[i];
+        if (!card) return;
+        waysTrack.scrollTo({ left: card.offsetLeft - waysTrack.offsetLeft, behavior: 'smooth' });
+        setWaysActive(i);
+      });
+    });
+
+    var waysTimer;
+    waysTrack.addEventListener('scroll', function () {
+      clearTimeout(waysTimer);
+      waysTimer = setTimeout(function () {
+        var center = waysTrack.scrollLeft + waysTrack.clientWidth * 0.35;
+        var nearest = 0;
+        var best = Infinity;
+        waysCards.forEach(function (card, i) {
+          var dist = Math.abs(card.offsetLeft - waysTrack.offsetLeft - center);
+          if (dist < best) { best = dist; nearest = i; }
+        });
+        setWaysActive(nearest);
+      }, 60);
+    }, { passive: true });
+    setWaysActive(0);
+  }
 });
 </script>
 </body>
