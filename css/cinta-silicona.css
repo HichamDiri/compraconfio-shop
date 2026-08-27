@@ -484,8 +484,68 @@ body[data-product="cinta-silicona"] .review-lightbox-nav.is-next { right: 0; }
 body[data-product="cinta-silicona"] .review-lightbox-nav:disabled { opacity: 0.35; cursor: default; }
 
 @media (max-width: 719px) {
+  body[data-product="cinta-silicona"] #resenas .section-lead {
+    max-width: none;
+    margin-bottom: 18px;
+    font-size: 0.88rem;
+  }
+
   body[data-product="cinta-silicona"] .review-grid--photos {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  body[data-product="cinta-silicona"] .review-card--photo {
+    display: grid;
+    grid-template-columns: 118px minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+    column-gap: 0;
+    align-items: stretch;
+  }
+
+  body[data-product="cinta-silicona"] .review-card--photo .review-photo-btn {
+    grid-row: 1 / -1;
+    align-self: stretch;
+    min-height: 100%;
+  }
+
+  body[data-product="cinta-silicona"] .review-card--photo .review-photo-btn img {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 132px;
+    object-position: center center;
+  }
+
+  body[data-product="cinta-silicona"] .review-card--photo .stars,
+  body[data-product="cinta-silicona"] .review-card--photo p,
+  body[data-product="cinta-silicona"] .review-card--photo cite {
+    padding: 0 14px 0 12px;
+  }
+
+  body[data-product="cinta-silicona"] .review-card--photo .stars {
+    margin-top: 12px;
+    margin-bottom: 6px;
+  }
+
+  body[data-product="cinta-silicona"] .review-card--photo p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+
+  body[data-product="cinta-silicona"] .review-card--photo cite {
+    padding-bottom: 12px;
+    margin-top: 0;
+  }
+
+  body[data-product="cinta-silicona"] .review-photo-btn::after {
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 12px;
+    right: 6px;
+    bottom: 6px;
   }
 
   body[data-product="cinta-silicona"] .review-lightbox-panel {
