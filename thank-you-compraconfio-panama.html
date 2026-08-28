@@ -107,9 +107,9 @@
     var orderId = p.get('order') || ('CC-' + Date.now().toString().slice(-8));
     var productName = p.get('productName') ? decodeURIComponent(p.get('productName')) : 'Máscara Varita de Hierro';
     var price = p.get('price') || '299';
-    var currency = p.get('currency') || 'PAB';
-    var currencyPrefix = currency === 'GTQ' ? 'Q' : (currency === 'PAB' ? 'B/.' : '');
-    var currencyLabel = currency === 'GTQ' ? 'quetzales' : (currency === 'PAB' ? 'balboas' : currency);
+    var currency = p.get('currency') || 'USD';
+    var currencyPrefix = currency === 'GTQ' ? 'Q' : (currency === 'USD' ? '$' : '');
+    var currencyLabel = currency === 'GTQ' ? 'quetzales' : (currency === 'USD' ? 'USD' : currency);
     var priceLabel = currencyPrefix + price + ' ' + currencyLabel;
     var shipping = Number(p.get('shipping') || 0);
     var total = p.get('total') || price;

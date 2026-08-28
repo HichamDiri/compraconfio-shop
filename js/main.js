@@ -462,8 +462,8 @@ document.addEventListener('DOMContentLoaded', function() {
       return { full: 'quetzales', short: 'Q' };
     }
 
-    if (currency === 'PAB') {
-      return { full: 'balboas', short: 'B/.' };
+    if (currency === 'USD') {
+      return { full: 'USD', short: '$' };
     }
 
     if (currency === 'QAR') {
@@ -491,15 +491,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function formatPrice(value, currency) {
     var labels = getCurrencyLabels(currency);
-    if (currency === 'GTQ' || currency === 'PAB') {
-      return labels.short + value + ' ' + labels.full;
+    if (currency === 'GTQ' || currency === 'USD') {
+      return labels.short + value + (currency === 'USD' ? ' USD' : ' ' + labels.full);
     }
     return value + ' ' + labels.full;
   }
 
   function formatShortPrice(value, currency) {
     var labels = getCurrencyLabels(currency);
-    if (currency === 'GTQ' || currency === 'PAB') {
+    if (currency === 'GTQ' || currency === 'USD') {
       return labels.short + value;
     }
     return value + ' ' + labels.short;
