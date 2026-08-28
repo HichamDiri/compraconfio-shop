@@ -623,8 +623,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var dept = document.getElementById('department');
   var city = document.getElementById('city');
-  if (dept && city && window.GT_LOCATIONS) {
-    Object.keys(window.GT_LOCATIONS).sort().forEach(function (name) {
+  if (dept && city && window.GT_MUNICIPIOS) {
+    Object.keys(window.GT_MUNICIPIOS).sort().forEach(function (name) {
       var opt = document.createElement('option');
       opt.value = name;
       opt.textContent = name;
@@ -632,7 +632,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     dept.addEventListener('change', function () {
       city.innerHTML = '<option value="" disabled selected>Seleccioná tu municipio</option>';
-      (window.GT_LOCATIONS[dept.value] || []).forEach(function (name) {
+      (window.GT_MUNICIPIOS[dept.value] || []).forEach(function (name) {
         var opt = document.createElement('option');
         opt.value = name;
         opt.textContent = name;
