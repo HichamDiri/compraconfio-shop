@@ -462,6 +462,10 @@ document.addEventListener('DOMContentLoaded', function() {
       return { full: 'quetzales', short: 'Q' };
     }
 
+    if (currency === 'PAB') {
+      return { full: 'balboas', short: 'B/.' };
+    }
+
     if (currency === 'QAR') {
       return { full: 'ريال قطري', short: 'ر.ق' };
     }
@@ -487,7 +491,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function formatPrice(value, currency) {
     var labels = getCurrencyLabels(currency);
-    if (currency === 'GTQ') {
+    if (currency === 'GTQ' || currency === 'PAB') {
       return labels.short + value + ' ' + labels.full;
     }
     return value + ' ' + labels.full;
@@ -495,7 +499,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function formatShortPrice(value, currency) {
     var labels = getCurrencyLabels(currency);
-    if (currency === 'GTQ') {
+    if (currency === 'GTQ' || currency === 'PAB') {
       return labels.short + value;
     }
     return value + ' ' + labels.short;
@@ -624,9 +628,27 @@ document.addEventListener('DOMContentLoaded', function() {
     return digits.length >= 7 && digits.length <= 15 ? digits : '';
   }
 
+  function normalizePanamaPhone(value) {
+    var digits = String(value || '').replace(/[^\d]/g, '');
+
+    if (/^507[2-9][0-9]{7}$/.test(digits)) {
+      return digits.slice(3);
+    }
+
+    if (/^[2-9][0-9]{7}$/.test(digits)) {
+      return digits;
+    }
+
+    return '';
+  }
+
   function normalizePhone(value, country) {
     if (country === 'GT') {
       return normalizeGuatemalaPhone(value);
+    }
+
+    if (country === 'PA') {
+      return normalizePanamaPhone(value);
     }
 
     if (country === 'QA') {
