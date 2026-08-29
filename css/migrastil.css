@@ -287,6 +287,12 @@ body[data-product="migrastil"] .guarantee-badge-wrap {
   margin: 0 auto 16px;
 }
 
+body[data-product="migrastil"] .guarantee-badge-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 body[data-product="migrastil"] .disclaimer-box {
   background: #fff8ef;
   border: 1px solid #ecd9b8;
