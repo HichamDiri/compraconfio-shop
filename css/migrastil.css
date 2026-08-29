@@ -139,6 +139,21 @@ body[data-product="migrastil"] .story-flow .story-step:first-child {
   border-top: none;
 }
 
+body[data-product="migrastil"] .feature-media--square {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--migrastil-warm);
+}
+
+body[data-product="migrastil"] .feature-media--square img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
 body[data-product="migrastil"] .story-eyebrow {
   font-size: 0.72rem;
   font-weight: 700;
