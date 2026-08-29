@@ -154,6 +154,21 @@ body[data-product="migrastil"] .feature-media--square img {
   border-radius: 0;
 }
 
+body[data-product="migrastil"] .feature-media--wide {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--migrastil-warm);
+}
+
+body[data-product="migrastil"] .feature-media--wide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
 body[data-product="migrastil"] .story-eyebrow {
   font-size: 0.72rem;
   font-weight: 700;
