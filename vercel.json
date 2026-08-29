@@ -85,6 +85,18 @@
       ]
     },
     {
+      "source": "/migrastil-neuropathy-cream",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/migrastil-neuropathy-cream/",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
       "source": "/images/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
@@ -114,6 +126,8 @@
     { "source": "/nattokinase/", "destination": "/nattokinase.html" },
     { "source": "/nattokinasa", "destination": "/nattokinase.html" },
     { "source": "/nattokinasa/", "destination": "/nattokinase.html" },
+    { "source": "/migrastil-neuropathy-cream", "destination": "/migrastil-neuropathy-cream.html" },
+    { "source": "/migrastil-neuropathy-cream/", "destination": "/migrastil-neuropathy-cream.html" },
     { "source": "/deoxyribose-serum", "destination": "/deoxyribose-serum.html" },
     { "source": "/deoxyribose-serum/", "destination": "/deoxyribose-serum.html" },
     { "source": "/purple-mouthwash", "destination": "/purple-mouthwash.html" },
