@@ -273,6 +273,8 @@ body[data-product="barra-telescopica"] .bundle-save {
   border-radius: 4px;
   padding: 4px 9px;
 }
+
+body[data-product="barra-telescopica"] .spec-chip {
   display: inline-block;
   font-size: 0.78rem;
   font-weight: 600;
