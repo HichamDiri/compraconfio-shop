@@ -107,6 +107,14 @@ body[data-product="barra-telescopica"] .benefit-card__media--square {
   aspect-ratio: 1 / 1;
 }
 
+body[data-product="barra-telescopica"] .feature-media--square img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 0;
+}
+
 body[data-product="barra-telescopica"] .feature-media--natural {
   aspect-ratio: auto;
   overflow: visible;
