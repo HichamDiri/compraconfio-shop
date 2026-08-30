@@ -64,6 +64,17 @@ body[data-product="barra-telescopica"] .guarantee {
   border-top: 1px solid var(--barra-line);
 }
 
+body[data-product="barra-telescopica"] .guarantee-badge-wrap {
+  max-width: 220px;
+  margin: 0 auto 16px;
+}
+
+body[data-product="barra-telescopica"] .guarantee-badge-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 body[data-product="barra-telescopica"] .dot.steel {
   background: var(--barra-steel);
 }
