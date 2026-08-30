@@ -43,12 +43,21 @@
     <section class="gallery" id="heroSection">
       <div class="gallery-stage" id="galleryTrack">
         <div class="slide">
-          <div class="media-placeholder" aria-label="Foto del producto — barra telescópica">
-            <span class="media-placeholder__label">Foto producto</span>
-          </div>
+          <img class="is-contain" src="/images/barra-telescopica-hero-1.png?v=20260830h" alt="Barra telescópica para ropa — acero inoxidable con perchas" width="1024" height="1024" loading="eager" decoding="async">
+        </div>
+        <div class="slide">
+          <img class="is-contain" src="/images/barra-telescopica-hero-2.png?v=20260830h" alt="Barra telescópica instalada en lavandería — aguanta chaquetas y hoodies" width="1024" height="1024" loading="lazy" decoding="async">
+        </div>
+        <div class="slide">
+          <img class="is-contain" src="/images/barra-telescopica-hero-3.png?v=20260830h" alt="Montaje sin taladro — soporte de pared con acero inoxidable" width="1024" height="1024" loading="lazy" decoding="async">
         </div>
       </div>
       <div class="gallery-dots" id="galleryDots" aria-hidden="true"></div>
+      <div class="gallery-thumbs">
+        <button type="button" class="thumb is-active" aria-label="Producto"><img src="/images/barra-telescopica-hero-1.png?v=20260830h" alt="" width="160" height="160" decoding="async"></button>
+        <button type="button" class="thumb" aria-label="En lavandería"><img src="/images/barra-telescopica-hero-2.png?v=20260830h" alt="" width="160" height="160" loading="lazy" decoding="async"></button>
+        <button type="button" class="thumb" aria-label="Sin taladro"><img src="/images/barra-telescopica-hero-3.png?v=20260830h" alt="" width="160" height="160" loading="lazy" decoding="async"></button>
+      </div>
     </section>
 
     <section class="product-info">
@@ -286,9 +295,7 @@
 
     <div class="order-body">
       <div class="order-product">
-        <div class="media-placeholder" style="width:72px;height:72px;min-height:72px;border-radius:8px" aria-hidden="true">
-          <span class="media-placeholder__label" style="font-size:0.55rem;padding:4px">Foto</span>
-        </div>
+        <img src="/images/barra-telescopica-hero-1.png?v=20260830h" alt="" width="72" height="72" style="width:72px;height:72px;object-fit:contain;border-radius:8px;background:#f5f5f5">
         <div>
           <strong>Barra Telescópica para Ropa</strong>
           <span>70–120 cm · Envío gratis</span>
@@ -427,6 +434,41 @@
 <script src="/js/main.js?v=20260829p" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+  var track = document.getElementById('galleryTrack');
+  var dots = document.getElementById('galleryDots');
+  var thumbs = Array.prototype.slice.call(document.querySelectorAll('.thumb'));
+
+  if (track) {
+    var slides = Array.prototype.slice.call(track.querySelectorAll('.slide'));
+    var current = -1;
+
+    slides.forEach(function () { dots.appendChild(document.createElement('span')); });
+
+    function setActive(index) {
+      if (index === current || index < 0 || index >= slides.length) return;
+      current = index;
+      thumbs.forEach(function (t, i) { t.classList.toggle('is-active', i === index); });
+      Array.prototype.forEach.call(dots.children, function (d, i) { d.classList.toggle('is-active', i === index); });
+    }
+
+    thumbs.forEach(function (thumb, i) {
+      thumb.addEventListener('click', function () {
+        track.scrollTo({ left: track.clientWidth * i, behavior: 'smooth' });
+        setActive(i);
+      });
+    });
+
+    var scrollTimer;
+    track.addEventListener('scroll', function () {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(function () {
+        setActive(Math.round(track.scrollLeft / track.clientWidth));
+      }, 60);
+    }, { passive: true });
+
+    setActive(0);
+  }
+
   var priceNow = document.getElementById('priceNow');
   var priceWas = document.getElementById('priceWas');
   var priceSave = document.getElementById('priceSave');
