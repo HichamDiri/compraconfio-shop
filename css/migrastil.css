@@ -269,8 +269,8 @@ body[data-product="migrastil"] .benefit-card .persona {
 
 body[data-product="migrastil"] .benefit-card h3 {
   font-family: var(--serif);
-  font-size: 1.15rem;
-  font-weight: 500;
+  font-size: 1.3rem;
+  font-weight: 700;
   line-height: 1.25;
   margin-bottom: 10px;
 }
