@@ -1,0 +1,223 @@
+/* CompraConfio — Barra Telescópica para Ropa (stainless steel) */
+:root {
+  --barra-steel: #4a5568;
+  --barra-steel-deep: #2d3748;
+  --barra-accent: #718096;
+  --barra-soft: #f7fafc;
+  --barra-warm: #edf2f7;
+  --barra-line: #cbd5e0;
+}
+
+body[data-product="barra-telescopica"] .announce {
+  background: var(--barra-steel-deep);
+}
+
+body[data-product="barra-telescopica"] .deal-strip {
+  background: var(--barra-steel);
+  color: #fff;
+  font-weight: 700;
+}
+
+body[data-product="barra-telescopica"] .price-save,
+body[data-product="barra-telescopica"] .bundle-flag,
+body[data-product="barra-telescopica"] .btn-order,
+body[data-product="barra-telescopica"] .btn-buy,
+body[data-product="barra-telescopica"] .sticky-bar .js-open-order,
+body[data-product="barra-telescopica"] .ship.is-selected .radio,
+body[data-product="barra-telescopica"] .bundle.is-selected .radio {
+  background: var(--barra-steel);
+  color: #fff;
+  border-color: var(--barra-steel);
+}
+
+body[data-product="barra-telescopica"] .price-now {
+  background: none;
+  color: var(--ink);
+}
+
+body[data-product="barra-telescopica"] .btn-order:hover,
+body[data-product="barra-telescopica"] .btn-buy:hover,
+body[data-product="barra-telescopica"] .sticky-bar .js-open-order:hover {
+  background: var(--barra-steel-deep);
+  border-color: var(--barra-steel-deep);
+}
+
+body[data-product="barra-telescopica"] .price-save {
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.78rem;
+}
+
+body[data-product="barra-telescopica"] .bundle.is-selected .bundle-card,
+body[data-product="barra-telescopica"] .ship.is-selected {
+  border-color: var(--barra-steel);
+  background: var(--barra-soft);
+}
+
+body[data-product="barra-telescopica"] .notice {
+  background: var(--barra-soft);
+  border-left: 3px solid var(--barra-steel);
+}
+
+body[data-product="barra-telescopica"] .guarantee {
+  background: var(--barra-soft);
+  border-top: 1px solid var(--barra-line);
+}
+
+body[data-product="barra-telescopica"] .dot.steel {
+  background: var(--barra-steel);
+}
+
+body[data-product="barra-telescopica"] .product-subtitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--barra-steel);
+  margin-bottom: 6px;
+}
+
+body[data-product="barra-telescopica"] .hero-hook {
+  font-family: var(--serif);
+  font-size: 1.28rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+body[data-product="barra-telescopica"] .hero-lead {
+  font-size: 0.94rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+body[data-product="barra-telescopica"] .perks li {
+  line-height: 1.5;
+}
+
+body[data-product="barra-telescopica"] .gallery-stage .media-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+}
+
+body[data-product="barra-telescopica"] .feature-media--square,
+body[data-product="barra-telescopica"] .benefit-card__media--square {
+  aspect-ratio: 1 / 1;
+}
+
+body[data-product="barra-telescopica"] .feature-media--portrait,
+body[data-product="barra-telescopica"] .benefit-card__media--portrait {
+  aspect-ratio: 4 / 5;
+}
+
+body[data-product="barra-telescopica"] .feature-media--wide {
+  aspect-ratio: 16 / 9;
+}
+
+body[data-product="barra-telescopica"] .feature-media,
+body[data-product="barra-telescopica"] .benefit-card__media {
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--barra-warm);
+}
+
+body[data-product="barra-telescopica"] .media-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  background: linear-gradient(145deg, var(--barra-warm), #e2e8f0);
+  border: 1px dashed var(--barra-line);
+  border-radius: 10px;
+}
+
+body[data-product="barra-telescopica"] .media-placeholder__label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--barra-accent);
+  text-align: center;
+  padding: 12px;
+}
+
+body[data-product="barra-telescopica"] .steps-panel {
+  background: var(--barra-soft);
+  border: 1px solid var(--barra-line);
+  border-radius: 10px;
+  padding: 22px 20px;
+  margin-top: 18px;
+}
+
+body[data-product="barra-telescopica"] .steps-panel ol {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 14px;
+}
+
+body[data-product="barra-telescopica"] .steps-panel li {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+body[data-product="barra-telescopica"] .benefit-grid {
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 720px) {
+  body[data-product="barra-telescopica"] .benefit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+body[data-product="barra-telescopica"] .benefit-card {
+  border: 1px solid var(--barra-line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+
+body[data-product="barra-telescopica"] .benefit-card .benefit-copy {
+  padding: 18px 20px 22px;
+}
+
+body[data-product="barra-telescopica"] .benefit-card h3 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+body[data-product="barra-telescopica"] .benefit-card p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #444;
+  margin: 0;
+}
+
+body[data-product="barra-telescopica"] .section-lead {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: -6px 0 22px;
+}
+
+body[data-product="barra-telescopica"] .spec-chip {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--barra-steel-deep);
+  background: var(--barra-soft);
+  border: 1px solid var(--barra-line);
+  border-radius: 999px;
+  padding: 6px 12px;
+  margin-top: 8px;
+}
