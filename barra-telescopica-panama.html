@@ -70,7 +70,6 @@
       <div class="price-row">
         <span class="price-now" id="priceNow">$45</span>
         <span class="price-was" id="priceWas">$59</span>
-        <span class="price-save" id="priceSave">Ahorra 24%</span>
       </div>
 
       <ul class="perks">
@@ -308,7 +307,6 @@
               </div>
               <div class="bundle-units">
                 <span class="unit-chip"><span class="dot steel"></span>3 barras · toda la casa</span>
-                <span class="bundle-save">Ahorras $108 (61%)</span>
               </div>
             </div>
           </label>
@@ -431,7 +429,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var priceNow = document.getElementById('priceNow');
   var priceWas = document.getElementById('priceWas');
-  var priceSave = document.getElementById('priceSave');
   var stickyPrice = document.getElementById('stickyPrice');
   var stickyLabel = document.getElementById('stickyLabel');
   var sumSubtotal = document.getElementById('sumSubtotal');
@@ -456,7 +453,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     priceNow.textContent = '$' + subtotal;
     priceWas.textContent = '$' + bundle.dataset.oldPrice;
-    priceSave.textContent = 'Ahorra ' + bundle.dataset.save + '%';
     stickyPrice.textContent = '$' + subtotal;
     stickyLabel.textContent = bundle.dataset.label;
 
