@@ -580,7 +580,7 @@ body[data-product="natto-pa"] .stat-bar span {
 body[data-product="natto-pa"] .mech-head {
   display: grid;
   gap: 12px;
-  margin-bottom: 26px;
+  margin-bottom: 22px;
 }
 
 @media (min-width: 900px) {
@@ -589,7 +589,7 @@ body[data-product="natto-pa"] .mech-head {
 
 body[data-product="natto-pa"] .mech-head h2 {
   font-family: var(--serif);
-  font-size: clamp(1.6rem, 4vw, 2.35rem);
+  font-size: clamp(1.55rem, 6.4vw, 2.35rem);
   line-height: 1.15;
   color: var(--hl-crimson);
   font-weight: 500;
@@ -598,19 +598,24 @@ body[data-product="natto-pa"] .mech-head h2 {
 body[data-product="natto-pa"] .mech-head p { font-size: 0.88rem; line-height: 1.55; color: var(--hl-muted); }
 
 body[data-product="natto-pa"] .mech-track {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(78vw, 320px);
+  gap: 14px;
   overflow-x: auto;
-  padding-bottom: 8px;
+  overflow-y: hidden;
+  padding: 2px 18px 10px 0;
+  margin: 0 -18px 0 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
 
 body[data-product="natto-pa"] .mech-track::-webkit-scrollbar { display: none; }
 
 body[data-product="natto-pa"] .mech-card {
-  flex: 0 0 150px;
-  width: 150px;
+  width: 100%;
+  min-width: 0;
   border: none;
   background: none;
   padding: 0;
@@ -618,47 +623,73 @@ body[data-product="natto-pa"] .mech-card {
   text-align: left;
   font: inherit;
   white-space: normal;
-  transition: flex-basis 0.35s ease, width 0.35s ease;
+  overflow: hidden;
+  scroll-snap-align: start;
 }
-
-body[data-product="natto-pa"] .mech-card.is-active { flex: 0 0 min(340px, 80vw); width: min(340px, 80vw); }
 
 body[data-product="natto-pa"] .mech-card img {
   width: 100%;
-  height: auto;
+  height: auto !important;
   max-height: none;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 8px;
   display: block;
 }
 
 body[data-product="natto-pa"] .mech-card.is-active img {
-  aspect-ratio: 4 / 3;
   border-bottom: 3px solid var(--hl-crimson);
 }
 
 body[data-product="natto-pa"] .mech-card h3 {
   font-family: var(--serif);
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.25;
-  color: #c98f8f;
+  color: var(--hl-crimson);
   margin: 12px 0 0;
   font-weight: 500;
-  transition: color 0.25s ease;
+  overflow-wrap: anywhere;
 }
 
-body[data-product="natto-pa"] .mech-card.is-active h3 { color: var(--hl-crimson); }
-
 body[data-product="natto-pa"] .mech-card p {
-  font-size: 0.82rem;
+  font-size: 0.86rem;
   line-height: 1.55;
   color: var(--hl-muted);
   margin: 10px 0 0;
-  display: none;
+  overflow-wrap: anywhere;
 }
 
-body[data-product="natto-pa"] .mech-card.is-active p { display: block; }
+@media (min-width: 900px) {
+  body[data-product="natto-pa"] .mech-track {
+    display: flex;
+    align-items: flex-start;
+    grid-auto-flow: unset;
+    grid-auto-columns: unset;
+    gap: 12px;
+    padding: 0 0 8px;
+    margin: 0;
+    scroll-snap-type: none;
+  }
+
+  body[data-product="natto-pa"] .mech-card {
+    flex: 0 0 150px;
+    width: 150px;
+    overflow: visible;
+    scroll-snap-align: unset;
+  }
+
+  body[data-product="natto-pa"] .mech-card.is-active {
+    flex: 0 0 min(340px, 36vw);
+    width: min(340px, 36vw);
+  }
+
+  body[data-product="natto-pa"] .mech-card img { aspect-ratio: 1 / 1; border-radius: 4px; }
+  body[data-product="natto-pa"] .mech-card.is-active img { aspect-ratio: 4 / 3; }
+  body[data-product="natto-pa"] .mech-card h3 { color: #c98f8f; font-size: 1rem; }
+  body[data-product="natto-pa"] .mech-card.is-active h3 { color: var(--hl-crimson); }
+  body[data-product="natto-pa"] .mech-card p { display: none; }
+  body[data-product="natto-pa"] .mech-card.is-active p { display: block; }
+}
 
 /* ---------- ingredients (tilted cards) ---------- */
 body[data-product="natto-pa"] .ing-track {
@@ -955,7 +986,8 @@ body[data-product="natto-pa"] .disclaimer p { font-size: 0.75rem; line-height: 1
   body[data-product="natto-pa"] .stat-bar strong { font-size: 2.7rem; min-width: 4.4rem; }
   body[data-product="natto-pa"] .stat-bar span { font-size: 1rem; max-width: 12rem; }
   body[data-product="natto-pa"] .mech-head { margin-bottom: 18px; }
-  body[data-product="natto-pa"] .mech-head h2 { font-size: 1.45rem; }
+  body[data-product="natto-pa"] .mech-head h2 { font-size: 1.55rem; }
+  body[data-product="natto-pa"] .mech-track { grid-auto-columns: 78vw; gap: 16px; }
   body[data-product="natto-pa"] .ing-track { padding: 18px 0 28px; }
   body[data-product="natto-pa"] .ing-card { flex: 0 0 168px; width: 168px; }
   body[data-product="natto-pa"] .tl-step { padding-left: 48px; }
