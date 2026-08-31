@@ -935,6 +935,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  document.querySelectorAll('.collapse-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.collapse');
+      var wasOpen = item.classList.contains('is-open');
+      var group = item.closest('.collapse-group');
+      if (group) group.querySelectorAll('.collapse').forEach(function (i) { i.classList.remove('is-open'); });
+      if (!wasOpen) item.classList.add('is-open');
+    });
+  });
+
   document.querySelectorAll('.faq-q').forEach(function (btn) {
     btn.addEventListener('click', function () {
       btn.parentElement.classList.toggle('is-open');
