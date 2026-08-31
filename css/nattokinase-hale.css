@@ -31,8 +31,8 @@ body[data-product="natto-pa"] .rating-row a { color: var(--hl-ink); font-weight:
 /* ---------- hero title + bullets ---------- */
 body[data-product="natto-pa"] .product-title {
   font-family: var(--serif);
-  font-size: clamp(1.9rem, 5vw, 2.65rem);
-  line-height: 1.1;
+  font-size: clamp(1.55rem, 4.6vw, 2.35rem);
+  line-height: 1.12;
   color: var(--hl-ink);
   font-weight: 500;
   margin-bottom: 16px;
@@ -1175,7 +1175,7 @@ body[data-product="natto-pa"] .disclaimer p { font-size: 0.75rem; line-height: 1
 
 @media (max-width: 699px) {
   body[data-product="natto-pa"] .product-info { padding: 18px 16px 28px; }
-  body[data-product="natto-pa"] .product-title { font-size: 1.85rem; margin-bottom: 14px; }
+  body[data-product="natto-pa"] .product-title { font-size: 1.42rem; margin-bottom: 14px; }
   body[data-product="natto-pa"] .hale-bullets li { font-size: 0.86rem; padding-left: 26px; }
   body[data-product="natto-pa"] .hero-bundle {
     grid-template-columns: 58px 1fr auto;
