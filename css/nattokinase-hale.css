@@ -1,5 +1,7 @@
 /* Nattokinasa Panamá — Hale Heart layout */
 body[data-product="natto-pa"] {
+  --sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --hl-crimson: #991818;
   --hl-crimson-bright: #aa1a1a;
   --hl-crimson-deep: #6f1010;
@@ -11,6 +13,10 @@ body[data-product="natto-pa"] {
   --hl-pink: #fce9ec;
   --hl-copper: #b87333;
   --hl-line: #e5dcd2;
+}
+
+body[data-product="natto-pa"] {
+  font-family: var(--sans);
 }
 
 body[data-product="natto-pa"] .announce { background: var(--hl-crimson); }
