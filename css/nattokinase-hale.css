@@ -366,21 +366,40 @@ body[data-product="natto-pa"] .hl-lead {
 /* ---------- customer voices (crimson carousel) ---------- */
 body[data-product="natto-pa"] .voices {
   background: var(--hl-crimson);
-  padding: 52px 0;
+  padding: 40px 0 48px;
   color: #fff;
+  overflow: hidden;
 }
 
-body[data-product="natto-pa"] .voices .hl-eyebrow { color: rgba(255,255,255,0.72); }
-body[data-product="natto-pa"] .voices .hl-title { color: #fff; }
+body[data-product="natto-pa"] .voices .shell {
+  padding-left: 20px;
+  padding-right: 0;
+}
+
+body[data-product="natto-pa"] .voices .hl-eyebrow {
+  color: #e8c27a;
+  text-align: left;
+  letter-spacing: 0.18em;
+  margin-bottom: 12px;
+}
+
+body[data-product="natto-pa"] .voices .hl-title {
+  color: #fff;
+  text-align: left;
+  font-size: clamp(1.7rem, 7vw, 2.3rem);
+  line-height: 1.12;
+  margin-bottom: 22px;
+  padding-right: 20px;
+}
 
 body[data-product="natto-pa"] .voices-track {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 78%;
-  gap: 16px;
+  grid-auto-columns: min(78%, 320px);
+  gap: 22px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: 26px 4px 10px;
+  padding: 4px 20px 8px 0;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
@@ -388,7 +407,11 @@ body[data-product="natto-pa"] .voices-track {
 body[data-product="natto-pa"] .voices-track::-webkit-scrollbar { display: none; }
 
 @media (min-width: 700px) {
-  body[data-product="natto-pa"] .voices-track { grid-auto-columns: 42%; }
+  body[data-product="natto-pa"] .voices { padding: 56px 0; }
+  body[data-product="natto-pa"] .voices .shell { padding-left: 18px; padding-right: 18px; }
+  body[data-product="natto-pa"] .voices .hl-eyebrow,
+  body[data-product="natto-pa"] .voices .hl-title { text-align: center; padding-right: 0; }
+  body[data-product="natto-pa"] .voices-track { grid-auto-columns: 42%; padding: 26px 4px 10px; }
 }
 
 @media (min-width: 1024px) {
@@ -403,43 +426,45 @@ body[data-product="natto-pa"] .voice img {
   width: 100%;
   height: auto !important;
   max-height: none;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 2px;
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 body[data-product="natto-pa"] .voice-name {
   font-family: var(--serif);
-  font-size: 1rem;
+  font-size: 1.12rem;
   color: #fff;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  font-weight: 500;
 }
 
 body[data-product="natto-pa"] .voice-name span {
-  font-family: var(--sans, inherit);
-  font-size: 0.72rem;
-  color: rgba(255,255,255,0.7);
-  margin-left: 6px;
+  font-family: var(--serif);
+  font-size: inherit;
+  color: #fff;
+  margin-left: 0;
 }
 
 body[data-product="natto-pa"] .voice p {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 0.92rem;
-  line-height: 1.5;
-  color: rgba(255,255,255,0.94);
-  margin: 0 0 10px;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: #fff;
+  margin: 0 0 16px;
 }
 
 body[data-product="natto-pa"] .voice cite {
+  font-family: var(--sans);
   font-style: normal;
-  font-size: 0.64rem;
+  font-size: 0.62rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.62);
+  color: #e8c27a;
 }
 
 /* ---------- stats ---------- */
@@ -889,3 +914,33 @@ body[data-product="natto-pa"] .safety-lead { font-size: 0.9rem; line-height: 1.6
 
 body[data-product="natto-pa"] .disclaimer { background: #fff; border-top: 1px solid var(--hl-line); padding: 26px 0; }
 body[data-product="natto-pa"] .disclaimer p { font-size: 0.75rem; line-height: 1.55; color: #8a7f7f; margin-bottom: 8px; }
+
+@media (max-width: 699px) {
+  body[data-product="natto-pa"] .product-info { padding: 18px 16px 28px; }
+  body[data-product="natto-pa"] .product-title { font-size: 1.85rem; margin-bottom: 14px; }
+  body[data-product="natto-pa"] .hale-bullets li { font-size: 0.86rem; padding-left: 26px; }
+  body[data-product="natto-pa"] .hero-bundle {
+    grid-template-columns: 58px 1fr auto;
+    gap: 10px;
+    padding: 12px;
+  }
+  body[data-product="natto-pa"] .hero-bundle img { width: 58px; height: 42px; }
+  body[data-product="natto-pa"] .hero-bundle-copy strong { font-size: 0.88rem; }
+  body[data-product="natto-pa"] .hero-bundle-price { font-size: 1.02rem; }
+  body[data-product="natto-pa"] .btn-order { padding: 16px 14px; font-size: 0.86rem; }
+  body[data-product="natto-pa"] .hale-trust { gap: 6px; }
+  body[data-product="natto-pa"] .hale-trust div { font-size: 0.64rem; padding: 8px 6px; }
+  body[data-product="natto-pa"] .hl-section { padding: 36px 0; }
+  body[data-product="natto-pa"] .stats-panel { padding: 24px 18px; }
+  body[data-product="natto-pa"] .stat-bar { min-height: 72px; padding: 12px 14px; gap: 10px; }
+  body[data-product="natto-pa"] .stat-bar strong { font-size: 1.7rem; }
+  body[data-product="natto-pa"] .stat-bar span { font-size: 0.8rem; }
+  body[data-product="natto-pa"] .mech-head { margin-bottom: 18px; }
+  body[data-product="natto-pa"] .mech-head h2 { font-size: 1.45rem; }
+  body[data-product="natto-pa"] .ing-track { padding: 18px 0 28px; }
+  body[data-product="natto-pa"] .ing-card { flex: 0 0 168px; width: 168px; }
+  body[data-product="natto-pa"] .tl-step { padding-left: 48px; }
+  body[data-product="natto-pa"] .tl-step::before { width: 32px; height: 32px; font-size: 0.85rem; }
+  body[data-product="natto-pa"] .faq-q { font-size: 0.95rem; padding: 16px 0; }
+  body[data-product="natto-pa"] .sticky-bar { padding-bottom: calc(11px + env(safe-area-inset-bottom)); }
+}
