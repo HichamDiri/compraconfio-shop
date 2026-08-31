@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/product.css?v=20260811a">
-  <link rel="stylesheet" href="/css/nattokinase-hale.css?v=20260831n">
+  <link rel="stylesheet" href="/css/nattokinase-hale.css?v=20260831p">
 </head>
 <body data-country="PA" data-lang="es" data-brand="compraconfio" data-product="natto-pa" data-fb-pixel-id="1398615545550804" data-snap-pixel="off" data-thankyou="/thank-you-compraconfio-panama.html">
 
@@ -457,8 +457,8 @@
     <h2 class="hl-title">Tus primeros 12 meses</h2>
     <p class="hl-lead">La nattokinasa no es una solución del mismo día. La enzima se acumula con el uso constante.</p>
 
-    <div class="tl">
-      <div class="tl-step">
+    <div class="tl" id="natto-timeline">
+      <div class="tl-step tl-step--left">
         <div class="tl-card">
           <h3>Mes 1 · Arranque de la circulación</h3>
           <ul>
@@ -467,8 +467,11 @@
             <li>El recubrimiento entérico lleva la enzima intacta más allá del ácido estomacal.</li>
           </ul>
         </div>
+        <span class="tl-marker" aria-hidden="true">
+          <svg class="tl-check" viewBox="0 0 24 24" fill="none"><path d="M5 12.5L10 17.5L19 7.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </span>
       </div>
-      <div class="tl-step">
+      <div class="tl-step tl-step--right">
         <div class="tl-card">
           <h3>Mes 2 · Se construye la base</h3>
           <ul>
@@ -477,8 +480,11 @@
             <li>Los cofactores de apoyo (CoQ10, vitamina K2, bromelina) ayudan con la energía cardíaca constante y a prevenir mayor calcificación arterial.</li>
           </ul>
         </div>
+        <span class="tl-marker" aria-hidden="true">
+          <svg class="tl-check" viewBox="0 0 24 24" fill="none"><path d="M5 12.5L10 17.5L19 7.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </span>
       </div>
-      <div class="tl-step">
+      <div class="tl-step tl-step--left">
         <div class="tl-card">
           <h3>Mes 3 · Apoyo arterial más profundo</h3>
           <ul>
@@ -487,8 +493,11 @@
             <li>Apoya la degradación saludable de la fibrina, el mecanismo central de la nattokinasa.</li>
           </ul>
         </div>
+        <span class="tl-marker" aria-hidden="true">
+          <svg class="tl-check" viewBox="0 0 24 24" fill="none"><path d="M5 12.5L10 17.5L19 7.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </span>
       </div>
-      <div class="tl-step">
+      <div class="tl-step tl-step--right">
         <div class="tl-card">
           <h3>6 meses y más · Rutina a largo plazo</h3>
           <ul>
@@ -497,6 +506,9 @@
             <li>Apoyo continuo para la flexibilidad arterial y la circulación saludable.</li>
           </ul>
         </div>
+        <span class="tl-marker" aria-hidden="true">
+          <svg class="tl-check" viewBox="0 0 24 24" fill="none"><path d="M5 12.5L10 17.5L19 7.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </span>
       </div>
     </div>
   </div>
@@ -913,6 +925,36 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       });
     }
+  })();
+
+  (function initTimeline() {
+    var timeline = document.getElementById('natto-timeline');
+    if (!timeline) return;
+    var items = timeline.querySelectorAll('.tl-step');
+    if (!items.length) return;
+
+    items.forEach(function (item, idx) {
+      var delay = (idx * 80) + 'ms';
+      var marker = item.querySelector('.tl-marker');
+      var content = item.querySelector('.tl-card');
+      if (marker) marker.style.setProperty('--tl-delay', delay);
+      if (content) content.style.setProperty('--tl-delay', delay);
+    });
+
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(function (item) { item.classList.add('is-visible'); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.3, rootMargin: '0px 0px -10% 0px' });
+
+    items.forEach(function (item) { observer.observe(item); });
   })();
 
   document.querySelectorAll('.mech-card').forEach(function (card) {

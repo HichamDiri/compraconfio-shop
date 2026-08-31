@@ -330,7 +330,7 @@ body[data-product="natto-pa"] .collapse-body img { width: 100%; height: auto; bo
 body[data-product="natto-pa"] .hl-section { padding: 56px 0; }
 body[data-product="natto-pa"] .hl-cream { background: var(--hl-cream); }
 body[data-product="natto-pa"] .hl-warm { background: var(--hl-cream-warm); }
-body[data-product="natto-pa"] .hl-beige { background: var(--hl-beige); }
+body[data-product="natto-pa"] .hl-beige { background: var(--hl-beige); overflow-x: hidden; }
 
 body[data-product="natto-pa"] .hl-eyebrow {
   text-align: center;
@@ -886,41 +886,110 @@ body[data-product="natto-pa"] .ingc__card-desc {
   body[data-product="natto-pa"] .ingc__card-title { font-size: 1.5rem; }
 }
 
-/* ---------- timeline (zigzag) ---------- */
+/* ---------- timeline (scroll reveal) ---------- */
 body[data-product="natto-pa"] .tl { position: relative; margin-top: 30px; }
 
 body[data-product="natto-pa"] .tl::before {
   content: "";
   position: absolute;
-  left: 19px;
+  left: 23px;
   top: 0;
   bottom: 0;
-  width: 2px;
-  background: rgba(153, 24, 24, 0.28);
+  width: 3px;
+  background: var(--hl-crimson);
+  opacity: 0.3;
 }
 
-body[data-product="natto-pa"] .tl-step { position: relative; padding-left: 56px; margin-bottom: 22px; }
+body[data-product="natto-pa"] .tl-step {
+  position: relative;
+  padding-left: 68px;
+  margin-bottom: 28px;
+}
 
-body[data-product="natto-pa"] .tl-step::before {
-  content: "✓";
+body[data-product="natto-pa"] .tl-marker {
+  --tl-delay: 0ms;
   position: absolute;
   left: 0;
-  top: 6px;
-  width: 40px;
-  height: 40px;
+  top: 8px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: var(--hl-crimson);
-  color: #fff;
+  background: var(--hl-beige);
+  border: 2px solid var(--hl-crimson);
+  color: var(--hl-crimson);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  z-index: 2;
+  opacity: 0;
+  transform: scale(0.4);
+  transition:
+    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1) var(--tl-delay),
+    transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) var(--tl-delay),
+    background 0.45s ease calc(var(--tl-delay) + 200ms),
+    color 0.45s ease calc(var(--tl-delay) + 200ms),
+    box-shadow 0.45s ease calc(var(--tl-delay) + 200ms);
+}
+
+body[data-product="natto-pa"] .tl-check {
+  width: 60%;
+  height: 60%;
+  display: block;
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+  transition: stroke-dashoffset 0.5s cubic-bezier(0.65, 0, 0.45, 1) calc(var(--tl-delay) + 350ms);
+}
+
+body[data-product="natto-pa"] .tl-marker::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--hl-crimson);
+  opacity: 0;
+  transform: scale(0.85);
+  pointer-events: none;
 }
 
 body[data-product="natto-pa"] .tl-card {
+  --tl-delay: 0ms;
   background: var(--hl-cream);
   border-top: 3px solid var(--hl-crimson);
   padding: 16px 18px;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateX(32px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) var(--tl-delay),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) var(--tl-delay);
+}
+
+body[data-product="natto-pa"] .tl-step--left .tl-card { transform: translateX(-32px); }
+body[data-product="natto-pa"] .tl-step--right .tl-card { transform: translateX(32px); }
+
+body[data-product="natto-pa"] .tl-step.is-visible .tl-marker {
+  opacity: 1;
+  transform: scale(1);
+  background: var(--hl-crimson);
+  color: var(--hl-cream);
+  box-shadow: 0 4px 14px rgba(153, 24, 24, 0.28);
+}
+
+body[data-product="natto-pa"] .tl-step.is-visible .tl-check { stroke-dashoffset: 0; }
+
+body[data-product="natto-pa"] .tl-step.is-visible .tl-card {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+body[data-product="natto-pa"] .tl-step.is-visible .tl-marker::before {
+  animation: natto-marker-pulse 1.2s ease-out forwards;
+  animation-delay: calc(var(--tl-delay) + 250ms);
+}
+
+@keyframes natto-marker-pulse {
+  0% { opacity: 0.7; transform: scale(0.85); }
+  100% { opacity: 0; transform: scale(1.8); }
 }
 
 body[data-product="natto-pa"] .tl-card h3 {
@@ -952,10 +1021,31 @@ body[data-product="natto-pa"] .tl-card li::before {
 
 @media (min-width: 860px) {
   body[data-product="natto-pa"] .tl::before { left: 50%; transform: translateX(-50%); }
-  body[data-product="natto-pa"] .tl-step { padding-left: 0; width: calc(50% - 40px); margin-bottom: 30px; }
-  body[data-product="natto-pa"] .tl-step:nth-child(even) { margin-left: calc(50% + 40px); }
-  body[data-product="natto-pa"] .tl-step::before { left: auto; right: -60px; }
-  body[data-product="natto-pa"] .tl-step:nth-child(even)::before { right: auto; left: -60px; }
+  body[data-product="natto-pa"] .tl-step { padding-left: 0; width: calc(50% - 44px); margin-bottom: 36px; }
+  body[data-product="natto-pa"] .tl-step--right { margin-left: calc(50% + 44px); }
+  body[data-product="natto-pa"] .tl-marker {
+    left: auto;
+    right: -74px;
+    width: 56px;
+    height: 56px;
+    top: 12px;
+  }
+  body[data-product="natto-pa"] .tl-step--right .tl-marker { right: auto; left: -74px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-product="natto-pa"] .tl-marker,
+  body[data-product="natto-pa"] .tl-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  body[data-product="natto-pa"] .tl-marker {
+    background: var(--hl-crimson);
+    color: var(--hl-cream);
+  }
+  body[data-product="natto-pa"] .tl-check { stroke-dashoffset: 0 !important; }
+  body[data-product="natto-pa"] .tl-step.is-visible .tl-marker::before { animation: none !important; }
 }
 
 /* ---------- FAQ ---------- */
@@ -1108,8 +1198,9 @@ body[data-product="natto-pa"] .disclaimer p { font-size: 0.75rem; line-height: 1
   body[data-product="natto-pa"] .mech-head { margin-bottom: 18px; }
   body[data-product="natto-pa"] .mech-head h2 { font-size: 1.55rem; }
   body[data-product="natto-pa"] .mech-track { grid-auto-columns: 78vw; gap: 16px; }
-  body[data-product="natto-pa"] .tl-step { padding-left: 48px; }
-  body[data-product="natto-pa"] .tl-step::before { width: 32px; height: 32px; font-size: 0.85rem; }
+  body[data-product="natto-pa"] .tl::before { left: 20px; }
+  body[data-product="natto-pa"] .tl-step { padding-left: 62px; }
+  body[data-product="natto-pa"] .tl-marker { width: 42px; height: 42px; }
   body[data-product="natto-pa"] .faq-q { font-size: 0.95rem; padding: 16px 0; }
   body[data-product="natto-pa"] .sticky-bar { padding-bottom: calc(11px + env(safe-area-inset-bottom)); }
 }
