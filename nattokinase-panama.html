@@ -945,6 +945,81 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   updateTotals();
 
+  var department = document.getElementById('department');
+  var city = document.getElementById('city');
+  var distritos = window.PA_DISTRITOS || {};
+
+  if (department && city) {
+    Object.keys(distritos).forEach(function (name) {
+      department.appendChild(new Option(name, name));
+    });
+
+    department.addEventListener('change', function () {
+      city.innerHTML = '';
+      city.appendChild(new Option('Selecciona tu distrito', '', true, true));
+      city.firstChild.disabled = true;
+      (distritos[department.value] || []).forEach(function (name) {
+        city.appendChild(new Option(name, name));
+      });
+      city.disabled = false;
+    });
+  }
+
+  var modal = document.getElementById('orderModal');
+  var firstName = document.getElementById('firstName');
+  var lastName = document.getElementById('lastName');
+  var fullName = document.getElementById('name');
+  var lastFocused = null;
+  var addressLine = document.getElementById('addressLine');
+  var zone = document.getElementById('zone');
+  var address = document.getElementById('address');
+  var orderForm = document.getElementById('orderForm');
+
+  function mergeFields() {
+    if (fullName && firstName && lastName) {
+      fullName.value = (firstName.value.trim() + ' ' + lastName.value.trim()).trim();
+    }
+    if (address && addressLine) {
+      address.value = [addressLine.value.trim(), zone ? zone.value.trim() : ''].filter(Boolean).join(', ');
+    }
+  }
+
+  function openOrder() {
+    if (!modal) return;
+    lastFocused = document.activeElement;
+    modal.classList.add('is-open');
+    document.body.classList.add('no-scroll');
+    if (firstName) {
+      setTimeout(function () { firstName.focus({ preventScroll: true }); }, 260);
+    }
+  }
+
+  function closeOrder() {
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    document.body.classList.remove('no-scroll');
+    if (lastFocused) lastFocused.focus({ preventScroll: true });
+  }
+
+  document.querySelectorAll('.js-open-order').forEach(function (btn) {
+    btn.addEventListener('click', openOrder);
+  });
+
+  if (modal) {
+    modal.querySelectorAll('[data-close-order]').forEach(function (btn) {
+      btn.addEventListener('click', closeOrder);
+    });
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal && modal.classList.contains('is-open')) closeOrder();
+  });
+
+  [firstName, lastName, addressLine, zone].forEach(function (input) {
+    if (input) input.addEventListener('input', mergeFields);
+  });
+  if (orderForm) orderForm.addEventListener('submit', mergeFields, true);
+
   var viewing = document.getElementById('liveViewing');
   var orders = document.getElementById('liveOrders');
   if (viewing && orders) {
