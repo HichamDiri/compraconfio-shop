@@ -482,53 +482,60 @@ body[data-product="natto-pa"] .stats-layout {
 body[data-product="natto-pa"] .stats-panel {
   background: var(--hl-crimson);
   color: #fff;
-  border-radius: 6px;
-  padding: 34px 28px;
+  border-radius: 14px;
+  padding: 28px 22px 24px;
 }
 
 body[data-product="natto-pa"] .stats-panel h2 {
   font-family: var(--serif);
-  font-size: clamp(1.5rem, 3.4vw, 2.1rem);
-  line-height: 1.15;
+  font-size: clamp(1.7rem, 6.2vw, 2.35rem);
+  line-height: 1.12;
   font-weight: 500;
   margin-bottom: 14px;
 }
 
-body[data-product="natto-pa"] .stats-panel p { font-size: 0.88rem; color: rgba(255,255,255,0.85); margin-bottom: 16px; }
+body[data-product="natto-pa"] .stats-panel p {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 22px;
+}
 
 body[data-product="natto-pa"] .stats-panel b {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
+  font-family: var(--sans);
   font-size: 0.78rem;
-  font-weight: 600;
-  color: rgba(255,255,255,0.95);
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
 }
 
 body[data-product="natto-pa"] .stats-panel b::before {
   content: "✓";
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: #3faa63;
   color: #fff;
-  font-size: 0.6rem;
+  font-size: 0.62rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-body[data-product="natto-pa"] .stat-bars { display: grid; gap: 12px; }
+body[data-product="natto-pa"] .stat-bars { display: grid; gap: 10px; }
 
 body[data-product="natto-pa"] .stat-bar {
   position: relative;
-  border-radius: 6px;
+  border-radius: 14px;
   overflow: hidden;
-  min-height: 84px;
+  min-height: 118px;
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 16px 20px;
+  gap: 14px;
+  padding: 22px 20px;
   color: #fff;
 }
 
@@ -545,7 +552,7 @@ body[data-product="natto-pa"] .stat-bar::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.42) 55%, rgba(0,0,0,0.18) 100%);
+  background: linear-gradient(90deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.28) 58%, rgba(0,0,0,0.08) 100%);
   z-index: 1;
 }
 
@@ -554,13 +561,20 @@ body[data-product="natto-pa"] .stat-bar span { position: relative; z-index: 2; }
 
 body[data-product="natto-pa"] .stat-bar strong {
   font-family: var(--serif);
-  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  font-size: clamp(2.4rem, 9vw, 3.1rem);
   font-weight: 400;
-  line-height: 1;
+  line-height: 0.9;
   flex: none;
+  min-width: 4.2rem;
 }
 
-body[data-product="natto-pa"] .stat-bar span { font-size: 0.92rem; line-height: 1.35; font-weight: 500; }
+body[data-product="natto-pa"] .stat-bar span {
+  font-family: var(--sans);
+  font-size: 0.98rem;
+  line-height: 1.3;
+  font-weight: 500;
+  max-width: 11.5rem;
+}
 
 /* ---------- mechanisms ---------- */
 body[data-product="natto-pa"] .mech-head {
@@ -933,10 +947,13 @@ body[data-product="natto-pa"] .disclaimer p { font-size: 0.75rem; line-height: 1
   body[data-product="natto-pa"] .hale-trust { gap: 6px; }
   body[data-product="natto-pa"] .hale-trust div { font-size: 0.64rem; padding: 8px 6px; }
   body[data-product="natto-pa"] .hl-section { padding: 36px 0; }
-  body[data-product="natto-pa"] .stats-panel { padding: 24px 18px; }
-  body[data-product="natto-pa"] .stat-bar { min-height: 72px; padding: 12px 14px; gap: 10px; }
-  body[data-product="natto-pa"] .stat-bar strong { font-size: 1.7rem; }
-  body[data-product="natto-pa"] .stat-bar span { font-size: 0.8rem; }
+  body[data-product="natto-pa"] .stats-layout { gap: 12px; }
+  body[data-product="natto-pa"] .stats-panel { padding: 28px 20px 22px; border-radius: 16px; }
+  body[data-product="natto-pa"] .stats-panel h2 { font-size: 1.85rem; }
+  body[data-product="natto-pa"] .stat-bars { gap: 10px; }
+  body[data-product="natto-pa"] .stat-bar { min-height: 122px; padding: 22px 18px; gap: 12px; border-radius: 16px; }
+  body[data-product="natto-pa"] .stat-bar strong { font-size: 2.7rem; min-width: 4.4rem; }
+  body[data-product="natto-pa"] .stat-bar span { font-size: 1rem; max-width: 12rem; }
   body[data-product="natto-pa"] .mech-head { margin-bottom: 18px; }
   body[data-product="natto-pa"] .mech-head h2 { font-size: 1.45rem; }
   body[data-product="natto-pa"] .ing-track { padding: 18px 0 28px; }
