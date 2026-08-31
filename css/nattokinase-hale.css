@@ -2,15 +2,15 @@
 body[data-product="natto-pa"] {
   --sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
   --serif: "Playfair Display", Georgia, "Times New Roman", serif;
-  --hl-crimson: #991818;
-  --hl-crimson-bright: #aa1a1a;
-  --hl-crimson-deep: #6f1010;
+  --hl-crimson: #4B2904;
+  --hl-crimson-bright: #624010;
+  --hl-crimson-deep: #351C03;
   --hl-ink: #2a1a1e;
   --hl-muted: #6b5c5e;
   --hl-cream: #fbf7f2;
   --hl-cream-warm: #f7f1e6;
   --hl-beige: #efe5d2;
-  --hl-pink: #fce9ec;
+  --hl-pink: #efe4d6;
   --hl-copper: #b87333;
   --hl-line: #e5dcd2;
 }
@@ -686,7 +686,7 @@ body[data-product="natto-pa"] .mech-card p {
 
   body[data-product="natto-pa"] .mech-card img { aspect-ratio: 1 / 1; border-radius: 4px; }
   body[data-product="natto-pa"] .mech-card.is-active img { aspect-ratio: 4 / 3; }
-  body[data-product="natto-pa"] .mech-card h3 { color: #c98f8f; font-size: 1rem; }
+  body[data-product="natto-pa"] .mech-card h3 { color: #a89078; font-size: 1rem; }
   body[data-product="natto-pa"] .mech-card.is-active h3 { color: var(--hl-crimson); }
   body[data-product="natto-pa"] .mech-card p { display: none; }
   body[data-product="natto-pa"] .mech-card.is-active p { display: block; }
@@ -973,7 +973,7 @@ body[data-product="natto-pa"] .tl-step.is-visible .tl-marker {
   transform: scale(1);
   background: var(--hl-crimson);
   color: var(--hl-cream);
-  box-shadow: 0 4px 14px rgba(153, 24, 24, 0.28);
+  box-shadow: 0 4px 14px rgba(75, 41, 4, 0.28);
 }
 
 body[data-product="natto-pa"] .tl-step.is-visible .tl-check { stroke-dashoffset: 0; }
@@ -1135,7 +1135,7 @@ body[data-product="natto-pa"] .rev-bar i {
   flex: 1;
   height: 5px;
   border-radius: 3px;
-  background: #f0dcdc;
+  background: #e8dfd4;
   overflow: hidden;
 }
 
