@@ -372,6 +372,7 @@ body[data-product="natto-pa"] .voices {
 }
 
 body[data-product="natto-pa"] .voices .shell {
+  max-width: none;
   padding-left: 20px;
   padding-right: 0;
 }
@@ -395,7 +396,7 @@ body[data-product="natto-pa"] .voices .hl-title {
 body[data-product="natto-pa"] .voices-track {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: min(78%, 320px);
+  grid-auto-columns: min(78vw, 340px);
   gap: 22px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -408,6 +409,7 @@ body[data-product="natto-pa"] .voices-track::-webkit-scrollbar { display: none; 
 
 @media (min-width: 700px) {
   body[data-product="natto-pa"] .voices { padding: 56px 0; }
+  body[data-product="natto-pa"] .voices .shell { max-width: var(--shell); padding-left: 18px; padding-right: 18px; }
   body[data-product="natto-pa"] .voices .shell { padding-left: 18px; padding-right: 18px; }
   body[data-product="natto-pa"] .voices .hl-eyebrow,
   body[data-product="natto-pa"] .voices .hl-title { text-align: center; padding-right: 0; }
