@@ -1,402 +1,876 @@
-/* Nattokinasa Panama — Hale Heart inspired layout */
+/* Nattokinasa Panamá — Hale Heart layout */
 body[data-product="natto-pa"] {
-  --hale-crimson: #8f1d2f;
-  --hale-crimson-deep: #6d1220;
-  --hale-cream: #faf7f2;
-  --hale-ink: #1a1412;
-  --hale-muted: #6b5f58;
-  --hale-gold: #c49a3a;
-  --hale-line: #e8ddd3;
-  --hale-soft: #f3ece4;
+  --hl-crimson: #991818;
+  --hl-crimson-bright: #aa1a1a;
+  --hl-crimson-deep: #6f1010;
+  --hl-ink: #2a1a1e;
+  --hl-muted: #6b5c5e;
+  --hl-cream: #fbf7f2;
+  --hl-cream-warm: #f7f1e6;
+  --hl-beige: #efe5d2;
+  --hl-pink: #fce9ec;
+  --hl-copper: #b87333;
+  --hl-line: #e5dcd2;
 }
 
-body[data-product="natto-pa"] .announce { background: var(--hale-crimson-deep); }
-body[data-product="natto-pa"] .deal-strip { background: var(--hale-crimson); color: #fff; }
+body[data-product="natto-pa"] .announce { background: var(--hl-crimson); }
+body[data-product="natto-pa"] .deal-strip { background: var(--hl-crimson); color: #fff; }
+body[data-product="natto-pa"] .strip { background: var(--hl-crimson); color: #fff; }
 
-body[data-product="natto-pa"] .price-now,
-body[data-product="natto-pa"] .price-save,
-body[data-product="natto-pa"] .bundle-flag,
+body[data-product="natto-pa"] .rating-row { margin-bottom: 10px; }
+body[data-product="natto-pa"] .rating-row .stars { color: var(--hl-crimson); }
+body[data-product="natto-pa"] .rating-row a { color: var(--hl-ink); font-weight: 600; }
+
+/* ---------- hero title + bullets ---------- */
+body[data-product="natto-pa"] .product-title {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 5vw, 2.65rem);
+  line-height: 1.1;
+  color: var(--hl-ink);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+body[data-product="natto-pa"] .product-title em {
+  font-style: normal;
+  color: var(--hl-crimson);
+}
+
+body[data-product="natto-pa"] .hale-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  display: grid;
+  gap: 11px;
+}
+
+body[data-product="natto-pa"] .hale-bullets li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--hl-ink);
+}
+
+body[data-product="natto-pa"] .hale-bullets li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--hl-crimson);
+  color: #fff;
+  font-size: 0.66rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- lab badge ---------- */
+body[data-product="natto-pa"] .lab-badge {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid var(--hl-line);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  background: #fff;
+}
+
+body[data-product="natto-pa"] .lab-badge i {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #e8effb;
+  color: #2f5fbf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  font-size: 0.9rem;
+}
+
+body[data-product="natto-pa"] .lab-badge div { font-size: 0.8rem; line-height: 1.4; }
+body[data-product="natto-pa"] .lab-badge strong { display: block; font-weight: 600; color: var(--hl-ink); }
+body[data-product="natto-pa"] .lab-badge span { color: var(--hl-muted); }
+
+body[data-product="natto-pa"] .lab-badge b {
+  display: inline-block;
+  background: var(--hl-cream-warm);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 0.7rem;
+  color: var(--hl-muted);
+  font-weight: 600;
+}
+
+/* ---------- live counter ---------- */
+body[data-product="natto-pa"] .live-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--hl-muted);
+  margin-bottom: 12px;
+}
+
+body[data-product="natto-pa"] .live-count i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--hl-crimson);
+  animation: hl-pulse 1.8s infinite;
+}
+
+@keyframes hl-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+/* ---------- hero bundle cards ---------- */
+body[data-product="natto-pa"] .hero-bundles {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+body[data-product="natto-pa"] .hero-bundle {
+  position: relative;
+  display: grid;
+  grid-template-columns: 74px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--hl-line);
+  border-radius: 10px;
+  background: var(--hl-cream);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+body[data-product="natto-pa"] .hero-bundle input { position: absolute; opacity: 0; pointer-events: none; }
+
+body[data-product="natto-pa"] .hero-bundle.is-selected {
+  border-color: var(--hl-crimson);
+  background: var(--hl-pink);
+}
+
+body[data-product="natto-pa"] .hero-bundle img {
+  width: 74px;
+  height: 54px;
+  object-fit: contain;
+  display: block;
+}
+
+body[data-product="natto-pa"] .hero-bundle-copy strong {
+  display: block;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--hl-ink);
+  line-height: 1.2;
+}
+
+body[data-product="natto-pa"] .hero-bundle-copy span {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--hl-crimson);
+  margin-top: 2px;
+}
+
+body[data-product="natto-pa"] .hero-bundle-copy em {
+  display: inline-block;
+  margin-top: 6px;
+  background: var(--hl-beige);
+  color: var(--hl-ink);
+  font-style: normal;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+body[data-product="natto-pa"] .hero-bundle-price {
+  text-align: right;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--hl-ink);
+  line-height: 1.2;
+}
+
+body[data-product="natto-pa"] .hero-bundle-price small {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 400;
+  color: var(--hl-muted);
+  text-decoration: line-through;
+}
+
+body[data-product="natto-pa"] .hero-bundle-flag {
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--hl-crimson);
+  padding: 3px 10px;
+  border-radius: 3px;
+}
+
+body[data-product="natto-pa"] .hero-bundle-flag.is-value { background: var(--hl-copper); }
+
+/* ---------- CTA ---------- */
 body[data-product="natto-pa"] .btn-order,
 body[data-product="natto-pa"] .btn-buy,
-body[data-product="natto-pa"] .sticky-bar .js-open-order,
-body[data-product="natto-pa"] .ship.is-selected .radio,
-body[data-product="natto-pa"] .bundle.is-selected .radio {
-  background: var(--hale-crimson);
-  border-color: var(--hale-crimson);
+body[data-product="natto-pa"] .sticky-bar .js-open-order {
+  background: var(--hl-crimson);
+  border-color: var(--hl-crimson);
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
 }
 
 body[data-product="natto-pa"] .btn-order:hover,
 body[data-product="natto-pa"] .btn-buy:hover,
 body[data-product="natto-pa"] .sticky-bar .js-open-order:hover {
-  background: var(--hale-crimson-deep);
+  background: var(--hl-crimson-deep);
 }
 
-body[data-product="natto-pa"] .price-save { color: #fff; }
+body[data-product="natto-pa"] .btn-order small {
+  display: block;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-size: 0.74rem;
+  opacity: 0.85;
+  margin-top: 3px;
+}
+
+body[data-product="natto-pa"] .price-now,
+body[data-product="natto-pa"] .price-save,
+body[data-product="natto-pa"] .bundle-flag,
+body[data-product="natto-pa"] .ship.is-selected .radio,
+body[data-product="natto-pa"] .bundle.is-selected .radio {
+  background: var(--hl-crimson);
+  border-color: var(--hl-crimson);
+}
+
 body[data-product="natto-pa"] .bundle.is-selected .bundle-card,
-body[data-product="natto-pa"] .ship.is-selected { border-color: var(--hale-crimson); }
-body[data-product="natto-pa"] .notice { background: var(--hale-soft); border-left-color: var(--hale-crimson); }
-body[data-product="natto-pa"] .dot.green { background: var(--hale-crimson); }
+body[data-product="natto-pa"] .ship.is-selected { border-color: var(--hl-crimson); }
+body[data-product="natto-pa"] .notice { background: var(--hl-cream-warm); border-left-color: var(--hl-crimson); }
+body[data-product="natto-pa"] .dot.green { background: var(--hl-crimson); }
 
-body[data-product="natto-pa"] .product-subtitle {
-  color: var(--hale-crimson);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-}
-
-body[data-product="natto-pa"] .rating-row .stars { color: var(--hale-gold); }
-
-body[data-product="natto-pa"] .hero-bullets {
+/* ---------- trust badges ---------- */
+body[data-product="natto-pa"] .hale-trust {
   display: grid;
-  gap: 10px;
-  margin: 16px 0 18px;
-  padding: 0;
-  list-style: none;
-}
-
-body[data-product="natto-pa"] .hero-bullets li {
-  font-size: 0.92rem;
-  line-height: 1.45;
-  color: var(--hale-ink);
-}
-
-body[data-product="natto-pa"] .hero-formula {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 8px 12px;
-  border-radius: 8px;
-  background: var(--hale-soft);
-  border: 1px solid var(--hale-line);
-  font-size: 0.82rem;
-  color: var(--hale-muted);
-}
-
-body[data-product="natto-pa"] .trust-banner img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-}
-
-body[data-product="natto-pa"] .social-proof {
-  background: var(--hale-cream);
-  border-top: 1px solid var(--hale-line);
-  border-bottom: 1px solid var(--hale-line);
-  padding: 14px 0;
-  text-align: center;
-  font-size: 0.88rem;
-  color: var(--hale-muted);
-}
-
-body[data-product="natto-pa"] .stats-section {
-  background: var(--hale-ink);
-  color: #fff;
-  padding: 48px 0;
-}
-
-body[data-product="natto-pa"] .stats-section .section-title { color: #fff; }
-body[data-product="natto-pa"] .stats-section .section-lead { color: rgba(255,255,255,0.78); }
-
-body[data-product="natto-pa"] .stats-grid {
-  display: grid;
-  gap: 14px;
-  margin-top: 24px;
-}
-
-@media (min-width: 768px) {
-  body[data-product="natto-pa"] .stats-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (min-width: 1024px) {
-  body[data-product="natto-pa"] .stats-grid { grid-template-columns: repeat(4, 1fr); }
-}
-
-body[data-product="natto-pa"] .stat-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-body[data-product="natto-pa"] .stat-card img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  display: block;
-}
-
-body[data-product="natto-pa"] .stat-card div {
-  padding: 14px;
-}
-
-body[data-product="natto-pa"] .stat-card strong {
-  display: block;
-  font-size: 1.6rem;
-  color: #fff;
-  line-height: 1.1;
-  margin-bottom: 6px;
-}
-
-body[data-product="natto-pa"] .stat-card span {
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.82);
-  line-height: 1.4;
-}
-
-body[data-product="natto-pa"] .mechanism-tabs {
-  display: grid;
-  gap: 20px;
-  margin-top: 24px;
-}
-
-@media (min-width: 900px) {
-  body[data-product="natto-pa"] .mechanism-tabs {
-    grid-template-columns: 280px 1fr;
-    align-items: start;
-  }
-}
-
-body[data-product="natto-pa"] .mechanism-nav {
-  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
+  margin: 14px 0 12px;
 }
 
-body[data-product="natto-pa"] .mechanism-btn {
-  text-align: left;
-  border: 1px solid var(--hale-line);
+body[data-product="natto-pa"] .hale-trust div {
+  border: 1px solid var(--hl-line);
+  border-radius: 8px;
+  padding: 10px 8px;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: 0.72rem;
+  line-height: 1.3;
+  color: var(--hl-ink);
   background: #fff;
+}
+
+body[data-product="natto-pa"] .hale-trust div i {
+  display: block;
+  font-style: normal;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+body[data-product="natto-pa"] .trusted-by {
+  background: var(--hl-cream-warm);
   border-radius: 10px;
   padding: 12px 14px;
-  cursor: pointer;
-  font: inherit;
-  color: var(--hale-ink);
+  font-size: 0.8rem;
+  color: var(--hl-muted);
+  margin-bottom: 16px;
 }
 
-body[data-product="natto-pa"] .mechanism-btn.is-active {
-  border-color: var(--hale-crimson);
-  background: var(--hale-soft);
-  box-shadow: inset 3px 0 0 var(--hale-crimson);
-}
-
-body[data-product="natto-pa"] .mechanism-btn strong {
+body[data-product="natto-pa"] .trusted-by strong {
   display: block;
-  font-size: 0.88rem;
-  margin-bottom: 4px;
-}
-
-body[data-product="natto-pa"] .mechanism-btn span {
-  display: block;
-  font-size: 0.78rem;
-  color: var(--hale-muted);
-  line-height: 1.35;
-}
-
-body[data-product="natto-pa"] .mechanism-panel {
-  border: 1px solid var(--hale-line);
-  border-radius: 14px;
-  overflow: hidden;
-  background: #fff;
-}
-
-body[data-product="natto-pa"] .mechanism-panel img {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  display: block;
-}
-
-body[data-product="natto-pa"] .mechanism-panel div {
-  padding: 18px;
-}
-
-body[data-product="natto-pa"] .mechanism-panel h3 {
-  font-family: var(--serif);
-  font-size: 1.35rem;
-  margin-bottom: 8px;
-}
-
-body[data-product="natto-pa"] .ingredient-scroll {
-  display: grid;
-  gap: 14px;
-  margin-top: 22px;
-}
-
-@media (min-width: 640px) {
-  body[data-product="natto-pa"] .ingredient-scroll { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (min-width: 960px) {
-  body[data-product="natto-pa"] .ingredient-scroll { grid-template-columns: repeat(3, 1fr); }
-}
-
-body[data-product="natto-pa"] .ingredient-tile {
-  border: 1px solid var(--hale-line);
-  border-radius: 14px;
-  overflow: hidden;
-  background: #fff;
-}
-
-body[data-product="natto-pa"] .ingredient-tile img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  display: block;
-}
-
-body[data-product="natto-pa"] .ingredient-tile div {
-  padding: 14px;
-}
-
-body[data-product="natto-pa"] .ingredient-tile em {
-  display: block;
-  font-style: normal;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--hale-crimson);
-  margin-bottom: 4px;
-}
-
-body[data-product="natto-pa"] .ingredient-tile strong {
-  display: block;
-  font-size: 1rem;
-  margin-bottom: 6px;
-}
-
-body[data-product="natto-pa"] .ingredient-tile p {
-  font-size: 0.84rem;
-  color: var(--hale-muted);
-  line-height: 1.45;
-  margin: 0;
-}
-
-body[data-product="natto-pa"] .timeline {
-  display: grid;
-  gap: 14px;
-  margin-top: 22px;
-}
-
-@media (min-width: 768px) {
-  body[data-product="natto-pa"] .timeline { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (min-width: 1024px) {
-  body[data-product="natto-pa"] .timeline { grid-template-columns: repeat(4, 1fr); }
-}
-
-body[data-product="natto-pa"] .timeline-step {
-  border: 1px solid var(--hale-line);
-  border-radius: 14px;
-  padding: 16px;
-  background: #fff;
-}
-
-body[data-product="natto-pa"] .timeline-step h3 {
-  font-size: 0.95rem;
-  margin-bottom: 10px;
-  color: var(--hale-crimson);
-}
-
-body[data-product="natto-pa"] .timeline-step ul {
-  margin: 0;
-  padding-left: 18px;
-  font-size: 0.84rem;
-  color: var(--hale-muted);
-  line-height: 1.45;
-}
-
-body[data-product="natto-pa"] .testimonial-track {
-  display: grid;
-  gap: 14px;
-  margin-top: 22px;
-}
-
-@media (min-width: 768px) {
-  body[data-product="natto-pa"] .testimonial-track { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (min-width: 1100px) {
-  body[data-product="natto-pa"] .testimonial-track { grid-template-columns: repeat(3, 1fr); }
-}
-
-body[data-product="natto-pa"] .testimonial-card {
-  border: 1px solid var(--hale-line);
-  border-radius: 14px;
-  overflow: hidden;
-  background: #fff;
-}
-
-body[data-product="natto-pa"] .testimonial-card img {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  display: block;
-}
-
-body[data-product="natto-pa"] .testimonial-card div {
-  padding: 14px;
-}
-
-body[data-product="natto-pa"] .testimonial-card .stars { color: var(--hale-gold); margin-bottom: 8px; }
-body[data-product="natto-pa"] .testimonial-card p {
-  font-size: 0.88rem;
-  line-height: 1.5;
-  margin: 0 0 10px;
-  font-style: italic;
-}
-
-body[data-product="natto-pa"] .testimonial-card cite {
-  display: block;
-  font-style: normal;
-  font-size: 0.78rem;
-  color: var(--hale-muted);
-}
-
-body[data-product="natto-pa"] .testimonial-card cite em {
-  display: block;
-  font-style: normal;
-  font-weight: 700;
-  color: var(--hale-ink);
+  color: var(--hl-ink);
+  font-size: 0.86rem;
   margin-bottom: 2px;
 }
 
-body[data-product="natto-pa"] .benefits-panel img {
-  width: 100%;
-  height: auto;
-  border-radius: 14px;
-  display: block;
-  margin-top: 18px;
+/* ---------- accordions ---------- */
+body[data-product="natto-pa"] .collapse-btn { font-weight: 600; }
+body[data-product="natto-pa"] .collapse-body ul { padding-left: 18px; margin: 0; display: grid; gap: 7px; }
+body[data-product="natto-pa"] .collapse-body ul li { font-size: 0.86rem; line-height: 1.45; }
+body[data-product="natto-pa"] .collapse-body img { width: 100%; height: auto; border-radius: 10px; margin-top: 14px; display: block; }
+
+/* ---------- shared section chrome ---------- */
+body[data-product="natto-pa"] .hl-section { padding: 56px 0; }
+body[data-product="natto-pa"] .hl-cream { background: var(--hl-cream); }
+body[data-product="natto-pa"] .hl-warm { background: var(--hl-cream-warm); }
+body[data-product="natto-pa"] .hl-beige { background: var(--hl-beige); }
+
+body[data-product="natto-pa"] .hl-eyebrow {
+  text-align: center;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--hl-crimson);
+  margin-bottom: 10px;
 }
 
-body[data-product="natto-pa"] .section-dark {
-  background: var(--hale-soft);
-  border-top: 1px solid var(--hale-line);
-  border-bottom: 1px solid var(--hale-line);
+body[data-product="natto-pa"] .hl-title {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  line-height: 1.15;
+  text-align: center;
+  color: var(--hl-ink);
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 
-body[data-product="natto-pa"] .guarantee {
-  background: var(--hale-cream);
-  border-top: 1px solid var(--hale-line);
-}
+body[data-product="natto-pa"] .hl-title.is-crimson { color: var(--hl-crimson); }
 
-body[data-product="natto-pa"] .safety {
-  background: #fff8f0;
-  border-top: 1px solid var(--hale-line);
-}
-
-body[data-product="natto-pa"] .safety h2 { color: var(--hale-crimson-deep); }
-
-body[data-product="natto-pa"] .safety-inner {
-  max-width: 760px;
+body[data-product="natto-pa"] .hl-lead {
+  text-align: center;
+  max-width: 620px;
   margin: 0 auto;
-  padding: 36px 0;
-}
-
-body[data-product="natto-pa"] .safety-lead {
   font-size: 0.92rem;
   line-height: 1.55;
-  color: var(--hale-muted);
-  margin: 0;
+  color: var(--hl-muted);
 }
+
+/* ---------- customer voices (crimson carousel) ---------- */
+body[data-product="natto-pa"] .voices {
+  background: var(--hl-crimson);
+  padding: 52px 0;
+  color: #fff;
+}
+
+body[data-product="natto-pa"] .voices .hl-eyebrow { color: rgba(255,255,255,0.72); }
+body[data-product="natto-pa"] .voices .hl-title { color: #fff; }
+
+body[data-product="natto-pa"] .voices-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 78%;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 26px 4px 10px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+body[data-product="natto-pa"] .voices-track::-webkit-scrollbar { display: none; }
+
+@media (min-width: 700px) {
+  body[data-product="natto-pa"] .voices-track { grid-auto-columns: 42%; }
+}
+
+@media (min-width: 1024px) {
+  body[data-product="natto-pa"] .voices-track { grid-auto-columns: 30%; }
+}
+
+body[data-product="natto-pa"] .voice {
+  scroll-snap-align: start;
+}
+
+body[data-product="natto-pa"] .voice img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+body[data-product="natto-pa"] .voice-name {
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+body[data-product="natto-pa"] .voice-name span {
+  font-family: var(--sans, inherit);
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.7);
+  margin-left: 6px;
+}
+
+body[data-product="natto-pa"] .voice p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.94);
+  margin: 0 0 10px;
+}
+
+body[data-product="natto-pa"] .voice cite {
+  font-style: normal;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.62);
+}
+
+/* ---------- stats ---------- */
+body[data-product="natto-pa"] .stats-layout {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 900px) {
+  body[data-product="natto-pa"] .stats-layout { grid-template-columns: 0.85fr 1.15fr; align-items: start; }
+}
+
+body[data-product="natto-pa"] .stats-panel {
+  background: var(--hl-crimson);
+  color: #fff;
+  border-radius: 6px;
+  padding: 34px 28px;
+}
+
+body[data-product="natto-pa"] .stats-panel h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+  line-height: 1.15;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+body[data-product="natto-pa"] .stats-panel p { font-size: 0.88rem; color: rgba(255,255,255,0.85); margin-bottom: 16px; }
+
+body[data-product="natto-pa"] .stats-panel b {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.95);
+}
+
+body[data-product="natto-pa"] .stats-panel b::before {
+  content: "✓";
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #3faa63;
+  color: #fff;
+  font-size: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body[data-product="natto-pa"] .stat-bars { display: grid; gap: 12px; }
+
+body[data-product="natto-pa"] .stat-bar {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  min-height: 84px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  color: #fff;
+}
+
+body[data-product="natto-pa"] .stat-bar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+body[data-product="natto-pa"] .stat-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.42) 55%, rgba(0,0,0,0.18) 100%);
+  z-index: 1;
+}
+
+body[data-product="natto-pa"] .stat-bar strong,
+body[data-product="natto-pa"] .stat-bar span { position: relative; z-index: 2; }
+
+body[data-product="natto-pa"] .stat-bar strong {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1;
+  flex: none;
+}
+
+body[data-product="natto-pa"] .stat-bar span { font-size: 0.92rem; line-height: 1.35; font-weight: 500; }
+
+/* ---------- mechanisms ---------- */
+body[data-product="natto-pa"] .mech-head {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+@media (min-width: 900px) {
+  body[data-product="natto-pa"] .mech-head { grid-template-columns: 1fr 1fr; align-items: end; }
+}
+
+body[data-product="natto-pa"] .mech-head h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 4vw, 2.35rem);
+  line-height: 1.15;
+  color: var(--hl-crimson);
+  font-weight: 500;
+}
+
+body[data-product="natto-pa"] .mech-head p { font-size: 0.88rem; line-height: 1.55; color: var(--hl-muted); }
+
+body[data-product="natto-pa"] .mech-track {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+
+body[data-product="natto-pa"] .mech-track::-webkit-scrollbar { display: none; }
+
+body[data-product="natto-pa"] .mech-card {
+  flex: 0 0 150px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  white-space: normal;
+  transition: flex-basis 0.35s ease;
+}
+
+body[data-product="natto-pa"] .mech-card.is-active { flex: 0 0 min(340px, 80vw); }
+
+body[data-product="natto-pa"] .mech-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  transition: aspect-ratio 0.35s ease;
+}
+
+body[data-product="natto-pa"] .mech-card.is-active img {
+  aspect-ratio: 4 / 3;
+  border-bottom: 3px solid var(--hl-crimson);
+}
+
+body[data-product="natto-pa"] .mech-card h3 {
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #c98f8f;
+  margin: 12px 0 0;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+body[data-product="natto-pa"] .mech-card.is-active h3 { color: var(--hl-crimson); }
+
+body[data-product="natto-pa"] .mech-card p {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--hl-muted);
+  margin: 10px 0 0;
+  display: none;
+}
+
+body[data-product="natto-pa"] .mech-card.is-active p { display: block; }
+
+/* ---------- ingredients (tilted cards) ---------- */
+body[data-product="natto-pa"] .ing-track {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 28px 4px 34px;
+  scrollbar-width: none;
+}
+
+body[data-product="natto-pa"] .ing-track::-webkit-scrollbar { display: none; }
+
+body[data-product="natto-pa"] .ing-card {
+  flex: 0 0 210px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(42, 26, 30, 0.16);
+}
+
+body[data-product="natto-pa"] .ing-card:nth-child(odd) { transform: rotate(-3deg); }
+body[data-product="natto-pa"] .ing-card:nth-child(even) { transform: rotate(2deg); }
+
+body[data-product="natto-pa"] .ing-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+}
+
+body[data-product="natto-pa"] .ing-card figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 34px 16px 14px;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.68) 100%);
+  color: #fff;
+}
+
+body[data-product="natto-pa"] .ing-card figcaption strong {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+body[data-product="natto-pa"] .ing-card figcaption em {
+  display: block;
+  font-style: normal;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.82);
+  margin-top: 2px;
+}
+
+body[data-product="natto-pa"] .ing-notes {
+  display: grid;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+@media (min-width: 700px) { body[data-product="natto-pa"] .ing-notes { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { body[data-product="natto-pa"] .ing-notes { grid-template-columns: repeat(3, 1fr); } }
+
+body[data-product="natto-pa"] .ing-note {
+  border-top: 2px solid var(--hl-crimson);
+  padding-top: 10px;
+}
+
+body[data-product="natto-pa"] .ing-note strong { display: block; font-size: 0.92rem; color: var(--hl-ink); }
+body[data-product="natto-pa"] .ing-note em { display: block; font-style: normal; font-size: 0.74rem; color: var(--hl-crimson); font-weight: 700; margin: 2px 0 6px; }
+body[data-product="natto-pa"] .ing-note p { font-size: 0.82rem; line-height: 1.5; color: var(--hl-muted); margin: 0; }
+
+/* ---------- timeline (zigzag) ---------- */
+body[data-product="natto-pa"] .tl { position: relative; margin-top: 30px; }
+
+body[data-product="natto-pa"] .tl::before {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(153, 24, 24, 0.28);
+}
+
+body[data-product="natto-pa"] .tl-step { position: relative; padding-left: 56px; margin-bottom: 22px; }
+
+body[data-product="natto-pa"] .tl-step::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--hl-crimson);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+body[data-product="natto-pa"] .tl-card {
+  background: var(--hl-cream);
+  border-top: 3px solid var(--hl-crimson);
+  padding: 16px 18px;
+}
+
+body[data-product="natto-pa"] .tl-card h3 {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--hl-crimson);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+body[data-product="natto-pa"] .tl-card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+
+body[data-product="natto-pa"] .tl-card li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--hl-muted);
+}
+
+body[data-product="natto-pa"] .tl-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--hl-crimson);
+  font-size: 0.76rem;
+}
+
+@media (min-width: 860px) {
+  body[data-product="natto-pa"] .tl::before { left: 50%; transform: translateX(-50%); }
+  body[data-product="natto-pa"] .tl-step { padding-left: 0; width: calc(50% - 40px); margin-bottom: 30px; }
+  body[data-product="natto-pa"] .tl-step:nth-child(even) { margin-left: calc(50% + 40px); }
+  body[data-product="natto-pa"] .tl-step::before { left: auto; right: -60px; }
+  body[data-product="natto-pa"] .tl-step:nth-child(even)::before { right: auto; left: -60px; }
+}
+
+/* ---------- FAQ ---------- */
+body[data-product="natto-pa"] .faq-list { max-width: 720px; margin: 26px auto 0; }
+
+body[data-product="natto-pa"] .faq-item { border-bottom: 1px solid var(--hl-line); }
+
+body[data-product="natto-pa"] .faq-q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: none;
+  border: none;
+  padding: 18px 0;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--serif);
+  font-size: 1.02rem;
+  color: var(--hl-ink);
+}
+
+body[data-product="natto-pa"] .faq-q i {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid var(--hl-crimson);
+  color: var(--hl-crimson);
+  font-style: normal;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+body[data-product="natto-pa"] .faq-item.is-open .faq-q i { transform: rotate(45deg); }
+
+body[data-product="natto-pa"] .faq-a {
+  display: none;
+  padding: 0 0 18px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--hl-muted);
+  max-width: 92%;
+}
+
+body[data-product="natto-pa"] .faq-item.is-open .faq-a { display: block; }
+
+/* ---------- reviews summary ---------- */
+body[data-product="natto-pa"] .rev-summary {
+  display: grid;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (min-width: 860px) { body[data-product="natto-pa"] .rev-summary { grid-template-columns: 1fr 1fr; } }
+
+body[data-product="natto-pa"] .rev-summary h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3.6vw, 2.1rem);
+  color: var(--hl-crimson);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+body[data-product="natto-pa"] .rev-score {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+body[data-product="natto-pa"] .rev-score b { font-size: 2rem; color: var(--hl-ink); }
+body[data-product="natto-pa"] .rev-score span { color: var(--hl-crimson); font-size: 1.05rem; letter-spacing: 2px; }
+body[data-product="natto-pa"] .rev-count { font-size: 0.78rem; color: var(--hl-muted); margin-bottom: 12px; }
+body[data-product="natto-pa"] .rev-disclaimer { font-size: 0.75rem; line-height: 1.5; color: var(--hl-muted); }
+
+body[data-product="natto-pa"] .rev-bars { display: grid; gap: 8px; }
+
+body[data-product="natto-pa"] .rev-bar { display: flex; align-items: center; gap: 12px; }
+
+body[data-product="natto-pa"] .rev-bar i {
+  flex: 1;
+  height: 5px;
+  border-radius: 3px;
+  background: #f0dcdc;
+  overflow: hidden;
+}
+
+body[data-product="natto-pa"] .rev-bar i u { display: block; height: 100%; background: var(--hl-crimson); }
+body[data-product="natto-pa"] .rev-bar span { flex: none; color: var(--hl-crimson); font-size: 0.8rem; letter-spacing: 1px; }
+
+body[data-product="natto-pa"] .rev-topics { margin-top: 22px; }
+
+body[data-product="natto-pa"] .rev-topics h3 {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--hl-crimson);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+body[data-product="natto-pa"] .rev-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+
+body[data-product="natto-pa"] .rev-pills span {
+  border: 1px solid var(--hl-line);
+  background: #fff;
+  border-radius: 999px;
+  padding: 7px 15px;
+  font-size: 0.8rem;
+  color: var(--hl-ink);
+}
+
+/* ---------- guarantee + safety ---------- */
+body[data-product="natto-pa"] .guarantee { background: var(--hl-cream-warm); border-top: 1px solid var(--hl-line); }
+body[data-product="natto-pa"] .safety { background: #fff8f0; border-top: 1px solid var(--hl-line); }
+body[data-product="natto-pa"] .safety-inner { max-width: 760px; margin: 0 auto; padding: 34px 0; }
+body[data-product="natto-pa"] .safety h2 { font-family: var(--serif); color: var(--hl-crimson-deep); margin-bottom: 10px; }
+body[data-product="natto-pa"] .safety-lead { font-size: 0.9rem; line-height: 1.6; color: var(--hl-muted); margin: 0; }
+
+body[data-product="natto-pa"] .disclaimer { background: #fff; border-top: 1px solid var(--hl-line); padding: 26px 0; }
+body[data-product="natto-pa"] .disclaimer p { font-size: 0.75rem; line-height: 1.55; color: #8a7f7f; margin-bottom: 8px; }
