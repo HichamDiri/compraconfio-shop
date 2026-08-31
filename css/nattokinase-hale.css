@@ -15,8 +15,9 @@ body[data-product="natto-pa"] {
   --hl-line: #e5dcd2;
 }
 
-body[data-product="natto-pa"] {
-  font-family: var(--sans);
+body[data-product="natto-pa"] .slide img.is-contain {
+  padding: 0;
+  background: #f4efe6;
 }
 
 body[data-product="natto-pa"] .announce { background: var(--hl-crimson); }
