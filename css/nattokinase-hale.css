@@ -1074,6 +1074,45 @@ body[data-product="natto-pa"] .rev-pills span {
   color: var(--hl-ink);
 }
 
+body[data-product="natto-pa"] .natto-review-lead {
+  max-width: 640px;
+  margin: 0 auto 22px;
+  text-align: center;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--hl-muted);
+}
+
+body[data-product="natto-pa"] .natto-review-grid {
+  margin-top: 8px;
+}
+
+body[data-product="natto-pa"] .natto-review-grid .review-card {
+  border: 1px solid var(--hl-line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+body[data-product="natto-pa"] .natto-review-grid .review-card > .stars,
+body[data-product="natto-pa"] .natto-review-grid .review-card p,
+body[data-product="natto-pa"] .natto-review-grid .review-card cite {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+body[data-product="natto-pa"] .natto-review-grid .review-card > .stars {
+  color: var(--hl-crimson);
+  margin-top: 18px;
+}
+
+body[data-product="natto-pa"] .natto-review-note {
+  margin-top: 18px;
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: var(--hl-muted);
+  text-align: center;
+}
+
 /* ---------- guarantee + safety ---------- */
 body[data-product="natto-pa"] .guarantee { background: var(--hl-cream-warm); border-top: 1px solid var(--hl-line); }
 body[data-product="natto-pa"] .safety { background: #fff8f0; border-top: 1px solid var(--hl-line); }
