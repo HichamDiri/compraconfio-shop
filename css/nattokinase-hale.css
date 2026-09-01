@@ -195,20 +195,25 @@ body[data-product="natto-pa"] .hale-trust {
 body[data-product="natto-pa"] .hale-trust div {
   border: 1px solid var(--hl-line);
   border-radius: 8px;
-  padding: 10px 8px;
+  padding: 12px 8px 10px;
   text-align: center;
   font-family: var(--serif);
   font-size: 0.72rem;
-  line-height: 1.3;
+  line-height: 1.35;
   color: var(--hl-ink);
   background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
-body[data-product="natto-pa"] .hale-trust div i {
+body[data-product="natto-pa"] .hale-trust div img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
   display: block;
-  font-style: normal;
-  font-size: 1rem;
-  margin-bottom: 4px;
+  border-radius: 50%;
 }
 
 body[data-product="natto-pa"] .trusted-by {
