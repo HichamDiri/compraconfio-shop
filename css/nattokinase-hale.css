@@ -1077,8 +1077,7 @@ body[data-product="natto-pa"] .rev-pills span {
 /* ---------- customer reviews ---------- */
 body[data-product="natto-pa"] .natto-review-lead {
   max-width: 640px;
-  margin: 0 auto 22px;
-  text-align: center;
+  margin: 28px 0 18px;
   font-size: 0.88rem;
   line-height: 1.55;
   color: var(--hl-muted);
