@@ -1155,6 +1155,19 @@ body[data-product="natto-pa"] .review-photo-btn img {
   background: var(--hl-cream-warm);
 }
 
+@media (max-width: 719px) {
+  body[data-product="natto-pa"] .natto-review-grid .review-card--photo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  body[data-product="natto-pa"] .natto-review-grid .review-card--photo .review-photo-btn img {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
+  }
+}
+
 body[data-product="natto-pa"] .review-photo-btn::after {
   content: "⤢";
   position: absolute;
