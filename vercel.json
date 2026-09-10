@@ -7,24 +7,6 @@
       ]
     },
     {
-      "source": "/deoxyribose-serum",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/purple-mouthwash",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/purple-mouthwash/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
       "source": "/voyage-nova",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
@@ -49,30 +31,6 @@
       ]
     },
     {
-      "source": "/cinta-silicona-senos",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/cinta-silicona-senos/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/cinta-doble-cara",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/cinta-doble-cara/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
       "source": "/cinta-doble-cara-panama",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
@@ -80,30 +38,6 @@
     },
     {
       "source": "/cinta-doble-cara-panama/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/migrastil-neuropathy-cream",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/migrastil-neuropathy-cream/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/migrastil-neuropathy-cream-panama",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/migrastil-neuropathy-cream-panama/",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
@@ -162,28 +96,16 @@
     { "source": "/nattokinase/", "destination": "/nattokinase.html" },
     { "source": "/nattokinasa", "destination": "/nattokinase.html" },
     { "source": "/nattokinasa/", "destination": "/nattokinase.html" },
-    { "source": "/migrastil-neuropathy-cream", "destination": "/migrastil-neuropathy-cream.html" },
-    { "source": "/migrastil-neuropathy-cream/", "destination": "/migrastil-neuropathy-cream.html" },
-    { "source": "/migrastil-neuropathy-cream-panama", "destination": "/migrastil-neuropathy-cream-panama.html" },
-    { "source": "/migrastil-neuropathy-cream-panama/", "destination": "/migrastil-neuropathy-cream-panama.html" },
     { "source": "/barra-telescopica-panama", "destination": "/barra-telescopica-panama.html" },
     { "source": "/barra-telescopica-panama/", "destination": "/barra-telescopica-panama.html" },
     { "source": "/nattokinase-panama", "destination": "/nattokinase-panama.html" },
     { "source": "/nattokinase-panama/", "destination": "/nattokinase-panama.html" },
-    { "source": "/deoxyribose-serum", "destination": "/deoxyribose-serum.html" },
-    { "source": "/deoxyribose-serum/", "destination": "/deoxyribose-serum.html" },
-    { "source": "/purple-mouthwash", "destination": "/purple-mouthwash.html" },
-    { "source": "/purple-mouthwash/", "destination": "/purple-mouthwash.html" },
-    { "source": "/cinta-silicona-senos", "destination": "/cinta-silicona-senos.html" },
-    { "source": "/cinta-silicona-senos/", "destination": "/cinta-silicona-senos.html" },
-    { "source": "/cinta-doble-cara", "destination": "/cinta-doble-cara.html" },
-    { "source": "/cinta-doble-cara/", "destination": "/cinta-doble-cara.html" },
     { "source": "/cinta-doble-cara-panama", "destination": "/cinta-doble-cara-panama.html" },
     { "source": "/cinta-doble-cara-panama/", "destination": "/cinta-doble-cara-panama.html" },
-    { "source": "/thank-you-compraconfio-panama", "destination": "/thank-you-compraconfio-panama.html" },
-    { "source": "/thank-you-compraconfio-panama/", "destination": "/thank-you-compraconfio-panama.html" },
     { "source": "/voyage-nova", "destination": "/voyage-nova.html" },
     { "source": "/voyage-nova/", "destination": "/voyage-nova.html" },
+    { "source": "/thank-you-compraconfio-panama", "destination": "/thank-you-compraconfio-panama.html" },
+    { "source": "/thank-you-compraconfio-panama/", "destination": "/thank-you-compraconfio-panama.html" },
     { "source": "/thank-you-compraconfio", "destination": "/thank-you-compraconfio.html" },
     { "source": "/thank-you-compraconfio/", "destination": "/thank-you-compraconfio.html" },
     { "source": "/privacidad", "destination": "/privacidad.html" },
@@ -214,6 +136,24 @@
     { "source": "/biodance-caviar-pdrn", "destination": "/", "permanent": true },
     { "source": "/biodance-caviar-pdrn/", "destination": "/", "permanent": true },
     { "source": "/biodance-caviar-pdrn.html", "destination": "/", "permanent": true },
+    { "source": "/migrastil-neuropathy-cream", "destination": "/", "permanent": true },
+    { "source": "/migrastil-neuropathy-cream/", "destination": "/", "permanent": true },
+    { "source": "/migrastil-neuropathy-cream.html", "destination": "/", "permanent": true },
+    { "source": "/migrastil-neuropathy-cream-panama", "destination": "/", "permanent": true },
+    { "source": "/migrastil-neuropathy-cream-panama/", "destination": "/", "permanent": true },
+    { "source": "/migrastil-neuropathy-cream-panama.html", "destination": "/", "permanent": true },
+    { "source": "/deoxyribose-serum", "destination": "/", "permanent": true },
+    { "source": "/deoxyribose-serum/", "destination": "/", "permanent": true },
+    { "source": "/deoxyribose-serum.html", "destination": "/", "permanent": true },
+    { "source": "/purple-mouthwash", "destination": "/", "permanent": true },
+    { "source": "/purple-mouthwash/", "destination": "/", "permanent": true },
+    { "source": "/purple-mouthwash.html", "destination": "/", "permanent": true },
+    { "source": "/cinta-silicona-senos", "destination": "/", "permanent": true },
+    { "source": "/cinta-silicona-senos/", "destination": "/", "permanent": true },
+    { "source": "/cinta-silicona-senos.html", "destination": "/", "permanent": true },
+    { "source": "/cinta-doble-cara", "destination": "/", "permanent": true },
+    { "source": "/cinta-doble-cara/", "destination": "/", "permanent": true },
+    { "source": "/cinta-doble-cara.html", "destination": "/", "permanent": true },
     { "source": "/terms.html", "destination": "/terminos.html", "permanent": true },
     { "source": "/refund.html", "destination": "/devoluciones.html", "permanent": true }
   ]

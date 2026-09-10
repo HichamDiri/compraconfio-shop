@@ -135,21 +135,11 @@
     var source = p.get('source') || '';
     var productImages = {
       'cc-voyage': '/images/voyage-hero-1.png',
-      'cc-purple': '/images/purple-hero-1.png',
-      'cc-deoxy': '/images/deoxy-hero-1.png',
-      'cc-silicone': '/images/silicone-hero-1.png',
-      'cc-tape': '/images/tape-hero.png',
-      'cc-migrastil': '/images/migrastil-hero.png',
       'cc-natto': '/images/natto-hero.png?v=20260823b',
       'cc-mascara': '/images/mascara-product.png'
     };
     var sourceImages = {
       'voyage-nova': '/images/voyage-hero-1.png',
-      'purple-mouthwash': '/images/purple-hero-1.png',
-      'deoxyribose-serum': '/images/deoxy-hero-1.png',
-      'cinta-silicona-senos': '/images/silicone-hero-1.png',
-      'cinta-doble-cara': '/images/tape-hero.png',
-      'migrastil-neuropathy-cream': '/images/migrastil-hero.png',
       'nattokinase': '/images/natto-hero.png?v=20260823b',
       'latine-mascara': '/images/mascara-product.png',
       'compraconfio-home': '/images/mascara-product.png'
@@ -183,12 +173,6 @@
 
     var fbPixelId = p.get('fbPixelId') || '';
     var tiktokPixelId = p.get('tiktokPixelId') || '';
-    if (!tiktokPixelId && p.get('source') === 'deoxyribose-serum') {
-      tiktokPixelId = 'DA46KJ3C77U8UMTFN63G';
-    }
-    if (!tiktokPixelId && p.get('source') === 'purple-mouthwash') {
-      tiktokPixelId = 'DA46KJ3C77U8UMTFN63G';
-    }
     var purchaseValue = Number(total) || Number(price) || 0;
 
     if (tiktokPixelId && orderId && purchaseValue > 0) {
