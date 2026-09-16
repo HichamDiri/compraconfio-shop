@@ -309,6 +309,23 @@ body[data-product="spicy-lip-plumper"] .mech-card p {
   }
 }
 
+body[data-product="spicy-lip-plumper"] .how-to-section .feature-copy h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+body[data-product="spicy-lip-plumper"] .how-to-note {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+body[data-product="spicy-lip-plumper"] .how-to-inner {
+  padding: 0;
+}
+
 body[data-product="spicy-lip-plumper"] .steps-panel ol {
   list-style: none;
   padding: 0;
