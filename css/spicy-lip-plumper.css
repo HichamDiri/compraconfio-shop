@@ -151,8 +151,12 @@ body[data-product="spicy-lip-plumper"] .mech-head {
   margin-bottom: 22px;
 }
 
+body[data-product="spicy-lip-plumper"] .mech-head--solo h2 {
+  max-width: 14rem;
+}
+
 @media (min-width: 900px) {
-  body[data-product="spicy-lip-plumper"] .mech-head {
+  body[data-product="spicy-lip-plumper"] .mech-head:not(.mech-head--solo) {
     grid-template-columns: 1fr 1fr;
     align-items: end;
   }
