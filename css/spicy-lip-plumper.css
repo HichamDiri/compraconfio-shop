@@ -136,43 +136,173 @@ body[data-product="spicy-lip-plumper"] .feature-media--wide img {
   display: block;
 }
 
-body[data-product="spicy-lip-plumper"] .reason-grid {
-  display: grid;
-  gap: 20px;
+/* ---------- reasons carousel (nattokinase mech layout) ---------- */
+body[data-product="spicy-lip-plumper"] .hl-section {
+  padding: 56px 0;
 }
 
-@media (min-width: 768px) {
-  body[data-product="spicy-lip-plumper"] .reason-grid {
-    grid-template-columns: repeat(2, 1fr);
+body[data-product="spicy-lip-plumper"] .hl-warm {
+  background: var(--spicy-soft);
+}
+
+body[data-product="spicy-lip-plumper"] .mech-head {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+@media (min-width: 900px) {
+  body[data-product="spicy-lip-plumper"] .mech-head {
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
   }
 }
 
-body[data-product="spicy-lip-plumper"] .reason-card {
-  background: #fff;
-  border: 1px solid var(--spicy-line);
-  border-radius: 12px;
-  padding: 22px 20px;
-}
-
-body[data-product="spicy-lip-plumper"] .reason-card .reason-num {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--spicy-gold-deep);
-  margin-bottom: 8px;
-}
-
-body[data-product="spicy-lip-plumper"] .reason-card h3 {
+body[data-product="spicy-lip-plumper"] .mech-head h2 {
   font-family: var(--serif);
-  font-size: 1.15rem;
-  margin-bottom: 10px;
+  font-size: clamp(1.55rem, 6.4vw, 2.35rem);
+  line-height: 1.15;
+  color: var(--spicy-gold-deep);
+  font-weight: 500;
 }
 
-body[data-product="spicy-lip-plumper"] .reason-card p {
-  font-size: 0.92rem;
+body[data-product="spicy-lip-plumper"] .mech-head p {
+  font-size: 0.88rem;
+  line-height: 1.55;
   color: var(--muted);
-  line-height: 1.6;
-  margin: 0;
+}
+
+body[data-product="spicy-lip-plumper"] .mech-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(78vw, 320px);
+  gap: 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2px 18px 10px 0;
+  margin: 0 -18px 0 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+body[data-product="spicy-lip-plumper"] .mech-track::-webkit-scrollbar {
+  display: none;
+}
+
+body[data-product="spicy-lip-plumper"] .mech-card {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  white-space: normal;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+body[data-product="spicy-lip-plumper"] .mech-card img {
+  width: 100%;
+  height: auto !important;
+  max-height: none;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  background: #fff;
+}
+
+body[data-product="spicy-lip-plumper"] .mech-card.is-active img {
+  border-bottom: 3px solid var(--spicy-gold);
+}
+
+body[data-product="spicy-lip-plumper"] .mech-card h3 {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.25;
+  color: var(--spicy-gold-deep);
+  margin: 12px 0 0;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+body[data-product="spicy-lip-plumper"] .mech-card p {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 10px 0 0;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 900px) {
+  body[data-product="spicy-lip-plumper"] .mech-track {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 0 0 8px;
+    margin: 0;
+    scroll-snap-type: none;
+  }
+
+  body[data-product="spicy-lip-plumper"] .mech-card {
+    flex: 0 0 150px;
+    width: 150px;
+    overflow: visible;
+    scroll-snap-align: unset;
+  }
+
+  body[data-product="spicy-lip-plumper"] .mech-card.is-active {
+    flex: 0 0 min(340px, 36vw);
+    width: min(340px, 36vw);
+  }
+
+  body[data-product="spicy-lip-plumper"] .mech-card img {
+    aspect-ratio: 1 / 1;
+    border-radius: 4px;
+  }
+
+  body[data-product="spicy-lip-plumper"] .mech-card.is-active img {
+    aspect-ratio: 4 / 3;
+  }
+
+  body[data-product="spicy-lip-plumper"] .mech-card h3 {
+    color: #b8a078;
+    font-size: 1rem;
+  }
+
+  body[data-product="spicy-lip-plumper"] .mech-card.is-active h3 {
+    color: var(--spicy-gold-deep);
+  }
+
+  body[data-product="spicy-lip-plumper"] .mech-card p {
+    display: none;
+  }
+
+  body[data-product="spicy-lip-plumper"] .mech-card.is-active p {
+    display: block;
+  }
+}
+
+@media (max-width: 899px) {
+  body[data-product="spicy-lip-plumper"] .hl-section {
+    padding: 36px 0;
+  }
+
+  body[data-product="spicy-lip-plumper"] .mech-head {
+    margin-bottom: 18px;
+  }
+
+  body[data-product="spicy-lip-plumper"] .mech-head h2 {
+    font-size: 1.55rem;
+  }
+
+  body[data-product="spicy-lip-plumper"] .mech-track {
+    grid-auto-columns: 78vw;
+    gap: 16px;
+  }
 }
 
 body[data-product="spicy-lip-plumper"] .steps-panel ol {

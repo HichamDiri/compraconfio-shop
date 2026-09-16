@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/product.css?v=20260811a">
-  <link rel="stylesheet" href="/css/spicy-lip-plumper.css?v=20260916c">
+  <link rel="stylesheet" href="/css/spicy-lip-plumper.css?v=20260916f">
 </head>
 <body data-country="PA" data-lang="es" data-brand="compraconfio" data-product="spicy-lip-plumper" data-snap-pixel="off" data-thankyou="/thank-you-compraconfio-panama.html">
 
@@ -164,58 +164,51 @@
     </div>
   </section>
 
-  <section class="feature story-step">
-    <div class="feature-inner">
-      <div class="feature-media feature-media--square">
-        <img src="/images/spicy-lip-plumper/hero-spicy.svg" alt="Efecto spicy con extracto de Capsicum Frutescens" width="800" height="800" loading="lazy" decoding="async">
-      </div>
-      <div class="feature-copy">
-        <span class="spicy-badge">¿Por qué se siente “spicy”?</span>
-        <h2>El secreto de la experiencia</h2>
-        <p>Su fórmula contiene ingredientes de efecto cálido, incluyendo extracto de <strong>Capsicum Frutescens</strong>, conocido por producir una sensación de calor y picor sobre los labios.</p>
-        <p>Esta sensación puede comenzar pocos minutos después de aplicarlo. Mientras tanto, el producto ayuda a crear temporalmente una apariencia de labios más llenos y voluminosos.</p>
-        <p><strong>¿La sensación es intensa?</strong> Puede sentirse cálida, picante o con hormigueo — la intensidad varía según cada persona. Por eso recomendamos comenzar con una pequeña cantidad.</p>
-      </div>
-    </div>
-  </section>
-
 </section>
 
-<section class="section">
+<section class="hl-section hl-warm" id="razones">
   <div class="shell">
-    <h2 class="section-title">💋 6 razones para probar Spicy Lip Plumper</h2>
+    <div class="mech-head">
+      <h2>💋 6 razones para probar Spicy Lip Plumper</h2>
+      <p>Combina efecto cosmético de volumen con un acabado glossy — seis motivos por los que lo eligen antes de salir, para una cita o cuando quieren un look más llamativo sin agujas.</p>
+    </div>
 
-    <div class="reason-grid">
-      <article class="reason-card">
-        <p class="reason-num">01</p>
+    <div class="mech-track" id="reasonTrack">
+      <button type="button" class="mech-card is-active">
+        <img src="/images/spicy-lip-plumper/story-results.png?v=20260916f" alt="Labios visualmente más voluminosos" width="1024" height="1024" loading="lazy" decoding="async">
         <h3>Labios visualmente más voluminosos</h3>
         <p>Consigue una apariencia de labios más llenos sin recurrir a agujas o procedimientos estéticos. Perfecto cuando quieres darle un poco más de protagonismo a tus labios.</p>
-      </article>
-      <article class="reason-card">
-        <p class="reason-num">02</p>
+      </button>
+
+      <button type="button" class="mech-card">
+        <img src="/images/spicy-lip-plumper/hero-shades.png?v=20260916f" alt="Efecto juicy lips" width="1024" height="1024" loading="lazy" decoding="async">
         <h3>Efecto “juicy lips” ✨</h3>
         <p>Su acabado brillante ayuda a conseguir ese look de labios hidratados, jugosos y luminosos que tanto se ve en redes sociales. Úsalo solo o combínalo con tu lipstick favorito.</p>
-      </article>
-      <article class="reason-card">
-        <p class="reason-num">03</p>
+      </button>
+
+      <button type="button" class="mech-card">
+        <img src="/images/spicy-lip-plumper/hero-before-after.png?v=20260916f" alt="Define mejor la apariencia de tus labios" width="1024" height="1024" loading="lazy" decoding="async">
         <h3>Define mejor la apariencia de tus labios</h3>
         <p>Unos labios con más volumen visual pueden hacer que el contorno se vea más definido y que tu maquillaje destaque mucho más.</p>
-      </article>
-      <article class="reason-card">
-        <p class="reason-num">04</p>
+      </button>
+
+      <button type="button" class="mech-card">
+        <img src="/images/spicy-lip-plumper/hero-how-to-use.png?v=20260916f" alt="Lista en minutos" width="1024" height="1024" loading="lazy" decoding="async">
         <h3>Lista en minutos</h3>
         <p>No necesitas una rutina complicada. Aplicar → esperar unos minutos → disfrutar del look. Ideal antes de salir, para una cita, una fiesta o simplemente cuando quieras verte diferente.</p>
-      </article>
-      <article class="reason-card">
-        <p class="reason-num">05</p>
+      </button>
+
+      <button type="button" class="mech-card">
+        <img src="/images/spicy-lip-plumper/story-problem.png?v=20260916f" alt="Sin agujas ni procedimientos" width="1024" height="1024" loading="lazy" decoding="async">
         <h3>Sin agujas</h3>
         <p>Si te gusta la apariencia de labios más voluminosos pero no quieres someterte a inyecciones, este es un producto cosmético que puedes probar desde casa.</p>
-      </article>
-      <article class="reason-card">
-        <p class="reason-num">06</p>
+      </button>
+
+      <button type="button" class="mech-card">
+        <img src="/images/spicy-lip-plumper/hero-product.png?v=20260916f" alt="Lleva tu look contigo" width="1500" height="1500" loading="lazy" decoding="async">
         <h3>Lleva tu look contigo</h3>
         <p>Su formato práctico permite tenerlo en tu cartera y utilizarlo cuando quieras refrescar el look de tus labios. Una pasada y listo.</p>
-      </article>
+      </button>
     </div>
   </div>
 </section>
@@ -675,6 +668,13 @@ document.addEventListener('DOMContentLoaded', function () {
     input.addEventListener('change', syncOrder);
   });
   syncOrder();
+
+  document.querySelectorAll('.mech-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      document.querySelectorAll('.mech-card').forEach(function (c) { c.classList.toggle('is-active', c === card); });
+      card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+    });
+  });
 
   document.querySelectorAll('.collapse-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
