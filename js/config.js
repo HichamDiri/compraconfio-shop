@@ -1,3 +1,3 @@
-// Orders are sent through our Vercel API, which saves them to Google Sheets.
-window.GOOGLE_SHEETS_URL = '';
+// Orders post directly to Google Apps Script (avoids /api/orders HTML errors on Vercel).
+window.GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbx__S60obOiYJB7dqlBNMqIvaxTIzY2pafz92tsgYX9G7tpGZvMQYur-N664u787IZVHw/exec';
 window.ORDER_API_URL = '/api/orders';

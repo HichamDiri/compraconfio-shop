@@ -764,7 +764,15 @@ document.addEventListener('DOMContentLoaded', function() {
       keepalive: true,
       body: JSON.stringify(payload)
     }).then(function(response) {
-      return response.json();
+      return response.text().then(function(text) {
+        try {
+          return JSON.parse(text);
+        } catch (error) {
+          throw new Error(isSpanishPage()
+            ? 'No se pudo conectar con el servidor. Intenta de nuevo.'
+            : 'تعذر الاتصال بالخادم. يرجى المحاولة مرة أخرى.');
+        }
+      });
     });
   }
 
