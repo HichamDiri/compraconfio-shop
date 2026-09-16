@@ -43,6 +43,42 @@ body[data-product="natto-pa"] .product-title em {
   color: var(--hl-crimson);
 }
 
+body[data-product="natto-pa"] .price-row {
+  margin: 6px 0 4px;
+}
+
+body[data-product="natto-pa"] .price-row .price-now {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--hl-crimson-deep);
+  font-family: var(--serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+body[data-product="natto-pa"] .price-row .price-was {
+  font-size: 1rem;
+  color: var(--hl-muted);
+}
+
+body[data-product="natto-pa"] .price-row .price-save {
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+body[data-product="natto-pa"] .price-note {
+  margin: 0 0 16px;
+  font-size: 0.82rem;
+  color: var(--hl-muted);
+}
+
 body[data-product="natto-pa"] .hale-bullets {
   list-style: none;
   padding: 0;
