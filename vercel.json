@@ -67,6 +67,18 @@
       ]
     },
     {
+      "source": "/spicy-lip-plumper-panama",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/spicy-lip-plumper-panama/",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
       "source": "/images/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
@@ -102,6 +114,8 @@
     { "source": "/nattokinase-panama/", "destination": "/nattokinase-panama.html" },
     { "source": "/cinta-doble-cara-panama", "destination": "/cinta-doble-cara-panama.html" },
     { "source": "/cinta-doble-cara-panama/", "destination": "/cinta-doble-cara-panama.html" },
+    { "source": "/spicy-lip-plumper-panama", "destination": "/spicy-lip-plumper-panama.html" },
+    { "source": "/spicy-lip-plumper-panama/", "destination": "/spicy-lip-plumper-panama.html" },
     { "source": "/voyage-nova", "destination": "/voyage-nova.html" },
     { "source": "/voyage-nova/", "destination": "/voyage-nova.html" },
     { "source": "/thank-you-compraconfio-panama", "destination": "/thank-you-compraconfio-panama.html" },

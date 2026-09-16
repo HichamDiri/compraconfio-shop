@@ -1,0 +1,303 @@
+/* CompraConfio — Spicy Lip Plumper Panamá */
+:root {
+  --spicy-rose: #d72654;
+  --spicy-rose-deep: #8b1e3f;
+  --spicy-blush: #fff5f7;
+  --spicy-warm: #ffe4ea;
+  --spicy-line: #f3c4cf;
+  --spicy-pepper: #c4451a;
+}
+
+body[data-product="spicy-lip-plumper"] .announce {
+  background: var(--spicy-rose-deep);
+}
+
+body[data-product="spicy-lip-plumper"] .deal-strip {
+  background: linear-gradient(90deg, var(--spicy-rose-deep), var(--spicy-rose));
+  color: #fff;
+  font-weight: 700;
+}
+
+body[data-product="spicy-lip-plumper"] .price-save,
+body[data-product="spicy-lip-plumper"] .bundle-flag,
+body[data-product="spicy-lip-plumper"] .btn-order,
+body[data-product="spicy-lip-plumper"] .btn-buy,
+body[data-product="spicy-lip-plumper"] .sticky-bar .js-open-order,
+body[data-product="spicy-lip-plumper"] .ship.is-selected .radio,
+body[data-product="spicy-lip-plumper"] .bundle.is-selected .radio {
+  background: var(--spicy-rose);
+  color: #fff;
+  border-color: var(--spicy-rose);
+}
+
+body[data-product="spicy-lip-plumper"] .btn-order:hover,
+body[data-product="spicy-lip-plumper"] .btn-buy:hover,
+body[data-product="spicy-lip-plumper"] .sticky-bar .js-open-order:hover {
+  background: var(--spicy-rose-deep);
+  border-color: var(--spicy-rose-deep);
+}
+
+body[data-product="spicy-lip-plumper"] .price-now {
+  background: none;
+  color: var(--ink);
+}
+
+body[data-product="spicy-lip-plumper"] .price-save {
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.78rem;
+}
+
+body[data-product="spicy-lip-plumper"] .bundle.is-selected .bundle-card,
+body[data-product="spicy-lip-plumper"] .ship.is-selected {
+  border-color: var(--spicy-rose);
+  background: var(--spicy-blush);
+}
+
+body[data-product="spicy-lip-plumper"] .notice {
+  background: var(--spicy-blush);
+  border-left: 3px solid var(--spicy-rose);
+}
+
+body[data-product="spicy-lip-plumper"] .guarantee {
+  background: var(--spicy-blush);
+  border-top: 1px solid var(--spicy-line);
+}
+
+body[data-product="spicy-lip-plumper"] .dot.spicy {
+  background: var(--spicy-rose);
+}
+
+body[data-product="spicy-lip-plumper"] .product-subtitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--spicy-rose);
+  margin-bottom: 6px;
+}
+
+body[data-product="spicy-lip-plumper"] .hero-hook {
+  font-family: var(--serif);
+  font-size: 1.28rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+body[data-product="spicy-lip-plumper"] .hero-lead {
+  font-size: 0.94rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+body[data-product="spicy-lip-plumper"] .perks li {
+  line-height: 1.5;
+}
+
+body[data-product="spicy-lip-plumper"] .feature-media--square,
+body[data-product="spicy-lip-plumper"] .benefit-card__media--square {
+  aspect-ratio: 1 / 1;
+}
+
+body[data-product="spicy-lip-plumper"] .feature-media--square img,
+body[data-product="spicy-lip-plumper"] .benefit-card__media--square img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 0;
+}
+
+body[data-product="spicy-lip-plumper"] .feature-media--wide {
+  aspect-ratio: 16 / 9;
+}
+
+body[data-product="spicy-lip-plumper"] .feature-media--wide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+body[data-product="spicy-lip-plumper"] .reason-grid {
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  body[data-product="spicy-lip-plumper"] .reason-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+body[data-product="spicy-lip-plumper"] .reason-card {
+  background: #fff;
+  border: 1px solid var(--spicy-line);
+  border-radius: 12px;
+  padding: 22px 20px;
+}
+
+body[data-product="spicy-lip-plumper"] .reason-card .reason-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--spicy-rose);
+  margin-bottom: 8px;
+}
+
+body[data-product="spicy-lip-plumper"] .reason-card h3 {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+body[data-product="spicy-lip-plumper"] .reason-card p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+body[data-product="spicy-lip-plumper"] .steps-panel ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body[data-product="spicy-lip-plumper"] .steps-panel li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--spicy-line);
+  line-height: 1.55;
+}
+
+body[data-product="spicy-lip-plumper"] .steps-panel li:last-child {
+  border-bottom: none;
+}
+
+body[data-product="spicy-lip-plumper"] .testimonial-grid {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  body[data-product="spicy-lip-plumper"] .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+body[data-product="spicy-lip-plumper"] .testimonial-card {
+  background: #fff;
+  border: 1px solid var(--spicy-line);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+body[data-product="spicy-lip-plumper"] .testimonial-card blockquote {
+  margin: 0 0 12px;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+body[data-product="spicy-lip-plumper"] .testimonial-card cite {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-style: normal;
+}
+
+body[data-product="spicy-lip-plumper"] .compare-panel {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+@media (min-width: 640px) {
+  body[data-product="spicy-lip-plumper"] .compare-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+body[data-product="spicy-lip-plumper"] .compare-box {
+  background: var(--spicy-blush);
+  border: 1px solid var(--spicy-line);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+body[data-product="spicy-lip-plumper"] .compare-box h4 {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--spicy-rose-deep);
+}
+
+body[data-product="spicy-lip-plumper"] .compare-box ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+body[data-product="spicy-lip-plumper"] .expert-box {
+  background: #fff;
+  border: 1px solid var(--spicy-line);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+body[data-product="spicy-lip-plumper"] .expert-box h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+body[data-product="spicy-lip-plumper"] .expert-box ul {
+  margin: 12px 0 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+body[data-product="spicy-lip-plumper"] .expert-box li {
+  padding: 6px 0;
+  font-size: 0.92rem;
+}
+
+body[data-product="spicy-lip-plumper"] .final-cta {
+  text-align: center;
+  background: linear-gradient(180deg, var(--spicy-blush), #fff);
+  padding: 48px 20px;
+}
+
+body[data-product="spicy-lip-plumper"] .final-cta h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  margin-bottom: 16px;
+}
+
+body[data-product="spicy-lip-plumper"] .final-cta .cta-perks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 24px;
+  margin: 20px 0 24px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--spicy-rose-deep);
+}
+
+body[data-product="spicy-lip-plumper"] .spicy-badge {
+  display: inline-block;
+  background: var(--spicy-warm);
+  color: var(--spicy-pepper);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
