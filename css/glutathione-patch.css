@@ -1,14 +1,14 @@
-/* CompraConfio — Glutathione 7 Dark Spot Serum Patch Panamá */
+/* CompraConfio — Glutathione 7 Dark Spot Serum Patch Panamá (packaging: lemon yellow) */
 :root {
-  --gluta-lilac: #e8dff5;
-  --gluta-purple: #8b6fc0;
-  --gluta-purple-deep: #5b3d8f;
-  --gluta-cream: #faf9fc;
-  --gluta-soft: #f3eef9;
-  --gluta-line: #e0d8ec;
-  --gluta-pearl: #d4c8e8;
-  --gluta-ink: #2a2433;
-  --gluta-warm: #ebe3f7;
+  --gluta-lilac: #f9f5c8;
+  --gluta-purple: #c9b832;
+  --gluta-purple-deep: #8a7d14;
+  --gluta-cream: #fefdf8;
+  --gluta-soft: #fbf8e8;
+  --gluta-line: #ece6c8;
+  --gluta-pearl: #ddd4a0;
+  --gluta-ink: #2a2520;
+  --gluta-warm: #f5f0c8;
 }
 
 body[data-product="glutathione-patch"] {
@@ -22,7 +22,7 @@ body[data-product="glutathione-patch"] .announce {
 
 body[data-product="glutathione-patch"] .deal-strip {
   background: linear-gradient(90deg, var(--gluta-purple-deep), var(--gluta-purple));
-  color: var(--gluta-ink);
+  color: #fff;
   font-weight: 700;
 }
 
@@ -35,7 +35,7 @@ body[data-product="glutathione-patch"] .ship.is-selected .radio,
 body[data-product="glutathione-patch"] .bundle.is-selected .radio {
   background: var(--gluta-purple);
   color: var(--gluta-ink);
-  border-color: var(--gluta-purple);
+  border-color: var(--gluta-purple-deep);
 }
 
 body[data-product="glutathione-patch"] .btn-order:hover,
@@ -676,7 +676,7 @@ body[data-product="glutathione-patch"] .ingc__card-label span {
 
 body[data-product="glutathione-patch"] .ingc__card-back {
   transform: rotateY(180deg);
-  background: #3d2648;
+  background: #3d3820;
   color: #fff;
   padding: 28px 24px;
   display: flex;
