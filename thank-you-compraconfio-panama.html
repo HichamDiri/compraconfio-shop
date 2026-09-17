@@ -182,7 +182,7 @@
 
     var fbPixelId = p.get('fbPixelId') || '';
     var tiktokPixelId = p.get('tiktokPixelId') || '';
-    if (!tiktokPixelId && p.get('source') === 'barra-telescopica-panama') {
+    if (!tiktokPixelId && (p.get('source') === 'barra-telescopica-panama' || p.get('source') === 'spicy-lip-plumper-panama')) {
       tiktokPixelId = 'DA46KJ3C77U8UMTFN63G';
     }
     var purchaseValue = Number(total) || Number(price) || 0;
