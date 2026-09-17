@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Sistema de cuidado localizado con parches">
+  <rect width="800" height="800" fill="#faf9fc"/>
+  <rect x="250" y="200" width="300" height="360" rx="24" fill="#fff" stroke="#c9b8e0" stroke-width="3"/>
+  <rect x="310" y="280" width="180" height="120" rx="16" fill="#d9ccf0"/>
+  <text x="400" y="120" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#5b3d8f">Cuidado localizado</text>
+  <text x="400" y="620" text-anchor="middle" font-family="Arial" font-size="20" fill="#8b6fc0">Activos sellados sobre la zona que te preocupa</text>
+  <text x="400" y="660" text-anchor="middle" font-family="Arial" font-size="18" fill="#6a6070">Glutatión + Niacinamida + NAG</text>
+</svg>

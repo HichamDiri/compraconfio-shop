@@ -1,0 +1,1012 @@
+/* CompraConfio — Glutathione 7 Dark Spot Serum Patch Panamá */
+:root {
+  --gluta-lilac: #e8dff5;
+  --gluta-purple: #8b6fc0;
+  --gluta-purple-deep: #5b3d8f;
+  --gluta-cream: #faf9fc;
+  --gluta-soft: #f3eef9;
+  --gluta-line: #e0d8ec;
+  --gluta-pearl: #d4c8e8;
+  --gluta-ink: #2a2433;
+  --gluta-warm: #ebe3f7;
+}
+
+body[data-product="glutathione-patch"] {
+  background: var(--gluta-cream);
+}
+
+body[data-product="glutathione-patch"] .announce {
+  background: var(--gluta-ink);
+  color: var(--gluta-lilac);
+}
+
+body[data-product="glutathione-patch"] .deal-strip {
+  background: linear-gradient(90deg, var(--gluta-purple-deep), var(--gluta-purple));
+  color: var(--gluta-ink);
+  font-weight: 700;
+}
+
+body[data-product="glutathione-patch"] .price-save,
+body[data-product="glutathione-patch"] .bundle-flag,
+body[data-product="glutathione-patch"] .btn-order,
+body[data-product="glutathione-patch"] .btn-buy,
+body[data-product="glutathione-patch"] .sticky-bar .js-open-order,
+body[data-product="glutathione-patch"] .ship.is-selected .radio,
+body[data-product="glutathione-patch"] .bundle.is-selected .radio {
+  background: var(--gluta-purple);
+  color: var(--gluta-ink);
+  border-color: var(--gluta-purple);
+}
+
+body[data-product="glutathione-patch"] .btn-order:hover,
+body[data-product="glutathione-patch"] .btn-buy:hover,
+body[data-product="glutathione-patch"] .sticky-bar .js-open-order:hover {
+  background: var(--gluta-purple-deep);
+  border-color: var(--gluta-purple-deep);
+  color: #fff;
+}
+
+body[data-product="glutathione-patch"] .price-now {
+  background: none;
+  color: var(--ink);
+}
+
+body[data-product="glutathione-patch"] .price-save {
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.78rem;
+}
+
+body[data-product="glutathione-patch"] .bundle.is-selected .bundle-card,
+body[data-product="glutathione-patch"] .ship.is-selected {
+  border-color: var(--gluta-purple);
+  background: var(--gluta-soft);
+}
+
+body[data-product="glutathione-patch"] .notice {
+  background: var(--gluta-soft);
+  border-left: 3px solid var(--gluta-purple);
+}
+
+body[data-product="glutathione-patch"] .guarantee {
+  background: var(--gluta-soft);
+  border-top: 1px solid var(--gluta-line);
+}
+
+body[data-product="glutathione-patch"] .dot.gluta {
+  background: var(--gluta-purple);
+}
+
+body[data-product="glutathione-patch"] .product-subtitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gluta-purple-deep);
+  margin-bottom: 6px;
+}
+
+body[data-product="glutathione-patch"] .hero-hook {
+  font-family: var(--serif);
+  font-size: 1.28rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+body[data-product="glutathione-patch"] .hero-lead {
+  font-size: 0.94rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+body[data-product="glutathione-patch"] .perks li {
+  line-height: 1.5;
+}
+
+body[data-product="glutathione-patch"] .gallery-stage {
+  background: #fff;
+}
+
+body[data-product="glutathione-patch"] .feature-media--square,
+body[data-product="glutathione-patch"] .benefit-card__media--square {
+  aspect-ratio: 1 / 1;
+  background: #fff;
+}
+
+body[data-product="glutathione-patch"] .feature-media--square img,
+body[data-product="glutathione-patch"] .benefit-card__media--square img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 0;
+}
+
+body[data-product="glutathione-patch"] .feature-media--wide {
+  aspect-ratio: 16 / 9;
+  background: #fff;
+}
+
+body[data-product="glutathione-patch"] .feature-media--wide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ---------- reasons carousel (nattokinase mech layout) ---------- */
+body[data-product="glutathione-patch"] .hl-section {
+  padding: 56px 0;
+}
+
+body[data-product="glutathione-patch"] .hl-warm {
+  background: var(--gluta-soft);
+}
+
+body[data-product="glutathione-patch"] .mech-head {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+body[data-product="glutathione-patch"] .mech-head--solo h2 {
+  max-width: 14rem;
+}
+
+@media (min-width: 900px) {
+  body[data-product="glutathione-patch"] .mech-head:not(.mech-head--solo) {
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+  }
+}
+
+body[data-product="glutathione-patch"] .mech-head h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.55rem, 6.4vw, 2.35rem);
+  line-height: 1.15;
+  color: var(--gluta-purple-deep);
+  font-weight: 500;
+}
+
+body[data-product="glutathione-patch"] .mech-head p {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+body[data-product="glutathione-patch"] .mech-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(78vw, 320px);
+  gap: 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2px 18px 10px 0;
+  margin: 0 -18px 0 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+body[data-product="glutathione-patch"] .mech-track::-webkit-scrollbar {
+  display: none;
+}
+
+body[data-product="glutathione-patch"] .mech-card {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  white-space: normal;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+body[data-product="glutathione-patch"] .mech-card img {
+  width: 100%;
+  height: auto !important;
+  max-height: none;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  background: #fff;
+}
+
+body[data-product="glutathione-patch"] .mech-card.is-active img {
+  border-bottom: 3px solid var(--gluta-purple);
+}
+
+body[data-product="glutathione-patch"] .mech-card h3 {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.25;
+  color: var(--gluta-purple-deep);
+  margin: 12px 0 0;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+body[data-product="glutathione-patch"] .mech-card p {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 10px 0 0;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 900px) {
+  body[data-product="glutathione-patch"] .mech-track {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 0 0 8px;
+    margin: 0;
+    scroll-snap-type: none;
+  }
+
+  body[data-product="glutathione-patch"] .mech-card {
+    flex: 0 0 150px;
+    width: 150px;
+    overflow: visible;
+    scroll-snap-align: unset;
+  }
+
+  body[data-product="glutathione-patch"] .mech-card.is-active {
+    flex: 0 0 min(340px, 36vw);
+    width: min(340px, 36vw);
+  }
+
+  body[data-product="glutathione-patch"] .mech-card img {
+    aspect-ratio: 1 / 1;
+    border-radius: 4px;
+  }
+
+  body[data-product="glutathione-patch"] .mech-card.is-active img {
+    aspect-ratio: 4 / 3;
+  }
+
+  body[data-product="glutathione-patch"] .mech-card h3 {
+    color: #b8a078;
+    font-size: 1rem;
+  }
+
+  body[data-product="glutathione-patch"] .mech-card.is-active h3 {
+    color: var(--gluta-purple-deep);
+  }
+
+  body[data-product="glutathione-patch"] .mech-card p {
+    display: none;
+  }
+
+  body[data-product="glutathione-patch"] .mech-card.is-active p {
+    display: block;
+  }
+}
+
+@media (max-width: 899px) {
+  body[data-product="glutathione-patch"] .hl-section {
+    padding: 36px 0;
+  }
+
+  body[data-product="glutathione-patch"] .mech-head {
+    margin-bottom: 18px;
+  }
+
+  body[data-product="glutathione-patch"] .mech-head h2 {
+    font-size: 1.55rem;
+  }
+
+  body[data-product="glutathione-patch"] .mech-track {
+    grid-auto-columns: 78vw;
+    gap: 16px;
+  }
+}
+
+body[data-product="glutathione-patch"] .how-to-section .feature-copy h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+body[data-product="glutathione-patch"] .how-to-note {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+body[data-product="glutathione-patch"] .how-to-inner {
+  padding: 0;
+}
+
+body[data-product="glutathione-patch"] .steps-panel ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body[data-product="glutathione-patch"] .steps-panel li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gluta-line);
+  line-height: 1.55;
+}
+
+body[data-product="glutathione-patch"] .steps-panel li:last-child {
+  border-bottom: none;
+}
+
+body[data-product="glutathione-patch"] .testimonial-grid {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  body[data-product="glutathione-patch"] .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+body[data-product="glutathione-patch"] .testimonial-card {
+  background: #fff;
+  border: 1px solid var(--gluta-line);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+body[data-product="glutathione-patch"] .testimonial-card .stars {
+  color: var(--gluta-purple);
+  font-size: 0.84rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+body[data-product="glutathione-patch"] .testimonial-card blockquote {
+  margin: 0 0 12px;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+body[data-product="glutathione-patch"] .testimonial-card cite {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-style: normal;
+}
+
+body[data-product="glutathione-patch"] .compare-panel {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+@media (min-width: 640px) {
+  body[data-product="glutathione-patch"] .compare-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+body[data-product="glutathione-patch"] .compare-box {
+  background: var(--gluta-soft);
+  border: 1px solid var(--gluta-line);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+body[data-product="glutathione-patch"] .compare-box h4 {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gluta-purple-deep);
+}
+
+body[data-product="glutathione-patch"] .compare-box ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+body[data-product="glutathione-patch"] .expert-box {
+  background: #fff;
+  border: 1px solid var(--gluta-line);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+body[data-product="glutathione-patch"] .expert-box h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+body[data-product="glutathione-patch"] .expert-box ul {
+  margin: 12px 0 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+body[data-product="glutathione-patch"] .expert-box li {
+  padding: 6px 0;
+  font-size: 0.92rem;
+}
+
+body[data-product="glutathione-patch"] .final-cta {
+  text-align: center;
+  background: linear-gradient(180deg, var(--gluta-soft), #fff);
+  padding: 48px 20px;
+}
+
+body[data-product="glutathione-patch"] .final-cta h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  margin-bottom: 16px;
+}
+
+body[data-product="glutathione-patch"] .final-cta .cta-perks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 24px;
+  margin: 20px 0 24px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--gluta-purple-deep);
+}
+
+body[data-product="glutathione-patch"] .gluta-badge {
+  display: inline-block;
+  background: var(--gluta-lilac);
+  color: var(--gluta-purple-deep);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+  border: 1px solid var(--gluta-line);
+}
+
+body[data-product="glutathione-patch"] .text-link {
+  color: var(--gluta-purple-deep);
+}
+
+body[data-product="glutathione-patch"] .sticky-bar {
+  border-top: 1px solid var(--gluta-line);
+}
+
+body[data-product="glutathione-patch"] .guarantee-row {
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--gluta-line);
+}
+
+body[data-product="glutathione-patch"] .guarantee-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+body[data-product="glutathione-patch"] .guarantee-icon {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 2px;
+}
+
+body[data-product="glutathione-patch"] .guarantee-item strong {
+  margin-bottom: 0;
+}
+
+body[data-product="glutathione-patch"] .guarantee-item span {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+
+/* ---------- ingredients carousel (nattokinase flip-card layout) ---------- */
+body[data-product="glutathione-patch"] .hl-cream {
+  background: var(--gluta-cream);
+}
+
+body[data-product="glutathione-patch"] .ingc-section {
+  overflow: hidden;
+}
+
+body[data-product="glutathione-patch"] .ingc {
+  width: 100%;
+  position: relative;
+}
+
+body[data-product="glutathione-patch"] .ingc__header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 8px;
+  padding: 0 20px;
+}
+
+body[data-product="glutathione-patch"] .ingc__heading {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(1.7rem, 5.4vw, 2.85rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--gluta-ink);
+  margin: 0 0 12px;
+}
+
+body[data-product="glutathione-patch"] .ingc__sub {
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 3.2vw, 1.25rem);
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0;
+}
+
+body[data-product="glutathione-patch"] .ingc__wrap {
+  position: relative;
+  width: 100%;
+}
+
+body[data-product="glutathione-patch"] .ingc__arr {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.1);
+  padding: 0;
+}
+
+body[data-product="glutathione-patch"] .ingc__arr--l { left: 16px; }
+body[data-product="glutathione-patch"] .ingc__arr--r { right: 16px; }
+
+body[data-product="glutathione-patch"] .ingc__track {
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  padding: 20px 50px 60px;
+  min-height: 520px;
+  -webkit-overflow-scrolling: touch;
+}
+
+body[data-product="glutathione-patch"] .ingc__track::-webkit-scrollbar {
+  display: none;
+}
+
+body[data-product="glutathione-patch"] .ingc__card {
+  flex: 0 0 300px;
+  width: 300px;
+  height: 420px;
+  perspective: 900px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s;
+  will-change: transform;
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+}
+
+body[data-product="glutathione-patch"] .ingc__card-inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  border-radius: 18px;
+}
+
+@media (hover: hover) {
+  body[data-product="glutathione-patch"] .ingc__card:hover .ingc__card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+body[data-product="glutathione-patch"] .ingc__card.is-flipped .ingc__card-inner {
+  transform: rotateY(180deg);
+}
+
+body[data-product="glutathione-patch"] .ingc__card-front,
+body[data-product="glutathione-patch"] .ingc__card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+body[data-product="glutathione-patch"] .ingc__card-img {
+  width: 100%;
+  height: 100% !important;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  display: block;
+}
+
+body[data-product="glutathione-patch"] .ingc__card-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px 22px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
+}
+
+body[data-product="glutathione-patch"] .ingc__card-label span {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+body[data-product="glutathione-patch"] .ingc__card-back {
+  transform: rotateY(180deg);
+  background: #3d2648;
+  color: #fff;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+body[data-product="glutathione-patch"] .ingc__card-title {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0 0 4px;
+  overflow-wrap: anywhere;
+}
+
+body[data-product="glutathione-patch"] .ingc__card-dose {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 16px;
+  display: block;
+}
+
+body[data-product="glutathione-patch"] .ingc__card-desc {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  opacity: 0.88;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 749px) {
+  body[data-product="glutathione-patch"] .ingc__card {
+    flex: 0 0 72vw;
+    width: 72vw;
+    height: 400px;
+  }
+
+  body[data-product="glutathione-patch"] .ingc__track {
+    padding: 20px 14vw 50px;
+    gap: 12px;
+    min-height: 480px;
+  }
+
+  body[data-product="glutathione-patch"] .ingc__arr--l { left: 6px; }
+  body[data-product="glutathione-patch"] .ingc__arr--r { right: 6px; }
+  body[data-product="glutathione-patch"] .ingc__arr { width: 36px; height: 36px; }
+  body[data-product="glutathione-patch"] .ingc__card-label span,
+  body[data-product="glutathione-patch"] .ingc__card-title { font-size: 1.5rem; }
+}
+
+/* ---------- reviews summary ---------- */
+body[data-product="glutathione-patch"] .rev-summary {
+  display: grid;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (min-width: 860px) {
+  body[data-product="glutathione-patch"] .rev-summary { grid-template-columns: 1fr 1fr; }
+}
+
+body[data-product="glutathione-patch"] .rev-summary h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3.6vw, 2.1rem);
+  color: var(--gluta-purple-deep);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+body[data-product="glutathione-patch"] .rev-score {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+body[data-product="glutathione-patch"] .rev-score b { font-size: 2rem; color: var(--gluta-ink); }
+body[data-product="glutathione-patch"] .rev-score span { color: var(--gluta-purple); font-size: 1.05rem; letter-spacing: 2px; }
+body[data-product="glutathione-patch"] .rev-count { font-size: 0.78rem; color: #7a7060; margin-bottom: 12px; }
+body[data-product="glutathione-patch"] .rev-disclaimer { font-size: 0.75rem; line-height: 1.5; color: #7a7060; }
+
+body[data-product="glutathione-patch"] .rev-bars { display: grid; gap: 8px; }
+
+body[data-product="glutathione-patch"] .rev-bar { display: flex; align-items: center; gap: 12px; }
+
+body[data-product="glutathione-patch"] .rev-bar i {
+  flex: 1;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--gluta-line);
+  overflow: hidden;
+}
+
+body[data-product="glutathione-patch"] .rev-bar i u { display: block; height: 100%; background: var(--gluta-purple); }
+body[data-product="glutathione-patch"] .rev-bar span { flex: none; color: var(--gluta-purple-deep); font-size: 0.8rem; letter-spacing: 1px; }
+
+body[data-product="glutathione-patch"] .rev-topics { margin-top: 22px; }
+
+body[data-product="glutathione-patch"] .rev-topics h3 {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--gluta-purple-deep);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+body[data-product="glutathione-patch"] .rev-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+
+body[data-product="glutathione-patch"] .rev-pills span {
+  border: 1px solid var(--gluta-line);
+  background: #fff;
+  border-radius: 999px;
+  padding: 7px 15px;
+  font-size: 0.8rem;
+  color: var(--gluta-ink);
+}
+
+/* ---------- customer reviews ---------- */
+body[data-product="glutathione-patch"] .gluta-review-lead {
+  max-width: 640px;
+  margin: 28px 0 18px;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #7a7060;
+}
+
+body[data-product="glutathione-patch"] .gluta-review-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+@media (min-width: 720px) {
+  body[data-product="glutathione-patch"] .gluta-review-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+body[data-product="glutathione-patch"] .gluta-review-grid .review-card {
+  border: 1px solid var(--gluta-line);
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+body[data-product="glutathione-patch"] .review-card--photo .stars,
+body[data-product="glutathione-patch"] .review-card--photo .review-card__title,
+body[data-product="glutathione-patch"] .review-card--photo p,
+body[data-product="glutathione-patch"] .review-card--photo cite {
+  padding: 0 16px;
+}
+
+body[data-product="glutathione-patch"] .review-card--photo .stars {
+  margin-top: 12px;
+  margin-bottom: 6px;
+  color: var(--gluta-purple);
+  font-size: 0.84rem;
+  letter-spacing: 1px;
+}
+
+body[data-product="glutathione-patch"] .review-card--photo .review-card__title {
+  margin: 0 0 8px;
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--gluta-ink);
+}
+
+body[data-product="glutathione-patch"] .review-card--photo p {
+  margin: 0 0 10px;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: #333;
+  flex: 1;
+}
+
+body[data-product="glutathione-patch"] .review-card--photo cite {
+  display: block;
+  padding-bottom: 16px;
+  margin-top: auto;
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 600;
+  color: #7a7060;
+}
+
+body[data-product="glutathione-patch"] .review-photo-btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+  position: relative;
+}
+
+body[data-product="glutathione-patch"] .review-photo-btn img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background: var(--gluta-soft);
+}
+
+@media (max-width: 719px) {
+  body[data-product="glutathione-patch"] .gluta-review-grid .review-card--photo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  body[data-product="glutathione-patch"] .gluta-review-grid .review-card--photo .review-photo-btn img {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
+  }
+}
+
+body[data-product="glutathione-patch"] .review-photo-btn::after {
+  content: "⤢";
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #333;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+body[data-product="glutathione-patch"] .gluta-review-note {
+  margin-top: 18px;
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: #7a7060;
+  text-align: center;
+}
+
+body[data-product="glutathione-patch"] .review-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 130;
+  align-items: center;
+  justify-content: center;
+}
+
+body[data-product="glutathione-patch"] .review-lightbox.is-open { display: flex; }
+
+body[data-product="glutathione-patch"] .review-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+body[data-product="glutathione-patch"] .review-lightbox-panel {
+  position: relative;
+  z-index: 1;
+  width: min(94vw, 760px);
+  max-height: 92vh;
+  padding: 52px 48px;
+}
+
+body[data-product="glutathione-patch"] .review-lightbox-figure { margin: 0; }
+
+body[data-product="glutathione-patch"] .review-lightbox-figure img {
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px;
+  background: #111;
+}
+
+body[data-product="glutathione-patch"] .review-lightbox-figure figcaption {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+body[data-product="glutathione-patch"] .review-lightbox-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+body[data-product="glutathione-patch"] .review-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+body[data-product="glutathione-patch"] .review-lightbox-nav.is-prev { left: 0; }
+body[data-product="glutathione-patch"] .review-lightbox-nav.is-next { right: 0; }
+body[data-product="glutathione-patch"] .review-lightbox-nav:disabled { opacity: 0.25; cursor: default; }
+
+@media (max-width: 640px) {
+  body[data-product="glutathione-patch"] .review-lightbox-panel { padding: 44px 36px; }
+}
