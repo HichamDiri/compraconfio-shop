@@ -1,0 +1,104 @@
+/* Cápsulas Anti Inflamación y Digestión — AiRi pink + green theme */
+body[data-product="digest-pa"] {
+  --hl-crimson: #2f6b45;
+  --hl-crimson-bright: #3d8558;
+  --hl-crimson-deep: #1f4a32;
+  --hl-ink: #2a2520;
+  --hl-muted: #6b6560;
+  --hl-cream: #fef8fa;
+  --hl-cream-warm: #fceef3;
+  --hl-beige: #f8e8ee;
+  --hl-pink: #f5dfe8;
+  --hl-copper: #2f6b45;
+  --hl-line: #ecd9e2;
+}
+
+body[data-product="digest-pa"] .slide img.is-contain {
+  padding: 12px;
+  background: #fef8fa;
+}
+
+body[data-product="digest-pa"] .announce {
+  background: var(--hl-crimson-deep);
+  color: #f5dfe8;
+}
+
+body[data-product="digest-pa"] .deal-strip {
+  background: linear-gradient(90deg, var(--hl-crimson-deep), var(--hl-crimson));
+  color: #fff;
+}
+
+body[data-product="digest-pa"] .feature-media--square {
+  background: #fef8fa;
+}
+
+body[data-product="digest-pa"] .product-tagline {
+  margin: -8px 0 16px;
+  font-size: 1rem;
+  line-height: 1.45;
+  color: var(--hl-crimson-deep);
+  font-weight: 600;
+}
+
+body[data-product="digest-pa"] .quote-block {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 28px 24px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid var(--hl-line);
+  text-align: center;
+}
+
+body[data-product="digest-pa"] .quote-block p {
+  margin: 0 0 12px;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--hl-ink);
+}
+
+body[data-product="digest-pa"] .quote-block cite {
+  display: block;
+  font-style: normal;
+  font-size: 0.82rem;
+  color: var(--hl-muted);
+}
+
+body[data-product="digest-pa"] .cta-final {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+body[data-product="digest-pa"] .cta-final .btn-order {
+  margin-top: 18px;
+}
+
+body[data-product="digest-pa"] .digest-voices {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+body[data-product="digest-pa"] .digest-voices .voice {
+  background: #fff;
+  border: 1px solid var(--hl-line);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+body[data-product="digest-pa"] .digest-voices .voice h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  line-height: 1.35;
+  color: var(--hl-crimson-deep);
+}
+
+body[data-product="digest-pa"] .digest-voices .voice p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--hl-muted);
+}
