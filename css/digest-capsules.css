@@ -75,18 +75,57 @@ body[data-product="digest-pa"] .cta-final .btn-order {
   margin-top: 18px;
 }
 
-body[data-product="digest-pa"] .digest-voices {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+body[data-product="digest-pa"] .product-subtitle {
+  margin: 0 0 8px;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--hl-muted);
+}
+
+body[data-product="digest-pa"] .notice {
+  margin: 14px 0 0;
+  font-size: 0.88rem;
+  color: var(--hl-crimson-deep);
+}
+
+body[data-product="digest-pa"] .digest-voices.voices-track {
+  display: flex;
   gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 2px 16px;
   margin-top: 28px;
+  -webkit-overflow-scrolling: touch;
 }
 
 body[data-product="digest-pa"] .digest-voices .voice {
+  flex: 0 0 min(300px, 82vw);
+  scroll-snap-align: start;
   background: #fff;
   border: 1px solid var(--hl-line);
   border-radius: 12px;
   padding: 20px;
+}
+
+body[data-product="digest-pa"] .digest-voices .voice-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--hl-cream-warm);
+  color: var(--hl-crimson-deep);
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+body[data-product="digest-pa"] .digest-voices .voice-name {
+  margin: 0 0 10px;
+  font-size: 0.78rem;
+  color: var(--hl-muted);
 }
 
 body[data-product="digest-pa"] .digest-voices .voice h3 {
@@ -96,9 +135,29 @@ body[data-product="digest-pa"] .digest-voices .voice h3 {
   color: var(--hl-crimson-deep);
 }
 
-body[data-product="digest-pa"] .digest-voices .voice p {
+body[data-product="digest-pa"] .digest-voices .voice p:last-child {
   margin: 0;
   font-size: 0.88rem;
   line-height: 1.55;
   color: var(--hl-muted);
+}
+
+body[data-product="digest-pa"] .digest-voices-note {
+  margin: 8px 0 0;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--hl-muted);
+  text-align: center;
+}
+
+body[data-product="digest-pa"] .ingc__card-img[src$=".svg"] {
+  object-fit: contain;
+  padding: 18px;
+  background: #fef8fa;
+}
+
+body[data-product="digest-pa"] .mech-card img[src$=".svg"] {
+  object-fit: contain;
+  padding: 12px;
+  background: #fef8fa;
 }
