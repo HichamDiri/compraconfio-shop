@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
       done();
     }
 
-    setTimeout(done, 1500);
+    setTimeout(done, 600);
   }
 
   function initTikTokPixel(pixelId) {
