@@ -151,8 +151,8 @@ document.addEventListener('DOMContentLoaded', function() {
       window.ttq.load(pixelId);
       window.ttq.page();
       window.__tiktokPixelLoaded = true;
-      trackTikTokLandingPageView();
     }
+    trackTikTokLandingPageView();
   }
 
   function trackTikTok(eventName, params) {
