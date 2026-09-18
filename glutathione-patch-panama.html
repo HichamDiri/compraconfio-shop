@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/product.css?v=20260811a">
-  <link rel="stylesheet" href="/css/glutathione-patch.css?v=20260918g">
+  <link rel="stylesheet" href="/css/glutathione-patch.css?v=20260918h">
 </head>
 <body data-country="PA" data-lang="es" data-brand="compraconfio" data-product="glutathione-patch" data-snap-pixel="off" data-thankyou="/thank-you-compraconfio-panama.html">
 
@@ -141,16 +141,23 @@
 <section class="hl-section gluta-real-results" id="resultados-reales">
   <div class="shell">
     <h2 class="gluta-real-results__title">Personas reales, resultados reales</h2>
-    <div class="gluta-real-results__grid">
-      <figure class="gluta-real-results__card">
-        <img src="/images/glutathione-patch/real-result-01.png?v=20260918g" alt="Antes y después — melasma y manchas en la mejilla" width="800" height="600" loading="lazy" decoding="async">
-      </figure>
-      <figure class="gluta-real-results__card">
-        <img src="/images/glutathione-patch/real-result-02.png?v=20260918g" alt="Antes y después — hiperpigmentación post-acné en la mejilla" width="800" height="600" loading="lazy" decoding="async">
-      </figure>
-      <figure class="gluta-real-results__card">
-        <img src="/images/glutathione-patch/real-result-03.png?v=20260918g" alt="Antes y después — manchas oscuras en la frente" width="800" height="600" loading="lazy" decoding="async">
-      </figure>
+    <div class="gluta-real-results__viewport">
+      <div class="gluta-real-results__track" id="realResultsTrack">
+        <figure class="gluta-real-results__card">
+          <img src="/images/glutathione-patch/real-result-01.png?v=20260918h" alt="Antes y después — melasma y manchas en la mejilla" width="800" height="800" loading="lazy" decoding="async">
+        </figure>
+        <figure class="gluta-real-results__card">
+          <img src="/images/glutathione-patch/real-result-02.png?v=20260918h" alt="Antes y después — hiperpigmentación post-acné en la mejilla" width="800" height="800" loading="lazy" decoding="async">
+        </figure>
+        <figure class="gluta-real-results__card">
+          <img src="/images/glutathione-patch/real-result-03.png?v=20260918h" alt="Antes y después — manchas oscuras en la frente" width="800" height="800" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </div>
+    <div class="gluta-real-results__nav">
+      <button type="button" class="gluta-real-results__btn" id="realResultsPrev" aria-label="Resultado anterior">&#8249;</button>
+      <span class="gluta-real-results__count" id="realResultsCount" aria-live="polite">1/3</span>
+      <button type="button" class="gluta-real-results__btn" id="realResultsNext" aria-label="Resultado siguiente">&#8250;</button>
     </div>
   </div>
 </section>
@@ -818,6 +825,50 @@ document.addEventListener('DOMContentLoaded', function () {
       card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
     });
   });
+
+  (function initRealResultsCarousel() {
+    var track = document.getElementById('realResultsTrack');
+    var prevBtn = document.getElementById('realResultsPrev');
+    var nextBtn = document.getElementById('realResultsNext');
+    var countEl = document.getElementById('realResultsCount');
+    if (!track || !prevBtn || !nextBtn || !countEl) return;
+
+    var cards = Array.prototype.slice.call(track.querySelectorAll('.gluta-real-results__card'));
+    if (!cards.length) return;
+
+    function getIndex() {
+      var trackRect = track.getBoundingClientRect();
+      var best = 0;
+      var bestDist = Infinity;
+      cards.forEach(function (card, index) {
+        var dist = Math.abs(card.getBoundingClientRect().left - trackRect.left);
+        if (dist < bestDist) {
+          bestDist = dist;
+          best = index;
+        }
+      });
+      return best;
+    }
+
+    function updateControls() {
+      var index = getIndex();
+      countEl.textContent = (index + 1) + '/' + cards.length;
+      prevBtn.disabled = index <= 0;
+      nextBtn.disabled = index >= cards.length - 1;
+    }
+
+    function scrollToIndex(index) {
+      var target = cards[Math.max(0, Math.min(index, cards.length - 1))];
+      if (!target) return;
+      track.scrollTo({ left: target.offsetLeft, behavior: 'smooth' });
+    }
+
+    prevBtn.addEventListener('click', function () { scrollToIndex(getIndex() - 1); });
+    nextBtn.addEventListener('click', function () { scrollToIndex(getIndex() + 1); });
+    track.addEventListener('scroll', function () { window.requestAnimationFrame(updateControls); }, { passive: true });
+    window.addEventListener('resize', updateControls);
+    updateControls();
+  })();
 
   (function initIngredientCarousel() {
     var section = document.querySelector('.ingc');
