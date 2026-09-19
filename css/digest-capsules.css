@@ -37,17 +37,22 @@ body[data-product="digest-pa"] .story-flow .feature-copy .pay-note {
   font-size: 0.82rem;
 }
 
-body[data-product="digest-pa"] .feature-media--square {
+body[data-product="digest-pa"] .story-flow .feature-media--square {
   aspect-ratio: 1 / 1;
+  width: 100%;
+  overflow: hidden;
   background: #fef8fa;
 }
 
-body[data-product="digest-pa"] .feature-media--square img {
+body[data-product="digest-pa"] .story-flow .feature-media--square img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  object-position: center;
   display: block;
   border-radius: 4px;
+  background: #fef8fa;
 }
 
 body[data-product="digest-pa"] .product-tagline {
