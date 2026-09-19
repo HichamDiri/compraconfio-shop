@@ -225,3 +225,9 @@ body[data-product="digest-pa"] .mech-card img[src$=".svg"] {
   padding: 12px;
   background: #fef8fa;
 }
+
+body[data-product="digest-pa"] .mech-card img[src$=".png"] {
+  object-fit: cover;
+  object-position: center;
+  background: #fef8fa;
+}
