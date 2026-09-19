@@ -34,7 +34,7 @@ body[data-product="rfid-card-holder"] .sticky-bar .js-open-order,
 body[data-product="rfid-card-holder"] .ship.is-selected .radio,
 body[data-product="rfid-card-holder"] .bundle.is-selected .radio {
   background: var(--rfid-purple);
-  color: var(--rfid-ink);
+  color: #fff;
   border-color: var(--rfid-purple-deep);
 }
 
