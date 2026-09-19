@@ -1,4 +1,4 @@
-﻿/* CompraConfio â€” Glutathione 7 Dark Spot Serum Patch PanamÃ¡ (packaging: lemon yellow) */
+/* CompraConfio â€” Glutathione 7 Dark Spot Serum Patch PanamÃ¡ (packaging: lemon yellow) */
 :root {
   --rfid-lilac: #e2e8f0;
   --rfid-purple: #64748b;
@@ -157,7 +157,7 @@ body[data-product="rfid-card-holder"] .benefit-card__media--square img {
   border-radius: 0;
 }
 
-body[data-product="rfid-card-holder"] .how-to-section .feature-media--square img[src$=".jpg"] {
+body[data-product="rfid-card-holder"] .how-to-section .feature-media--square img[src$=".gif"] {
   object-fit: cover;
   object-position: center top;
 }
