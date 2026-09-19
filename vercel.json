@@ -91,6 +91,18 @@
       ]
     },
     {
+      "source": "/digest-capsules-panama",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/digest-capsules-panama/",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
       "source": "/images/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
@@ -130,6 +142,8 @@
     { "source": "/spicy-lip-plumper-panama/", "destination": "/spicy-lip-plumper-panama.html" },
     { "source": "/glutathione-patch-panama", "destination": "/glutathione-patch-panama.html" },
     { "source": "/glutathione-patch-panama/", "destination": "/glutathione-patch-panama.html" },
+    { "source": "/digest-capsules-panama", "destination": "/digest-capsules-panama.html" },
+    { "source": "/digest-capsules-panama/", "destination": "/digest-capsules-panama.html" },
     { "source": "/voyage-nova", "destination": "/voyage-nova.html" },
     { "source": "/voyage-nova/", "destination": "/voyage-nova.html" },
     { "source": "/thank-you-compraconfio-panama", "destination": "/thank-you-compraconfio-panama.html" },
@@ -182,9 +196,6 @@
     { "source": "/cinta-doble-cara", "destination": "/", "permanent": true },
     { "source": "/cinta-doble-cara/", "destination": "/", "permanent": true },
     { "source": "/cinta-doble-cara.html", "destination": "/", "permanent": true },
-    { "source": "/digest-capsules-panama", "destination": "/", "permanent": true },
-    { "source": "/digest-capsules-panama/", "destination": "/", "permanent": true },
-    { "source": "/digest-capsules-panama.html", "destination": "/", "permanent": true },
     { "source": "/terms.html", "destination": "/terminos.html", "permanent": true },
     { "source": "/refund.html", "destination": "/devoluciones.html", "permanent": true }
   ]

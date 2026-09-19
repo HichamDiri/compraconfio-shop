@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Fácil rutina">
+  <rect width="400" height="400" fill="#fef8fa"/>
+  <circle cx="200" cy="160" r="90" fill="#fceef3" stroke="#2f6b45" stroke-width="3"/>
+  <text x="200" y="180" text-anchor="middle" font-size="64">💊</text>
+  <text x="200" y="300" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#1f4a32">Fácil rutina</text>
+</svg>

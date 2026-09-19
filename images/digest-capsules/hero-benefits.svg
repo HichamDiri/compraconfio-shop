@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Beneficios digestivos">
+  <rect width="800" height="800" fill="#fef8fa"/>
+  <text x="400" y="80" text-anchor="middle" font-family="Georgia, serif" font-size="32" fill="#1f4a32">Apoyo digestivo diario</text>
+  <rect x="70" y="130" width="200" height="200" rx="16" fill="#fff" stroke="#ecd9e2"/><text x="170" y="220" text-anchor="middle" font-size="42">🌿</text><text x="170" y="280" text-anchor="middle" font-family="Arial" font-size="16" fill="#2a2520">Menos hinchazón</text>
+  <rect x="300" y="130" width="200" height="200" rx="16" fill="#fff" stroke="#ecd9e2"/><text x="400" y="220" text-anchor="middle" font-size="42">💚</text><text x="400" y="280" text-anchor="middle" font-family="Arial" font-size="16" fill="#2a2520">Digestión cómoda</text>
+  <rect x="530" y="130" width="200" height="200" rx="16" fill="#fff" stroke="#ecd9e2"/><text x="630" y="220" text-anchor="middle" font-size="42">✨</text><text x="630" y="280" text-anchor="middle" font-family="Arial" font-size="16" fill="#2a2520">Menos pesadez</text>
+  <rect x="185" y="380" width="200" height="200" rx="16" fill="#fff" stroke="#ecd9e2"/><text x="285" y="470" text-anchor="middle" font-size="42">🦠</text><text x="285" y="530" text-anchor="middle" font-family="Arial" font-size="16" fill="#2a2520">Microbiota</text>
+  <rect x="415" y="380" width="200" height="200" rx="16" fill="#fff" stroke="#ecd9e2"/><text x="515" y="470" text-anchor="middle" font-size="42">🌱</text><text x="515" y="530" text-anchor="middle" font-family="Arial" font-size="16" fill="#2a2520">Botánicos</text>
+  <text x="400" y="680" text-anchor="middle" font-family="Arial" font-size="18" fill="#6b6560">Enzimas + probióticos + extractos botánicos</text>
+</svg>

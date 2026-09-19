@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Apoyo digestivo diario">
+  <rect width="800" height="800" fill="#fef8fa"/>
+  <rect x="280" y="180" width="240" height="320" rx="24" fill="#f5dfe8" stroke="#2f6b45" stroke-width="4"/>
+  <rect x="330" y="120" width="140" height="50" rx="25" fill="#fff" stroke="#2f6b45" stroke-width="3"/>
+  <circle cx="400" cy="340" r="70" fill="#fff" stroke="#2f6b45" stroke-width="3"/>
+  <text x="400" y="350" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#1f4a32">AiRi</text>
+  <text x="400" y="560" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#1f4a32">Recupera la ligereza</text>
+  <text x="400" y="610" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#6b6560">Enzimas · probióticos · botánicos</text>
+</svg>
