@@ -136,6 +136,12 @@ body[data-product="rfid-card-holder"] .mech-card img[src$=".svg"] {
   background: #f8fafc;
 }
 
+body[data-product="rfid-card-holder"] .mech-card img[src$=".png"] {
+  object-fit: cover;
+  object-position: center;
+  background: #f8fafc;
+}
+
 body[data-product="rfid-card-holder"] .feature-media--square,
 body[data-product="rfid-card-holder"] .benefit-card__media--square {
   aspect-ratio: 1 / 1;
@@ -149,6 +155,11 @@ body[data-product="rfid-card-holder"] .benefit-card__media--square img {
   object-fit: contain;
   display: block;
   border-radius: 0;
+}
+
+body[data-product="rfid-card-holder"] .how-to-section .feature-media--square img[src$=".jpg"] {
+  object-fit: cover;
+  object-position: center top;
 }
 
 body[data-product="rfid-card-holder"] .feature-media--wide {
