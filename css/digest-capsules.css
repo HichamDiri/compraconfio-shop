@@ -28,8 +28,25 @@ body[data-product="digest-pa"] .deal-strip {
   color: #fff;
 }
 
+body[data-product="digest-pa"] .story-flow .story-step:first-child {
+  border-top: none;
+}
+
+body[data-product="digest-pa"] .story-flow .feature-copy .pay-note {
+  margin: 10px 0 0;
+  font-size: 0.82rem;
+}
+
 body[data-product="digest-pa"] .feature-media--square {
+  aspect-ratio: 1 / 1;
   background: #fef8fa;
+}
+
+body[data-product="digest-pa"] .feature-media--square img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 body[data-product="digest-pa"] .product-tagline {
