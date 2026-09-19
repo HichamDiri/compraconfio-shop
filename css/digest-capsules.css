@@ -220,6 +220,12 @@ body[data-product="digest-pa"] .ingc__card-img[src$=".svg"] {
   background: #fef8fa;
 }
 
+body[data-product="digest-pa"] .ingc__card-img[src$=".png"] {
+  object-fit: contain;
+  padding: 10px;
+  background: #fff;
+}
+
 body[data-product="digest-pa"] .mech-card img[src$=".svg"] {
   object-fit: contain;
   padding: 12px;
