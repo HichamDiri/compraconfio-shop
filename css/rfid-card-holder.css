@@ -114,6 +114,16 @@ body[data-product="rfid-card-holder"] .slide img[src$=".svg"] {
   background: #f8fafc;
 }
 
+body[data-product="rfid-card-holder"] .slide img[src$=".png"] {
+  object-fit: contain;
+  background: #f8fafc;
+}
+
+body[data-product="rfid-card-holder"] .gallery-thumbs img[src$=".png"] {
+  object-fit: cover;
+  object-position: center;
+}
+
 body[data-product="rfid-card-holder"] .ingc__card-img[src$=".svg"] {
   object-fit: contain;
   padding: 18px;
