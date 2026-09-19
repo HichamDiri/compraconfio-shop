@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/product.css?v=20260811a">
   <link rel="stylesheet" href="/css/nattokinase-hale.css?v=20260919a">
-  <link rel="stylesheet" href="/css/digest-capsules.css?v=20260919h">
+  <link rel="stylesheet" href="/css/digest-capsules.css?v=20260919i">
 </head>
 <body data-country="PA" data-lang="es" data-brand="compraconfio" data-product="digest-pa" data-fb-pixel-id="1398615545550804" data-snap-pixel="off" data-thankyou="/thank-you-compraconfio-panama.html">
 
@@ -419,51 +419,27 @@
   </div>
 </section>
 
-<section class="hl-section hl-beige">
+<section class="hl-section hl-routine">
   <div class="shell">
     <p class="hl-eyebrow">Qué esperar</p>
     <h2 class="hl-title">Una rutina sencilla para sentirte más cómoda</h2>
-    <p class="hl-lead">Los resultados pueden variar según cada persona. La constancia es clave.</p>
 
-    <div class="tl" id="digest-timeline">
-      <div class="tl-step tl-step--left">
-        <div class="tl-card">
-          <h3>Al comenzar</h3>
-          <ul>
-            <li>Incorporas una combinación de enzimas, probióticos y extractos botánicos a tu rutina.</li>
-            <li>Empiezas con 2 cápsulas al día con agua, preferiblemente con las comidas.</li>
-            <li>Es el primer paso para complementar tu bienestar digestivo diario.</li>
-          </ul>
-        </div>
-        <span class="tl-marker" aria-hidden="true">
-          <svg class="tl-check" viewBox="0 0 24 24" fill="none"><path d="M5 12.5L10 17.5L19 7.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-        </span>
+    <div class="tl-h" id="digest-timeline">
+      <div class="tl-h__line" aria-hidden="true"></div>
+      <div class="tl-h__step">
+        <p class="tl-h__when">Días 1–7</p>
+        <span class="tl-h__dot" aria-hidden="true"></span>
+        <p class="tl-h__benefit">Más ligera, menos hinchada después de las comidas</p>
       </div>
-      <div class="tl-step tl-step--right">
-        <div class="tl-card">
-          <h3>Con el uso constante</h3>
-          <ul>
-            <li>Puedes experimentar una digestión más cómoda y una menor sensación de pesadez o hinchazón ocasional.</li>
-            <li>Mantener la rutina ayuda a que los ingredientes formen parte de tu día a día.</li>
-            <li>Muchas personas notan cambios graduales con el uso regular.</li>
-          </ul>
-        </div>
-        <span class="tl-marker" aria-hidden="true">
-          <svg class="tl-check" viewBox="0 0 24 24" fill="none"><path d="M5 12.5L10 17.5L19 7.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-        </span>
+      <div class="tl-h__step">
+        <p class="tl-h__when">Semanas 2–3</p>
+        <span class="tl-h__dot" aria-hidden="true"></span>
+        <p class="tl-h__benefit">Vientre más plano y mejor regularidad</p>
       </div>
-      <div class="tl-step tl-step--left">
-        <div class="tl-card">
-          <h3>Con el tiempo</h3>
-          <ul>
-            <li>El objetivo es convertir el apoyo digestivo en una parte sencilla de tu rutina diaria.</li>
-            <li>Una rutina constante puede complementar tu bienestar a largo plazo.</li>
-            <li>Los resultados individuales pueden variar según cada persona.</li>
-          </ul>
-        </div>
-        <span class="tl-marker" aria-hidden="true">
-          <svg class="tl-check" viewBox="0 0 24 24" fill="none"><path d="M5 12.5L10 17.5L19 7.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-        </span>
+      <div class="tl-h__step">
+        <p class="tl-h__when">30+ días</p>
+        <span class="tl-h__dot" aria-hidden="true"></span>
+        <p class="tl-h__benefit">Calma a largo plazo, intestino equilibrado</p>
       </div>
     </div>
   </div>
@@ -924,15 +900,11 @@ document.addEventListener('DOMContentLoaded', function () {
   (function initTimeline() {
     var timeline = document.getElementById('digest-timeline');
     if (!timeline) return;
-    var items = timeline.querySelectorAll('.tl-step');
+    var items = timeline.querySelectorAll('.tl-h__step');
     if (!items.length) return;
 
     items.forEach(function (item, idx) {
-      var delay = (idx * 80) + 'ms';
-      var marker = item.querySelector('.tl-marker');
-      var content = item.querySelector('.tl-card');
-      if (marker) marker.style.setProperty('--tl-delay', delay);
-      if (content) content.style.setProperty('--tl-delay', delay);
+      item.style.setProperty('--tl-delay', (idx * 120) + 'ms');
     });
 
     if (!('IntersectionObserver' in window)) {
