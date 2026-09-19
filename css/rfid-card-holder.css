@@ -109,6 +109,23 @@ body[data-product="rfid-card-holder"] .gallery-stage {
   background: #fff;
 }
 
+body[data-product="rfid-card-holder"] .slide picture,
+body[data-product="rfid-card-holder"] .feature-media picture,
+body[data-product="rfid-card-holder"] .mech-card picture,
+body[data-product="rfid-card-holder"] .review-photo-btn picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+body[data-product="rfid-card-holder"] .slide picture img,
+body[data-product="rfid-card-holder"] .feature-media picture img,
+body[data-product="rfid-card-holder"] .mech-card picture img,
+body[data-product="rfid-card-holder"] .review-photo-btn picture img {
+  width: 100%;
+  height: 100%;
+}
+
 body[data-product="rfid-card-holder"] .slide img[src$=".svg"] {
   padding: 16px;
   background: #f8fafc;

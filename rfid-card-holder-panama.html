@@ -9,13 +9,17 @@
   <meta name="tiktok-pixel-id" content="DA46KJ3C77U8UMTFN63G">
   <link rel="preconnect" href="https://analytics.tiktok.com" crossorigin>
   <link rel="dns-prefetch" href="https://analytics.tiktok.com">
+  <link rel="preload" as="image" href="/images/rfid-card-holder/hero-rfid-protection.webp?v=20260920a" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="style" href="/css/product.css?v=20260811a">
+  <link rel="preload" as="style" href="/css/rfid-card-holder.css?v=20260920a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/product.css?v=20260811a">
-  <link rel="stylesheet" href="/css/rfid-card-holder.css?v=20260919i">
+  <link rel="stylesheet" href="/css/rfid-card-holder.css?v=20260920a">
   <script>
-  (function () {
+  function bootTikTokPixel() {
     var meta = document.querySelector('meta[name="tiktok-pixel-id"]');
     var id = meta && meta.content;
     if (!id || window.__tiktokPixelLoaded) return;
@@ -60,7 +64,12 @@
       window.ttq.ready(fireLpv);
     }
     setTimeout(fireLpv, 600);
-  })();
+  }
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(bootTikTokPixel, { timeout: 2500 });
+  } else {
+    window.addEventListener('load', bootTikTokPixel);
+  }
   </script>
 </head>
 <body data-country="PA" data-lang="es" data-brand="compraconfio" data-product="rfid-card-holder" data-snap-pixel="off" data-tiktok-pixel-id="DA46KJ3C77U8UMTFN63G" data-thankyou="/thank-you-compraconfio-panama.html">
@@ -94,28 +103,40 @@
     <section class="gallery" id="heroSection">
       <div class="gallery-stage" id="galleryTrack">
         <div class="slide">
-          <img class="is-contain" src="/images/rfid-card-holder/hero-rfid-protection.png?v=20260919b" alt="Protección avanzada RFID — bloqueo de señales" width="800" height="800" loading="eager" decoding="async">
+          <picture>
+            <source type="image/webp" srcset="/images/rfid-card-holder/hero-rfid-protection.webp?v=20260920a">
+            <img class="is-contain" src="/images/rfid-card-holder/hero-rfid-protection.png?v=20260920a" alt="Protección avanzada RFID — bloqueo de señales" width="800" height="800" loading="eager" decoding="async" fetchpriority="high">
+          </picture>
         </div>
         <div class="slide">
-          <img class="is-contain" src="/images/rfid-card-holder/hero-product.png?v=20260919b" alt="Porta tarjetas RFID de acero inoxidable — vista del producto" width="800" height="800" loading="lazy" decoding="async">
+          <img class="is-contain" src="/images/rfid-card-holder/hero-product.png?v=20260920a" alt="Porta tarjetas RFID de acero inoxidable — vista del producto" width="800" height="800" loading="lazy" decoding="async">
         </div>
         <div class="slide">
-          <img class="is-contain" src="/images/rfid-card-holder/hero-daily-essential.png?v=20260919b" alt="Tu esencial de todos los días — estilo profesional" width="800" height="800" loading="lazy" decoding="async">
+          <picture>
+            <source type="image/webp" srcset="/images/rfid-card-holder/hero-daily-essential.webp?v=20260920a">
+            <img class="is-contain" src="/images/rfid-card-holder/hero-daily-essential.png?v=20260920a" alt="Tu esencial de todos los días — estilo profesional" width="800" height="800" loading="lazy" decoding="async">
+          </picture>
         </div>
         <div class="slide">
-          <img class="is-contain" src="/images/rfid-card-holder/hero-impression.png?v=20260919b" alt="Deja una impresión duradera — elegancia y funcionalidad" width="800" height="800" loading="lazy" decoding="async">
+          <picture>
+            <source type="image/webp" srcset="/images/rfid-card-holder/hero-impression.webp?v=20260920a">
+            <img class="is-contain" src="/images/rfid-card-holder/hero-impression.png?v=20260920a" alt="Deja una impresión duradera — elegancia y funcionalidad" width="800" height="800" loading="lazy" decoding="async">
+          </picture>
         </div>
         <div class="slide">
-          <img class="is-contain" src="/images/rfid-card-holder/hero-ultra-slim.png?v=20260919b" alt="Ultra delgado e increíblemente elegante" width="800" height="800" loading="lazy" decoding="async">
+          <picture>
+            <source type="image/webp" srcset="/images/rfid-card-holder/hero-ultra-slim.webp?v=20260920a">
+            <img class="is-contain" src="/images/rfid-card-holder/hero-ultra-slim.png?v=20260920a" alt="Ultra delgado e increíblemente elegante" width="800" height="800" loading="lazy" decoding="async">
+          </picture>
         </div>
       </div>
       <div class="gallery-dots" id="galleryDots" aria-hidden="true"></div>
       <div class="gallery-thumbs">
-        <button type="button" class="thumb is-active" aria-label="Protección RFID"><img src="/images/rfid-card-holder/hero-rfid-protection.png?v=20260919b" alt="" width="160" height="160" decoding="async"></button>
-        <button type="button" class="thumb" aria-label="Producto"><img src="/images/rfid-card-holder/hero-product.png?v=20260919b" alt="" width="160" height="160" loading="lazy" decoding="async"></button>
-        <button type="button" class="thumb" aria-label="Esencial diario"><img src="/images/rfid-card-holder/hero-daily-essential.png?v=20260919b" alt="" width="160" height="160" loading="lazy" decoding="async"></button>
-        <button type="button" class="thumb" aria-label="Impresión duradera"><img src="/images/rfid-card-holder/hero-impression.png?v=20260919b" alt="" width="160" height="160" loading="lazy" decoding="async"></button>
-        <button type="button" class="thumb" aria-label="Ultra delgado"><img src="/images/rfid-card-holder/hero-ultra-slim.png?v=20260919b" alt="" width="160" height="160" loading="lazy" decoding="async"></button>
+        <button type="button" class="thumb is-active" aria-label="Protección RFID"><img src="/images/rfid-card-holder/hero-rfid-protection-thumb.webp?v=20260920a" alt="" width="160" height="160" decoding="async"></button>
+        <button type="button" class="thumb" aria-label="Producto"><img src="/images/rfid-card-holder/hero-product-thumb.webp?v=20260920a" alt="" width="160" height="160" loading="lazy" decoding="async"></button>
+        <button type="button" class="thumb" aria-label="Esencial diario"><img src="/images/rfid-card-holder/hero-daily-essential-thumb.webp?v=20260920a" alt="" width="160" height="160" loading="lazy" decoding="async"></button>
+        <button type="button" class="thumb" aria-label="Impresión duradera"><img src="/images/rfid-card-holder/hero-impression-thumb.webp?v=20260920a" alt="" width="160" height="160" loading="lazy" decoding="async"></button>
+        <button type="button" class="thumb" aria-label="Ultra delgado"><img src="/images/rfid-card-holder/hero-ultra-slim-thumb.webp?v=20260920a" alt="" width="160" height="160" loading="lazy" decoding="async"></button>
       </div>
     </section>
 
@@ -147,17 +168,17 @@
 
         <div class="guarantee-row">
           <div class="guarantee-item">
-            <img class="guarantee-icon" src="/images/rfid-card-holder/icon-guarantee.png?v=20260919i" alt="" width="48" height="48" decoding="async">
+            <picture><source type="image/webp" srcset="/images/rfid-card-holder/icon-guarantee.webp?v=20260920a"><img class="guarantee-icon" src="/images/rfid-card-holder/icon-guarantee.png?v=20260920a" alt="" width="48" height="48" decoding="async"></picture>
             <strong>30 días</strong>
             <span>Garantía</span>
           </div>
           <div class="guarantee-item">
-            <img class="guarantee-icon" src="/images/rfid-card-holder/icon-shipping.png?v=20260919i" alt="" width="48" height="48" decoding="async">
+            <picture><source type="image/webp" srcset="/images/rfid-card-holder/icon-shipping.webp?v=20260920a"><img class="guarantee-icon" src="/images/rfid-card-holder/icon-shipping.png?v=20260920a" alt="" width="48" height="48" decoding="async"></picture>
             <strong>Envío</strong>
             <span>Gratis</span>
           </div>
           <div class="guarantee-item">
-            <img class="guarantee-icon" src="/images/rfid-card-holder/icon-cod.png?v=20260919i" alt="" width="48" height="48" decoding="async">
+            <picture><source type="image/webp" srcset="/images/rfid-card-holder/icon-cod.webp?v=20260920a"><img class="guarantee-icon" src="/images/rfid-card-holder/icon-cod.png?v=20260920a" alt="" width="48" height="48" decoding="async"></picture>
             <strong>Pago</strong>
             <span>Al recibir</span>
           </div>
@@ -188,7 +209,7 @@
   <section class="feature story-step">
     <div class="feature-inner">
       <div class="feature-media feature-media--square">
-        <img src="/images/rfid-card-holder/story-problem.png?v=20260919c" alt="Billetera abultada vulnerable a lecturas RFID no deseadas" width="800" height="800" loading="lazy" decoding="async">
+        <picture><source type="image/webp" srcset="/images/rfid-card-holder/story-problem.webp?v=20260920a"><img src="/images/rfid-card-holder/story-problem.png?v=20260920a" alt="Billetera abultada vulnerable a lecturas RFID no deseadas" width="800" height="800" loading="lazy" decoding="async"></picture>
       </div>
       <div class="feature-copy">
         <h2>¿Tus tarjetas están realmente protegidas?</h2>
@@ -201,7 +222,7 @@
   <section class="feature story-step is-reversed">
     <div class="feature-inner">
       <div class="feature-media feature-media--square">
-        <img src="/images/rfid-card-holder/story-solution.png?v=20260919c" alt="Porta tarjetas RFID con bloqueo de señales y diseño compacto" width="800" height="800" loading="lazy" decoding="async">
+        <picture><source type="image/webp" srcset="/images/rfid-card-holder/story-solution.webp?v=20260920a"><img src="/images/rfid-card-holder/story-solution.png?v=20260920a" alt="Porta tarjetas RFID con bloqueo de señales y diseño compacto" width="800" height="800" loading="lazy" decoding="async"></picture>
       </div>
       <div class="feature-copy">
         <h2>Protección RFID en un diseño compacto</h2>
@@ -222,31 +243,31 @@
 
     <div class="mech-track" id="reasonTrack">
       <button type="button" class="mech-card is-active">
-        <img src="/images/rfid-card-holder/benefit-rfid.png?v=20260919d" alt="Protección RFID en aeropuerto — bloqueo de señales" width="800" height="800" loading="lazy" decoding="async">
+        <picture><source type="image/webp" srcset="/images/rfid-card-holder/benefit-rfid.webp?v=20260920a"><img src="/images/rfid-card-holder/benefit-rfid.png?v=20260920a" alt="Protección RFID en aeropuerto — bloqueo de señales" width="800" height="800" loading="lazy" decoding="async"></picture>
         <h3>🛡️ Protección RFID</h3>
         <p>Su diseño está pensado para ayudar a bloquear señales RFID y reducir lecturas inalámbricas no deseadas de tarjetas compatibles.</p>
       </button>
 
       <button type="button" class="mech-card">
-        <img src="/images/rfid-card-holder/benefit-steel.png?v=20260919d" alt="Acero inoxidable resistente con escudo de protección" width="800" height="800" loading="lazy" decoding="async">
+        <picture><source type="image/webp" srcset="/images/rfid-card-holder/benefit-steel.webp?v=20260920a"><img src="/images/rfid-card-holder/benefit-steel.png?v=20260920a" alt="Acero inoxidable resistente con escudo de protección" width="800" height="800" loading="lazy" decoding="async"></picture>
         <h3>🔩 Acero inoxidable resistente</h3>
         <p>Una estructura metálica sólida que oferece mayor resistencia y protección física para tus tarjetas.</p>
       </button>
 
       <button type="button" class="mech-card">
-        <img src="/images/rfid-card-holder/benefit-compact.png?v=20260919d" alt="Diseño compacto — cabe en bolsillo, bolso y mochila" width="800" height="800" loading="lazy" decoding="async">
+        <picture><source type="image/webp" srcset="/images/rfid-card-holder/benefit-compact.webp?v=20260920a"><img src="/images/rfid-card-holder/benefit-compact.png?v=20260920a" alt="Diseño compacto — cabe en bolsillo, bolso y mochila" width="800" height="800" loading="lazy" decoding="async"></picture>
         <h3>📦 Diseño compacto</h3>
         <p>Olvídate de una billetera grande. Su tamaño reducido cabe fácilmente en el bolsillo, bolso o mochila.</p>
       </button>
 
       <button type="button" class="mech-card">
-        <img src="/images/rfid-card-holder/benefit-capacity.png?v=20260919d" alt="Capacidad para 12–18 tarjetas organizadas" width="800" height="800" loading="lazy" decoding="async">
+        <picture><source type="image/webp" srcset="/images/rfid-card-holder/benefit-capacity.webp?v=20260920a"><img src="/images/rfid-card-holder/benefit-capacity.png?v=20260920a" alt="Capacidad para 12–18 tarjetas organizadas" width="800" height="800" loading="lazy" decoding="async"></picture>
         <h3>💳 Lleva tus tarjetas importantes</h3>
         <p>Puede almacenar aproximadamente <strong>12–18 tarjetas</strong>, dependiendo del grosor de cada una.</p>
       </button>
 
       <button type="button" class="mech-card">
-        <img src="/images/rfid-card-holder/benefit-daily.png?v=20260919d" alt="Ideal para trabajo, viajes y uso diario" width="800" height="800" loading="lazy" decoding="async">
+        <picture><source type="image/webp" srcset="/images/rfid-card-holder/benefit-daily.webp?v=20260920a"><img src="/images/rfid-card-holder/benefit-daily.png?v=20260920a" alt="Ideal para trabajo, viajes y uso diario" width="800" height="800" loading="lazy" decoding="async"></picture>
         <h3>✈️ Ideal para todos los días</h3>
         <p>Úsalo para salir, trabajar, viajar, ir de compras o simplemente llevar tus tarjetas de forma más práctica.</p>
       </button>
@@ -258,7 +279,7 @@
   <div class="shell">
     <div class="feature-inner how-to-inner">
       <div class="feature-media feature-media--square">
-        <img src="/images/rfid-card-holder/how-to-use.gif?v=20260919f" alt="Demostración — abre el porta tarjetas, coloca tus tarjetas y llévalo contigo" width="800" height="800" loading="lazy" decoding="async">
+        <img class="how-to-demo" id="howToDemo" src="/images/rfid-card-holder/how-to-use-poster.webp?v=20260920a" data-animate="/images/rfid-card-holder/how-to-use.gif?v=20260920a" alt="Demostración — abre el porta tarjetas, coloca tus tarjetas y llévalo contigo" width="800" height="800" loading="lazy" decoding="async">
       </div>
       <div class="feature-copy">
         <h2>Fácil de usar todos los días</h2>
@@ -286,7 +307,7 @@
     <div class="review-grid review-grid--photos gluta-review-grid">
       <article class="review-card review-card--photo">
         <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
-          <img src="/images/rfid-card-holder/review-1.png?v=20260919h" alt="Foto de reseña — Herm F" width="800" height="800" loading="lazy" decoding="async">
+          <picture><source type="image/webp" srcset="/images/rfid-card-holder/review-1.webp?v=20260920a"><img src="/images/rfid-card-holder/review-1.png?v=20260920a" alt="Foto de reseña — Herm F" width="800" height="800" loading="lazy" decoding="async"></picture>
         </button>
         <div class="stars">★★★★★</div>
         <h3 class="review-card__title">Sigue excelente después de más de 3 años</h3>
@@ -296,7 +317,7 @@
 
       <article class="review-card review-card--photo">
         <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
-          <img src="/images/rfid-card-holder/review-2.png?v=20260919h" alt="Foto de reseña — Judy Seals" width="800" height="800" loading="lazy" decoding="async">
+          <picture><source type="image/webp" srcset="/images/rfid-card-holder/review-2.webp?v=20260920a"><img src="/images/rfid-card-holder/review-2.png?v=20260920a" alt="Foto de reseña — Judy Seals" width="800" height="800" loading="lazy" decoding="async"></picture>
         </button>
         <div class="stars">★★★★★</div>
         <h3 class="review-card__title">Seguridad</h3>
@@ -306,7 +327,7 @@
 
       <article class="review-card review-card--photo">
         <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
-          <img src="/images/rfid-card-holder/review-3.png?v=20260919h" alt="Foto de reseña — Melissa Elkins" width="800" height="800" loading="lazy" decoding="async">
+          <picture><source type="image/webp" srcset="/images/rfid-card-holder/review-3.webp?v=20260920a"><img src="/images/rfid-card-holder/review-3.png?v=20260920a" alt="Foto de reseña — Melissa Elkins" width="800" height="800" loading="lazy" decoding="async"></picture>
         </button>
         <div class="stars">★★★★★</div>
         <h3 class="review-card__title">Minimalista y muy práctica</h3>
@@ -316,7 +337,7 @@
 
       <article class="review-card review-card--photo">
         <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
-          <img src="/images/rfid-card-holder/review-4.png?v=20260919h" alt="Foto de reseña — Jpb17" width="800" height="800" loading="lazy" decoding="async">
+          <picture><source type="image/webp" srcset="/images/rfid-card-holder/review-4.webp?v=20260920a"><img src="/images/rfid-card-holder/review-4.png?v=20260920a" alt="Foto de reseña — Jpb17" width="800" height="800" loading="lazy" decoding="async"></picture>
         </button>
         <div class="stars">★★★★★</div>
         <h3 class="review-card__title">Lo que buscaba</h3>
@@ -326,7 +347,7 @@
 
       <article class="review-card review-card--photo">
         <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
-          <img src="/images/rfid-card-holder/review-5.png?v=20260919h" alt="Foto de reseña — Mary" width="800" height="800" loading="lazy" decoding="async">
+          <picture><source type="image/webp" srcset="/images/rfid-card-holder/review-5.webp?v=20260920a"><img src="/images/rfid-card-holder/review-5.png?v=20260920a" alt="Foto de reseña — Mary" width="800" height="800" loading="lazy" decoding="async"></picture>
         </button>
         <div class="stars">★★★★★</div>
         <h3 class="review-card__title">Guarda billetes y tarjetas</h3>
@@ -429,7 +450,7 @@
 
     <div class="order-body">
       <div class="order-product">
-        <img src="/images/rfid-card-holder/hero-product.png?v=20260919b" alt="" width="72" height="72" style="width:72px;height:72px;object-fit:contain;border-radius:8px;background:#f8fafc">
+        <img src="/images/rfid-card-holder/hero-product-thumb.webp?v=20260920a" alt="" width="72" height="72" style="width:72px;height:72px;object-fit:contain;border-radius:8px;background:#f8fafc" loading="lazy" decoding="async">
         <div>
           <strong>Porta Tarjetas RFID de Acero Inoxidable</strong>
           <span>Protección RFID · Envío gratis</span>
@@ -766,6 +787,28 @@ document.addEventListener('DOMContentLoaded', function () {
     input.addEventListener('change', syncOrder);
   });
   syncOrder();
+
+  var howToDemo = document.getElementById('howToDemo');
+  if (howToDemo && howToDemo.dataset.animate) {
+    var loadHowToGif = function () {
+      if (howToDemo.dataset.loaded) return;
+      howToDemo.dataset.loaded = '1';
+      howToDemo.src = howToDemo.dataset.animate;
+    };
+    if ('IntersectionObserver' in window) {
+      var howToObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            loadHowToGif();
+            howToObserver.disconnect();
+          }
+        });
+      }, { rootMargin: '240px' });
+      howToObserver.observe(howToDemo);
+    } else {
+      loadHowToGif();
+    }
+  }
 
   document.querySelectorAll('.mech-card').forEach(function (card) {
     card.addEventListener('click', function () {
