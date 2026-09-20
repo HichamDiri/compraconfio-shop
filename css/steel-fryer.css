@@ -883,6 +883,12 @@ body[data-product="steel-fryer"] .gluta-review-grid {
   }
 }
 
+@media (min-width: 960px) {
+  body[data-product="steel-fryer"] .gluta-review-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 body[data-product="steel-fryer"] .gluta-review-grid .review-card {
   border: 1px solid var(--fryer-line);
   border-radius: 10px;

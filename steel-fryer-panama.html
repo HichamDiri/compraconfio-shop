@@ -248,20 +248,31 @@
       <h2>Lo que dicen quienes ya la están usando</h2>
     </div>
 
-    <div class="review-grid">
-      <article class="review-card">
+    <p class="gluta-review-lead">Reseñas con foto — toca para ampliar.</p>
+
+    <div class="review-grid review-grid--photos gluta-review-grid">
+      <article class="review-card review-card--photo">
+        <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
+          <img src="/images/steel-fryer/review-1.png?v=20260920g" alt="Foto de reseña — olla freidora en cocina con canasta y tapa" width="800" height="800" loading="lazy" decoding="async">
+        </button>
         <div class="stars">★★★★★</div>
         <p>“Me encanta porque puedo freír y después levantar la canasta para escurrir todo el aceite. Es mucho más práctico que usar una sartén.”</p>
         <cite>— María, Panamá</cite>
       </article>
 
-      <article class="review-card">
+      <article class="review-card review-card--photo">
+        <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
+          <img src="/images/steel-fryer/review-2.png?v=20260920g" alt="Foto de reseña — kit completo acero inoxidable 304" width="800" height="800" loading="lazy" decoding="async">
+        </button>
         <div class="stars">★★★★★</div>
         <p>“La compré principalmente para hacer papas y pollo. Me gusta que no necesito una freidora grande y ocupa poco espacio.”</p>
         <cite>— Carolina, Ciudad de Panamá</cite>
       </article>
 
-      <article class="review-card">
+      <article class="review-card review-card--photo">
+        <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
+          <img src="/images/steel-fryer/review-3.png?v=20260920g" alt="Foto de reseña — canasta escurridora dentro de la olla" width="800" height="800" loading="lazy" decoding="async">
+        </button>
         <div class="stars">★★★★★</div>
         <p>“Lo que más me gusta es que puedo sacar todo de una vez y dejar que el aceite vuelva a la olla. Mucho más cómodo.”</p>
         <cite>— José, Panamá</cite>
@@ -323,6 +334,19 @@
     </div>
   </div>
 </section>
+
+<div class="review-lightbox" id="reviewLightbox" role="dialog" aria-modal="true" aria-label="Foto de reseña ampliada" hidden>
+  <div class="review-lightbox-backdrop" data-close-lightbox></div>
+  <div class="review-lightbox-panel">
+    <button type="button" class="review-lightbox-close" data-close-lightbox aria-label="Cerrar">&times;</button>
+    <button type="button" class="review-lightbox-nav is-prev" id="reviewLightboxPrev" aria-label="Foto anterior">&#8249;</button>
+    <figure class="review-lightbox-figure">
+      <img id="reviewLightboxImg" src="" alt="">
+      <figcaption id="reviewLightboxCount"></figcaption>
+    </figure>
+    <button type="button" class="review-lightbox-nav is-next" id="reviewLightboxNext" aria-label="Foto siguiente">&#8250;</button>
+  </div>
+</div>
 
 <footer class="site-footer">
   <div class="footer-brand">compra<em>confio</em></div>
@@ -619,6 +643,66 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && modal.classList.contains('is-open')) closeOrder();
   });
+
+  var lightbox = document.getElementById('reviewLightbox');
+  var lightboxImg = document.getElementById('reviewLightboxImg');
+  var lightboxCount = document.getElementById('reviewLightboxCount');
+  var lightboxPrev = document.getElementById('reviewLightboxPrev');
+  var lightboxNext = document.getElementById('reviewLightboxNext');
+  var lightboxClose = lightbox ? lightbox.querySelector('.review-lightbox-close') : null;
+  var reviewPhotos = Array.prototype.slice.call(document.querySelectorAll('#resenas .js-review-photo img'));
+  var lightboxIndex = 0;
+  var lightboxLastFocused = null;
+
+  function showLightboxPhoto(index) {
+    if (!reviewPhotos.length) return;
+    lightboxIndex = (index + reviewPhotos.length) % reviewPhotos.length;
+    var photo = reviewPhotos[lightboxIndex];
+    lightboxImg.src = photo.src;
+    lightboxImg.alt = photo.alt;
+    lightboxCount.textContent = (lightboxIndex + 1) + ' / ' + reviewPhotos.length;
+    lightboxPrev.disabled = reviewPhotos.length <= 1;
+    lightboxNext.disabled = reviewPhotos.length <= 1;
+  }
+
+  function openLightbox(index) {
+    if (!lightbox || !reviewPhotos.length) return;
+    lightboxLastFocused = document.activeElement;
+    showLightboxPhoto(index);
+    lightbox.hidden = false;
+    lightbox.classList.add('is-open');
+    document.body.classList.add('no-scroll');
+    if (lightboxClose) lightboxClose.focus({ preventScroll: true });
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('is-open');
+    lightbox.hidden = true;
+    lightboxImg.removeAttribute('src');
+    if (!modal || !modal.classList.contains('is-open')) document.body.classList.remove('no-scroll');
+    if (lightboxLastFocused) lightboxLastFocused.focus({ preventScroll: true });
+  }
+
+  if (lightbox) {
+    document.querySelectorAll('#resenas .js-review-photo').forEach(function (btn, index) {
+      btn.addEventListener('click', function () { openLightbox(index); });
+    });
+
+    lightbox.querySelectorAll('[data-close-lightbox]').forEach(function (btn) {
+      btn.addEventListener('click', closeLightbox);
+    });
+
+    lightboxPrev.addEventListener('click', function () { showLightboxPhoto(lightboxIndex - 1); });
+    lightboxNext.addEventListener('click', function () { showLightboxPhoto(lightboxIndex + 1); });
+
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showLightboxPhoto(lightboxIndex - 1);
+      if (e.key === 'ArrowRight') showLightboxPhoto(lightboxIndex + 1);
+    });
+  }
 
   [firstName, lastName, addressLine, zone].forEach(function (input) {
     input.addEventListener('input', mergeFields);
