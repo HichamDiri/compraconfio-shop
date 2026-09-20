@@ -1209,50 +1209,6 @@ body[data-product="steel-fryer"] .gluta-real-results__count {
   }
 }
 
-body[data-product="steel-fryer"] .hl-cream {
-  background: var(--fryer-cream);
-}
-
-body[data-product="steel-fryer"] .spec-grid {
-  display: grid;
-  gap: 14px;
-}
-
-@media (min-width: 700px) {
-  body[data-product="steel-fryer"] .spec-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 960px) {
-  body[data-product="steel-fryer"] .spec-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-body[data-product="steel-fryer"] .spec-card {
-  background: #fff;
-  border: 1px solid var(--fryer-line);
-  border-radius: 12px;
-  padding: 18px 16px;
-}
-
-body[data-product="steel-fryer"] .spec-card h3 {
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  line-height: 1.25;
-  color: var(--fryer-purple-deep);
-  margin: 0 0 8px;
-  font-weight: 500;
-}
-
-body[data-product="steel-fryer"] .spec-card p {
-  margin: 0;
-  font-size: 0.88rem;
-  line-height: 1.55;
-  color: var(--muted);
-}
-
 body[data-product="steel-fryer"] .notice--center {
   text-align: center;
   margin: 18px auto 0;
