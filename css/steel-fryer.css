@@ -1238,7 +1238,8 @@ body[data-product="steel-fryer"] .feature-media--square img {
   background: #fff;
 }
 
-body[data-product="steel-fryer"] .story-solution-demo[src$=".gif"] {
+body[data-product="steel-fryer"] .story-solution-demo[src$=".gif"],
+body[data-product="steel-fryer"] .how-to-demo[src$=".gif"] {
   object-fit: cover;
   object-position: center;
 }

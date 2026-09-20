@@ -224,7 +224,7 @@
   <div class="shell">
     <div class="feature-inner how-to-inner">
       <div class="feature-media feature-media--square">
-        <img src="/images/steel-fryer/hero-product.png?v=20260920b" alt="Olla freidora multifuncional con canasta escurridora" width="1500" height="1500" loading="lazy" decoding="async">
+        <img class="how-to-demo" id="howToDemo" src="/images/steel-fryer/hero-product.png?v=20260920f" data-animate="/images/steel-fryer/how-to-demo.gif?v=20260920f" alt="Demostración paso a paso — freír con la olla y canasta escurridora" width="1024" height="1024" loading="lazy" decoding="async">
       </div>
       <div class="feature-copy">
         <h2>Freír nunca fue tan sencillo</h2>
@@ -647,27 +647,30 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  var storySolutionDemo = document.getElementById('storySolutionDemo');
-  if (storySolutionDemo && storySolutionDemo.dataset.animate) {
-    var loadSolutionGif = function () {
-      if (storySolutionDemo.dataset.loaded) return;
-      storySolutionDemo.dataset.loaded = '1';
-      storySolutionDemo.src = storySolutionDemo.dataset.animate;
+  function lazyLoadGif(img) {
+    if (!img || !img.dataset.animate) return;
+    var load = function () {
+      if (img.dataset.loaded) return;
+      img.dataset.loaded = '1';
+      img.src = img.dataset.animate;
     };
     if ('IntersectionObserver' in window) {
-      var solutionObserver = new IntersectionObserver(function (entries) {
+      var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            loadSolutionGif();
-            solutionObserver.disconnect();
+            load();
+            observer.disconnect();
           }
         });
       }, { rootMargin: '240px' });
-      solutionObserver.observe(storySolutionDemo);
+      observer.observe(img);
     } else {
-      loadSolutionGif();
+      load();
     }
   }
+
+  lazyLoadGif(document.getElementById('storySolutionDemo'));
+  lazyLoadGif(document.getElementById('howToDemo'));
 });
 </script>
 </body>
