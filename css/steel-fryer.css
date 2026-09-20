@@ -1286,3 +1286,8 @@ body[data-product="steel-fryer"] .slide img.is-contain {
   background: #fff;
 }
 
+body[data-product="steel-fryer"] .gallery-thumbs img {
+  object-fit: cover;
+  object-position: center;
+}
+
