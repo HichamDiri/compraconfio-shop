@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Manchas que no desaparecen">
-  <rect width="800" height="800" fill="#f3eef9"/>
-  <text x="400" y="120" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#5b3d8f">¿El granito se fue&</text>
-  <text x="400" y="165" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#5b3d8f">pero la mancha se quedó?</text>
-  <circle cx="280" cy="380" r="24" fill="#c4a882" opacity=".7"/>
-  <circle cx="420" cy="420" r="18" fill="#c4a882" opacity=".65"/>
-  <circle cx="500" cy="350" r="20" fill="#c4a882" opacity=".6"/>
-  <text x="400" y="620" text-anchor="middle" font-family="Arial" font-size="20" fill="#6a6070">Marcas post-acné · melasma · manchas del sol</text>
-</svg>

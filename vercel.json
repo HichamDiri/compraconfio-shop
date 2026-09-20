@@ -7,54 +7,6 @@
       ]
     },
     {
-      "source": "/voyage-nova",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/voyage-nova/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/nattokinase",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/nattokinase/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/cinta-doble-cara-panama",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/cinta-doble-cara-panama/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/barra-telescopica-panama",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/barra-telescopica-panama/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
       "source": "/nattokinase-panama",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
@@ -74,18 +26,6 @@
     },
     {
       "source": "/spicy-lip-plumper-panama/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/glutathione-patch-panama",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/glutathione-patch-panama/",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
@@ -140,26 +80,14 @@
     }
   ],
   "rewrites": [
-    { "source": "/nattokinase", "destination": "/nattokinase.html" },
-    { "source": "/nattokinase/", "destination": "/nattokinase.html" },
-    { "source": "/nattokinasa", "destination": "/nattokinase.html" },
-    { "source": "/nattokinasa/", "destination": "/nattokinase.html" },
-    { "source": "/barra-telescopica-panama", "destination": "/barra-telescopica-panama.html" },
-    { "source": "/barra-telescopica-panama/", "destination": "/barra-telescopica-panama.html" },
     { "source": "/nattokinase-panama", "destination": "/nattokinase-panama.html" },
     { "source": "/nattokinase-panama/", "destination": "/nattokinase-panama.html" },
-    { "source": "/cinta-doble-cara-panama", "destination": "/cinta-doble-cara-panama.html" },
-    { "source": "/cinta-doble-cara-panama/", "destination": "/cinta-doble-cara-panama.html" },
     { "source": "/spicy-lip-plumper-panama", "destination": "/spicy-lip-plumper-panama.html" },
     { "source": "/spicy-lip-plumper-panama/", "destination": "/spicy-lip-plumper-panama.html" },
-    { "source": "/glutathione-patch-panama", "destination": "/glutathione-patch-panama.html" },
-    { "source": "/glutathione-patch-panama/", "destination": "/glutathione-patch-panama.html" },
     { "source": "/digest-capsules-panama", "destination": "/digest-capsules-panama.html" },
     { "source": "/digest-capsules-panama/", "destination": "/digest-capsules-panama.html" },
     { "source": "/rfid-card-holder-panama", "destination": "/rfid-card-holder-panama.html" },
     { "source": "/rfid-card-holder-panama/", "destination": "/rfid-card-holder-panama.html" },
-    { "source": "/voyage-nova", "destination": "/voyage-nova.html" },
-    { "source": "/voyage-nova/", "destination": "/voyage-nova.html" },
     { "source": "/thank-you-compraconfio-panama", "destination": "/thank-you-compraconfio-panama.html" },
     { "source": "/thank-you-compraconfio-panama/", "destination": "/thank-you-compraconfio-panama.html" },
     { "source": "/thank-you-compraconfio", "destination": "/thank-you-compraconfio.html" },
@@ -176,6 +104,23 @@
     { "source": "/contacto/", "destination": "/contacto.html" }
   ],
   "redirects": [
+    { "source": "/voyage-nova", "destination": "/", "permanent": true },
+    { "source": "/voyage-nova/", "destination": "/", "permanent": true },
+    { "source": "/voyage-nova.html", "destination": "/", "permanent": true },
+    { "source": "/nattokinase", "destination": "/", "permanent": true },
+    { "source": "/nattokinase/", "destination": "/", "permanent": true },
+    { "source": "/nattokinase.html", "destination": "/", "permanent": true },
+    { "source": "/nattokinasa", "destination": "/", "permanent": true },
+    { "source": "/nattokinasa/", "destination": "/", "permanent": true },
+    { "source": "/cinta-doble-cara-panama", "destination": "/", "permanent": true },
+    { "source": "/cinta-doble-cara-panama/", "destination": "/", "permanent": true },
+    { "source": "/cinta-doble-cara-panama.html", "destination": "/", "permanent": true },
+    { "source": "/glutathione-patch-panama", "destination": "/", "permanent": true },
+    { "source": "/glutathione-patch-panama/", "destination": "/", "permanent": true },
+    { "source": "/glutathione-patch-panama.html", "destination": "/", "permanent": true },
+    { "source": "/barra-telescopica-panama", "destination": "/", "permanent": true },
+    { "source": "/barra-telescopica-panama/", "destination": "/", "permanent": true },
+    { "source": "/barra-telescopica-panama.html", "destination": "/", "permanent": true },
     { "source": "/compraconfio-mascara", "destination": "/", "permanent": true },
     { "source": "/compraconfio-mascara/", "destination": "/", "permanent": true },
     { "source": "/compraconfio-mascara.html", "destination": "/", "permanent": true },

@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Cuidado de manchas y tono desigual">
-  <rect width="800" height="800" fill="#faf9fc"/>
-  <ellipse cx="400" cy="380" rx="220" ry="280" fill="#f5e8dc" stroke="#e8d0c0" stroke-width="3"/>
-  <circle cx="320" cy="340" r="28" fill="#d9ccf0" opacity=".9"/>
-  <circle cx="470" cy="390" r="22" fill="#d9ccf0" opacity=".85"/>
-  <circle cx="380" cy="470" r="18" fill="#d9ccf0" opacity=".8"/>
-  <text x="400" y="640" text-anchor="middle" font-family="Georgia, serif" font-size="32" fill="#5b3d8f">Cuidado localizado</text>
-  <text x="400" y="680" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#8b6fc0">Manchas · post-acné · tono desigual</text>
-</svg>
