@@ -145,7 +145,8 @@ body[data-product="steel-fryer"] .slide img[src$=".png"] {
   background: #f8fafc;
 }
 
-body[data-product="steel-fryer"] .gallery-thumbs img[src$=".png"] {
+body[data-product="steel-fryer"] .gallery-thumbs img[src$=".png"],
+body[data-product="steel-fryer"] .gallery-thumbs img[src$=".webp"] {
   object-fit: cover;
   object-position: center;
 }
@@ -1245,7 +1246,9 @@ body[data-product="steel-fryer"] .feature-media--square img {
 }
 
 body[data-product="steel-fryer"] .story-solution-demo[src$=".gif"],
-body[data-product="steel-fryer"] .how-to-demo[src$=".gif"] {
+body[data-product="steel-fryer"] .how-to-demo[src$=".gif"],
+body[data-product="steel-fryer"] .story-solution-demo[src$=".webp"],
+body[data-product="steel-fryer"] .how-to-demo[src$=".webp"] {
   object-fit: cover;
   object-position: center;
 }
