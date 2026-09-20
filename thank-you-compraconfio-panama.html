@@ -135,17 +135,13 @@
     var productId = p.get('productId') || p.get('bundleOption') || '';
     var source = p.get('source') || '';
     var productImages = {
-      'cc-spicy-lip-pa': '/images/spicy-lip-plumper/hero-product.png',
       'cc-digest-pa': '/images/digest-capsules/hero-product.png',
       'cc-rfid-holder-pa': '/images/rfid-card-holder/hero-product.png',
-      'cc-natto-pa': '/images/nattokinase-hale/hero-bottle-clinical.jpg?v=20260831r',
       'cc-mascara': '/images/mascara-product.png'
     };
     var sourceImages = {
-      'spicy-lip-plumper-panama': '/images/spicy-lip-plumper/hero-product.png',
       'digest-capsules-panama': '/images/digest-capsules/hero-product.png',
       'rfid-card-holder-panama': '/images/rfid-card-holder/hero-product.png',
-      'nattokinase-panama': '/images/nattokinase-hale/hero-bottle-clinical.jpg?v=20260831r',
       'latine-mascara': '/images/mascara-product.png',
       'compraconfio-home': '/images/mascara-product.png'
     };
@@ -178,7 +174,7 @@
 
     var fbPixelId = p.get('fbPixelId') || '';
     var tiktokPixelId = p.get('tiktokPixelId') || '';
-    if (!tiktokPixelId && (p.get('source') === 'spicy-lip-plumper-panama' || p.get('source') === 'rfid-card-holder-panama')) {
+    if (!tiktokPixelId && p.get('source') === 'rfid-card-holder-panama') {
       tiktokPixelId = 'DA46KJ3C77U8UMTFN63G';
     }
     var purchaseValue = Number(total) || Number(price) || 0;

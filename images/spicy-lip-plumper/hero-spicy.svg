@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Efecto spicy cálido">
-  <rect width="800" height="800" fill="#fff8f3"/>
-  <circle cx="400" cy="360" r="170" fill="#ffd166" opacity=".25"/>
-  <circle cx="400" cy="360" r="120" fill="#ff7b54" opacity=".35"/>
-  <text x="400" y="330" text-anchor="middle" font-size="120"><6</text>
-  <text x="400" y="120" text-anchor="middle" font-family="Georgia, serif" font-size="38" fill="#8b1e3f">Sensación spicy</text>
-  <text x="400" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" fill="#5c4033">Extracto de Capsicum Frutescens</text>
-  <text x="400" y="620" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#8b5e3c">Calor suave · efecto plumping cosmético</text>
-</svg>

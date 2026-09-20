@@ -7,30 +7,6 @@
       ]
     },
     {
-      "source": "/nattokinase-panama",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/nattokinase-panama/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/spicy-lip-plumper-panama",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/spicy-lip-plumper-panama/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
       "source": "/digest-capsules-panama",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
@@ -80,10 +56,6 @@
     }
   ],
   "rewrites": [
-    { "source": "/nattokinase-panama", "destination": "/nattokinase-panama.html" },
-    { "source": "/nattokinase-panama/", "destination": "/nattokinase-panama.html" },
-    { "source": "/spicy-lip-plumper-panama", "destination": "/spicy-lip-plumper-panama.html" },
-    { "source": "/spicy-lip-plumper-panama/", "destination": "/spicy-lip-plumper-panama.html" },
     { "source": "/digest-capsules-panama", "destination": "/digest-capsules-panama.html" },
     { "source": "/digest-capsules-panama/", "destination": "/digest-capsules-panama.html" },
     { "source": "/rfid-card-holder-panama", "destination": "/rfid-card-holder-panama.html" },
@@ -121,6 +93,12 @@
     { "source": "/barra-telescopica-panama", "destination": "/", "permanent": true },
     { "source": "/barra-telescopica-panama/", "destination": "/", "permanent": true },
     { "source": "/barra-telescopica-panama.html", "destination": "/", "permanent": true },
+    { "source": "/nattokinase-panama", "destination": "/", "permanent": true },
+    { "source": "/nattokinase-panama/", "destination": "/", "permanent": true },
+    { "source": "/nattokinase-panama.html", "destination": "/", "permanent": true },
+    { "source": "/spicy-lip-plumper-panama", "destination": "/", "permanent": true },
+    { "source": "/spicy-lip-plumper-panama/", "destination": "/", "permanent": true },
+    { "source": "/spicy-lip-plumper-panama.html", "destination": "/", "permanent": true },
     { "source": "/compraconfio-mascara", "destination": "/", "permanent": true },
     { "source": "/compraconfio-mascara/", "destination": "/", "permanent": true },
     { "source": "/compraconfio-mascara.html", "destination": "/", "permanent": true },
