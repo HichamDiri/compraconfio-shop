@@ -1281,6 +1281,11 @@ body[data-product="steel-fryer"] .feature-media--square img {
   background: #fff;
 }
 
+body[data-product="steel-fryer"] .story-solution-demo[src$=".gif"] {
+  object-fit: cover;
+  object-position: center;
+}
+
 body[data-product="steel-fryer"] .slide img.is-contain {
   object-fit: contain;
   background: #fff;

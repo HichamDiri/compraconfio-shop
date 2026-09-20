@@ -154,7 +154,7 @@
   <section class="feature story-step is-reversed">
     <div class="feature-inner">
       <div class="feature-media feature-media--square">
-        <img src="/images/steel-fryer/hero-product.png?v=20260920b" alt="Olla freidora con canasta escurridora — levanta y el aceite regresa a la olla" width="1500" height="1500" loading="lazy" decoding="async">
+        <img class="story-solution-demo" id="storySolutionDemo" src="/images/steel-fryer/hero-lift-drain.png?v=20260920d" data-animate="/images/steel-fryer/story-solution.gif?v=20260920d" alt="Demostración — levanta la canasta y el aceite regresa a la olla" width="1024" height="1024" loading="lazy" decoding="async">
       </div>
       <div class="feature-copy">
         <h2>Todo lo que necesitas para freír, en un solo diseño práctico</h2>
@@ -678,6 +678,28 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!wasOpen) item.classList.add('is-open');
     });
   });
+
+  var storySolutionDemo = document.getElementById('storySolutionDemo');
+  if (storySolutionDemo && storySolutionDemo.dataset.animate) {
+    var loadSolutionGif = function () {
+      if (storySolutionDemo.dataset.loaded) return;
+      storySolutionDemo.dataset.loaded = '1';
+      storySolutionDemo.src = storySolutionDemo.dataset.animate;
+    };
+    if ('IntersectionObserver' in window) {
+      var solutionObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            loadSolutionGif();
+            solutionObserver.disconnect();
+          }
+        });
+      }, { rootMargin: '240px' });
+      solutionObserver.observe(storySolutionDemo);
+    } else {
+      loadSolutionGif();
+    }
+  }
 });
 </script>
 </body>
