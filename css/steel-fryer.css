@@ -1270,7 +1270,8 @@ body[data-product="steel-fryer"] .mech-card img {
   height: auto !important;
   max-height: none;
   aspect-ratio: 1 / 1;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
   border-radius: 8px;
   display: block;
   background: #fff;
