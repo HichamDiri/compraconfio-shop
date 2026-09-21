@@ -138,12 +138,14 @@
       'cc-digest-pa': '/images/digest-capsules/hero-product.png',
       'cc-rfid-holder-pa': '/images/rfid-card-holder/hero-product.png',
       'cc-fryer-pa': '/images/steel-fryer/hero-product.png',
+      'cc-socket-pa': '/images/universal-socket-wrench/hero-product.png',
       'cc-mascara': '/images/mascara-product.png'
     };
     var sourceImages = {
       'digest-capsules-panama': '/images/digest-capsules/hero-product.png',
       'rfid-card-holder-panama': '/images/rfid-card-holder/hero-product.png',
       'steel-fryer-panama': '/images/steel-fryer/hero-product.png',
+      'universal-socket-wrench-panama': '/images/universal-socket-wrench/hero-product.png',
       'latine-mascara': '/images/mascara-product.png',
       'compraconfio-home': '/images/mascara-product.png'
     };
@@ -176,7 +178,7 @@
 
     var fbPixelId = p.get('fbPixelId') || '';
     var tiktokPixelId = p.get('tiktokPixelId') || '';
-    if (!tiktokPixelId && (p.get('source') === 'rfid-card-holder-panama' || p.get('source') === 'steel-fryer-panama')) {
+    if (!tiktokPixelId && (p.get('source') === 'rfid-card-holder-panama' || p.get('source') === 'steel-fryer-panama' || p.get('source') === 'universal-socket-wrench-panama')) {
       tiktokPixelId = 'DA46KJ3C77U8UMTFN63G';
     }
     var purchaseValue = Number(total) || Number(price) || 0;

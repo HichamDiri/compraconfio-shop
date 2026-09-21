@@ -43,6 +43,18 @@
       ]
     },
     {
+      "source": "/universal-socket-wrench-panama",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/universal-socket-wrench-panama/",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
       "source": "/images/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
@@ -74,6 +86,8 @@
     { "source": "/rfid-card-holder-panama/", "destination": "/rfid-card-holder-panama.html" },
     { "source": "/steel-fryer-panama", "destination": "/steel-fryer-panama.html" },
     { "source": "/steel-fryer-panama/", "destination": "/steel-fryer-panama.html" },
+    { "source": "/universal-socket-wrench-panama", "destination": "/universal-socket-wrench-panama.html" },
+    { "source": "/universal-socket-wrench-panama/", "destination": "/universal-socket-wrench-panama.html" },
     { "source": "/thank-you-compraconfio-panama", "destination": "/thank-you-compraconfio-panama.html" },
     { "source": "/thank-you-compraconfio-panama/", "destination": "/thank-you-compraconfio-panama.html" },
     { "source": "/thank-you-compraconfio", "destination": "/thank-you-compraconfio.html" },
