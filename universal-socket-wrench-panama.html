@@ -274,7 +274,7 @@
   <div class="shell">
     <div class="feature-inner how-to-inner">
       <div class="feature-media feature-media--square">
-        <img src="/images/universal-socket-wrench/hero-product.png?v=20260921a" alt="Cómo usar la llave universal — coloca, ajusta y gira" width="800" height="800" loading="lazy" decoding="async">
+        <img class="how-to-demo" id="howToDemo" src="/images/universal-socket-wrench/hero-easy-use.png?v=20260921f" data-animate="/images/universal-socket-wrench/how-to-demo.gif?v=20260921f" alt="Demostración paso a paso — coloca, ajusta y gira con la llave universal" width="800" height="800" loading="lazy" decoding="async">
       </div>
       <div class="feature-copy">
         <h2>Fácil de usar en 3 pasos</h2>
@@ -290,33 +290,6 @@
     </div>
   </div>
 </section>
-
-<section class="hl-section hl-cream" id="materiales">
-  <div class="shell">
-    <div class="mech-head mech-head--solo">
-      <h2>Diseñada para el trabajo diario</h2>
-    </div>
-    <div class="spec-grid">
-      <article class="spec-card">
-        <h3>Mecanismo interno ajustable</h3>
-        <p>Sus componentes internos se adaptan a diferentes tamaños de sujetadores, permitiendo utilizar una sola herramienta para distintas reparaciones.</p>
-      </article>
-      <article class="spec-card">
-        <h3>Acero resistente</h3>
-        <p>Fabricada en acero de alta resistencia, pensado para ofrecer durabilidad y estabilidad durante el uso cotidiano.</p>
-      </article>
-      <article class="spec-card">
-        <h3>Diseño compacto</h3>
-        <p>Su formato permite llevarla fácilmente en una caja de herramientas, vehículo o espacio de trabajo sin ocupar el lugar de un juego completo de dados.</p>
-      </article>
-      <article class="spec-card">
-        <h3>Adaptador de 3/8"</h3>
-        <p>Incluye un adaptador de 3/8" para utilizarla con herramientas compatibles, como llaves de mano y otros accesorios.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
 <section class="hl-section hl-warm" id="resenas">
   <div class="shell">
     <div class="mech-head mech-head--solo">
@@ -696,6 +669,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   lazyLoadGif(document.getElementById('storySolutionDemo'));
+  lazyLoadGif(document.getElementById('howToDemo'));
 });
 </script>
 </body>
