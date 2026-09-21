@@ -215,7 +215,7 @@
   <section class="feature story-step is-reversed">
     <div class="feature-inner">
       <div class="feature-media feature-media--square">
-        <img src="/images/universal-socket-wrench/hero-product.png?v=20260921a" alt="Llave universal con mecanismo ajustable y adaptador 3/8" width="800" height="800" loading="lazy" decoding="async">
+        <img class="story-solution-demo" id="storySolutionDemo" src="/images/universal-socket-wrench/hero-product.png?v=20260921d" data-animate="/images/universal-socket-wrench/story-solution.gif?v=20260921d" alt="Demostración — llave universal ajustándose a diferentes tuercas y tornillos" width="800" height="800" loading="lazy" decoding="async">
       </div>
       <div class="feature-copy">
         <h2>Una herramienta. Diferentes tamaños. Menos complicaciones.</h2>
@@ -677,6 +677,30 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!wasOpen) item.classList.add('is-open');
     });
   });
+
+  function lazyLoadGif(img) {
+    if (!img || !img.dataset.animate) return;
+    var load = function () {
+      if (img.dataset.loaded) return;
+      img.dataset.loaded = '1';
+      img.src = img.dataset.animate;
+    };
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            load();
+            observer.disconnect();
+          }
+        });
+      }, { rootMargin: '240px' });
+      observer.observe(img);
+    } else {
+      load();
+    }
+  }
+
+  lazyLoadGif(document.getElementById('storySolutionDemo'));
 });
 </script>
 </body>
