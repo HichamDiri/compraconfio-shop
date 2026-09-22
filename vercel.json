@@ -55,6 +55,18 @@
       ]
     },
     {
+      "source": "/led-flashlight-stick-panama",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/led-flashlight-stick-panama/",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
       "source": "/images/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
@@ -88,6 +100,8 @@
     { "source": "/steel-fryer-panama/", "destination": "/steel-fryer-panama.html" },
     { "source": "/universal-socket-wrench-panama", "destination": "/universal-socket-wrench-panama.html" },
     { "source": "/universal-socket-wrench-panama/", "destination": "/universal-socket-wrench-panama.html" },
+    { "source": "/led-flashlight-stick-panama", "destination": "/led-flashlight-stick-panama.html" },
+    { "source": "/led-flashlight-stick-panama/", "destination": "/led-flashlight-stick-panama.html" },
     { "source": "/thank-you-compraconfio-panama", "destination": "/thank-you-compraconfio-panama.html" },
     { "source": "/thank-you-compraconfio-panama/", "destination": "/thank-you-compraconfio-panama.html" },
     { "source": "/thank-you-compraconfio", "destination": "/thank-you-compraconfio.html" },
