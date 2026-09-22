@@ -1,5 +1,4 @@
 (function () {
-  var ABANDON_DELAY_MS = 5 * 60 * 1000;
   var STORAGE_PREFIX = 'cc_abandon_sent_';
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -8,10 +7,8 @@
     var form = document.getElementById('orderForm');
     if (!form || !window.GOOGLE_SHEETS_URL) return;
 
-    var eligible = false;
     var submitted = false;
     var sent = false;
-    var abandonTimer = null;
 
     function normalizePanamaPhone(value) {
       var digits = String(value || '').replace(/[^\d]/g, '');
@@ -42,25 +39,6 @@
       if (!form.checkValidity()) return false;
       var phone = form.querySelector('#phone');
       return Boolean(normalizePanamaPhone(phone && phone.value));
-    }
-
-    function clearTimer() {
-      eligible = false;
-      if (abandonTimer) {
-        clearTimeout(abandonTimer);
-        abandonTimer = null;
-      }
-    }
-
-    function scheduleEligibility() {
-      clearTimer();
-      if (submitted || sent || !isComplete()) return;
-
-      abandonTimer = setTimeout(function () {
-        if (!submitted && !sent && isComplete()) {
-          eligible = true;
-        }
-      }, ABANDON_DELAY_MS);
     }
 
     function buildPayload() {
@@ -112,7 +90,7 @@
     }
 
     function sendAbandon() {
-      if (sent || submitted || !eligible || !isComplete()) return;
+      if (sent || submitted || !isComplete()) return;
 
       var payload = buildPayload();
       if (!payload.phone || sessionStorage.getItem(storageKey(payload)) === '1') return;
@@ -135,9 +113,6 @@
       sent = true;
       sessionStorage.setItem(storageKey(payload), '1');
     }
-
-    form.addEventListener('input', scheduleEligibility, true);
-    form.addEventListener('change', scheduleEligibility, true);
 
     form.addEventListener('submit', function () {
       if (form.checkValidity()) submitted = true;
