@@ -1,5 +1,6 @@
 (function () {
   var STORAGE_PREFIX = 'cc_abandon_sent_';
+  var DRAFT_KEY = 'cc_abandon_draft';
 
   document.addEventListener('DOMContentLoaded', function () {
     if (!document.body || document.body.dataset.abandonCheckout !== 'on') return;
@@ -36,9 +37,22 @@
 
     function isComplete() {
       mergeFields();
-      if (!form.checkValidity()) return false;
+
+      var firstName = form.querySelector('#firstName');
+      var lastName = form.querySelector('#lastName');
       var phone = form.querySelector('#phone');
-      return Boolean(normalizePanamaPhone(phone && phone.value));
+      var department = form.querySelector('#department');
+      var city = form.querySelector('#city');
+      var addressLine = form.querySelector('#addressLine');
+
+      if (!firstName || !firstName.value.trim()) return false;
+      if (!lastName || !lastName.value.trim()) return false;
+      if (!normalizePanamaPhone(phone && phone.value)) return false;
+      if (!department || !department.value.trim()) return false;
+      if (!city || city.disabled || !city.value.trim()) return false;
+      if (!addressLine || !addressLine.value.trim()) return false;
+
+      return true;
     }
 
     function buildPayload() {
@@ -89,35 +103,88 @@
       return STORAGE_PREFIX + payload.source + '_' + payload.phone;
     }
 
+    function postPayload(payload) {
+      var body = 'payload=' + encodeURIComponent(JSON.stringify(payload));
+
+      return fetch(window.GOOGLE_SHEETS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        keepalive: true,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+        body: body
+      }).catch(function () {});
+    }
+
+    function markSent(payload) {
+      sent = true;
+      sessionStorage.setItem(storageKey(payload), '1');
+      try {
+        localStorage.removeItem(DRAFT_KEY);
+      } catch (error) {}
+    }
+
+    function saveDraft() {
+      if (submitted || sent || !isComplete()) {
+        try {
+          localStorage.removeItem(DRAFT_KEY);
+        } catch (error) {}
+        return;
+      }
+
+      try {
+        localStorage.setItem(DRAFT_KEY, JSON.stringify(buildPayload()));
+      } catch (error) {}
+    }
+
     function sendAbandon() {
       if (sent || submitted || !isComplete()) return;
 
       var payload = buildPayload();
       if (!payload.phone || sessionStorage.getItem(storageKey(payload)) === '1') return;
 
-      var body = new URLSearchParams();
-      body.append('payload', JSON.stringify(payload));
-
-      var delivered = typeof navigator.sendBeacon === 'function'
-        && navigator.sendBeacon(window.GOOGLE_SHEETS_URL, body);
-
-      if (!delivered) {
-        fetch(window.GOOGLE_SHEETS_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          keepalive: true,
-          body: body
-        });
-      }
-
-      sent = true;
-      sessionStorage.setItem(storageKey(payload), '1');
+      markSent(payload);
+      postPayload(payload);
     }
 
+    function flushSavedDraft() {
+      var raw;
+      try {
+        raw = localStorage.getItem(DRAFT_KEY);
+      } catch (error) {
+        return;
+      }
+      if (!raw) return;
+
+      try {
+        var payload = JSON.parse(raw);
+        if (!payload || !payload.phone || sessionStorage.getItem(storageKey(payload)) === '1') {
+          localStorage.removeItem(DRAFT_KEY);
+          return;
+        }
+        markSent(payload);
+        postPayload(payload);
+      } catch (error) {
+        try {
+          localStorage.removeItem(DRAFT_KEY);
+        } catch (removeError) {}
+      }
+    }
+
+    form.addEventListener('input', saveDraft, true);
+    form.addEventListener('change', saveDraft, true);
+
     form.addEventListener('submit', function () {
-      if (form.checkValidity()) submitted = true;
+      if (isComplete()) submitted = true;
+      try {
+        localStorage.removeItem(DRAFT_KEY);
+      } catch (error) {}
     }, true);
 
     window.addEventListener('pagehide', sendAbandon);
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'hidden') sendAbandon();
+    });
+
+    flushSavedDraft();
   });
 })();
