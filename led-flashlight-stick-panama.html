@@ -239,66 +239,46 @@
   </div>
 </section>
 
-<section class="hl-section" id="tecnologia">
-  <div class="shell">
-    <div class="mech-head mech-head--solo">
-      <h2>Tecnología y diseño</h2>
-    </div>
-    <div class="spec-grid">
-      <article class="spec-card">
-        <h3>Cuerpo flexible de 30 pulgadas</h3>
-        <p>Permite doblar y posicionar la luz para alcanzar espacios difíciles.</p>
-      </article>
-      <article class="spec-card">
-        <h3>Iluminación LED</h3>
-        <p>Proporciona una iluminación práctica para reparaciones, mantenimiento e inspecciones.</p>
-      </article>
-      <article class="spec-card">
-        <h3>3 modos de iluminación</h3>
-        <p>Ajusta fácilmente la intensidad según la situación.</p>
-      </article>
-      <article class="spec-card">
-        <h3>Batería recargable</h3>
-        <p>La batería integrada permite utilizarla sin cables mientras trabajas.</p>
-      </article>
-      <article class="spec-card">
-        <h3>Carga USB-C</h3>
-        <p>Recarga la luz fácilmente con un cable USB-C compatible.</p>
-      </article>
-      <article class="spec-card">
-        <h3>Diseño resistente al agua</h3>
-        <p>Adecuada para diferentes trabajos y situaciones de uso.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
 <section class="hl-section hl-warm" id="resenas">
   <div class="shell">
     <div class="mech-head mech-head--solo">
       <h2>Lo que dicen los usuarios</h2>
     </div>
 
-    <div class="review-grid gluta-review-grid">
-      <article class="review-card">
+    <p class="gluta-review-lead">Reseñas con foto — toca para ampliar.</p>
+
+    <div class="review-grid review-grid--photos gluta-review-grid">
+      <article class="review-card review-card--photo">
+        <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
+          <picture><source type="image/webp" srcset="/images/led-flashlight-stick/review-1.webp?v=20260922g"><img src="/images/led-flashlight-stick/review-1.png?v=20260922g" alt="Foto de reseña — luz flexible doblada en forma de arco" width="800" height="800" loading="lazy" decoding="async"></picture>
+        </button>
         <div class="stars">★★★★★</div>
         <h3 class="review-card__title">Me encanta poder trabajar con las dos manos</h3>
         <p>“La posibilidad de colocar la luz y mantenerla en posición hace mucho más cómodo trabajar en espacios difíciles.”</p>
         <cite>— Cliente verificado</cite>
       </article>
-      <article class="review-card">
+      <article class="review-card review-card--photo">
+        <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
+          <picture><source type="image/webp" srcset="/images/led-flashlight-stick/review-2.webp?v=20260922g"><img src="/images/led-flashlight-stick/review-2.png?v=20260922g" alt="Foto de reseña — luz flexible curvada sobre el suelo" width="800" height="800" loading="lazy" decoding="async"></picture>
+        </button>
         <div class="stars">★★★★★</div>
         <h3 class="review-card__title">Llega a lugares donde una linterna normal no puede</h3>
         <p>“Su diseño flexible permite iluminar alrededor de obstáculos y en espacios reducidos.”</p>
         <cite>— Cliente verificado</cite>
       </article>
-      <article class="review-card">
+      <article class="review-card review-card--photo">
+        <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
+          <picture><source type="image/webp" srcset="/images/led-flashlight-stick/review-3.webp?v=20260922g"><img src="/images/led-flashlight-stick/review-3.png?v=20260922g" alt="Foto de reseña — luz flexible iluminando una esquina" width="800" height="800" loading="lazy" decoding="async"></picture>
+        </button>
         <div class="stars">★★★★★</div>
         <h3 class="review-card__title">Muy práctica para el carro y el garaje</h3>
         <p>“Ideal para reparaciones, mantenimiento e inspecciones cuando necesitas iluminación adicional.”</p>
         <cite>— Cliente verificado</cite>
       </article>
-      <article class="review-card">
+      <article class="review-card review-card--photo">
+        <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
+          <picture><source type="image/webp" srcset="/images/led-flashlight-stick/review-4.webp?v=20260922g"><img src="/images/led-flashlight-stick/review-4.png?v=20260922g" alt="Foto de reseña — luz flexible doblada sobre la cama" width="800" height="800" loading="lazy" decoding="async"></picture>
+        </button>
         <div class="stars">★★★★★</div>
         <h3 class="review-card__title">Puedes doblarla y dejarla donde la necesitas</h3>
         <p>“Una forma práctica de mantener la luz dirigida hacia el área de trabajo.”</p>
@@ -361,6 +341,19 @@
     </div>
   </div>
 </section>
+
+<div class="review-lightbox" id="reviewLightbox" role="dialog" aria-modal="true" aria-label="Foto de reseña ampliada" hidden>
+  <div class="review-lightbox-backdrop" data-close-lightbox></div>
+  <div class="review-lightbox-panel">
+    <button type="button" class="review-lightbox-close" data-close-lightbox aria-label="Cerrar">&times;</button>
+    <button type="button" class="review-lightbox-nav is-prev" id="reviewLightboxPrev" aria-label="Foto anterior">&#8249;</button>
+    <figure class="review-lightbox-figure">
+      <img id="reviewLightboxImg" src="" alt="">
+      <figcaption id="reviewLightboxCount"></figcaption>
+    </figure>
+    <button type="button" class="review-lightbox-nav is-next" id="reviewLightboxNext" aria-label="Foto siguiente">&#8250;</button>
+  </div>
+</div>
 
 <footer class="site-footer">
   <div class="footer-brand">compra<em>confio</em></div>
@@ -611,6 +604,66 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.js-open-order').forEach(function (btn) { btn.addEventListener('click', openOrder); });
   modal.querySelectorAll('[data-close-order]').forEach(function (btn) { btn.addEventListener('click', closeOrder); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('is-open')) closeOrder(); });
+
+  var lightbox = document.getElementById('reviewLightbox');
+  var lightboxImg = document.getElementById('reviewLightboxImg');
+  var lightboxCount = document.getElementById('reviewLightboxCount');
+  var lightboxPrev = document.getElementById('reviewLightboxPrev');
+  var lightboxNext = document.getElementById('reviewLightboxNext');
+  var lightboxClose = lightbox ? lightbox.querySelector('.review-lightbox-close') : null;
+  var reviewPhotos = Array.prototype.slice.call(document.querySelectorAll('#resenas .js-review-photo img'));
+  var lightboxIndex = 0;
+  var lightboxLastFocused = null;
+
+  function showLightboxPhoto(index) {
+    if (!reviewPhotos.length) return;
+    lightboxIndex = (index + reviewPhotos.length) % reviewPhotos.length;
+    var photo = reviewPhotos[lightboxIndex];
+    lightboxImg.src = photo.src;
+    lightboxImg.alt = photo.alt;
+    lightboxCount.textContent = (lightboxIndex + 1) + ' / ' + reviewPhotos.length;
+    lightboxPrev.disabled = reviewPhotos.length <= 1;
+    lightboxNext.disabled = reviewPhotos.length <= 1;
+  }
+
+  function openLightbox(index) {
+    if (!lightbox || !reviewPhotos.length) return;
+    lightboxLastFocused = document.activeElement;
+    showLightboxPhoto(index);
+    lightbox.hidden = false;
+    lightbox.classList.add('is-open');
+    document.body.classList.add('no-scroll');
+    if (lightboxClose) lightboxClose.focus({ preventScroll: true });
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('is-open');
+    lightbox.hidden = true;
+    lightboxImg.removeAttribute('src');
+    if (!modal || !modal.classList.contains('is-open')) document.body.classList.remove('no-scroll');
+    if (lightboxLastFocused) lightboxLastFocused.focus({ preventScroll: true });
+  }
+
+  if (lightbox) {
+    document.querySelectorAll('#resenas .js-review-photo').forEach(function (btn, index) {
+      btn.addEventListener('click', function () { openLightbox(index); });
+    });
+
+    lightbox.querySelectorAll('[data-close-lightbox]').forEach(function (btn) {
+      btn.addEventListener('click', closeLightbox);
+    });
+
+    lightboxPrev.addEventListener('click', function () { showLightboxPhoto(lightboxIndex - 1); });
+    lightboxNext.addEventListener('click', function () { showLightboxPhoto(lightboxIndex + 1); });
+
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showLightboxPhoto(lightboxIndex - 1);
+      if (e.key === 'ArrowRight') showLightboxPhoto(lightboxIndex + 1);
+    });
+  }
 
   [firstName, lastName, addressLine, zone].forEach(function (input) { input.addEventListener('input', mergeFields); });
   document.getElementById('orderForm').addEventListener('submit', mergeFields, true);
