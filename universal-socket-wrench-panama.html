@@ -296,21 +296,27 @@
       <h2>Lo que más destacan quienes la usan</h2>
     </div>
 
-    <div class="review-grid gluta-review-grid">
-      <article class="review-card">
+    <p class="gluta-review-lead">Reseñas con foto — toca para ampliar.</p>
+
+    <div class="review-grid review-grid--photos gluta-review-grid">
+      <article class="review-card review-card--photo">
+        <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
+          <picture><source type="image/webp" srcset="/images/universal-socket-wrench/review-1.webp?v=20260922a"><img src="/images/universal-socket-wrench/review-1.png?v=20260922a" alt="Foto de reseña — anna" width="800" height="800" loading="lazy" decoding="async"></picture>
+        </button>
         <div class="stars">★★★★★</div>
-        <p>“Me gusta porque no tengo que estar buscando cada tamaño de dado. Para reparaciones rápidas es muy práctica.”</p>
-        <cite>— Cliente verificado</cite>
+        <h3 class="review-card__title">Affordable price good quality works as it should</h3>
+        <p>“What a fantastic tool to add to anyone's collection. When I first received his tool I went ahead and took it out to some gates I have on my property to test it. The gates have bolts and nuts that are anywhere from 12 mm to 14 mm. Some of them are stripped some of them are in good condition. I brought out my electrical DeWalt wrench and connected disc to the wrench see how it works. When first using this I used it with the DeWalt wrench and put it on a 12 mm good condition socket/bolt that didn't have any rust on it. I began turning it to see how it would unscrew. This universal socket wrench begin to unscrew the 12 mm bolt with no issues. After I did five full rotations I confirmed that it was starting to get loose so I tighten it back up since it was holding my gate. After that I decided to go ahead and try it on a 14 mm bolt that was Rusty and stripped. At first I didn't feel like it was grabbing well to that specific bolt but with a little bit of adjustment and more pressure put on to this universal socket wrench it begin to loosen up the rusty 14 mm bolt. I was able to fully loosen the bolt and then grab a new bolt and use it to tighten the new bolt into place. One thing that I recommend if you're purchasing this to use it I would not use it with the impact wrench or a drill driver. I would simply use this with a hand wrench and hold it into place flat to make sure the mating surface gets as much bite on it as possible. This is definitely a tool that I'll frequently be using with this type of application.”</p>
+        <cite>— anna · Compra verificada</cite>
       </article>
-      <article class="review-card">
+
+      <article class="review-card review-card--photo">
+        <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
+          <picture><source type="image/webp" srcset="/images/universal-socket-wrench/review-2.webp?v=20260922a"><img src="/images/universal-socket-wrench/review-2.png?v=20260922a" alt="Foto de reseña — Zander Aldrich" width="800" height="800" loading="lazy" decoding="async"></picture>
+        </button>
         <div class="stars">★★★★★</div>
-        <p>“La llevo en mi caja de herramientas y me ha resultado muy útil para diferentes reparaciones.”</p>
-        <cite>— Cliente verificado</cite>
-      </article>
-      <article class="review-card">
-        <div class="stars">★★★★★</div>
-        <p>“Me ha ayudado especialmente cuando no tenía el tamaño exacto que necesitaba.”</p>
-        <cite>— Cliente verificado</cite>
+        <h3 class="review-card__title">Great adjustable ratchet</h3>
+        <p>“This Adjustable Rachet is a lifesaver. Instead of having to carry multiple sizes this adjusts to whatever you need it for. Saving room and time since all you need to do is adjust by turning it left or right with your hand.”</p>
+        <cite>— Zander Aldrich · Compra verificada</cite>
       </article>
     </div>
 
@@ -373,6 +379,19 @@
     </div>
   </div>
 </section>
+
+<div class="review-lightbox" id="reviewLightbox" role="dialog" aria-modal="true" aria-label="Foto de reseña ampliada" hidden>
+  <div class="review-lightbox-backdrop" data-close-lightbox></div>
+  <div class="review-lightbox-panel">
+    <button type="button" class="review-lightbox-close" data-close-lightbox aria-label="Cerrar">&times;</button>
+    <button type="button" class="review-lightbox-nav is-prev" id="reviewLightboxPrev" aria-label="Foto anterior">&#8249;</button>
+    <figure class="review-lightbox-figure">
+      <img id="reviewLightboxImg" src="" alt="">
+      <figcaption id="reviewLightboxCount"></figcaption>
+    </figure>
+    <button type="button" class="review-lightbox-nav is-next" id="reviewLightboxNext" aria-label="Foto siguiente">&#8250;</button>
+  </div>
+</div>
 
 <footer class="site-footer">
   <div class="footer-brand">compra<em>confio</em></div>
@@ -623,6 +642,66 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.js-open-order').forEach(function (btn) { btn.addEventListener('click', openOrder); });
   modal.querySelectorAll('[data-close-order]').forEach(function (btn) { btn.addEventListener('click', closeOrder); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('is-open')) closeOrder(); });
+
+  var lightbox = document.getElementById('reviewLightbox');
+  var lightboxImg = document.getElementById('reviewLightboxImg');
+  var lightboxCount = document.getElementById('reviewLightboxCount');
+  var lightboxPrev = document.getElementById('reviewLightboxPrev');
+  var lightboxNext = document.getElementById('reviewLightboxNext');
+  var lightboxClose = lightbox ? lightbox.querySelector('.review-lightbox-close') : null;
+  var reviewPhotos = Array.prototype.slice.call(document.querySelectorAll('#resenas .js-review-photo img'));
+  var lightboxIndex = 0;
+  var lightboxLastFocused = null;
+
+  function showLightboxPhoto(index) {
+    if (!reviewPhotos.length) return;
+    lightboxIndex = (index + reviewPhotos.length) % reviewPhotos.length;
+    var photo = reviewPhotos[lightboxIndex];
+    lightboxImg.src = photo.src;
+    lightboxImg.alt = photo.alt;
+    lightboxCount.textContent = (lightboxIndex + 1) + ' / ' + reviewPhotos.length;
+    lightboxPrev.disabled = reviewPhotos.length <= 1;
+    lightboxNext.disabled = reviewPhotos.length <= 1;
+  }
+
+  function openLightbox(index) {
+    if (!lightbox || !reviewPhotos.length) return;
+    lightboxLastFocused = document.activeElement;
+    showLightboxPhoto(index);
+    lightbox.hidden = false;
+    lightbox.classList.add('is-open');
+    document.body.classList.add('no-scroll');
+    if (lightboxClose) lightboxClose.focus({ preventScroll: true });
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('is-open');
+    lightbox.hidden = true;
+    lightboxImg.removeAttribute('src');
+    if (!modal || !modal.classList.contains('is-open')) document.body.classList.remove('no-scroll');
+    if (lightboxLastFocused) lightboxLastFocused.focus({ preventScroll: true });
+  }
+
+  if (lightbox) {
+    document.querySelectorAll('#resenas .js-review-photo').forEach(function (btn, index) {
+      btn.addEventListener('click', function () { openLightbox(index); });
+    });
+
+    lightbox.querySelectorAll('[data-close-lightbox]').forEach(function (btn) {
+      btn.addEventListener('click', closeLightbox);
+    });
+
+    lightboxPrev.addEventListener('click', function () { showLightboxPhoto(lightboxIndex - 1); });
+    lightboxNext.addEventListener('click', function () { showLightboxPhoto(lightboxIndex + 1); });
+
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showLightboxPhoto(lightboxIndex - 1);
+      if (e.key === 'ArrowRight') showLightboxPhoto(lightboxIndex + 1);
+    });
+  }
 
   [firstName, lastName, addressLine, zone].forEach(function (input) { input.addEventListener('input', mergeFields); });
   document.getElementById('orderForm').addEventListener('submit', mergeFields, true);

@@ -888,6 +888,12 @@ body[data-product="universal-socket"] .gluta-review-grid {
   body[data-product="universal-socket"] .gluta-review-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  body[data-product="universal-socket"] .review-grid--photos.gluta-review-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 920px;
+    margin-inline: auto;
+  }
 }
 
 body[data-product="universal-socket"] .gluta-review-grid .review-card {
