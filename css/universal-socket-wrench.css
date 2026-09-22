@@ -102,7 +102,17 @@ body[data-product="universal-socket"] .hero-lead {
 }
 
 body[data-product="universal-socket"] .perks li {
+  position: relative;
+  padding-left: 1.35em;
   line-height: 1.5;
+}
+
+body[data-product="universal-socket"] .perks li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--socket-purple);
+  font-weight: 700;
 }
 
 body[data-product="universal-socket"] .gallery-stage {
