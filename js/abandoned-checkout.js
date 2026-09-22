@@ -9,7 +9,6 @@
     if (!form || !window.GOOGLE_SHEETS_URL) return;
 
     var submitted = false;
-    var sent = false;
 
     function normalizePanamaPhone(value) {
       var digits = String(value || '').replace(/[^\d]/g, '');
@@ -115,16 +114,8 @@
       }).catch(function () {});
     }
 
-    function markSent(payload) {
-      sent = true;
-      sessionStorage.setItem(storageKey(payload), '1');
-      try {
-        localStorage.removeItem(DRAFT_KEY);
-      } catch (error) {}
-    }
-
     function saveDraft() {
-      if (submitted || sent || !isComplete()) {
+      if (submitted || !isComplete()) {
         try {
           localStorage.removeItem(DRAFT_KEY);
         } catch (error) {}
@@ -137,37 +128,21 @@
     }
 
     function sendAbandon() {
-      if (sent || submitted || !isComplete()) return;
+      if (submitted) return;
 
-      var payload = buildPayload();
-      if (!payload.phone || sessionStorage.getItem(storageKey(payload)) === '1') return;
+      saveDraft();
 
-      markSent(payload);
+      var payload;
+      try {
+        payload = isComplete() ? buildPayload() : JSON.parse(localStorage.getItem(DRAFT_KEY) || 'null');
+      } catch (error) {
+        payload = null;
+      }
+
+      if (!payload || !payload.phone || sessionStorage.getItem(storageKey(payload)) === '1') return;
+
+      sessionStorage.setItem(storageKey(payload), '1');
       postPayload(payload);
-    }
-
-    function flushSavedDraft() {
-      var raw;
-      try {
-        raw = localStorage.getItem(DRAFT_KEY);
-      } catch (error) {
-        return;
-      }
-      if (!raw) return;
-
-      try {
-        var payload = JSON.parse(raw);
-        if (!payload || !payload.phone || sessionStorage.getItem(storageKey(payload)) === '1') {
-          localStorage.removeItem(DRAFT_KEY);
-          return;
-        }
-        markSent(payload);
-        postPayload(payload);
-      } catch (error) {
-        try {
-          localStorage.removeItem(DRAFT_KEY);
-        } catch (removeError) {}
-      }
     }
 
     form.addEventListener('input', saveDraft, true);
@@ -180,11 +155,25 @@
       } catch (error) {}
     }, true);
 
-    window.addEventListener('pagehide', sendAbandon);
-    document.addEventListener('visibilitychange', function () {
-      if (document.visibilityState === 'hidden') sendAbandon();
+    document.querySelectorAll('[data-close-order]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        window.setTimeout(saveDraft, 0);
+      });
     });
 
-    flushSavedDraft();
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest('a[href]');
+      if (!link) return;
+      if (link.target === '_blank' || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+      var href = link.getAttribute('href');
+      if (!href || href.charAt(0) === '#' || href.indexOf('javascript:') === 0 || href.indexOf('mailto:') === 0 || href.indexOf('tel:') === 0) {
+        return;
+      }
+
+      sendAbandon();
+    }, true);
+
+    window.addEventListener('pagehide', sendAbandon);
   });
 })();
