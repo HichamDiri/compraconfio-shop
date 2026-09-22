@@ -100,7 +100,7 @@ function appendOrder_(data) {
     total ? 'Q' + total : '',
     data.currency || 'GTQ',
     data.source || '',
-    'Nuevo'
+    data.status || 'Nuevo'
   ]);
 }
 
