@@ -228,7 +228,7 @@
   <div class="shell">
     <div class="feature-inner how-to-inner">
       <div class="feature-media feature-media--square">
-        <picture><source type="image/webp" srcset="/images/makeup-brush-cleaner/hero-product.webp?v=20260923b"><img src="/images/makeup-brush-cleaner/hero-product.png?v=20260923b" alt="Demostración paso a paso — coloca, limpia y enjuaga tus brochas" width="1024" height="1024" loading="lazy" decoding="async"></picture>
+        <img class="how-to-demo" id="howToDemo" src="/images/makeup-brush-cleaner/how-to-demo-poster.webp?v=20260923f" data-animate="/images/makeup-brush-cleaner/how-to-demo.webp?v=20260923f" alt="Demostración paso a paso — coloca, limpia y enjuaga tus brochas" width="800" height="800" loading="lazy" decoding="async">
       </div>
       <div class="feature-copy">
         <h2>Limpia tus brochas en 3 simples pasos</h2>
@@ -242,37 +242,6 @@
         </div>
         <button type="button" class="btn-order js-open-order">Pedir ahora</button>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="hl-section hl-warm" id="tecnologia">
-  <div class="shell">
-    <div class="mech-head mech-head--solo">
-      <h2>Tecnología diseñada para simplificar tu rutina</h2>
-    </div>
-
-    <div class="mech-track" id="techTrack">
-      <article class="mech-card is-active">
-        <h3>⚙️ Sistema de rotación eléctrica</h3>
-        <p>El movimiento giratorio ayuda a desprender los residuos de maquillaje de las cerdas durante la limpieza.</p>
-      </article>
-      <article class="mech-card">
-        <h3>👆 Funcionamiento sencillo</h3>
-        <p>Activa el dispositivo fácilmente para comenzar sin configuraciones complicadas.</p>
-      </article>
-      <article class="mech-card">
-        <h3>🖌️ Soporte para diferentes brochas</h3>
-        <p>Diseñado para utilizarse con diferentes tamaños y tipos de brochas compatibles.</p>
-      </article>
-      <article class="mech-card">
-        <h3>🔌 Conexión USB</h3>
-        <p>Utiliza una conexión USB para una alimentación práctica y sencilla.</p>
-      </article>
-      <article class="mech-card">
-        <h3>📦 Diseño compacto</h3>
-        <p>Su formato ligero y práctico facilita guardarlo en casa o llevarlo contigo.</p>
-      </article>
     </div>
   </div>
 </section>
@@ -611,7 +580,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('input[name="bundleOption"], input[name="shippingMethod"]').forEach(function (input) { input.addEventListener('change', syncOrder); });
   syncOrder();
 
-  document.querySelectorAll('#beneficios .mech-card, #tecnologia .mech-card').forEach(function (card) {
+  document.querySelectorAll('#beneficios .mech-card').forEach(function (card) {
     card.addEventListener('click', function () {
       var trackEl = card.closest('.mech-track');
       if (!trackEl) return;
@@ -629,6 +598,30 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!wasOpen) item.classList.add('is-open');
     });
   });
+
+  function lazyLoadGif(img) {
+    if (!img || !img.dataset.animate) return;
+    var load = function () {
+      if (img.dataset.loaded) return;
+      img.dataset.loaded = '1';
+      img.src = img.dataset.animate;
+    };
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            load();
+            observer.disconnect();
+          }
+        });
+      }, { rootMargin: '240px' });
+      observer.observe(img);
+    } else {
+      load();
+    }
+  }
+
+  lazyLoadGif(document.getElementById('howToDemo'));
 });
 </script>
 </body>
