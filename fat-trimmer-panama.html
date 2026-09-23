@@ -230,7 +230,7 @@
   <div class="shell">
     <div class="feature-inner how-to-inner">
       <div class="feature-media feature-media--square">
-        <picture><source type="image/webp" srcset="/images/fat-trimmer/hero-product.webp?v=20260923b"><img src="/images/fat-trimmer/hero-product.png?v=20260923b" alt="Cómo usar el cortador manual de grasa — coloca, desliza y retira" width="800" height="800" loading="lazy" decoding="async"></picture>
+        <img class="how-to-demo" id="howToDemo" src="/images/fat-trimmer/how-to-demo-poster.webp?v=20260923f" data-animate="/images/fat-trimmer/how-to-demo.webp?v=20260923f" alt="Demostración paso a paso — coloca, desliza y retira grasa con el cortador manual" width="800" height="800" loading="lazy" decoding="async">
       </div>
       <div class="feature-copy">
         <h2>Preparar tu carne es tan sencillo como 1, 2, 3</h2>
@@ -244,36 +244,6 @@
         </div>
         <button type="button" class="btn-order js-open-order">Pedir ahora</button>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="hl-section hl-cream" id="tecnologia">
-  <div class="shell">
-    <div class="mech-head mech-head--solo">
-      <h2>Diseño pensado para una preparación más práctica</h2>
-    </div>
-    <div class="mech-track">
-      <article class="mech-card is-active">
-        <h3>🔪 Cuchilla metálica</h3>
-        <p>Diseñada para cortar capas de grasa mientras trabajas sobre diferentes cortes de carne.</p>
-      </article>
-      <article class="mech-card">
-        <h3>⬛ Estructura en forma de U</h3>
-        <p>La estructura ayuda a mantener la zona de corte guiada mientras deslizas la herramienta.</p>
-      </article>
-      <article class="mech-card">
-        <h3>✋ Mango antideslizante</h3>
-        <p>El agarre texturizado facilita el manejo y proporciona un mejor control durante la preparación.</p>
-      </article>
-      <article class="mech-card">
-        <h3>💪 Construcción resistente</h3>
-        <p>Marco de plástico resistente a impactos y cuchilla metálica para el uso habitual en la cocina.</p>
-      </article>
-      <article class="mech-card">
-        <h3>🖐️ 100% manual</h3>
-        <p>No depende de electricidad ni baterías. Simplemente tómalo y úsalo cuando lo necesites.</p>
-      </article>
     </div>
   </div>
 </section>
@@ -625,7 +595,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('input[name="bundleOption"], input[name="shippingMethod"]').forEach(function (input) { input.addEventListener('change', syncOrder); });
   syncOrder();
 
-  document.querySelectorAll('#beneficios .mech-card, #tecnologia .mech-card').forEach(function (card) {
+  document.querySelectorAll('#beneficios .mech-card').forEach(function (card) {
     card.addEventListener('click', function () {
       var trackEl = card.closest('.mech-track');
       if (!trackEl) return;
@@ -667,6 +637,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   lazyLoadGif(document.getElementById('storySolutionDemo'));
+  lazyLoadGif(document.getElementById('howToDemo'));
 });
 </script>
 </body>
