@@ -102,7 +102,17 @@ body[data-product="fat-trimmer"] .hero-lead {
 }
 
 body[data-product="fat-trimmer"] .perks li {
+  position: relative;
+  padding-left: 1.35em;
   line-height: 1.5;
+}
+
+body[data-product="fat-trimmer"] .perks li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--trimmer-purple);
+  font-weight: 700;
 }
 
 body[data-product="fat-trimmer"] .gallery-stage {
