@@ -187,6 +187,9 @@
     if (!tiktokPixelId && (p.get('source') === 'rfid-card-holder-panama' || p.get('source') === 'steel-fryer-panama' || p.get('source') === 'universal-socket-wrench-panama')) {
       tiktokPixelId = 'DA46KJ3C77U8UMTFN63G';
     }
+    if (!tiktokPixelId && p.get('source') === 'digest-capsules-panama') {
+      tiktokPixelId = 'DAQEE5RC77U17TEHS700';
+    }
     var purchaseValue = Number(total) || Number(price) || 0;
 
     if (tiktokPixelId && orderId && purchaseValue > 0) {

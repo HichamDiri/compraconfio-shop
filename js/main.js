@@ -23,9 +23,17 @@
     ? document.body.dataset.fbPixelId
     : '';
   if (earlyFbPixelId && !window.fbq) {
-    bootstrapFacebookPixel();
-    window.fbq('init', earlyFbPixelId);
-    window.fbq('track', 'PageView');
+    function bootEarlyFbPixel() {
+      if (window.fbq) return;
+      bootstrapFacebookPixel();
+      window.fbq('init', earlyFbPixelId);
+      window.fbq('track', 'PageView');
+    }
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(bootEarlyFbPixel, { timeout: 3000 });
+    } else {
+      window.addEventListener('load', bootEarlyFbPixel);
+    }
   }
 })();
 
