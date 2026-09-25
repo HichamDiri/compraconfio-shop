@@ -150,7 +150,7 @@
   <section class="feature story-step">
     <div class="feature-inner">
       <div class="feature-media feature-media--square">
-        <picture><source type="image/webp" srcset="/images/dumpling-maker-set/story-problem.webp?v=20260925a"><img src="/images/dumpling-maker-set/story-problem.png?v=20260925a" alt="Preparar empanadas a mano — tarea larga y repetitiva con formas irregulares" width="800" height="800" loading="lazy" decoding="async"></picture>
+        <picture><source type="image/webp" srcset="/images/dumpling-maker-set/story-problem.webp?v=20260925c"><img src="/images/dumpling-maker-set/story-problem.png?v=20260925c" alt="Preparar empanadas a mano — encimera llena de masa, relleno y bordes irregulares" width="800" height="800" loading="lazy" decoding="async"></picture>
       </div>
       <div class="feature-copy">
         <h2>¿Cansado de preparar cada empanada a mano?</h2>
@@ -164,7 +164,7 @@
   <section class="feature story-step is-reversed">
     <div class="feature-inner">
       <div class="feature-media feature-media--square">
-        <picture><source type="image/webp" srcset="/images/dumpling-maker-set/story-solution.webp?v=20260925a"><img src="/images/dumpling-maker-set/story-solution.png?v=20260925a" alt="Maker & Dough Cutter Set — corta, rellena y sella empanadas con un proceso sencillo" width="800" height="800" loading="lazy" decoding="async"></picture>
+        <img class="story-solution-demo" id="storySolutionDemo" src="/images/dumpling-maker-set/story-solution-poster.webp?v=20260925c" data-animate="/images/dumpling-maker-set/story-solution.webp?v=20260925c" alt="Demostración — corta, rellena y sella empanadas con el Maker & Dough Cutter Set" width="800" height="800" loading="lazy" decoding="async">
       </div>
       <div class="feature-copy">
         <h2>Una forma más fácil de preparar tus empanadas</h2>
@@ -597,6 +597,30 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!wasOpen) item.classList.add('is-open');
     });
   });
+
+  function lazyLoadGif(img) {
+    if (!img || !img.dataset.animate) return;
+    var load = function () {
+      if (img.dataset.loaded) return;
+      img.dataset.loaded = '1';
+      img.src = img.dataset.animate;
+    };
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            load();
+            observer.disconnect();
+          }
+        });
+      }, { rootMargin: '240px' });
+      observer.observe(img);
+    } else {
+      load();
+    }
+  }
+
+  lazyLoadGif(document.getElementById('storySolutionDemo'));
 });
 </script>
 </body>
