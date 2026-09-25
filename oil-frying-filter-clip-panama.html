@@ -150,7 +150,7 @@
   <section class="feature story-step">
     <div class="feature-inner">
       <div class="feature-media feature-media--square">
-        <picture><source type="image/webp" srcset="/images/frying-filter-clip/story-problem.webp?v=20260925a"><img src="/images/frying-filter-clip/story-problem.png?v=20260925a" alt="Sacar frituras del aceite con pinzas y espumadera por separado — incómodo y con aceite por todas partes" width="800" height="800" loading="lazy" decoding="async"></picture>
+        <picture><source type="image/webp" srcset="/images/frying-filter-clip/story-problem.webp?v=20260925d"><img src="/images/frying-filter-clip/story-problem.png?v=20260925d" alt="Freír en casa con pinzas y espumadera — aceite por todas partes y comida demasiado grasosa" width="800" height="800" loading="lazy" decoding="async"></picture>
       </div>
       <div class="feature-copy">
         <h2>¿Todavía usas varias herramientas para sacar tus frituras?</h2>
@@ -164,7 +164,7 @@
   <section class="feature story-step is-reversed">
     <div class="feature-inner">
       <div class="feature-media feature-media--square">
-        <picture><source type="image/webp" srcset="/images/frying-filter-clip/story-solution.webp?v=20260925a"><img src="/images/frying-filter-clip/story-solution.png?v=20260925a" alt="Pinza colador 2 en 1 — agarra, escurre y sirve en un solo movimiento" width="800" height="800" loading="lazy" decoding="async"></picture>
+        <img class="story-solution-demo" id="storySolutionDemo" src="/images/frying-filter-clip/story-solution-poster.webp?v=20260925d" data-animate="/images/frying-filter-clip/story-solution.webp?v=20260925d" alt="Demostración — pinza colador 2 en 1 agarra, escurre y sirve frituras en un solo movimiento" width="800" height="800" loading="lazy" decoding="async">
       </div>
       <div class="feature-copy">
         <h2>Una herramienta para agarrar, escurrir y servir</h2>
@@ -624,6 +624,30 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!wasOpen) item.classList.add('is-open');
     });
   });
+
+  function lazyLoadGif(img) {
+    if (!img || !img.dataset.animate) return;
+    var load = function () {
+      if (img.dataset.loaded) return;
+      img.dataset.loaded = '1';
+      img.src = img.dataset.animate;
+    };
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            load();
+            observer.disconnect();
+          }
+        });
+      }, { rootMargin: '240px' });
+      observer.observe(img);
+    } else {
+      load();
+    }
+  }
+
+  lazyLoadGif(document.getElementById('storySolutionDemo'));
 });
 </script>
 </body>
