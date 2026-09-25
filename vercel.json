@@ -91,6 +91,18 @@
       ]
     },
     {
+      "source": "/oil-frying-filter-clip-panama",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/oil-frying-filter-clip-panama/",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
       "source": "/images/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
@@ -130,6 +142,8 @@
     { "source": "/fat-trimmer-panama/", "destination": "/fat-trimmer-panama.html" },
     { "source": "/makeup-brush-cleaner-panama", "destination": "/makeup-brush-cleaner-panama.html" },
     { "source": "/makeup-brush-cleaner-panama/", "destination": "/makeup-brush-cleaner-panama.html" },
+    { "source": "/oil-frying-filter-clip-panama", "destination": "/oil-frying-filter-clip-panama.html" },
+    { "source": "/oil-frying-filter-clip-panama/", "destination": "/oil-frying-filter-clip-panama.html" },
     { "source": "/thank-you-compraconfio-panama", "destination": "/thank-you-compraconfio-panama.html" },
     { "source": "/thank-you-compraconfio-panama/", "destination": "/thank-you-compraconfio-panama.html" },
     { "source": "/thank-you-compraconfio", "destination": "/thank-you-compraconfio.html" },
