@@ -242,38 +242,6 @@
   </div>
 </section>
 
-<section class="hl-section hl-warm" id="tecnologia">
-  <div class="shell">
-    <div class="mech-head mech-head--solo">
-      <h2>Diseño 2 en 1 para cocinar con mayor comodidad</h2>
-      <p>Pinza de agarre + malla fina de drenaje en un solo utensilio</p>
-    </div>
-
-    <div class="mech-track">
-      <button type="button" class="mech-card is-active">
-        <picture><source type="image/webp" srcset="/images/frying-filter-clip/hero-dual-design.webp?v=20260925a"><img src="/images/frying-filter-clip/hero-dual-design.png?v=20260925a" alt="Diseño 2 en 1 — pinza y colador integrados" width="800" height="800" loading="lazy" decoding="async"></picture>
-        <h3>Diseño 2 en 1</h3>
-        <p>Combina una pinza de agarre con una malla fina de drenaje, permitiéndote manipular y escurrir tus alimentos con una sola herramienta.</p>
-      </button>
-      <button type="button" class="mech-card">
-        <picture><source type="image/webp" srcset="/images/frying-filter-clip/tech-steel.webp?v=20260925a"><img src="/images/frying-filter-clip/tech-steel.png?v=20260925a" alt="Acero inoxidable resistente y fácil de limpiar" width="800" height="800" loading="lazy" decoding="async"></picture>
-        <h3>Acero inoxidable</h3>
-        <p>Fabricada en acero inoxidable, pensado para el uso frecuente en la cocina y fácil de limpiar después de cada preparación.</p>
-      </button>
-      <button type="button" class="mech-card">
-        <picture><source type="image/webp" srcset="/images/frying-filter-clip/tech-mesh.webp?v=20260925a"><img src="/images/frying-filter-clip/tech-mesh.png?v=20260925a" alt="Malla fina que deja escurrir el aceite" width="800" height="800" loading="lazy" decoding="async"></picture>
-        <h3>Malla fina</h3>
-        <p>La malla permite que el exceso de aceite pueda escurrirse mientras mantienes los alimentos sujetos.</p>
-      </button>
-      <button type="button" class="mech-card">
-        <picture><source type="image/webp" srcset="/images/frying-filter-clip/tech-handle.webp?v=20260925a"><img src="/images/frying-filter-clip/tech-handle.png?v=20260925a" alt="Mango extendido para mayor distancia del aceite caliente" width="800" height="800" loading="lazy" decoding="async"></picture>
-        <h3>Mango extendido</h3>
-        <p>Su mango largo facilita alcanzar los alimentos dentro de la olla manteniendo una mayor distancia de la superficie caliente.</p>
-      </button>
-    </div>
-  </div>
-</section>
-
 <section class="hl-section hl-warm" id="resenas">
   <div class="shell">
     <div class="mech-head mech-head--solo">
@@ -601,7 +569,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('input[name="bundleOption"], input[name="shippingMethod"]').forEach(function (input) { input.addEventListener('change', syncOrder); });
   syncOrder();
 
-  document.querySelectorAll('#beneficios .mech-card, #tecnologia .mech-card').forEach(function (card) {
+  document.querySelectorAll('#beneficios .mech-card').forEach(function (card) {
     card.addEventListener('click', function () {
       var trackEl = card.closest('.mech-track');
       if (!trackEl) return;
