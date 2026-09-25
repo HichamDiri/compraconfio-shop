@@ -224,7 +224,7 @@
   <div class="shell">
     <div class="feature-inner how-to-inner">
       <div class="feature-media feature-media--square">
-        <picture><source type="image/webp" srcset="/images/frying-filter-clip/story-solution.webp?v=20260925a"><img src="/images/frying-filter-clip/story-solution.png?v=20260925a" alt="Demostración — agarra, escurre y sirve frituras con la pinza colador" width="800" height="800" loading="lazy" decoding="async"></picture>
+        <img class="how-to-demo" id="howToDemo" src="/images/frying-filter-clip/how-to-demo-poster.webp?v=20260925f" data-animate="/images/frying-filter-clip/how-to-demo.webp?v=20260925f" alt="Demostración paso a paso — agarra, escurre y sirve frituras con la pinza colador" width="800" height="800" loading="lazy" decoding="async">
       </div>
       <div class="feature-copy">
         <h2>Fácil de usar en 3 pasos</h2>
@@ -611,6 +611,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   lazyLoadGif(document.getElementById('storySolutionDemo'));
+  lazyLoadGif(document.getElementById('howToDemo'));
 });
 </script>
 </body>
