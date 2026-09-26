@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Llave Universal Multi-Función | CompraConfio Panamá — Pago Contra Entrega</title>
   <meta name="description" content="Llave universal multi-función con mecanismo ajustable. Se adapta a diferentes tuercas y tornillos. Incluye adaptador 3/8. Envío gratis y pago contra entrega en Panamá.">
+  <meta name="tiktok-pixel-id" content="DAQEE5RC77U17TEHS700">
+  <link rel="preconnect" href="https://analytics.tiktok.com" crossorigin>
+  <link rel="dns-prefetch" href="https://analytics.tiktok.com">
   <link rel="preload" as="image" href="/images/universal-socket-wrench/hero-product.png?v=20260921b" fetchpriority="high">
   <link rel="preload" as="style" href="/css/product.css?v=20260811a">
   <link rel="preload" as="style" href="/css/universal-socket-wrench.css?v=20260922b">
@@ -14,8 +17,61 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="/css/product.css?v=20260811a">
   <link rel="stylesheet" href="/css/universal-socket-wrench.css?v=20260922b">
+  <script>
+  function bootTikTokPixel() {
+    var meta = document.querySelector('meta[name="tiktok-pixel-id"]');
+    var id = meta && meta.content;
+    if (!id || window.__tiktokPixelLoaded) return;
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject = t;
+      var ttq = w[t] = w[t] || [];
+      ttq.methods = ['page', 'track', 'identify', 'instances', 'debug', 'on', 'off', 'once', 'ready', 'alias', 'group', 'enableCookie', 'disableCookie', 'holdConsent', 'revokeConsent', 'grantConsent'];
+      ttq.setAndDefer = function (target, method) {
+        target[method] = function () {
+          target.push([method].concat(Array.prototype.slice.call(arguments, 0)));
+        };
+      };
+      for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
+      ttq.load = function (pixelId, options) {
+        var src = 'https://analytics.tiktok.com/i18n/pixel/events.js';
+        ttq._i = ttq._i || {};
+        ttq._i[pixelId] = [];
+        ttq._i[pixelId]._u = src;
+        ttq._t = ttq._t || {};
+        ttq._t[pixelId] = +new Date();
+        ttq._o = ttq._o || {};
+        ttq._o[pixelId] = options || {};
+        var script = d.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src = src + '?sdkid=' + pixelId + '&lib=' + t;
+        var firstScript = d.getElementsByTagName('script')[0];
+        firstScript.parentNode.insertBefore(script, firstScript);
+      };
+    }(window, document, 'ttq');
+    window.ttq.load(id);
+    window.ttq.page();
+    window.__tiktokPixelLoaded = true;
+
+    function fireLpv() {
+      if (window.__tiktokLpvTracked || !window.ttq || typeof window.ttq.track !== 'function') return;
+      window.ttq.track('LandingPageView');
+      window.__tiktokLpvTracked = true;
+    }
+
+    if (typeof window.ttq.ready === 'function') {
+      window.ttq.ready(fireLpv);
+    }
+    setTimeout(fireLpv, 600);
+  }
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(bootTikTokPixel, { timeout: 2500 });
+  } else {
+    window.addEventListener('load', bootTikTokPixel);
+  }
+  </script>
 </head>
-<body data-country="PA" data-lang="es" data-brand="compraconfio" data-product="universal-socket" data-snap-pixel="off" data-abandon-checkout="on" data-thankyou="/thank-you-compraconfio-panama.html">
+<body data-country="PA" data-lang="es" data-brand="compraconfio" data-product="universal-socket" data-snap-pixel="off" data-tiktok-pixel-id="DAQEE5RC77U17TEHS700" data-abandon-checkout="on" data-thankyou="/thank-you-compraconfio-panama.html">
 
 <div class="announce" aria-hidden="true">
   <div class="announce-track">
