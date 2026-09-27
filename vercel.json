@@ -7,30 +7,6 @@
       ]
     },
     {
-      "source": "/digest-capsules-panama",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/digest-capsules-panama/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/rfid-card-holder-panama",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/rfid-card-holder-panama/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
       "source": "/steel-fryer-panama",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
@@ -38,18 +14,6 @@
     },
     {
       "source": "/steel-fryer-panama/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/universal-socket-wrench-panama",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/universal-socket-wrench-panama/",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
@@ -152,14 +116,8 @@
     }
   ],
   "rewrites": [
-    { "source": "/digest-capsules-panama", "destination": "/digest-capsules-panama.html" },
-    { "source": "/digest-capsules-panama/", "destination": "/digest-capsules-panama.html" },
-    { "source": "/rfid-card-holder-panama", "destination": "/rfid-card-holder-panama.html" },
-    { "source": "/rfid-card-holder-panama/", "destination": "/rfid-card-holder-panama.html" },
     { "source": "/steel-fryer-panama", "destination": "/steel-fryer-panama.html" },
     { "source": "/steel-fryer-panama/", "destination": "/steel-fryer-panama.html" },
-    { "source": "/universal-socket-wrench-panama", "destination": "/universal-socket-wrench-panama.html" },
-    { "source": "/universal-socket-wrench-panama/", "destination": "/universal-socket-wrench-panama.html" },
     { "source": "/led-flashlight-stick-panama", "destination": "/led-flashlight-stick-panama.html" },
     { "source": "/led-flashlight-stick-panama/", "destination": "/led-flashlight-stick-panama.html" },
     { "source": "/fat-trimmer-panama", "destination": "/fat-trimmer-panama.html" },
@@ -246,6 +204,15 @@
     { "source": "/cinta-doble-cara/", "destination": "/", "permanent": true },
     { "source": "/cinta-doble-cara.html", "destination": "/", "permanent": true },
     { "source": "/terms.html", "destination": "/terminos.html", "permanent": true },
-    { "source": "/refund.html", "destination": "/devoluciones.html", "permanent": true }
+    { "source": "/refund.html", "destination": "/devoluciones.html", "permanent": true },
+    { "source": "/digest-capsules-panama", "destination": "/", "permanent": true },
+    { "source": "/digest-capsules-panama/", "destination": "/", "permanent": true },
+    { "source": "/digest-capsules-panama.html", "destination": "/", "permanent": true },
+    { "source": "/rfid-card-holder-panama", "destination": "/", "permanent": true },
+    { "source": "/rfid-card-holder-panama/", "destination": "/", "permanent": true },
+    { "source": "/rfid-card-holder-panama.html", "destination": "/", "permanent": true },
+    { "source": "/universal-socket-wrench-panama", "destination": "/", "permanent": true },
+    { "source": "/universal-socket-wrench-panama/", "destination": "/", "permanent": true },
+    { "source": "/universal-socket-wrench-panama.html", "destination": "/", "permanent": true }
   ]
 }
