@@ -10,6 +10,32 @@
 
     var submitted = false;
     var sent = false;
+    var idleMinutes = parseFloat(document.body.dataset.abandonIdleMinutes || '', 10);
+    var idleMs = idleMinutes > 0 ? Math.round(idleMinutes * 60 * 1000) : 0;
+    var idleTimer = null;
+
+    function clearIdleTimer() {
+      if (idleTimer) {
+        clearTimeout(idleTimer);
+        idleTimer = null;
+      }
+    }
+
+    function syncIdleAbandonTimer() {
+      if (!idleMs || submitted || sent) {
+        clearIdleTimer();
+        return;
+      }
+      if (!isComplete()) {
+        clearIdleTimer();
+        return;
+      }
+      if (idleTimer) return;
+      idleTimer = setTimeout(function () {
+        idleTimer = null;
+        sendAbandon();
+      }, idleMs);
+    }
 
     function normalizePanamaPhone(value) {
       var digits = String(value || '').replace(/[^\d]/g, '');
@@ -170,11 +196,17 @@
       }
     }
 
-    form.addEventListener('input', saveDraft, true);
-    form.addEventListener('change', saveDraft, true);
+    function onFormActivity() {
+      saveDraft();
+      syncIdleAbandonTimer();
+    }
+
+    form.addEventListener('input', onFormActivity, true);
+    form.addEventListener('change', onFormActivity, true);
 
     form.addEventListener('submit', function () {
       if (isComplete()) submitted = true;
+      clearIdleTimer();
       try {
         localStorage.removeItem(DRAFT_KEY);
       } catch (error) {}
@@ -186,5 +218,6 @@
     });
 
     flushSavedDraft();
+    syncIdleAbandonTimer();
   });
 })();
