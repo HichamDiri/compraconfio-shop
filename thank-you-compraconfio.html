@@ -171,6 +171,9 @@
 
     var fbPixelId = p.get('fbPixelId') || '';
     var tiktokPixelId = p.get('tiktokPixelId') || '';
+    if (!tiktokPixelId && p.get('source') === 'makeup-brush-cleaner-guatemala') {
+      tiktokPixelId = 'DA46KJ3C77U8UMTFN63G';
+    }
     var purchaseValue = Number(total) || Number(price) || 0;
 
     if (tiktokPixelId && orderId && purchaseValue > 0) {
