@@ -37,11 +37,25 @@
       }, idleMs);
     }
 
+    var marketCountry = document.body.dataset.country || 'PA';
+
     function normalizePanamaPhone(value) {
       var digits = String(value || '').replace(/[^\d]/g, '');
       if (/^507[2-9][0-9]{7}$/.test(digits)) return digits.slice(3);
       if (/^[2-9][0-9]{7}$/.test(digits)) return digits;
       return '';
+    }
+
+    function normalizeGuatemalaPhone(value) {
+      var digits = String(value || '').replace(/[^\d]/g, '');
+      if (/^502[34567][0-9]{7}$/.test(digits)) return digits.slice(3);
+      if (/^[34567][0-9]{7}$/.test(digits)) return digits;
+      return '';
+    }
+
+    function normalizeCheckoutPhone(value) {
+      if (marketCountry === 'GT') return normalizeGuatemalaPhone(value);
+      return normalizePanamaPhone(value);
     }
 
     function mergeFields() {
@@ -73,7 +87,7 @@
 
       if (!firstName || !firstName.value.trim()) return false;
       if (!lastName || !lastName.value.trim()) return false;
-      if (!normalizePanamaPhone(phone && phone.value)) return false;
+      if (!normalizeCheckoutPhone(phone && phone.value)) return false;
       if (!department || !department.value.trim()) return false;
       if (!city || city.disabled || !city.value.trim()) return false;
       if (!addressLine || !addressLine.value.trim()) return false;
@@ -85,7 +99,7 @@
       mergeFields();
       var formData = new FormData(form);
       var bundle = form.querySelector('input[name="bundleOption"]:checked');
-      var phone = normalizePanamaPhone(formData.get('phone'));
+      var phone = normalizeCheckoutPhone(formData.get('phone'));
       var firstName = String(formData.get('firstName') || '').trim();
       var lastName = String(formData.get('lastName') || '').trim();
       var name = String(formData.get('name') || '').trim() || (firstName + ' ' + lastName).trim();
