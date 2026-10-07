@@ -222,7 +222,7 @@
   <div class="shell">
     <div class="feature-inner how-to-inner">
       <div class="feature-media feature-media--square">
-        <picture><source type="image/webp" srcset="/images/thermal-wristband/how-to-demo.webp?v=20261007a"><img src="/images/thermal-wristband/how-to-demo.png?v=20261007a" alt="Cómo usar la muñequera térmica — coloca, elige modo y relájate" width="800" height="800" loading="lazy" decoding="async"></picture>
+        <img class="how-to-demo" id="howToDemo" src="/images/thermal-wristband/how-to-demo-poster.webp?v=20261007f" data-animate="/images/thermal-wristband/how-to-demo.gif?v=20261007f" alt="Demostración — coloca la muñequera, elige calor y vibración, relájate 15 minutos" width="800" height="800" loading="lazy" decoding="async">
       </div>
       <div class="feature-copy">
         <h2>¡3 pasos y listo!</h2>
@@ -615,6 +615,8 @@ document.addEventListener('DOMContentLoaded', function () {
       load();
     }
   }
+
+  lazyLoadGif(document.getElementById('howToDemo'));
 
 });
 </script>
