@@ -43,30 +43,6 @@
       ]
     },
     {
-      "source": "/makeup-brush-cleaner-panama",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/makeup-brush-cleaner-panama/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/makeup-brush-cleaner-guatemala",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/makeup-brush-cleaner-guatemala/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
       "source": "/oil-frying-filter-clip-panama",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
@@ -134,10 +110,6 @@
     { "source": "/led-flashlight-stick-panama/", "destination": "/led-flashlight-stick-panama.html" },
     { "source": "/fat-trimmer-panama", "destination": "/fat-trimmer-panama.html" },
     { "source": "/fat-trimmer-panama/", "destination": "/fat-trimmer-panama.html" },
-    { "source": "/makeup-brush-cleaner-panama", "destination": "/makeup-brush-cleaner-panama.html" },
-    { "source": "/makeup-brush-cleaner-panama/", "destination": "/makeup-brush-cleaner-panama.html" },
-    { "source": "/makeup-brush-cleaner-guatemala", "destination": "/makeup-brush-cleaner-panama.html" },
-    { "source": "/makeup-brush-cleaner-guatemala/", "destination": "/makeup-brush-cleaner-panama.html" },
     { "source": "/oil-frying-filter-clip-panama", "destination": "/oil-frying-filter-clip-panama.html" },
     { "source": "/oil-frying-filter-clip-panama/", "destination": "/oil-frying-filter-clip-panama.html" },
     { "source": "/dumpling-maker-set-panama", "destination": "/dumpling-maker-set-panama.html" },
@@ -227,6 +199,11 @@
     { "source": "/rfid-card-holder-panama.html", "destination": "/", "permanent": true },
     { "source": "/universal-socket-wrench-panama", "destination": "/", "permanent": true },
     { "source": "/universal-socket-wrench-panama/", "destination": "/", "permanent": true },
-    { "source": "/universal-socket-wrench-panama.html", "destination": "/", "permanent": true }
+    { "source": "/universal-socket-wrench-panama.html", "destination": "/", "permanent": true },
+    { "source": "/makeup-brush-cleaner-panama", "destination": "/", "permanent": true },
+    { "source": "/makeup-brush-cleaner-panama/", "destination": "/", "permanent": true },
+    { "source": "/makeup-brush-cleaner-panama.html", "destination": "/", "permanent": true },
+    { "source": "/makeup-brush-cleaner-guatemala", "destination": "/", "permanent": true },
+    { "source": "/makeup-brush-cleaner-guatemala/", "destination": "/", "permanent": true }
   ]
 }
