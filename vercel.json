@@ -19,18 +19,6 @@
       ]
     },
     {
-      "source": "/led-flashlight-stick-panama",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/led-flashlight-stick-panama/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
       "source": "/fat-trimmer-panama",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
@@ -106,8 +94,6 @@
   "rewrites": [
     { "source": "/steel-fryer-panama", "destination": "/steel-fryer-panama.html" },
     { "source": "/steel-fryer-panama/", "destination": "/steel-fryer-panama.html" },
-    { "source": "/led-flashlight-stick-panama", "destination": "/led-flashlight-stick-panama.html" },
-    { "source": "/led-flashlight-stick-panama/", "destination": "/led-flashlight-stick-panama.html" },
     { "source": "/fat-trimmer-panama", "destination": "/fat-trimmer-panama.html" },
     { "source": "/fat-trimmer-panama/", "destination": "/fat-trimmer-panama.html" },
     { "source": "/oil-frying-filter-clip-panama", "destination": "/oil-frying-filter-clip-panama.html" },
@@ -204,6 +190,9 @@
     { "source": "/makeup-brush-cleaner-panama/", "destination": "/", "permanent": true },
     { "source": "/makeup-brush-cleaner-panama.html", "destination": "/", "permanent": true },
     { "source": "/makeup-brush-cleaner-guatemala", "destination": "/", "permanent": true },
-    { "source": "/makeup-brush-cleaner-guatemala/", "destination": "/", "permanent": true }
+    { "source": "/makeup-brush-cleaner-guatemala/", "destination": "/", "permanent": true },
+    { "source": "/led-flashlight-stick-panama", "destination": "/", "permanent": true },
+    { "source": "/led-flashlight-stick-panama/", "destination": "/", "permanent": true },
+    { "source": "/led-flashlight-stick-panama.html", "destination": "/", "permanent": true }
   ]
 }
