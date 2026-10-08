@@ -180,32 +180,32 @@
 
     <div class="mech-track" id="reasonTrack">
       <button type="button" class="mech-card is-active">
-        <picture><source type="image/webp" srcset="/images/silk-skin-soap/benefit-1.webp?v=20261008a"><img src="/images/silk-skin-soap/benefit-1.png?v=20261008a" alt="🤍 Ayuda a aclarar la piel" width="800" height="800" loading="lazy" decoding="async"></picture>
+        <picture><source type="image/webp" srcset="/images/silk-skin-soap/benefit-1.webp?v=20261008d"><img src="/images/silk-skin-soap/benefit-1.png?v=20261008d" alt="🤍 Ayuda a aclarar la piel" width="800" height="800" loading="lazy" decoding="async"></picture>
         <h3>🤍 Ayuda a aclarar la piel</h3>
         <p>Ayuda a mejorar la apariencia de una piel oscura o apagada, para un aspecto más claro y luminoso.</p>
       </button>
       <button type="button" class="mech-card">
-        <picture><source type="image/webp" srcset="/images/silk-skin-soap/benefit-2.webp?v=20261008a"><img src="/images/silk-skin-soap/benefit-2.png?v=20261008a" alt="✨ Ayuda a reducir las manchas" width="800" height="800" loading="lazy" decoding="async"></picture>
+        <picture><source type="image/webp" srcset="/images/silk-skin-soap/benefit-2.webp?v=20261008d"><img src="/images/silk-skin-soap/benefit-2.png?v=20261008d" alt="✨ Ayuda a reducir las manchas" width="800" height="800" loading="lazy" decoding="async"></picture>
         <h3>✨ Ayuda a reducir las manchas</h3>
         <p>Ayuda a mejorar la apariencia de manchas oscuras y zonas con tono desigual.</p>
       </button>
       <button type="button" class="mech-card">
-        <picture><source type="image/webp" srcset="/images/silk-skin-soap/benefit-3.webp?v=20261008a"><img src="/images/silk-skin-soap/benefit-3.png?v=20261008a" alt="🌟 Ilumina la piel" width="800" height="800" loading="lazy" decoding="async"></picture>
+        <picture><source type="image/webp" srcset="/images/silk-skin-soap/benefit-3.webp?v=20261008d"><img src="/images/silk-skin-soap/benefit-3.png?v=20261008d" alt="🌟 Ilumina la piel" width="800" height="800" loading="lazy" decoding="async"></picture>
         <h3>🌟 Ilumina la piel</h3>
         <p>Ayuda a devolver una apariencia más fresca, luminosa y radiante.</p>
       </button>
       <button type="button" class="mech-card">
-        <picture><source type="image/webp" srcset="/images/silk-skin-soap/benefit-5.webp?v=20261008a"><img src="/images/silk-skin-soap/benefit-5.png?v=20261008a" alt="💧 Hidrata y suaviza" width="800" height="800" loading="lazy" decoding="async"></picture>
+        <picture><source type="image/webp" srcset="/images/silk-skin-soap/benefit-5.webp?v=20261008d"><img src="/images/silk-skin-soap/benefit-5.png?v=20261008d" alt="💧 Hidrata y suaviza" width="800" height="800" loading="lazy" decoding="async"></picture>
         <h3>💧 Hidrata y suaviza</h3>
         <p>Deja la piel con sensación de hidratación, suavidad y confort.</p>
       </button>
       <button type="button" class="mech-card">
-        <picture><source type="image/webp" srcset="/images/silk-skin-soap/benefit-7.webp?v=20261008a"><img src="/images/silk-skin-soap/benefit-7.png?v=20261008a" alt="🫧 Limpia la piel" width="800" height="800" loading="lazy" decoding="async"></picture>
+        <picture><source type="image/webp" srcset="/images/silk-skin-soap/benefit-7.webp?v=20261008d"><img src="/images/silk-skin-soap/benefit-7.png?v=20261008d" alt="🫧 Limpia la piel" width="800" height="800" loading="lazy" decoding="async"></picture>
         <h3>🫧 Limpia la piel</h3>
         <p>Ayuda a eliminar suciedad, sudor y exceso de grasa con sensación de frescura.</p>
       </button>
       <button type="button" class="mech-card">
-        <picture><source type="image/webp" srcset="/images/silk-skin-soap/benefit-8.webp?v=20261008a"><img src="/images/silk-skin-soap/benefit-8.png?v=20261008a" alt="🌸 Aroma agradable" width="800" height="800" loading="lazy" decoding="async"></picture>
+        <picture><source type="image/webp" srcset="/images/silk-skin-soap/benefit-8.webp?v=20261008d"><img src="/images/silk-skin-soap/benefit-8.png?v=20261008d" alt="🌸 Aroma agradable" width="800" height="800" loading="lazy" decoding="async"></picture>
         <h3>🌸 Aroma agradable</h3>
         <p>Experiencia de limpieza fresca con un delicado aroma.</p>
       </button>
@@ -217,7 +217,7 @@
   <div class="shell">
     <div class="feature-inner how-to-inner">
       <div class="feature-media feature-media--square">
-        <picture><source type="image/webp" srcset="/images/silk-skin-soap/how-to-demo.webp?v=20261008a"><img src="/images/silk-skin-soap/how-to-demo.png?v=20261008a" alt="Cómo usar el jabón — moja, espuma, masajea y enjuaga" width="800" height="800" loading="lazy" decoding="async"></picture>
+        <img class="how-to-demo" id="howToDemo" src="/images/silk-skin-soap/how-to-demo-poster.webp?v=20261008e" data-animate="/images/silk-skin-soap/how-to-demo.gif?v=20261008e" alt="Demostración — moja, haz espuma, masajea y enjuaga con el jabón SKT" width="800" height="800" loading="lazy" decoding="async">
       </div>
       <div class="feature-copy">
         <h2>Tu rutina de cuidado en 4 simples pasos</h2>
@@ -626,6 +626,8 @@ document.addEventListener('DOMContentLoaded', function () {
       load();
     }
   }
+
+  lazyLoadGif(document.getElementById('howToDemo'));
 
   });
 </script>
