@@ -618,6 +618,7 @@ body[data-product="silk-soap"] .guarantee-icon {
 
 body[data-product="silk-soap"] .guarantee-item strong {
   margin-bottom: 0;
+  color: var(--silk-accent-deep);
 }
 
 body[data-product="silk-soap"] .guarantee-item span {
