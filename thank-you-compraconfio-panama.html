@@ -101,6 +101,7 @@
   </footer>
 </div>
 
+<script src="/js/config.js?v=20260916b"></script>
 <script>
   (function() {
     var p = new URLSearchParams(window.location.search);
@@ -292,6 +293,55 @@
         }, { eventID: orderId });
       }
     }
+
+    function syncOrderToSheet() {
+      if (!window.GOOGLE_SHEETS_URL) return;
+      var phoneRaw = p.get('phone');
+      if (!orderId || !phoneRaw || !productId) return;
+      var syncKey = 'cc_sheet_sync_' + orderId;
+      if (sessionStorage.getItem(syncKey) === 'done') return;
+
+      var payload = {
+        orderId: orderId,
+        productId: productId,
+        productName: productName,
+        price: price,
+        currency: currency,
+        name: p.get('name') ? decodeURIComponent(p.get('name')) : '',
+        firstName: p.get('firstName') ? decodeURIComponent(p.get('firstName')) : '',
+        lastName: p.get('lastName') ? decodeURIComponent(p.get('lastName')) : '',
+        phone: decodeURIComponent(phoneRaw),
+        address: address,
+        addressLine: p.get('addressLine') ? decodeURIComponent(p.get('addressLine')) : '',
+        zone: p.get('zone') ? decodeURIComponent(p.get('zone')) : '',
+        city: city,
+        country: p.get('country') ? decodeURIComponent(p.get('country')) : '',
+        department: p.get('department') ? decodeURIComponent(p.get('department')) : '',
+        bundleLabel: p.get('bundleLabel') ? decodeURIComponent(p.get('bundleLabel')) : '',
+        shippingMethod: p.get('shippingMethod') ? decodeURIComponent(p.get('shippingMethod')) : '',
+        shipping: String(shipping),
+        total: String(total),
+        color: p.get('color') ? decodeURIComponent(p.get('color')) : '',
+        source: source,
+        createdAt: new Date().toISOString(),
+        status: 'Pedido'
+      };
+
+      var body = new URLSearchParams();
+      body.append('payload', JSON.stringify(payload));
+      fetch(window.GOOGLE_SHEETS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        keepalive: true,
+        body: body
+      }).finally(function () {
+        try {
+          sessionStorage.setItem(syncKey, 'done');
+        } catch (error) {}
+      });
+    }
+
+    syncOrderToSheet();
   })();
 </script>
 </body>

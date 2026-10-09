@@ -747,10 +747,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var body = new URLSearchParams();
     body.append('payload', JSON.stringify(payload));
 
-    if (typeof navigator.sendBeacon === 'function' && navigator.sendBeacon(url, body)) {
-      return Promise.resolve({ ok: true, order: { id: payload.orderId } });
-    }
-
     return fetch(url, {
       method: 'POST',
       mode: 'no-cors',
@@ -758,6 +754,13 @@ document.addEventListener('DOMContentLoaded', function() {
       body: body
     }).then(function() {
       return { ok: true, order: { id: payload.orderId } };
+    }).catch(function() {
+      if (typeof navigator.sendBeacon === 'function' && navigator.sendBeacon(url, body)) {
+        return { ok: true, order: { id: payload.orderId } };
+      }
+      throw new Error(isSpanishPage()
+        ? 'No se pudo conectar con el servidor. Intenta de nuevo.'
+        : 'تعذر الاتصال بالخادم. يرجى المحاولة مرة أخرى.');
     });
   }
 
@@ -878,7 +881,8 @@ document.addEventListener('DOMContentLoaded', function() {
       bundleLabel: selectedBundle ? String(selectedBundle.dataset.label || '').trim() : '',
       color: String(formData.get('color') || '').trim(),
       createdAt: new Date().toISOString(),
-      source: String(formData.get('source') || 'compraconfio').trim()
+      source: String(formData.get('source') || 'compraconfio').trim(),
+      status: 'Pedido'
     };
 
     var shippingMethodValue = String(formData.get('shippingMethod') || '').trim();
@@ -898,6 +902,10 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!result || !result.ok) {
         throw new Error(result.message || (isSpanishPage() ? 'No se pudo enviar el pedido' : 'تعذر إرسال الطلب'));
       }
+
+      try {
+        sessionStorage.setItem('cc_sheet_sync_' + payload.orderId, 'done');
+      } catch (storageError) {}
 
       goToThankYou(payload, result.order && result.order.id ? result.order.id : payload.orderId);
     } catch (error) {
