@@ -79,6 +79,42 @@
       ]
     },
     {
+      "source": "/nattokinase-panama",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/nattokinase-panama/",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/nattokinase",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/nattokinase/",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/nattokinasa",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/nattokinasa/",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
       "source": "/images/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
@@ -118,6 +154,12 @@
     { "source": "/closet-organizer-hanger-panama/", "destination": "/closet-organizer-hanger-panama.html" },
     { "source": "/thermal-wristband-panama", "destination": "/thermal-wristband-panama.html" },
     { "source": "/thermal-wristband-panama/", "destination": "/thermal-wristband-panama.html" },
+    { "source": "/nattokinase-panama", "destination": "/nattokinase-panama.html" },
+    { "source": "/nattokinase-panama/", "destination": "/nattokinase-panama.html" },
+    { "source": "/nattokinase", "destination": "/nattokinase.html" },
+    { "source": "/nattokinase/", "destination": "/nattokinase.html" },
+    { "source": "/nattokinasa", "destination": "/nattokinase.html" },
+    { "source": "/nattokinasa/", "destination": "/nattokinase.html" },
     { "source": "/thank-you-compraconfio-panama", "destination": "/thank-you-compraconfio-panama.html" },
     { "source": "/thank-you-compraconfio-panama/", "destination": "/thank-you-compraconfio-panama.html" },
     { "source": "/thank-you-compraconfio", "destination": "/thank-you-compraconfio.html" },
@@ -137,20 +179,12 @@
     { "source": "/voyage-nova", "destination": "/", "permanent": true },
     { "source": "/voyage-nova/", "destination": "/", "permanent": true },
     { "source": "/voyage-nova.html", "destination": "/", "permanent": true },
-    { "source": "/nattokinase", "destination": "/", "permanent": true },
-    { "source": "/nattokinase/", "destination": "/", "permanent": true },
-    { "source": "/nattokinase.html", "destination": "/", "permanent": true },
-    { "source": "/nattokinasa", "destination": "/", "permanent": true },
-    { "source": "/nattokinasa/", "destination": "/", "permanent": true },
     { "source": "/cinta-doble-cara-panama", "destination": "/", "permanent": true },
     { "source": "/cinta-doble-cara-panama/", "destination": "/", "permanent": true },
     { "source": "/cinta-doble-cara-panama.html", "destination": "/", "permanent": true },
     { "source": "/glutathione-patch-panama", "destination": "/", "permanent": true },
     { "source": "/glutathione-patch-panama/", "destination": "/", "permanent": true },
     { "source": "/glutathione-patch-panama.html", "destination": "/", "permanent": true },
-    { "source": "/nattokinase-panama", "destination": "/", "permanent": true },
-    { "source": "/nattokinase-panama/", "destination": "/", "permanent": true },
-    { "source": "/nattokinase-panama.html", "destination": "/", "permanent": true },
     { "source": "/spicy-lip-plumper-panama", "destination": "/", "permanent": true },
     { "source": "/spicy-lip-plumper-panama/", "destination": "/", "permanent": true },
     { "source": "/spicy-lip-plumper-panama.html", "destination": "/", "permanent": true },
