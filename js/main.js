@@ -735,7 +735,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (tiktokPixelId) {
       params.set('tiktokPixelId', tiktokPixelId);
     }
-    trackFacebookPurchase(payload, orderId);
     window.location.href = getThankYouPath() + '?' + params.toString();
   }
 
