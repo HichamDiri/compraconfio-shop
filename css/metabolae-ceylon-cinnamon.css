@@ -521,7 +521,9 @@ body[data-product="cinnamon-pa"] .stat-bar span, body[data-product="cinnamon-pa"
   font-size: 0.98rem;
   line-height: 1.3;
   font-weight: 500;
-  max-width: 11.5rem;
+  flex: 1;
+  min-width: 0;
+  max-width: 22rem;
 }
 
 /* ---------- mechanisms ---------- */
