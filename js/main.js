@@ -169,6 +169,9 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function getTikTokPixelId() {
+    if (document.body && document.body.dataset.tiktokPixel === 'off') {
+      return '';
+    }
     return document.body && document.body.dataset.tiktokPixelId
       ? document.body.dataset.tiktokPixelId
       : '';
@@ -729,9 +732,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (fbPixelId) {
       params.set('fbPixelId', fbPixelId);
     }
-    var tiktokPixelId = document.body && document.body.dataset.tiktokPixelId
-      ? document.body.dataset.tiktokPixelId
-      : '';
+    var tiktokPixelId = getTikTokPixelId();
     if (tiktokPixelId) {
       params.set('tiktokPixelId', tiktokPixelId);
     }

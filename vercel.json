@@ -91,6 +91,18 @@
       ]
     },
     {
+      "source": "/metabolae-ceylon-cinnamon-panama",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/metabolae-ceylon-cinnamon-panama/",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
       "source": "/nattokinase",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
@@ -156,6 +168,8 @@
     { "source": "/thermal-wristband-panama/", "destination": "/thermal-wristband-panama.html" },
     { "source": "/nattokinase-panama", "destination": "/nattokinase-panama.html" },
     { "source": "/nattokinase-panama/", "destination": "/nattokinase-panama.html" },
+    { "source": "/metabolae-ceylon-cinnamon-panama", "destination": "/metabolae-ceylon-cinnamon-panama.html" },
+    { "source": "/metabolae-ceylon-cinnamon-panama/", "destination": "/metabolae-ceylon-cinnamon-panama.html" },
     { "source": "/nattokinase", "destination": "/nattokinase.html" },
     { "source": "/nattokinase/", "destination": "/nattokinase.html" },
     { "source": "/nattokinasa", "destination": "/nattokinase.html" },
