@@ -19,7 +19,7 @@
     })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
   }
 
-  var earlyFbPixelId = document.body && document.body.dataset.fbPixelId
+  var earlyFbPixelId = document.body && document.body.dataset.fbPixel !== 'off' && document.body.dataset.fbPixelId
     ? document.body.dataset.fbPixelId
     : '';
   if (earlyFbPixelId && !window.fbq) {
@@ -196,6 +196,9 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function getFbPixelId() {
+    if (document.body && document.body.dataset.fbPixel === 'off') {
+      return '';
+    }
     return document.body && document.body.dataset.fbPixelId
       ? document.body.dataset.fbPixelId
       : '';
@@ -366,9 +369,7 @@ document.addEventListener('DOMContentLoaded', function() {
       y.parentNode.insertBefore(t, y);
     })(window, document, 'clarity', 'script', 'y6dpyklm95');
 
-    var fbPixelId = document.body && document.body.dataset.fbPixelId
-      ? document.body.dataset.fbPixelId
-      : '';
+    var fbPixelId = getFbPixelId();
     var snapshot = getTrackingSnapshot();
     var trackingProductId = snapshot.productId || 'cc-mascara-1';
     var trackingPrice = snapshot.price || 299;
@@ -726,9 +727,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     params.set('order', orderId);
-    var fbPixelId = document.body && document.body.dataset.fbPixelId
-      ? document.body.dataset.fbPixelId
-      : '';
+    var fbPixelId = getFbPixelId();
     if (fbPixelId) {
       params.set('fbPixelId', fbPixelId);
     }
