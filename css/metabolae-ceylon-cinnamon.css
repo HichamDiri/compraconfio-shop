@@ -969,6 +969,15 @@ body[data-product="cinnamon-pa"] .tl-card li::before, body[data-product="cinnamo
   font-size: 0.76rem;
 }
 
+body[data-product="cinnamon-pa"] .tl-footnote, body[data-product="cinnamon-pa"] .tl-footnote{
+  text-align: center;
+  max-width: 620px;
+  margin: 20px auto 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--hl-muted);
+}
+
 @media (min-width: 860px) {
   body[data-product="cinnamon-pa"] .tl::before, body[data-product="cinnamon-pa"] .tl::before{ left: 50%; transform: translateX(-50%); }
   body[data-product="cinnamon-pa"] .tl-step, body[data-product="cinnamon-pa"] .tl-step{ padding-left: 0; width: calc(50% - 44px); margin-bottom: 36px; }
