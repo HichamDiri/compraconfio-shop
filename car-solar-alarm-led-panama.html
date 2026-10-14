@@ -700,20 +700,22 @@ document.addEventListener('DOMContentLoaded', function () {
       return 0;
     }
 
-    function goTo(index) {
+    function setActive(index, scroll) {
       index = Math.max(0, Math.min(cards.length - 1, index));
       cards.forEach(function (c, i) { c.classList.toggle('is-active', i === index); });
-      cards[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+      if (scroll) {
+        cards[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+      }
       if (prevBtn) prevBtn.disabled = index === 0;
       if (nextBtn) nextBtn.disabled = index === cards.length - 1;
     }
 
     cards.forEach(function (card, index) {
-      card.addEventListener('click', function () { goTo(index); });
+      card.addEventListener('click', function () { setActive(index, true); });
     });
-    if (prevBtn) prevBtn.addEventListener('click', function () { goTo(activeIndex() - 1); });
-    if (nextBtn) nextBtn.addEventListener('click', function () { goTo(activeIndex() + 1); });
-    goTo(activeIndex());
+    if (prevBtn) prevBtn.addEventListener('click', function () { setActive(activeIndex() - 1, true); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { setActive(activeIndex() + 1, true); });
+    setActive(activeIndex(), false);
   })();
 
   document.querySelectorAll('.collapse-btn').forEach(function (btn) {
