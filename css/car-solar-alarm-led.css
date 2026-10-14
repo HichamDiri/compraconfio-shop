@@ -915,7 +915,13 @@ body[data-product="car-alarm-led"] .gluta-review-grid {
 
 @media (min-width: 960px) {
   body[data-product="car-alarm-led"] .gluta-review-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  body[data-product="car-alarm-led"] .gluta-review-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
