@@ -19,18 +19,6 @@
       ]
     },
     {
-      "source": "/fat-trimmer-panama",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/fat-trimmer-panama/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
       "source": "/oil-frying-filter-clip-panama",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
@@ -43,18 +31,6 @@
       ]
     },
     {
-      "source": "/dumpling-maker-set-panama",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/dumpling-maker-set-panama/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
       "source": "/closet-organizer-hanger-panama",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
@@ -62,18 +38,6 @@
     },
     {
       "source": "/closet-organizer-hanger-panama/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/thermal-wristband-panama",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/thermal-wristband-panama/",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
@@ -154,18 +118,10 @@
   "rewrites": [
     { "source": "/steel-fryer-panama", "destination": "/steel-fryer-panama.html" },
     { "source": "/steel-fryer-panama/", "destination": "/steel-fryer-panama.html" },
-    { "source": "/fat-trimmer-panama", "destination": "/fat-trimmer-panama.html" },
-    { "source": "/fat-trimmer-panama/", "destination": "/fat-trimmer-panama.html" },
     { "source": "/oil-frying-filter-clip-panama", "destination": "/oil-frying-filter-clip-panama.html" },
     { "source": "/oil-frying-filter-clip-panama/", "destination": "/oil-frying-filter-clip-panama.html" },
-    { "source": "/dumpling-maker-set-panama", "destination": "/dumpling-maker-set-panama.html" },
-    { "source": "/dumpling-maker-set-panama/", "destination": "/dumpling-maker-set-panama.html" },
-    { "source": "/dumpling-maker-set-panama-meta", "destination": "/dumpling-maker-set-panama-meta.html" },
-    { "source": "/dumpling-maker-set-panama-meta/", "destination": "/dumpling-maker-set-panama-meta.html" },
     { "source": "/closet-organizer-hanger-panama", "destination": "/closet-organizer-hanger-panama.html" },
     { "source": "/closet-organizer-hanger-panama/", "destination": "/closet-organizer-hanger-panama.html" },
-    { "source": "/thermal-wristband-panama", "destination": "/thermal-wristband-panama.html" },
-    { "source": "/thermal-wristband-panama/", "destination": "/thermal-wristband-panama.html" },
     { "source": "/nattokinase-panama", "destination": "/nattokinase-panama.html" },
     { "source": "/nattokinase-panama/", "destination": "/nattokinase-panama.html" },
     { "source": "/metabolae-ceylon-cinnamon-panama", "destination": "/metabolae-ceylon-cinnamon-panama.html" },
@@ -260,6 +216,18 @@
     { "source": "/silk-skin-soap-panama.html", "destination": "/", "permanent": true },
     { "source": "/barra-telescopica-panama", "destination": "/", "permanent": true },
     { "source": "/barra-telescopica-panama/", "destination": "/", "permanent": true },
-    { "source": "/barra-telescopica-panama.html", "destination": "/", "permanent": true }
+    { "source": "/barra-telescopica-panama.html", "destination": "/", "permanent": true },
+    { "source": "/fat-trimmer-panama", "destination": "/", "permanent": true },
+    { "source": "/fat-trimmer-panama/", "destination": "/", "permanent": true },
+    { "source": "/fat-trimmer-panama.html", "destination": "/", "permanent": true },
+    { "source": "/dumpling-maker-set-panama", "destination": "/", "permanent": true },
+    { "source": "/dumpling-maker-set-panama/", "destination": "/", "permanent": true },
+    { "source": "/dumpling-maker-set-panama.html", "destination": "/", "permanent": true },
+    { "source": "/dumpling-maker-set-panama-meta", "destination": "/", "permanent": true },
+    { "source": "/dumpling-maker-set-panama-meta/", "destination": "/", "permanent": true },
+    { "source": "/dumpling-maker-set-panama-meta.html", "destination": "/", "permanent": true },
+    { "source": "/thermal-wristband-panama", "destination": "/", "permanent": true },
+    { "source": "/thermal-wristband-panama/", "destination": "/", "permanent": true },
+    { "source": "/thermal-wristband-panama.html", "destination": "/", "permanent": true }
   ]
 }
