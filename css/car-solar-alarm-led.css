@@ -1282,7 +1282,8 @@ body[data-product="car-alarm-led"] .story-problem-photo {
 body[data-product="car-alarm-led"] .story-solution-demo[src$=".gif"],
 body[data-product="car-alarm-led"] .how-to-demo[src$=".gif"],
 body[data-product="car-alarm-led"] .story-solution-demo[src$=".webp"],
-body[data-product="car-alarm-led"] .how-to-demo[src$=".webp"] {
+body[data-product="car-alarm-led"] .how-to-demo[src$=".webp"],
+body[data-product="car-alarm-led"] .how-to-demo[src$=".jpg"] {
   object-fit: cover;
   object-position: center;
 }
