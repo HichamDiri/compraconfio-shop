@@ -7,18 +7,6 @@
       ]
     },
     {
-      "source": "/steel-fryer-panama",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/steel-fryer-panama/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
       "source": "/oil-frying-filter-clip-panama",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
@@ -38,18 +26,6 @@
     },
     {
       "source": "/closet-organizer-hanger-panama/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/nattokinase-panama",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/nattokinase-panama/",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
@@ -128,14 +104,10 @@
     }
   ],
   "rewrites": [
-    { "source": "/steel-fryer-panama", "destination": "/steel-fryer-panama.html" },
-    { "source": "/steel-fryer-panama/", "destination": "/steel-fryer-panama.html" },
     { "source": "/oil-frying-filter-clip-panama", "destination": "/oil-frying-filter-clip-panama.html" },
     { "source": "/oil-frying-filter-clip-panama/", "destination": "/oil-frying-filter-clip-panama.html" },
     { "source": "/closet-organizer-hanger-panama", "destination": "/closet-organizer-hanger-panama.html" },
     { "source": "/closet-organizer-hanger-panama/", "destination": "/closet-organizer-hanger-panama.html" },
-    { "source": "/nattokinase-panama", "destination": "/nattokinase-panama.html" },
-    { "source": "/nattokinase-panama/", "destination": "/nattokinase-panama.html" },
     { "source": "/metabolae-ceylon-cinnamon-panama", "destination": "/metabolae-ceylon-cinnamon-panama.html" },
     { "source": "/metabolae-ceylon-cinnamon-panama/", "destination": "/metabolae-ceylon-cinnamon-panama.html" },
     { "source": "/car-solar-alarm-led-panama", "destination": "/car-solar-alarm-led-panama.html" },
@@ -160,6 +132,12 @@
     { "source": "/contacto/", "destination": "/contacto.html" }
   ],
   "redirects": [
+    { "source": "/steel-fryer-panama", "destination": "/", "permanent": true },
+    { "source": "/steel-fryer-panama/", "destination": "/", "permanent": true },
+    { "source": "/steel-fryer-panama.html", "destination": "/", "permanent": true },
+    { "source": "/nattokinase-panama", "destination": "/", "permanent": true },
+    { "source": "/nattokinase-panama/", "destination": "/", "permanent": true },
+    { "source": "/nattokinase-panama.html", "destination": "/", "permanent": true },
     { "source": "/voyage-nova", "destination": "/", "permanent": true },
     { "source": "/voyage-nova/", "destination": "/", "permanent": true },
     { "source": "/voyage-nova.html", "destination": "/", "permanent": true },
