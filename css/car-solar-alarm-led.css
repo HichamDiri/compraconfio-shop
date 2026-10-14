@@ -1251,6 +1251,11 @@ body[data-product="car-alarm-led"] .feature-media--square img {
   background: #fff;
 }
 
+body[data-product="car-alarm-led"] .story-problem-photo {
+  object-fit: cover;
+  object-position: center;
+}
+
 body[data-product="car-alarm-led"] .story-solution-demo[src$=".gif"],
 body[data-product="car-alarm-led"] .how-to-demo[src$=".gif"],
 body[data-product="car-alarm-led"] .story-solution-demo[src$=".webp"],
