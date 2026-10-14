@@ -397,20 +397,42 @@ body[data-product="car-alarm-led"] .how-to-inner {
   padding: 0;
 }
 
-body[data-product="car-alarm-led"] .steps-panel ol {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+body[data-product="car-alarm-led"] .how-to-steps {
+  display: grid;
+  gap: 0;
 }
 
-body[data-product="car-alarm-led"] .steps-panel li {
-  padding: 12px 0;
+body[data-product="car-alarm-led"] .how-to-step {
+  padding: 16px 0;
   border-bottom: 1px solid var(--alarm-line);
-  line-height: 1.55;
 }
 
-body[data-product="car-alarm-led"] .steps-panel li:last-child {
+body[data-product="car-alarm-led"] .how-to-step:last-child {
   border-bottom: none;
+}
+
+body[data-product="car-alarm-led"] .how-to-step__num {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--alarm-red);
+  margin: 0 0 6px;
+}
+
+body[data-product="car-alarm-led"] .how-to-step__title {
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--alarm-red-deep);
+  margin: 0 0 8px;
+}
+
+body[data-product="car-alarm-led"] .how-to-step__text {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 0;
 }
 
 body[data-product="car-alarm-led"] .testimonial-grid {
