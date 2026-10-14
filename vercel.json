@@ -55,6 +55,18 @@
       ]
     },
     {
+      "source": "/peel-off-lip-duo-panama",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/peel-off-lip-duo-panama/",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
       "source": "/images/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
@@ -88,6 +100,8 @@
     { "source": "/metabolae-ceylon-cinnamon-panama/", "destination": "/metabolae-ceylon-cinnamon-panama.html" },
     { "source": "/car-solar-alarm-led-panama", "destination": "/car-solar-alarm-led-panama.html" },
     { "source": "/car-solar-alarm-led-panama/", "destination": "/car-solar-alarm-led-panama.html" },
+    { "source": "/peel-off-lip-duo-panama", "destination": "/peel-off-lip-duo-panama.html" },
+    { "source": "/peel-off-lip-duo-panama/", "destination": "/peel-off-lip-duo-panama.html" },
     { "source": "/thank-you-compraconfio-panama", "destination": "/thank-you-compraconfio-panama.html" },
     { "source": "/thank-you-compraconfio-panama/", "destination": "/thank-you-compraconfio-panama.html" },
     { "source": "/thank-you-compraconfio", "destination": "/thank-you-compraconfio.html" },
