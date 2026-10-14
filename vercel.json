@@ -55,30 +55,6 @@
       ]
     },
     {
-      "source": "/nattokinase",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/nattokinase/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/nattokinasa",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
-      "source": "/nattokinasa/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
-    {
       "source": "/images/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
@@ -112,10 +88,6 @@
     { "source": "/metabolae-ceylon-cinnamon-panama/", "destination": "/metabolae-ceylon-cinnamon-panama.html" },
     { "source": "/car-solar-alarm-led-panama", "destination": "/car-solar-alarm-led-panama.html" },
     { "source": "/car-solar-alarm-led-panama/", "destination": "/car-solar-alarm-led-panama.html" },
-    { "source": "/nattokinase", "destination": "/nattokinase.html" },
-    { "source": "/nattokinase/", "destination": "/nattokinase.html" },
-    { "source": "/nattokinasa", "destination": "/nattokinase.html" },
-    { "source": "/nattokinasa/", "destination": "/nattokinase.html" },
     { "source": "/thank-you-compraconfio-panama", "destination": "/thank-you-compraconfio-panama.html" },
     { "source": "/thank-you-compraconfio-panama/", "destination": "/thank-you-compraconfio-panama.html" },
     { "source": "/thank-you-compraconfio", "destination": "/thank-you-compraconfio.html" },
@@ -138,6 +110,11 @@
     { "source": "/nattokinase-panama", "destination": "/", "permanent": true },
     { "source": "/nattokinase-panama/", "destination": "/", "permanent": true },
     { "source": "/nattokinase-panama.html", "destination": "/", "permanent": true },
+    { "source": "/nattokinase", "destination": "/", "permanent": true },
+    { "source": "/nattokinase/", "destination": "/", "permanent": true },
+    { "source": "/nattokinase.html", "destination": "/", "permanent": true },
+    { "source": "/nattokinasa", "destination": "/", "permanent": true },
+    { "source": "/nattokinasa/", "destination": "/", "permanent": true },
     { "source": "/voyage-nova", "destination": "/", "permanent": true },
     { "source": "/voyage-nova/", "destination": "/", "permanent": true },
     { "source": "/voyage-nova.html", "destination": "/", "permanent": true },
