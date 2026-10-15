@@ -190,9 +190,11 @@ body[data-product="lip-duo-pa"] .benefit-card__media--square img {
   border-radius: 0;
 }
 
+body[data-product="lip-duo-pa"] .story-solution-demo[src$=".gif"],
+body[data-product="lip-duo-pa"] .how-to-demo[src$=".gif"],
 body[data-product="lip-duo-pa"] .how-to-section .feature-media--square img[src$=".gif"] {
   object-fit: cover;
-  object-position: center top;
+  object-position: center;
 }
 
 body[data-product="lip-duo-pa"] .feature-media--wide {
