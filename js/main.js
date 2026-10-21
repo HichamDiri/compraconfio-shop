@@ -731,6 +731,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (fbPixelId) {
       params.set('fbPixelId', fbPixelId);
     }
+    if (document.body && document.body.dataset.fbThankyouEvent) {
+      params.set('fbEvent', document.body.dataset.fbThankyouEvent);
+    }
     var tiktokPixelId = getTikTokPixelId();
     if (tiktokPixelId) {
       params.set('tiktokPixelId', tiktokPixelId);
