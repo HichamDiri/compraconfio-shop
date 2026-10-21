@@ -2,14 +2,90 @@
   var STORAGE_PREFIX = 'cc_abandon_sent_';
   var DRAFT_KEY = 'cc_abandon_draft';
 
+  function storageKey(payload) {
+    return STORAGE_PREFIX + payload.source + '_' + payload.phone;
+  }
+
+  function postPayload(payload, useBeacon) {
+    var url = window.GOOGLE_SHEETS_URL;
+    if (!url) return Promise.resolve(false);
+
+    var encoded = 'payload=' + encodeURIComponent(JSON.stringify(payload));
+
+    if (useBeacon && typeof navigator.sendBeacon === 'function') {
+      var blob = new Blob([encoded], { type: 'application/x-www-form-urlencoded;charset=UTF-8' });
+      if (navigator.sendBeacon(url, blob)) {
+        return Promise.resolve(true);
+      }
+    }
+
+    if (window.ORDER_API_URL) {
+      return fetch(window.ORDER_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        keepalive: true,
+        body: JSON.stringify(payload)
+      }).then(function (response) {
+        return response.ok;
+      }).catch(function () {
+        return false;
+      });
+    }
+
+    return fetch(url, {
+      method: 'POST',
+      mode: 'no-cors',
+      keepalive: true,
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+      body: encoded
+    }).then(function () {
+      return true;
+    }).catch(function () {
+      if (useBeacon && typeof navigator.sendBeacon === 'function') {
+        var fallbackBlob = new Blob([encoded], { type: 'application/x-www-form-urlencoded;charset=UTF-8' });
+        return navigator.sendBeacon(url, fallbackBlob);
+      }
+      return false;
+    });
+  }
+
+  function flushSavedDraft() {
+    if (!window.GOOGLE_SHEETS_URL) return;
+
+    var raw;
+    try {
+      raw = localStorage.getItem(DRAFT_KEY);
+    } catch (error) {
+      return;
+    }
+    if (!raw) return;
+
+    try {
+      var payload = JSON.parse(raw);
+      if (!payload || !payload.phone || sessionStorage.getItem(storageKey(payload)) === '1') {
+        localStorage.removeItem(DRAFT_KEY);
+        return;
+      }
+      sessionStorage.setItem(storageKey(payload), '1');
+      localStorage.removeItem(DRAFT_KEY);
+      postPayload(payload, true);
+    } catch (error) {
+      try {
+        localStorage.removeItem(DRAFT_KEY);
+      } catch (removeError) {}
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
+    flushSavedDraft();
+
     if (!document.body || document.body.dataset.abandonCheckout !== 'on') return;
 
     var form = document.getElementById('orderForm');
     if (!form || !window.GOOGLE_SHEETS_URL) return;
 
     var submitted = false;
-    var sent = false;
+    var sending = false;
     var idleMinutes = parseFloat(document.body.dataset.abandonIdleMinutes || '', 10);
     var idleMs = idleMinutes > 0 ? Math.round(idleMinutes * 60 * 1000) : 0;
     var idleTimer = null;
@@ -19,22 +95,6 @@
         clearTimeout(idleTimer);
         idleTimer = null;
       }
-    }
-
-    function syncIdleAbandonTimer() {
-      if (!idleMs || submitted || sent) {
-        clearIdleTimer();
-        return;
-      }
-      if (!isComplete()) {
-        clearIdleTimer();
-        return;
-      }
-      if (idleTimer) return;
-      idleTimer = setTimeout(function () {
-        idleTimer = null;
-        sendAbandon();
-      }, idleMs);
     }
 
     var marketCountry = document.body.dataset.country || 'PA';
@@ -139,32 +199,8 @@
       };
     }
 
-    function storageKey(payload) {
-      return STORAGE_PREFIX + payload.source + '_' + payload.phone;
-    }
-
-    function postPayload(payload) {
-      var body = 'payload=' + encodeURIComponent(JSON.stringify(payload));
-
-      return fetch(window.GOOGLE_SHEETS_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        keepalive: true,
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
-        body: body
-      }).catch(function () {});
-    }
-
-    function markSent(payload) {
-      sent = true;
-      sessionStorage.setItem(storageKey(payload), '1');
-      try {
-        localStorage.removeItem(DRAFT_KEY);
-      } catch (error) {}
-    }
-
     function saveDraft() {
-      if (submitted || sent || !isComplete()) {
+      if (submitted || !isComplete()) {
         try {
           localStorage.removeItem(DRAFT_KEY);
         } catch (error) {}
@@ -176,38 +212,31 @@
       } catch (error) {}
     }
 
-    function sendAbandon() {
-      if (sent || submitted || !isComplete()) return;
+    function syncIdleAbandonTimer() {
+      clearIdleTimer();
+      if (!idleMs || submitted) return;
+      if (!isComplete()) return;
+      idleTimer = setTimeout(function () {
+        idleTimer = null;
+        sendAbandon(false);
+      }, idleMs);
+    }
+
+    function sendAbandon(useBeacon) {
+      if (sending || submitted || !isComplete()) return;
 
       var payload = buildPayload();
       if (!payload.phone || sessionStorage.getItem(storageKey(payload)) === '1') return;
 
-      markSent(payload);
-      postPayload(payload);
-    }
-
-    function flushSavedDraft() {
-      var raw;
-      try {
-        raw = localStorage.getItem(DRAFT_KEY);
-      } catch (error) {
-        return;
-      }
-      if (!raw) return;
-
-      try {
-        var payload = JSON.parse(raw);
-        if (!payload || !payload.phone || sessionStorage.getItem(storageKey(payload)) === '1') {
-          localStorage.removeItem(DRAFT_KEY);
-          return;
-        }
-        markSent(payload);
-        postPayload(payload);
-      } catch (error) {
+      sending = true;
+      postPayload(payload, useBeacon).then(function (ok) {
+        sending = false;
+        if (!ok) return;
+        sessionStorage.setItem(storageKey(payload), '1');
         try {
           localStorage.removeItem(DRAFT_KEY);
-        } catch (removeError) {}
-      }
+        } catch (error) {}
+      });
     }
 
     function onFormActivity() {
@@ -226,12 +255,17 @@
       } catch (error) {}
     }, true);
 
-    window.addEventListener('pagehide', sendAbandon);
-    document.addEventListener('visibilitychange', function () {
-      if (document.visibilityState === 'hidden') sendAbandon();
+    window.addEventListener('pagehide', function () {
+      sendAbandon(true);
     });
 
-    flushSavedDraft();
+    document.addEventListener('click', function (event) {
+      if (!event.target.closest('[data-close-order]')) return;
+      setTimeout(function () {
+        sendAbandon(false);
+      }, 0);
+    }, true);
+
     syncIdleAbandonTimer();
   });
 })();
