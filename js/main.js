@@ -767,26 +767,39 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function submitOrder(payload) {
-    if (window.GOOGLE_SHEETS_URL) {
-      return submitToGoogleSheets(window.GOOGLE_SHEETS_URL, payload);
+    if (window.ORDER_API_URL) {
+      return fetch(window.ORDER_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        keepalive: true,
+        body: JSON.stringify(payload)
+      }).then(function(response) {
+        return response.text().then(function(text) {
+          var result;
+          try {
+            result = JSON.parse(text);
+          } catch (error) {
+            throw new Error(isSpanishPage()
+              ? 'No se pudo conectar con el servidor. Intenta de nuevo.'
+              : 'تعذر الاتصال بالخادم. يرجى المحاولة مرة أخرى.');
+          }
+          if (!response.ok || !result.ok) {
+            throw new Error(result.message || (isSpanishPage()
+              ? 'No se pudo enviar el pedido'
+              : 'تعذر إرسال الطلب'));
+          }
+          return { ok: true, order: { id: payload.orderId }, sheetSynced: true };
+        });
+      });
     }
 
-    return fetch(window.ORDER_API_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      keepalive: true,
-      body: JSON.stringify(payload)
-    }).then(function(response) {
-      return response.text().then(function(text) {
-        try {
-          return JSON.parse(text);
-        } catch (error) {
-          throw new Error(isSpanishPage()
-            ? 'No se pudo conectar con el servidor. Intenta de nuevo.'
-            : 'تعذر الاتصال بالخادم. يرجى المحاولة مرة أخرى.');
-        }
+    if (window.GOOGLE_SHEETS_URL) {
+      return submitToGoogleSheets(window.GOOGLE_SHEETS_URL, payload).then(function() {
+        return { ok: true, order: { id: payload.orderId }, sheetSynced: false };
       });
-    });
+    }
+
+    return Promise.resolve({ ok: false, message: 'No order endpoint configured' });
   }
 
   form.addEventListener('submit', async function(e) {
@@ -905,11 +918,14 @@ document.addEventListener('DOMContentLoaded', function() {
         throw new Error(result.message || (isSpanishPage() ? 'No se pudo enviar el pedido' : 'تعذر إرسال الطلب'));
       }
 
-      try {
-        sessionStorage.setItem('cc_sheet_sync_' + payload.orderId, 'done');
-      } catch (storageError) {}
+      var confirmedOrderId = result.order && result.order.id ? result.order.id : payload.orderId;
+      if (result.sheetSynced) {
+        try {
+          sessionStorage.setItem('cc_sheet_sync_' + confirmedOrderId, 'done');
+        } catch (storageError) {}
+      }
 
-      goToThankYou(payload, result.order && result.order.id ? result.order.id : payload.orderId);
+      goToThankYou(payload, confirmedOrderId);
     } catch (error) {
       alert(error.message || (isSpanishPage() ? 'Ocurrió un error, intenta de nuevo' : 'حدث خطأ، يرجى المحاولة مرة أخرى'));
       if (submitButton) {

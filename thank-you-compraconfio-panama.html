@@ -101,7 +101,7 @@
   </footer>
 </div>
 
-<script src="/js/config.js?v=20260916b"></script>
+<script src="/js/config.js?v=20261022b"></script>
 <script>
   (function() {
     var p = new URLSearchParams(window.location.search);
@@ -345,18 +345,51 @@
         status: 'Pedido'
       };
 
-      var body = new URLSearchParams();
-      body.append('payload', JSON.stringify(payload));
-      fetch(window.GOOGLE_SHEETS_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        keepalive: true,
-        body: body
-      }).finally(function () {
+      function markSheetSynced() {
         try {
           sessionStorage.setItem(syncKey, 'done');
         } catch (error) {}
-      });
+      }
+
+      if (window.ORDER_API_URL) {
+        fetch(window.ORDER_API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          keepalive: true,
+          body: JSON.stringify(payload)
+        }).then(function (response) {
+          return response.json().catch(function () { return {}; }).then(function (result) {
+            if (response.ok && result && result.ok) markSheetSynced();
+          });
+        }).catch(function () {
+          postSheetFallback();
+        });
+        return;
+      }
+
+      postSheetFallback();
+
+      function postSheetFallback() {
+        var encoded = 'payload=' + encodeURIComponent(JSON.stringify(payload));
+        var sent = false;
+        if (typeof navigator.sendBeacon === 'function') {
+          sent = navigator.sendBeacon(
+            window.GOOGLE_SHEETS_URL,
+            new Blob([encoded], { type: 'application/x-www-form-urlencoded;charset=UTF-8' })
+          );
+        }
+        if (sent) {
+          markSheetSynced();
+          return;
+        }
+        fetch(window.GOOGLE_SHEETS_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          keepalive: true,
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+          body: encoded
+        }).finally(markSheetSynced);
+      }
     }
 
     syncOrderToSheet();
