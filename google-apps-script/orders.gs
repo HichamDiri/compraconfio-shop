@@ -51,7 +51,7 @@ function doPost(e) {
 function doGet() {
   return jsonOutput_({
     ok: true,
-    message: 'CompraConfio order endpoint v20261023-usd-format is running.'
+    message: 'CompraConfio order endpoint v20261023-plain-number is running.'
   });
 }
 
@@ -91,19 +91,15 @@ function normalizeAmount_(value) {
   return s;
 }
 
-function amountNumberFormat_(currency) {
-  var c = String(currency || '').toUpperCase();
-  if (c === 'USD') return '$#,##0.00';
-  if (c === 'GTQ') return '#,##0.00';
-  return '#,##0.00';
+function amountNumberFormat_(value) {
+  return Number(value) % 1 === 0 ? '0' : '0.00';
 }
 
-function applyAmountFormats_(sheet, row, currency) {
-  if (!row || row < 2) return;
-  var fmt = amountNumberFormat_(currency);
-  sheet.getRange(row, COL_SUBTOTAL).setNumberFormat(fmt);
-  sheet.getRange(row, COL_SHIPPING).setNumberFormat(fmt);
-  sheet.getRange(row, COL_TOTAL).setNumberFormat(fmt);
+function setPlainAmount_(sheet, row, col, value) {
+  var n = Number(value) || 0;
+  var cell = sheet.getRange(row, col);
+  cell.setNumberFormat(amountNumberFormat_(n));
+  cell.setValue(n);
 }
 
 function appendOrder_(data) {
@@ -146,10 +142,9 @@ function appendOrder_(data) {
   ]);
 
   var row = sheet.getLastRow();
-  applyAmountFormats_(sheet, row, currency);
-  sheet.getRange(row, COL_SUBTOTAL).setValue(Number(subtotal) || 0);
-  sheet.getRange(row, COL_SHIPPING).setValue(Number(shippingDisplay) || 0);
-  sheet.getRange(row, COL_TOTAL).setValue(Number(total) || 0);
+  setPlainAmount_(sheet, row, COL_SUBTOTAL, subtotal);
+  setPlainAmount_(sheet, row, COL_SHIPPING, shippingDisplay);
+  setPlainAmount_(sheet, row, COL_TOTAL, total);
 }
 
 function inferCountry_(data) {
@@ -178,14 +173,10 @@ function ensureHeaders_(sheet) {
   sheet.appendRow(HEADERS);
   sheet.setFrozenRows(1);
   sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold');
-  sheet.getRange(2, COL_SUBTOTAL, sheet.getMaxRows() - 1, 1).setNumberFormat('#,##0.00');
-  sheet.getRange(2, COL_SHIPPING, sheet.getMaxRows() - 1, 1).setNumberFormat('#,##0.00');
-  sheet.getRange(2, COL_TOTAL, sheet.getMaxRows() - 1, 1).setNumberFormat('#,##0.00');
 }
 
 /**
- * Run once from Apps Script editor (Run) to remove column-wide "Q" display on old rows.
- * Re-formats Subtotal / Envío / Total from Moneda column (col 16).
+ * Run once from the Apps Script editor to turn old "Q39" / "$42,00" amounts into plain numbers.
  */
 function fixExistingPedidosAmountFormats() {
   var sheet = getSheet_();
@@ -193,13 +184,12 @@ function fixExistingPedidosAmountFormats() {
   if (lastRow < 2) return;
 
   for (var row = 2; row <= lastRow; row++) {
-    var currency = String(sheet.getRange(row, 16).getValue() || 'GTQ').toUpperCase();
-    applyAmountFormats_(sheet, row, currency);
     [COL_SUBTOTAL, COL_SHIPPING, COL_TOTAL].forEach(function (col) {
-      var cell = sheet.getRange(row, col);
-      var n = normalizeAmount_(cell.getDisplayValue());
+      var raw = sheet.getRange(row, col).getValue();
+      if (raw === '' || raw == null) return;
+      var n = typeof raw === 'number' ? raw : normalizeAmount_(raw);
       if (typeof n === 'number' && !isNaN(n)) {
-        cell.setValue(n);
+        setPlainAmount_(sheet, row, col, n);
       }
     });
   }
