@@ -44,7 +44,10 @@ function doPost(e) {
 }
 
 function doGet() {
-  return jsonOutput_({ ok: true, message: 'CompraConfio order endpoint is running.' });
+  return jsonOutput_({
+    ok: true,
+    message: 'CompraConfio order endpoint v20261023-no-q is running.'
+  });
 }
 
 function parsePayload_(e) {
