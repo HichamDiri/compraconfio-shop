@@ -1,7 +1,7 @@
 /**
  * CompraConfio ? Google Sheets order receiver
  *
- * Deploy from YOUR spreadsheet (e.g. "Hicham Test Products"):
+ * Deploy from the spreadsheet "CompraConfio Pedidos" (tab "Pedidos"):
  * Extensions ? Apps Script ? paste ? Deploy ? Web app (Execute as: Me, Anyone)
  * Copy the /exec URL into js/config.js ? GOOGLE_SHEETS_BY_SOURCE or GOOGLE_SHEETS_URL
  */

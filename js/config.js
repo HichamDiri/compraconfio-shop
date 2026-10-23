@@ -1,12 +1,10 @@
-// Orders post to Google Apps Script (and /api/orders on Vercel as primary path).
+// Orders → Google Sheet file "CompraConfio Pedidos" (tab "Pedidos").
+// Deploy google-apps-script/orders.gs from THAT spreadsheet, then paste the Web App /exec URL here.
 window.GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbx__S60obOiYJB7dqlBNMqIvaxTIzY2pafz92tsgYX9G7tpGZvMQYur-N664u787IZVHw/exec';
 window.ORDER_API_URL = '/api/orders';
 
-// Per-funnel Web App URLs (deploy orders.gs from each spreadsheet).
-// Paste your new sheet /exec URL for car-solar-alarm-led-panama-meta below.
-window.GOOGLE_SHEETS_BY_SOURCE = {
-  'car-solar-alarm-led-panama-meta': ''
-};
+// Optional: other /exec URLs per source (leave empty object = all funnels use GOOGLE_SHEETS_URL).
+window.GOOGLE_SHEETS_BY_SOURCE = {};
 
 window.resolveGoogleSheetsUrl = function (source) {
   var key = String(source || '').trim();
