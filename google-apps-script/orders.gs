@@ -9,6 +9,7 @@
 var SHEET_NAME = 'Pedidos';
 
 /** Column indexes (1-based) ? must match HEADERS */
+var COL_OFERTA = 10;
 var COL_SUBTOTAL = 12;
 var COL_SHIPPING = 13;
 var COL_TOTAL = 15;
@@ -55,7 +56,7 @@ function doPost(e) {
 function doGet() {
   return jsonOutput_({
     ok: true,
-    message: 'CompraConfio order endpoint v20261023-page-country is running.'
+    message: 'CompraConfio order endpoint v20261023-offer-qty is running.'
   });
 }
 
@@ -130,7 +131,7 @@ function appendOrder_(data) {
     data.addressLine || data.address || '',
     data.zone || '',
     data.productName || '',
-    data.bundleLabel || '',
+    offerQuantity_(data.bundleLabel),
     data.color || '',
     subtotal,
     shippingDisplay,
@@ -147,6 +148,11 @@ function appendOrder_(data) {
   setPlainAmount_(sheet, row, COL_SUBTOTAL, subtotal);
   setPlainAmount_(sheet, row, COL_SHIPPING, shippingDisplay);
   setPlainAmount_(sheet, row, COL_TOTAL, total);
+}
+
+function offerQuantity_(label) {
+  var match = String(label || '').match(/\d+/);
+  return match ? Number(match[0]) : (label || '');
 }
 
 function inferCountry_(data) {
@@ -224,6 +230,20 @@ function fixExistingPedidosAmountFormats() {
 /**
  * Run once from the Apps Script editor to add the headers and fill Product page / Country on old rows.
  */
+function fixExistingOfferQuantities() {
+  var sheet = getSheet_();
+  var lastRow = sheet.getLastRow();
+  if (lastRow < 2) return;
+
+  for (var row = 2; row <= lastRow; row++) {
+    var cell = sheet.getRange(row, COL_OFERTA);
+    var value = cell.getValue();
+    if (typeof value === 'string' && value) {
+      cell.setValue(offerQuantity_(value));
+    }
+  }
+}
+
 function backfillProductPageAndCountry() {
   var sheet = getSheet_();
   ensureHeaders_(sheet);
