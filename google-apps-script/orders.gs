@@ -9,6 +9,7 @@
 var SHEET_NAME = 'Pedidos';
 
 /** Column indexes (1-based) ? must match HEADERS */
+var COL_PRODUCTO = 9;
 var COL_OFERTA = 10;
 var COL_SUBTOTAL = 12;
 var COL_SHIPPING = 13;
@@ -56,7 +57,7 @@ function doPost(e) {
 function doGet() {
   return jsonOutput_({
     ok: true,
-    message: 'CompraConfio order endpoint v20261023-offer-qty is running.'
+    message: 'CompraConfio order endpoint v20261023-base-name is running.'
   });
 }
 
@@ -130,8 +131,8 @@ function appendOrder_(data) {
     data.city || '',
     data.addressLine || data.address || '',
     data.zone || '',
-    data.productName || '',
-    offerQuantity_(data.bundleLabel),
+    baseProductName_(data.productName),
+    offerQuantity_(data.bundleLabel || data.productName),
     data.color || '',
     subtotal,
     shippingDisplay,
@@ -151,8 +152,17 @@ function appendOrder_(data) {
 }
 
 function offerQuantity_(label) {
-  var match = String(label || '').match(/\d+/);
-  return match ? Number(match[0]) : (label || '');
+  var text = String(label || '');
+  var dash = text.match(/\s-\s*(\d+)/);
+  var match = dash || text.match(/\d+/);
+  return match ? Number(match[1] || match[0]) : text;
+}
+
+function baseProductName_(name) {
+  return String(name || '')
+    .replace(/\s+-\s+\d+.*$/, '')
+    .replace(/\s+\d+\s+(unidad|unidades|botella|botellas|pieza|piezas|bolsa|bolsas)\b.*$/i, '')
+    .trim();
 }
 
 function inferCountry_(data) {
@@ -240,6 +250,11 @@ function fixExistingOfferQuantities() {
     var value = cell.getValue();
     if (typeof value === 'string' && value) {
       cell.setValue(offerQuantity_(value));
+    }
+    var nameCell = sheet.getRange(row, COL_PRODUCTO);
+    var name = nameCell.getValue();
+    if (typeof name === 'string' && name) {
+      nameCell.setValue(baseProductName_(name));
     }
   }
 }
