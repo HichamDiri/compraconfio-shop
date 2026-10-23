@@ -74,14 +74,22 @@ function parsePayload_(e) {
   return parsed && typeof parsed === 'object' ? parsed : {};
 }
 
+function normalizeAmount_(value) {
+  if (value == null || value === '') return '';
+  var s = String(value).trim().replace(/^[$Qq]\s*/i, '');
+  var n = Number(s);
+  if (!isNaN(n)) return n;
+  return s;
+}
+
 function appendOrder_(data) {
   var sheet = getSheet_();
   ensureHeaders_(sheet);
 
-  var shippingRaw = data.shipping != null && data.shipping !== '' ? String(data.shipping) : '0';
-  var shippingDisplay = shippingRaw === '0' ? '0' : shippingRaw;
-  var subtotal = data.price != null && data.price !== '' ? String(data.price) : '';
-  var total = data.total != null && data.total !== '' ? String(data.total) : subtotal;
+  var shippingDisplay = normalizeAmount_(data.shipping != null && data.shipping !== '' ? data.shipping : 0);
+  if (shippingDisplay === '') shippingDisplay = 0;
+  var subtotal = normalizeAmount_(data.price);
+  var total = normalizeAmount_(data.total != null && data.total !== '' ? data.total : data.price);
   var currency = String(data.currency || data.marketCurrency || 'GTQ').toUpperCase();
   var moneda = currency;
   var marketCountry = data.marketCountry || inferCountry_(data);
