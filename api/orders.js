@@ -2,6 +2,19 @@ const GOOGLE_SHEETS_URL =
   process.env.GOOGLE_SHEETS_URL ||
   'https://script.google.com/macros/s/AKfycbx__S60obOiYJB7dqlBNMqIvaxTIzY2pafz92tsgYX9G7tpGZvMQYur-N664u787IZVHw/exec';
 
+const GOOGLE_SHEETS_BY_SOURCE = {
+  'car-solar-alarm-led-panama-meta':
+    process.env.GOOGLE_SHEETS_URL_CAR_ALARM_META || ''
+};
+
+function resolveGoogleSheetsUrl(source) {
+  const key = String(source || '').trim();
+  if (key && Object.prototype.hasOwnProperty.call(GOOGLE_SHEETS_BY_SOURCE, key)) {
+    return GOOGLE_SHEETS_BY_SOURCE[key] || '';
+  }
+  return GOOGLE_SHEETS_URL;
+}
+
 function readPayload(req) {
   if (!req.body) return {};
   if (typeof req.body === 'string') {
@@ -29,10 +42,18 @@ module.exports = async function handler(req, res) {
 
   try {
     const payload = readPayload(req);
+    const targetUrl = resolveGoogleSheetsUrl(payload.source);
+    if (!targetUrl) {
+      return res.status(502).json({
+        ok: false,
+        message: 'No Google Sheets URL configured for this product source'
+      });
+    }
+
     const encoded = new URLSearchParams();
     encoded.append('payload', JSON.stringify(payload));
 
-    const response = await fetch(GOOGLE_SHEETS_URL, {
+    const response = await fetch(targetUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encoded.toString(),

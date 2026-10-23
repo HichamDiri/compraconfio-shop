@@ -1,36 +1,36 @@
 /**
- * CompraConfio — Google Sheets order receiver
+ * CompraConfio ? Google Sheets order receiver
  *
- * Setup:
- * 1. Create a Google Sheet (e.g. "CompraConfio Pedidos")
- * 2. Extensions → Apps Script → paste this file → Save
- * 3. Deploy → New deployment → Web app
- *    - Execute as: Me
- *    - Who has access: Anyone
- * 4. Copy the Web App URL into js/config.js → GOOGLE_SHEETS_URL
+ * Deploy from YOUR spreadsheet (e.g. "Hicham Test Products"):
+ * Extensions ? Apps Script ? paste ? Deploy ? Web app (Execute as: Me, Anyone)
+ * Copy the /exec URL into js/config.js ? GOOGLE_SHEETS_BY_SOURCE or GOOGLE_SHEETS_URL
  */
 
 var SHEET_NAME = 'Pedidos';
 
 var HEADERS = [
   'Fecha',
-  'N° Pedido',
+  'N� Pedido',
   'Nombre',
   'WhatsApp',
   'Departamento',
   'Municipio',
-  'Dirección',
+  'Direcci�n',
   'Zona/Colonia',
   'Producto',
   'Oferta',
   'Color',
   'Subtotal',
-  'Envío',
-  'Método envío',
+  'Env�o',
+  'M�todo env�o',
   'Total',
   'Moneda',
   'Fuente',
-  'Estado'
+  'Estado',
+  'Product page',
+  '',
+  'country',
+  'currency'
 ];
 
 function doPost(e) {
@@ -78,8 +78,14 @@ function appendOrder_(data) {
   var sheet = getSheet_();
   ensureHeaders_(sheet);
 
-  var shipping = data.shipping ? 'Q' + data.shipping : 'Gratis';
-  var total = data.total || data.price || '';
+  var shippingRaw = data.shipping != null && data.shipping !== '' ? String(data.shipping) : '0';
+  var shippingDisplay = shippingRaw === '0' ? '0' : shippingRaw;
+  var subtotal = data.price != null && data.price !== '' ? String(data.price) : '';
+  var total = data.total != null && data.total !== '' ? String(data.total) : subtotal;
+  var currency = String(data.currency || data.marketCurrency || 'GTQ').toUpperCase();
+  var moneda = currency;
+  var marketCountry = data.marketCountry || inferCountry_(data);
+  var productPage = data.productPage || '';
   var createdAt = data.createdAt ? new Date(data.createdAt) : new Date();
 
   sheet.appendRow([
@@ -94,14 +100,25 @@ function appendOrder_(data) {
     data.productName || '',
     data.bundleLabel || '',
     data.color || '',
-    data.price ? 'Q' + data.price : '',
-    shipping,
-    data.shippingMethod || 'Envío gratis',
-    total ? 'Q' + total : '',
-    data.currency || 'GTQ',
+    subtotal,
+    shippingDisplay,
+    data.shippingMethod || 'Env�o gratis',
+    total,
+    moneda,
     data.source || '',
-    data.status || 'Nuevo'
+    data.status || 'Nuevo',
+    productPage,
+    '',
+    marketCountry,
+    currency
   ]);
+}
+
+function inferCountry_(data) {
+  var c = String(data.country || '').toLowerCase();
+  if (c.indexOf('panam') >= 0) return 'panama';
+  if (c.indexOf('guatem') >= 0) return 'guatemala';
+  return c || '';
 }
 
 function getSheet_() {

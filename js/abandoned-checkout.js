@@ -6,8 +6,15 @@
     return STORAGE_PREFIX + payload.source + '_' + payload.phone;
   }
 
+  function resolveSheetsUrl(source) {
+    if (typeof window.resolveGoogleSheetsUrl === 'function') {
+      return window.resolveGoogleSheetsUrl(source || '');
+    }
+    return window.GOOGLE_SHEETS_URL || '';
+  }
+
   function postPayload(payload, useBeacon) {
-    var url = window.GOOGLE_SHEETS_URL;
+    var url = resolveSheetsUrl(payload && payload.source);
     if (!url) return Promise.resolve(false);
 
     var encoded = 'payload=' + encodeURIComponent(JSON.stringify(payload));
@@ -50,7 +57,7 @@
   }
 
   function flushSavedDraft() {
-    if (!window.GOOGLE_SHEETS_URL) return;
+    if (!window.GOOGLE_SHEETS_URL && !window.ORDER_API_URL) return;
 
     var raw;
     try {
@@ -82,7 +89,7 @@
     if (!document.body || document.body.dataset.abandonCheckout !== 'on') return;
 
     var form = document.getElementById('orderForm');
-    if (!form || !window.GOOGLE_SHEETS_URL) return;
+    if (!form || (!window.GOOGLE_SHEETS_URL && !window.ORDER_API_URL)) return;
 
     var submitted = false;
     var sending = false;
@@ -195,7 +202,12 @@
         total: String(formData.get('total') || '').trim(),
         createdAt: new Date().toISOString(),
         source: String(formData.get('source') || '').trim(),
-        status: 'Abandono'
+        status: 'Abandono',
+        productPage: (document.body && document.body.dataset.productPage)
+          ? document.body.dataset.productPage
+          : (window.location.origin + window.location.pathname.replace(/\.html$/, '')),
+        marketCountry: marketCountry === 'GT' ? 'guatemala' : (marketCountry === 'PA' ? 'panama' : String(marketCountry).toLowerCase()),
+        marketCurrency: String(formData.get('currency') || 'USD').trim()
       };
     }
 

@@ -741,7 +741,32 @@ document.addEventListener('DOMContentLoaded', function() {
     window.location.href = getThankYouPath() + '?' + params.toString();
   }
 
+  function getGoogleSheetsUrl(source) {
+    if (typeof window.resolveGoogleSheetsUrl === 'function') {
+      return window.resolveGoogleSheetsUrl(source || '');
+    }
+    return window.GOOGLE_SHEETS_URL || '';
+  }
+
+  function getMarketCountryLabel() {
+    var code = document.body && document.body.dataset.country;
+    if (code === 'PA') return 'panama';
+    if (code === 'GT') return 'guatemala';
+    return String(code || '').toLowerCase();
+  }
+
+  function getProductPageUrl() {
+    if (document.body && document.body.dataset.productPage) {
+      return document.body.dataset.productPage;
+    }
+    var path = window.location.pathname.replace(/\.html$/, '');
+    return window.location.origin + path;
+  }
+
   function hasOrderEndpoint() {
+    if (typeof window.hasGoogleSheetsEndpoint === 'function') {
+      return window.hasGoogleSheetsEndpoint('');
+    }
     return Boolean(window.GOOGLE_SHEETS_URL || window.ORDER_API_URL);
   }
 
@@ -793,8 +818,9 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
 
-    if (window.GOOGLE_SHEETS_URL) {
-      return submitToGoogleSheets(window.GOOGLE_SHEETS_URL, payload).then(function() {
+    var sheetsUrl = getGoogleSheetsUrl(payload.source);
+    if (sheetsUrl) {
+      return submitToGoogleSheets(sheetsUrl, payload).then(function() {
         return { ok: true, order: { id: payload.orderId }, sheetSynced: false };
       });
     }
@@ -897,7 +923,10 @@ document.addEventListener('DOMContentLoaded', function() {
       color: String(formData.get('color') || '').trim(),
       createdAt: new Date().toISOString(),
       source: String(formData.get('source') || 'compraconfio').trim(),
-      status: 'Pedido'
+      status: 'Pedido',
+      productPage: getProductPageUrl(),
+      marketCountry: getMarketCountryLabel(),
+      marketCurrency: selection.currency
     };
 
     var shippingMethodValue = String(formData.get('shippingMethod') || '').trim();
