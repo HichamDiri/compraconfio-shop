@@ -1,6 +1,6 @@
 // Orders → Google Sheet file "CompraConfio Pedidos" (tab "Pedidos").
 // Deploy google-apps-script/orders.gs from THAT spreadsheet, then paste the Web App /exec URL here.
-window.GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbx__S60obOiYJB7dqlBNMqIvaxTIzY2pafz92tsgYX9G7tpGZvMQYur-N664u787IZVHw/exec';
+window.GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbymujUshGmKJ65Saxo67KcNiZiGwBfrO5Z2JE3XlqVzal_wP1uLBsj_puSRHQ1_rGM6lw/exec';
 window.ORDER_API_URL = '/api/orders';
 
 // Optional: other /exec URLs per source (leave empty object = all funnels use GOOGLE_SHEETS_URL).

@@ -1,6 +1,6 @@
 const GOOGLE_SHEETS_URL =
   process.env.GOOGLE_SHEETS_URL ||
-  'https://script.google.com/macros/s/AKfycbx__S60obOiYJB7dqlBNMqIvaxTIzY2pafz92tsgYX9G7tpGZvMQYur-N664u787IZVHw/exec';
+  'https://script.google.com/macros/s/AKfycbymujUshGmKJ65Saxo67KcNiZiGwBfrO5Z2JE3XlqVzal_wP1uLBsj_puSRHQ1_rGM6lw/exec';
 
 function resolveGoogleSheetsUrl(source) {
   const key = String(source || '').trim();
