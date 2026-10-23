@@ -12,6 +12,12 @@ var SHEET_NAME = 'Pedidos';
 var COL_SUBTOTAL = 12;
 var COL_SHIPPING = 13;
 var COL_TOTAL = 15;
+var COL_MONEDA = 16;
+var COL_FUENTE = 17;
+var COL_PRODUCT_PAGE = 19;
+var COL_COUNTRY = 20;
+
+var SITE_URL = 'https://www.compraconfio.shop/';
 
 var HEADERS = [
   'Fecha',
@@ -33,9 +39,7 @@ var HEADERS = [
   'Fuente',
   'Estado',
   'Product page',
-  '',
-  'country',
-  'currency'
+  'Country'
 ];
 
 function doPost(e) {
@@ -51,7 +55,7 @@ function doPost(e) {
 function doGet() {
   return jsonOutput_({
     ok: true,
-    message: 'CompraConfio order endpoint v20261023-plain-number is running.'
+    message: 'CompraConfio order endpoint v20261023-page-country is running.'
   });
 }
 
@@ -112,8 +116,8 @@ function appendOrder_(data) {
   var total = normalizeAmount_(data.total != null && data.total !== '' ? data.total : data.price);
   var currency = String(data.currency || data.marketCurrency || 'GTQ').toUpperCase();
   var moneda = currency;
-  var marketCountry = data.marketCountry || inferCountry_(data);
-  var productPage = data.productPage || '';
+  var country = countryLabel_(data.marketCountry || inferCountry_(data), currency);
+  var productPage = data.productPage || productPageFromSource_(data.source);
   var createdAt = data.createdAt ? new Date(data.createdAt) : new Date();
 
   sheet.appendRow([
@@ -136,9 +140,7 @@ function appendOrder_(data) {
     data.source || '',
     data.status || 'Nuevo',
     productPage,
-    '',
-    marketCountry,
-    currency
+    country
   ]);
 
   var row = sheet.getLastRow();
@@ -154,6 +156,24 @@ function inferCountry_(data) {
   return c || '';
 }
 
+function countryLabel_(value, currency) {
+  var c = String(value || '').toLowerCase();
+  if (c.indexOf('panam') >= 0 || c === 'pa') return 'Panamá';
+  if (c.indexOf('guatem') >= 0 || c === 'gt') return 'Guatemala';
+  if (!c) {
+    var cur = String(currency || '').toUpperCase();
+    if (cur === 'USD') return 'Panamá';
+    if (cur === 'GTQ') return 'Guatemala';
+  }
+  return value || '';
+}
+
+function productPageFromSource_(source) {
+  var s = String(source || '').trim();
+  if (!s || s === 'deploy-check' || s === 'compraconfio') return '';
+  return SITE_URL + s;
+}
+
 function getSheet_() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = ss.getSheetByName(SHEET_NAME);
@@ -166,13 +186,19 @@ function getSheet_() {
 }
 
 function ensureHeaders_(sheet) {
-  if (sheet.getLastRow() > 0) {
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(HEADERS);
+    sheet.setFrozenRows(1);
+    sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold');
     return;
   }
 
-  sheet.appendRow(HEADERS);
-  sheet.setFrozenRows(1);
-  sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold');
+  [COL_PRODUCT_PAGE, COL_COUNTRY].forEach(function (col) {
+    var cell = sheet.getRange(1, col);
+    if (cell.getValue() !== HEADERS[col - 1]) {
+      cell.setValue(HEADERS[col - 1]).setFontWeight('bold');
+    }
+  });
 }
 
 /**
@@ -192,6 +218,27 @@ function fixExistingPedidosAmountFormats() {
         setPlainAmount_(sheet, row, col, n);
       }
     });
+  }
+}
+
+/**
+ * Run once from the Apps Script editor to add the headers and fill Product page / Country on old rows.
+ */
+function backfillProductPageAndCountry() {
+  var sheet = getSheet_();
+  ensureHeaders_(sheet);
+  var lastRow = sheet.getLastRow();
+  if (lastRow < 2) return;
+
+  for (var row = 2; row <= lastRow; row++) {
+    var pageCell = sheet.getRange(row, COL_PRODUCT_PAGE);
+    var countryCell = sheet.getRange(row, COL_COUNTRY);
+    if (!pageCell.getValue()) {
+      pageCell.setValue(productPageFromSource_(sheet.getRange(row, COL_FUENTE).getValue()));
+    }
+    if (!countryCell.getValue()) {
+      countryCell.setValue(countryLabel_('', sheet.getRange(row, COL_MONEDA).getValue()));
+    }
   }
 }
 
