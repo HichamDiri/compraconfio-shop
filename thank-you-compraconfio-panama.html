@@ -169,6 +169,7 @@
       'cc-lip-duo-pa': '/images/peel-off-lip-duo/hero-product.jpg',
       'cc-silk-collagen-pa': '/images/silk-collagen-ampoule/hero-product.jpg',
       'cc-toilet-bolts-pa': '/images/toilet-seat-bolts/hero-bogo.jpg',
+      'cc-voyage-pa': '/images/voyage-hero-1.webp',
       'cc-mascara': '/images/mascara-product.png'
     };
     var sourceImages = {
@@ -190,6 +191,7 @@
       'peel-off-lip-duo-panama': '/images/peel-off-lip-duo/hero-product.jpg',
       'korean-silk-collagen-ampoule-panama': '/images/silk-collagen-ampoule/hero-product.jpg',
       'universal-toilet-seat-bolts-panama': '/images/toilet-seat-bolts/hero-bogo.jpg',
+      'voyage-nova-panama': '/images/voyage-hero-1.webp',
       'latine-mascara': '/images/mascara-product.png',
       'compraconfio-home': '/images/mascara-product.png'
     };
@@ -234,6 +236,9 @@
       fbPixelId = '28489676750661292';
     }
     if (!fbPixelId && p.get('source') === 'universal-toilet-seat-bolts-panama') {
+      fbPixelId = '28489676750661292';
+    }
+    if (!fbPixelId && p.get('source') === 'voyage-nova-panama') {
       fbPixelId = '28489676750661292';
     }
     var tiktokPixelId = p.get('tiktokPixelId') || '';
@@ -307,7 +312,8 @@
       var fbConversionEvent = p.get('fbEvent') || (
         orderSource === 'car-solar-alarm-led-panama-meta' ||
         orderSource === 'korean-silk-collagen-ampoule-panama' ||
-        orderSource === 'universal-toilet-seat-bolts-panama'
+        orderSource === 'universal-toilet-seat-bolts-panama' ||
+        orderSource === 'voyage-nova-panama'
           ? 'Lead'
           : 'Purchase'
       );
