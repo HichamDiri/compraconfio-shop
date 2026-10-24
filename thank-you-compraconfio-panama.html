@@ -151,6 +151,7 @@
       'cc-car-alarm-pa': '/images/car-solar-alarm-led/hero-product.jpg',
       'cc-lip-duo-pa': '/images/peel-off-lip-duo/hero-product.jpg',
       'cc-silk-collagen-pa': '/images/silk-collagen-ampoule/hero-product.jpg',
+      'cc-toilet-bolts-pa': '/images/toilet-seat-bolts/hero-bogo.jpg',
       'cc-mascara': '/images/mascara-product.png'
     };
     var sourceImages = {
@@ -171,6 +172,7 @@
       'car-solar-alarm-led-panama-meta': '/images/car-solar-alarm-led/hero-product.jpg',
       'peel-off-lip-duo-panama': '/images/peel-off-lip-duo/hero-product.jpg',
       'korean-silk-collagen-ampoule-panama': '/images/silk-collagen-ampoule/hero-product.jpg',
+      'universal-toilet-seat-bolts-panama': '/images/toilet-seat-bolts/hero-bogo.jpg',
       'latine-mascara': '/images/mascara-product.png',
       'compraconfio-home': '/images/mascara-product.png'
     };
@@ -212,6 +214,9 @@
       fbPixelId = '28489676750661292';
     }
     if (!fbPixelId && p.get('source') === 'korean-silk-collagen-ampoule-panama') {
+      fbPixelId = '28489676750661292';
+    }
+    if (!fbPixelId && p.get('source') === 'universal-toilet-seat-bolts-panama') {
       fbPixelId = '28489676750661292';
     }
     var tiktokPixelId = p.get('tiktokPixelId') || '';
@@ -284,7 +289,8 @@
       var orderSource = p.get('source') || '';
       var fbConversionEvent = p.get('fbEvent') || (
         orderSource === 'car-solar-alarm-led-panama-meta' ||
-        orderSource === 'korean-silk-collagen-ampoule-panama'
+        orderSource === 'korean-silk-collagen-ampoule-panama' ||
+        orderSource === 'universal-toilet-seat-bolts-panama'
           ? 'Lead'
           : 'Purchase'
       );
