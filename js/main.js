@@ -357,7 +357,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initTikTokPixel(earlyTikTokPixelId);
   }
 
-  function loadTracking() {
+  function loadClarity() {
+    if (document.querySelector('script[src*="/js/clarity.js"]')) return;
     (function(c, l, a, r, i, t, y) {
       c[a] = c[a] || function() {
         (c[a].q = c[a].q || []).push(arguments);
@@ -368,6 +369,10 @@ document.addEventListener('DOMContentLoaded', function() {
       y = l.getElementsByTagName(r)[0];
       y.parentNode.insertBefore(t, y);
     })(window, document, 'clarity', 'script', 'y6dpyklm95');
+  }
+
+  function loadTracking() {
+    loadClarity();
 
     var fbPixelId = getFbPixelId();
     var snapshot = getTrackingSnapshot();

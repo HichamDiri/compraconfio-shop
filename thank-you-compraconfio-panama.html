@@ -116,6 +116,23 @@
     var shipping = Number(p.get('shipping') || 0);
     var total = p.get('total') || price;
     var totalLabel = currencyPrefix + total + ' ' + currencyLabel;
+    var source = p.get('source') || '';
+
+    (function tagClarityThankYou() {
+      var tries = 0;
+      function attempt() {
+        if (typeof window.clarity === 'function') {
+          window.clarity('set', 'page_type', 'thank_you');
+          window.clarity('set', 'order_id', orderId);
+          if (source) window.clarity('set', 'funnel', source);
+          if (productName) window.clarity('set', 'product', productName);
+          window.clarity('event', 'thank_you_view');
+          return;
+        }
+        if (++tries < 40) setTimeout(attempt, 250);
+      }
+      attempt();
+    })();
 
     if (p.get('shippingMethod')) {
       document.getElementById('shippingRow').hidden = false;
@@ -135,7 +152,6 @@
     if (address) document.getElementById('customerAddress').textContent = address;
 
     var productId = p.get('productId') || p.get('bundleOption') || '';
-    var source = p.get('source') || '';
     var productImages = {
       'cc-digest-pa': '/images/digest-capsules/hero-product.png',
       'cc-rfid-holder-pa': '/images/rfid-card-holder/hero-product.png',
