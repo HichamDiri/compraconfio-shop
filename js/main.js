@@ -694,11 +694,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function normalizePhone(value, country) {
     if (country === 'GT') {
-      return normalizeGuatemalaPhone(value);
+      return normalizeGuatemalaPhone(value) || normalizeLenientPhone(value);
     }
 
     if (country === 'PA') {
-      return normalizePanamaPhone(value);
+      return normalizePanamaPhone(value) || normalizeLenientPhone(value);
     }
 
     if (country === 'QA') {
@@ -870,7 +870,7 @@ document.addEventListener('DOMContentLoaded', function() {
           : (country === 'GT'
             ? 'Por favor ingresa un número guatemalteco válido (ej: 55123456 o +50255123456)'
             : (country === 'PA'
-              ? 'Por favor revisa tu número de WhatsApp: debe tener 8 dígitos (ej: 6123 4567)'
+              ? 'Por favor revisa tu número de WhatsApp (ej: 6123 4567)'
               : 'Por favor ingresa un número de teléfono válido')));
       } else {
         alert(phoneLenient

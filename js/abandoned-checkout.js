@@ -163,7 +163,7 @@
 
       if (!firstName || !firstName.value.trim()) return false;
       if (!lastName || !lastName.value.trim()) return false;
-      if (!normalizeCheckoutPhone(phone && phone.value)) return false;
+      if (!capturePhone(phone && phone.value)) return false;
       if (!department || !department.value.trim()) return false;
       if (!city || city.disabled || !city.value.trim()) return false;
       if (!addressLine || !addressLine.value.trim()) return false;
