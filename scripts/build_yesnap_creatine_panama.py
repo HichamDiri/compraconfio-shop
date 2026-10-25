@@ -58,7 +58,7 @@ def build_css() -> None:
     css = css.replace('body[data-product="cinnamon-pa"]', 'body[data-product="creatine-pa"]')
     css = css.replace(
         "/* Metabolae Ceylon Cinnamon Panamá — Hale-style layout */",
-        "/* YESNAP Creatine for Women Panamá — Hale-style layout */",
+        "/* Creatine for Women Peach Pout Panamá — Hale-style layout */",
     )
     css = css.replace("--hl-crimson: #7B4A2E;", "--hl-crimson: #D63384;")
     css = css.replace("--hl-crimson-bright: #9A6238;", "--hl-crimson-bright: #E85A9A;")
@@ -75,7 +75,7 @@ def build_css() -> None:
 def gallery_block() -> str:
     q = f"?v={V}"
     slides = [
-        ("hero-product.jpg", "YESNAP Creatine for Women Peach Pout — bolsa con 30 sobres"),
+        ("hero-product.jpg", "Creatine for Women Peach Pout Peach Pout — bolsa con 30 sobres"),
         ("hero-formula.jpg", "Fórmula con creatina, colágeno y aminoácidos — sabor durazno"),
         ("hero-benefits.jpg", "Beneficios para rutina fitness y bienestar"),
         ("hero-how-to.jpg", "Sobres individuales — mezclar con agua"),
@@ -123,19 +123,19 @@ def replace_voices(html: str) -> str:
 
     <div class="voices-track">
       <article class="voice">
-        <img src="{IMG}/hero-product.jpg?v={V}" alt="Cliente con YESNAP Creatine" width="640" height="640" loading="lazy" decoding="async">
+        <img src="{IMG}/hero-product.jpg?v={V}" alt="Cliente con creatina Peach Pout" width="640" height="640" loading="lazy" decoding="async">
         <p class="voice-name">Valeria R. · Panamá</p>
         <p><strong>Me gusta el sabor durazno.</strong> Lo tomo después del gym y se siente fácil de mantener. El sobre se mezcla bien con agua fría y no me deja grumos raros.</p>
         <cite>Reseña de cliente</cite>
       </article>
       <article class="voice">
-        <img src="{IMG}/hero-formula.jpg?v={V}" alt="Cliente con creatina YESNAP" width="640" height="640" loading="lazy" decoding="async">
+        <img src="{IMG}/hero-formula.jpg?v={V}" alt="Cliente con creatina Peach Pout" width="640" height="640" loading="lazy" decoding="async">
         <p class="voice-name">Daniela M. · San Miguelito</p>
         <p><strong>Práctica para mi rutina.</strong> Llevo los sobres en la bolsa del gym. Me ayuda a ser constante con mi entrenamiento de pierna y glúteos.</p>
         <cite>Reseña de cliente</cite>
       </article>
       <article class="voice">
-        <img src="{IMG}/hero-benefits.jpg?v={V}" alt="Cliente satisfecha con YESNAP" width="640" height="640" loading="lazy" decoding="async">
+        <img src="{IMG}/hero-benefits.jpg?v={V}" alt="Cliente satisfecha con creatina Peach Pout" width="640" height="640" loading="lazy" decoding="async">
         <p class="voice-name">Camila S. · David</p>
         <p><strong>Compra sencilla y entrega clara.</strong> Pedí con pago contra entrega y me confirmaron por WhatsApp. El producto llegó bien empacado.</p>
         <cite>Reseña de cliente</cite>
@@ -241,24 +241,24 @@ def build_html() -> None:
     html = html.replace('data-product="cinnamon-pa"', 'data-product="creatine-pa"')
     html = html.replace("cc-cinnamon-pa", "cc-creatine-pa")
     html = html.replace("cinnamon-timeline", "creatine-timeline")
-    html = html.replace("Metabolae — Canela de Ceilán", "YESNAP Creatine for Women")
-    html = html.replace("Metabolae Canela de Ceilán", "YESNAP Creatine for Women Peach Pout")
-    html = html.replace("Metabolae Ceylon Cinnamon", "YESNAP Creatine for Women")
+    html = html.replace("Metabolae — Canela de Ceilán", "Creatine for Women Peach Pout")
+    html = html.replace("Metabolae Canela de Ceilán", "Creatine for Women Peach Pout Peach Pout")
+    html = html.replace("Metabolae Ceylon Cinnamon", "Creatine for Women Peach Pout")
     html = html.replace("Metabolae — <em>Canela de Ceilán 7200 mg</em> con aceite MCT · 300 cápsulas blandas",
-                        "YESNAP — <em>Creatine for Women</em> Peach Pout · 30 sobres · sabor durazno")
+                        " <em>Creatine for Women</em> Peach Pout · 30 sobres · sabor durazno")
     html = html.replace(
         "<title>Metabolae Canela de Ceilán 7200 mg, with MCT Oil, 300 Softgels | CompraConfio Panamá</title>",
-        "<title>YESNAP Creatine for Women Peach Pout — 30 sobres | CompraConfio Panamá</title>",
+        "<title>Creatine for Women Peach Pout Peach Pout — 30 sobres | CompraConfio Panamá</title>",
     )
     html = re.sub(
         r"<title>.*?</title>",
-        "<title>YESNAP Creatine for Women Peach Pout — 30 sobres | CompraConfio Panamá</title>",
+        "<title>Creatine for Women Peach Pout Peach Pout — 30 sobres | CompraConfio Panamá</title>",
         html,
         count=1,
     )
     html = re.sub(
         r'<meta name="description" content="[^"]*">',
-        '<meta name="description" content="Creatina para mujeres YESNAP Peach Pout: 30 sobres, creatina monohidratada, colágeno y aminoácidos. Sabor durazno. Envío gratis y pago contra entrega en Panamá.">',
+        '<meta name="description" content="Creatina para mujeres Peach Pout: 30 sobres, creatina monohidratada, colágeno y aminoácidos. Sabor durazno. Envío gratis y pago contra entrega en Panamá.">',
         html,
         count=1,
     )
@@ -318,7 +318,7 @@ def build_html() -> None:
         bundles = f"""<span class="block-label">1. Elige tu oferta</span>
         <div class="bundles">
           <label class="bundle bundle-option is-selected">
-            <input type="radio" name="bundleOption" value="cc-creatine-pa-1" data-product-id="cc-creatine-pa-1" data-product-name="YESNAP Creatine for Women - 1 bolsa" data-price="39" data-old-price="69" data-save="43" data-label="1 Bolsa · 30 sobres" checked>
+            <input type="radio" name="bundleOption" value="cc-creatine-pa-1" data-product-id="cc-creatine-pa-1" data-product-name="Creatine for Women Peach Pout - 1 bolsa" data-price="39" data-old-price="69" data-save="43" data-label="1 Bolsa · 30 sobres" checked>
             <div class="bundle-card">
               <div class="bundle-head">
                 <span class="bundle-pick"><span class="radio"></span>1 Bolsa</span>
@@ -330,7 +330,7 @@ def build_html() -> None:
             </div>
           </label>
           <label class="bundle bundle-option">
-            <input type="radio" name="bundleOption" value="cc-creatine-pa-2" data-product-id="cc-creatine-pa-2" data-product-name="YESNAP Creatine for Women - 2 bolsas" data-price="59" data-old-price="118" data-save="50" data-label="2 Bolsas · 60 sobres">
+            <input type="radio" name="bundleOption" value="cc-creatine-pa-2" data-product-id="cc-creatine-pa-2" data-product-name="Creatine for Women Peach Pout - 2 bolsas" data-price="59" data-old-price="118" data-save="50" data-label="2 Bolsas · 60 sobres">
             <div class="bundle-card">
               <span class="bundle-flag">Más popular</span>
               <div class="bundle-head">
@@ -343,7 +343,7 @@ def build_html() -> None:
             </div>
           </label>
           <label class="bundle bundle-option">
-            <input type="radio" name="bundleOption" value="cc-creatine-pa-3" data-product-id="cc-creatine-pa-3" data-product-name="YESNAP Creatine for Women - 3 bolsas" data-price="79" data-old-price="177" data-save="55" data-label="3 Bolsas · 90 sobres">
+            <input type="radio" name="bundleOption" value="cc-creatine-pa-3" data-product-id="cc-creatine-pa-3" data-product-name="Creatine for Women Peach Pout - 3 bolsas" data-price="79" data-old-price="177" data-save="55" data-label="3 Bolsas · 90 sobres">
             <div class="bundle-card">
               <span class="bundle-flag">Mejor valor</span>
               <div class="bundle-head">
@@ -466,7 +466,7 @@ def build_html() -> None:
     )
     html = html.replace(
         "<p class=\"safety-lead\">Incorpora Metabolae Ceylon Cinnamon de forma informada. Completa tus datos y confirma precio, dirección y pago contra entrega.</p>",
-        "<p class=\"safety-lead\">Descubre YESNAP Creatine for Women y complementa tus objetivos de rendimiento y desarrollo muscular. Envío gratis y pago contra entrega en Panamá.</p>",
+        "<p class=\"safety-lead\">Descubre Creatine for Women Peach Pout y complementa tus objetivos de rendimiento y desarrollo muscular. Envío gratis y pago contra entrega en Panamá.</p>",
     )
     html = html.replace("¡Haz tu pedido ahora!", "¡Quiero mi creatina!")
 
@@ -491,7 +491,7 @@ def build_html() -> None:
     if desc:
         new_desc = """<button type="button" class="collapse-btn">Descripción <i>+</i></button>
           <div class="collapse-body">
-            <p><strong>YESNAP Creatine for Women (Peach Pout)</strong> es una fórmula en sobres con creatina monohidratada pensada para complementar la rutina de mujeres que entrenan fuerza y glúteos.</p>
+            <p><strong>Creatine for Women Peach Pout (Peach Pout)</strong> es una fórmula en sobres con creatina monohidratada pensada para complementar la rutina de mujeres que entrenan fuerza y glúteos.</p>
             <p>Cada bolsa incluye <strong>30 sobres individuales</strong>. Sabor durazno. Mezcla con agua según las instrucciones del envase.</p>
             <p>Consulta siempre la etiqueta para verificar ingredientes, cantidades por porción e instrucciones de uso.</p>
           </div>
