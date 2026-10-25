@@ -1384,6 +1384,49 @@ body[data-product="creatine-pa"] .text-link {
   border-bottom-color: var(--hl-crimson-deep);
 }
 
+body[data-product="creatine-pa"] .guarantee {
+  border-top: 1px solid var(--hl-line);
+  background: var(--hl-cream-warm);
+  padding: 44px 0;
+}
+
+body[data-product="creatine-pa"] .guarantee-badge {
+  width: 200px;
+  max-width: 78vw;
+}
+
+body[data-product="creatine-pa"] .guarantee-copy h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  color: var(--hl-ink);
+}
+
+body[data-product="creatine-pa"] .guarantee-copy > p {
+  color: var(--hl-muted);
+}
+
+body[data-product="creatine-pa"] .guarantee .text-link {
+  margin-top: 6px;
+  color: var(--hl-ink);
+  border-bottom-color: var(--hl-ink);
+}
+
+body[data-product="creatine-pa"] .guarantee-note a {
+  color: var(--hl-crimson-deep);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (min-width: 1000px) {
+  body[data-product="creatine-pa"] .guarantee {
+    padding: 64px 0;
+  }
+
+  body[data-product="creatine-pa"] .guarantee-badge {
+    width: 260px;
+  }
+}
+
 @media (max-width: 699px) {
   body[data-product="creatine-pa"] .product-info, body[data-product="creatine-pa"] .product-info{ padding: 18px 16px 28px; }
   body[data-product="creatine-pa"] .product-title, body[data-product="creatine-pa"] .product-title{ font-size: 1.42rem; margin-bottom: 14px; }

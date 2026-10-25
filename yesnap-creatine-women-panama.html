@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/product.css?v=20260811a">
-  <link rel="stylesheet" href="/css/yesnap-creatine-women.css?v=20261025j">
+  <link rel="stylesheet" href="/css/yesnap-creatine-women.css?v=20261025k">
   <script src="/js/clarity.js?v=20261024" async></script>
 </head>
 <body data-country="PA" data-abandon-checkout="on" data-abandon-idle-minutes="5" data-lang="es" data-brand="compraconfio" data-product="creatine-pa" data-snap-pixel="off" data-fb-pixel="off" data-thankyou="/thank-you-compraconfio-panama.html">
@@ -361,6 +361,25 @@
   </div>
 </section>
 
+<section class="guarantee" id="garantia">
+  <div class="shell">
+    <div class="guarantee-inner">
+      <img class="guarantee-badge" src="/images/garantia-90-dias.jpg?v=20261025k" alt="Garantía de 90 días, satisfacción total" loading="lazy" width="1024" height="1024" decoding="async">
+      <div class="guarantee-copy">
+        <h2>Pruébalo sin presión</h2>
+        <p>Queremos que descubras si Peach Pout encaja en tu rutina — sin riesgo ni pagos adelantados.</p>
+        <ul class="guarantee-points">
+          <li>Entregamos primero — pagas en efectivo al recibir.</li>
+          <li>90 días para probarla con calma desde la entrega.</li>
+          <li>Si no te encanta, te devolvemos el 100% — sin complicaciones.</li>
+        </ul>
+        <button type="button" class="text-link js-open-order">Reservar mi pedido</button>
+        <p class="guarantee-note">Escríbenos a <a href="mailto:contacto@compraconfio.shop">contacto@compraconfio.shop</a> — respondemos el mismo día.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="hl-section hl-cream">
   <div class="shell">
     <p class="hl-eyebrow">Preguntas frecuentes</p>
@@ -655,12 +674,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     rightBtn.addEventListener('click', function () {
-      if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 20) fastScroll(0);
-      else fastScroll(track.scrollLeft + cardW);
+      if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 20) {
+        fastScroll(0, afterCarouselMove);
+      } else {
+        fastScroll(track.scrollLeft + cardW, afterCarouselMove);
+      }
     });
     leftBtn.addEventListener('click', function () {
-      if (track.scrollLeft <= 20) fastScroll(track.scrollWidth);
-      else fastScroll(track.scrollLeft - cardW);
+      if (track.scrollLeft <= 20) {
+        fastScroll(track.scrollWidth, afterCarouselMove);
+      } else {
+        fastScroll(track.scrollLeft - cardW, afterCarouselMove);
+      }
     });
 
     if (isMobile) {
