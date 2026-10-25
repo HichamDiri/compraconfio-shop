@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/product.css?v=20260811a">
-  <link rel="stylesheet" href="/css/yesnap-creatine-women.css?v=20261025c">
+  <link rel="stylesheet" href="/css/yesnap-creatine-women.css?v=20261025h">
   <script src="/js/clarity.js?v=20261024" async></script>
 </head>
 <body data-country="PA" data-abandon-checkout="on" data-abandon-idle-minutes="5" data-lang="es" data-brand="compraconfio" data-product="creatine-pa" data-snap-pixel="off" data-fb-pixel="off" data-thankyou="/thank-you-compraconfio-panama.html">
@@ -70,7 +70,7 @@
     <section class="product-info">
       <div class="rating-row">
         <span class="stars">★★★★★</span>
-        <a href="#ingredientes">4.9 Excelente · Información del producto</a>
+        <a href="#resenas">4.9 Excelente · Ver reseñas</a>
       </div>
 
       <h1 class="product-title"><em>Creatine for Women</em> Peach Pout · 30 sobres · sabor durazno</h1>
@@ -294,6 +294,45 @@
   </div>
 </section>
 
+<section class="hl-section hl-warm" id="resenas">
+  <div class="shell">
+    <p class="hl-eyebrow">Experiencias reales</p>
+    <h2 class="hl-title">Lo que dicen quienes la usan</h2>
+    <p class="natto-review-lead">Reseñas de clientas sobre sabor, practicidad de los sobres y su rutina de entrenamiento.</p>
+
+    <div class="natto-review-grid">
+      <article class="review-card review-card--photo">
+        <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
+          <img src="/images/yesnap-creatine-women/review-1.png?v=20261025h" alt="Bebida de creatina sabor durazno en vaso" width="800" height="800" loading="lazy" decoding="async">
+        </button>
+        <div class="stars">★★★★★</div>
+        <p>El sabor es dulce y muy refrescante. Me encanta que lleve 5000 mg de creatina y 5000 mg de colágeno, además de vitamina D3, ácido hialurónico, maca, L-glutamina, mioinositol y aminoácidos. Llevo unos 2 meses tomándola y noto los resultados a la vista y en cómo me siento. Es muy accesible y no he tenido efectos secundarios. Seguiré con este producto: hay muchas razones para estar contenta.</p>
+        <cite>Michelle R. · Compra verificada</cite>
+      </article>
+
+      <article class="review-card review-card--photo">
+        <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
+          <img src="/images/yesnap-creatine-women/review-2.png?v=20261025h" alt="Sobre individual de creatina Peach Pout" width="800" height="800" loading="lazy" decoding="async">
+        </button>
+        <div class="stars">★★★★★</div>
+        <p>El sabor durazno suena delicioso y me gusta lo práctico de los sobres individuales. La combinación de creatina con otros ingredientes la convierte en una opción fácil de sumar a mi rutina de entrenamiento. Fácil de llevar y simple de preparar.</p>
+        <cite>Jenna K. · Compra verificada</cite>
+      </article>
+
+      <article class="review-card review-card--photo">
+        <button type="button" class="review-photo-btn js-review-photo" aria-label="Ver foto ampliada">
+          <img src="/images/yesnap-creatine-women/review-3.png?v=20261025h" alt="Bolsa de creatina Peach Pout con sobres" width="800" height="800" loading="lazy" decoding="async">
+        </button>
+        <div class="stars">★★★★★</div>
+        <p>Llevo poco tiempo usando esta creatina, pero me encanta lo fácil que es incorporarla a mi rutina de entrenamiento para glúteos. Quiero trabajar para conseguir unos glúteos más fuertes y definidos, y los sobres individuales son súper prácticos para llevar a cualquier parte.</p>
+        <cite>Valeria M. · Panamá</cite>
+      </article>
+    </div>
+
+    <p class="natto-review-note">Los resultados varían según cada persona, el entrenamiento y el uso continuado según la etiqueta.</p>
+  </div>
+</section>
+
 <section class="hl-section hl-beige">
   <div class="shell">
     <p class="hl-eyebrow">Tu camino</p>
@@ -494,6 +533,19 @@
         <p class="pay-note">Envío gratis · Garantía de 90 días</p>
       </form>
     </div>
+  </div>
+</div>
+
+<div class="review-lightbox" id="reviewLightbox" role="dialog" aria-modal="true" aria-label="Foto de reseña ampliada" hidden>
+  <div class="review-lightbox-backdrop" data-close-lightbox></div>
+  <div class="review-lightbox-panel">
+    <button type="button" class="review-lightbox-close" data-close-lightbox aria-label="Cerrar">&times;</button>
+    <button type="button" class="review-lightbox-nav is-prev" id="reviewLightboxPrev" aria-label="Foto anterior">&#8249;</button>
+    <figure class="review-lightbox-figure">
+      <img id="reviewLightboxImg" src="" alt="">
+      <figcaption id="reviewLightboxCount"></figcaption>
+    </figure>
+    <button type="button" class="review-lightbox-nav is-next" id="reviewLightboxNext" aria-label="Foto siguiente">&#8250;</button>
   </div>
 </div>
 
@@ -849,6 +901,71 @@ document.addEventListener('DOMContentLoaded', function () {
     viewing.textContent = (48 + Math.floor(Math.random() * 30)) + ' personas viendo';
     orders.textContent = (1100 + Math.floor(Math.random() * 120)).toLocaleString('es-PA') + ' pedidos esta semana';
   }
+
+  (function initReviewLightbox() {
+    var lightbox = document.getElementById('reviewLightbox');
+    var lightboxImg = document.getElementById('reviewLightboxImg');
+    var lightboxCount = document.getElementById('reviewLightboxCount');
+    var lightboxPrev = document.getElementById('reviewLightboxPrev');
+    var lightboxNext = document.getElementById('reviewLightboxNext');
+    if (!lightbox || !lightboxImg) return;
+
+    var reviewPhotos = Array.prototype.slice.call(document.querySelectorAll('#resenas .js-review-photo img'));
+    var lightboxIndex = 0;
+    var lightboxLastFocused = null;
+
+    function showLightboxPhoto(index) {
+      if (!reviewPhotos.length) return;
+      lightboxIndex = (index + reviewPhotos.length) % reviewPhotos.length;
+      var photo = reviewPhotos[lightboxIndex];
+      lightboxImg.src = photo.currentSrc || photo.src;
+      lightboxImg.alt = photo.alt || '';
+      if (lightboxCount) {
+        lightboxCount.textContent = (lightboxIndex + 1) + ' / ' + reviewPhotos.length;
+      }
+      if (lightboxPrev) lightboxPrev.disabled = reviewPhotos.length <= 1;
+      if (lightboxNext) lightboxNext.disabled = reviewPhotos.length <= 1;
+    }
+
+    function openLightbox(index) {
+      lightboxLastFocused = document.activeElement;
+      showLightboxPhoto(index);
+      lightbox.hidden = false;
+      lightbox.classList.add('is-open');
+      document.body.classList.add('no-scroll');
+      var closeBtn = lightbox.querySelector('.review-lightbox-close');
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      lightbox.hidden = true;
+      lightboxImg.removeAttribute('src');
+      document.body.classList.remove('no-scroll');
+      if (lightboxLastFocused && lightboxLastFocused.focus) lightboxLastFocused.focus();
+    }
+
+    document.querySelectorAll('#resenas .js-review-photo').forEach(function (btn, idx) {
+      btn.addEventListener('click', function () { openLightbox(idx); });
+    });
+
+    lightbox.querySelectorAll('[data-close-lightbox]').forEach(function (el) {
+      el.addEventListener('click', closeLightbox);
+    });
+    if (lightboxPrev) {
+      lightboxPrev.addEventListener('click', function () { showLightboxPhoto(lightboxIndex - 1); });
+    }
+    if (lightboxNext) {
+      lightboxNext.addEventListener('click', function () { showLightboxPhoto(lightboxIndex + 1); });
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft' && lightboxPrev) showLightboxPhoto(lightboxIndex - 1);
+      if (e.key === 'ArrowRight' && lightboxNext) showLightboxPhoto(lightboxIndex + 1);
+    });
+  })();
 });
 </script>
 </body>

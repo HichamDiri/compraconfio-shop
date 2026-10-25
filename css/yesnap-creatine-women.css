@@ -1142,6 +1142,12 @@ body[data-product="creatine-pa"] .natto-review-grid, body[data-product="creatine
   }
 }
 
+@media (min-width: 1024px) {
+  body[data-product="creatine-pa"] .natto-review-grid, body[data-product="creatine-pa"] .natto-review-grid{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 body[data-product="creatine-pa"] .natto-review-grid .review-card, body[data-product="creatine-pa"] .natto-review-grid .review-card{
   border: 1px solid var(--hl-line);
   border-radius: 10px;
