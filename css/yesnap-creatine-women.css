@@ -787,6 +787,8 @@ body[data-product="creatine-pa"] .ingc__card-back, body[data-product="creatine-p
   padding: 28px 24px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  gap: 10px;
 }
 
 body[data-product="creatine-pa"] .ingc__card-title, body[data-product="creatine-pa"] .ingc__card-title{

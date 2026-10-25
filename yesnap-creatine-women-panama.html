@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/product.css?v=20260811a">
-  <link rel="stylesheet" href="/css/yesnap-creatine-women.css?v=20261025i">
+  <link rel="stylesheet" href="/css/yesnap-creatine-women.css?v=20261025j">
   <script src="/js/clarity.js?v=20261024" async></script>
 </head>
 <body data-country="PA" data-abandon-checkout="on" data-abandon-idle-minutes="5" data-lang="es" data-brand="compraconfio" data-product="creatine-pa" data-snap-pixel="off" data-fb-pixel="off" data-thankyou="/thank-you-compraconfio-panama.html">
@@ -570,7 +570,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var isMobile = window.matchMedia('(max-width: 749px)').matches;
     var cardW = isMobile ? (window.innerWidth * 0.72 + 12) : 318;
 
-    function fastScroll(target) {
+    function fastScroll(target, done) {
       var start = track.scrollLeft;
       var diff = target - start;
       var duration = isMobile ? 280 : 250;
@@ -581,6 +581,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var ease = p < 0.5 ? 2 * p * p : -1 + (4 - 2 * p) * p;
         track.scrollLeft = start + diff * ease;
         if (p < 1) requestAnimationFrame(step);
+        else if (typeof done === 'function') done();
       }
       requestAnimationFrame(step);
     }
@@ -611,6 +612,13 @@ document.addEventListener('DOMContentLoaded', function () {
       fastScroll(card.offsetLeft + card.offsetWidth / 2 - track.clientWidth / 2);
     }
 
+    function syncFlippedToCenter() {
+      var idx = getClosestCardIndex();
+      cards.forEach(function (card, i) {
+        card.classList.toggle('is-flipped', i === idx);
+      });
+    }
+
     function applyArc() {
       var trackRect = track.getBoundingClientRect();
       var viewCenter = trackRect.left + trackRect.width / 2;
@@ -618,18 +626,26 @@ document.addEventListener('DOMContentLoaded', function () {
         var cardRect = card.getBoundingClientRect();
         var dist = (cardRect.left + cardRect.width / 2 - viewCenter) / (trackRect.width / 2);
         dist = Math.max(-1, Math.min(1, dist));
-        card.style.transform = 'rotate(' + (dist * 4) + 'deg) translateY(' + (Math.abs(dist) * 50) + 'px) scale(' + (1 - Math.abs(dist) * 0.04) + ')';
+        card.style.transform = 'translateY(' + (Math.abs(dist) * 50) + 'px) scale(' + (1 - Math.abs(dist) * 0.04) + ')';
       });
     }
 
+    function afterCarouselMove() {
+      applyArc();
+      syncFlippedToCenter();
+    }
+
     setTimeout(function () {
-      centerCard(1);
-      setTimeout(applyArc, 50);
+      centerCard(0);
+      setTimeout(afterCarouselMove, 50);
     }, 100);
 
     var isTouchActive = false;
+    var syncTimer = null;
     track.addEventListener('scroll', function () {
-      if (!isTouchActive) applyArc();
+      applyArc();
+      if (syncTimer) clearTimeout(syncTimer);
+      syncTimer = setTimeout(syncFlippedToCenter, 120);
     }, { passive: true });
 
     window.addEventListener('resize', function () {
@@ -666,7 +682,7 @@ document.addEventListener('DOMContentLoaded', function () {
           snapToClosest();
           setTimeout(function () {
             cards.forEach(function (c) { c.style.transition = ''; });
-            applyArc();
+            afterCarouselMove();
           }, 300);
         }, 120);
       }, { passive: true });
@@ -680,37 +696,15 @@ document.addEventListener('DOMContentLoaded', function () {
           snapToClosest();
           setTimeout(function () {
             cards.forEach(function (c) { c.style.transition = ''; });
-            applyArc();
+            afterCarouselMove();
           }, 300);
         }, 150);
       }, { passive: true });
-
-      cards.forEach(function (card) {
-        var startX = 0;
-        var startY = 0;
-        var startTime = 0;
-        card.addEventListener('touchstart', function (e) {
-          if (e.touches.length === 1) {
-            startX = e.touches[0].clientX;
-            startY = e.touches[0].clientY;
-            startTime = Date.now();
-          }
-        }, { passive: true });
-        card.addEventListener('touchend', function (e) {
-          if (!e.changedTouches.length) return;
-          var dx = Math.abs(e.changedTouches[0].clientX - startX);
-          var dy = Math.abs(e.changedTouches[0].clientY - startY);
-          var dt = Date.now() - startTime;
-          var scrolled = Math.abs(track.scrollLeft - trackScrollStart);
-          if (dx < 8 && dy < 8 && dt < 400 && scrolled < 8) {
-            card.classList.toggle('is-flipped');
-          }
-        });
-      });
     } else {
-      cards.forEach(function (card) {
+      cards.forEach(function (card, idx) {
         card.addEventListener('click', function () {
-          card.classList.toggle('is-flipped');
+          centerCard(idx);
+          setTimeout(afterCarouselMove, 280);
         });
       });
     }
