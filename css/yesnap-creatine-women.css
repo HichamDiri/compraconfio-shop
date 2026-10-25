@@ -245,11 +245,10 @@ body[data-product="creatine-pa"] .hale-trust div, body[data-product="creatine-pa
 }
 
 body[data-product="creatine-pa"] .hale-trust div img, body[data-product="creatine-pa"] .hale-trust div img{
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
   display: block;
-  border-radius: 50%;
 }
 
 body[data-product="creatine-pa"] .trusted-by, body[data-product="creatine-pa"] .trusted-by{
