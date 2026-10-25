@@ -1334,98 +1334,47 @@ body[data-product="creatine-pa"] .safety-lead, body[data-product="creatine-pa"] 
 body[data-product="creatine-pa"] .disclaimer, body[data-product="creatine-pa"] .disclaimer{ background: #fff; border-top: 1px solid var(--hl-line); padding: 26px 0; }
 body[data-product="creatine-pa"] .disclaimer p, body[data-product="creatine-pa"] .disclaimer p{ font-size: 0.75rem; line-height: 1.55; color: #8a7f7f; margin-bottom: 8px; }
 
-body[data-product="creatine-pa"] .ps-section .ps-row {
-  display: grid;
-  gap: 28px;
-  align-items: center;
+/* ---------- problem / solution (story-flow, like car-solar-alarm) ---------- */
+body[data-product="creatine-pa"] .story-flow .story-step:first-child {
+  border-top: none;
 }
 
-@media (min-width: 900px) {
-  body[data-product="creatine-pa"] .ps-section .ps-row {
-    grid-template-columns: 1fr minmax(260px, 42%);
-    gap: 40px;
-  }
-
-  body[data-product="creatine-pa"] .ps-section .ps-row--reverse {
-    grid-template-columns: minmax(260px, 42%) 1fr;
-  }
-
-  body[data-product="creatine-pa"] .ps-section .ps-row--reverse .ps-media {
-    order: -1;
-  }
-}
-
-body[data-product="creatine-pa"] .ps-copy .hl-lead,
-body[data-product="creatine-pa"] .ps-solution-card .hl-lead {
-  text-align: left;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-body[data-product="creatine-pa"] .ps-emphasis {
-  font-size: 0.98rem;
-  line-height: 1.55;
-  color: var(--hl-ink);
-  margin: 0 0 14px;
-}
-
-body[data-product="creatine-pa"] .ps-media {
-  margin: 0;
-  border-radius: 16px;
-  overflow: hidden;
+body[data-product="creatine-pa"] .feature-media--square {
+  aspect-ratio: 1 / 1;
   background: #fff0f6;
-  border: 1px solid var(--hl-line);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-body[data-product="creatine-pa"] .ps-media img {
-  display: block;
+body[data-product="creatine-pa"] .feature-media--square img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: contain;
+  display: block;
 }
 
-body[data-product="creatine-pa"] .ps-solution-card {
-  background: #fff;
-  border: 1px solid var(--hl-line);
-  border-radius: 16px;
-  padding: 24px 22px;
-  box-shadow: 0 10px 28px rgba(214, 51, 132, 0.08);
+body[data-product="creatine-pa"] .story-problem-photo {
+  object-fit: cover;
+  object-position: center;
 }
 
-body[data-product="creatine-pa"] .ps-solution-list {
-  list-style: none;
-  margin: 0 0 16px;
-  padding: 0;
+body[data-product="creatine-pa"] .story-solution-demo {
+  object-fit: contain;
+  object-position: center;
 }
 
-body[data-product="creatine-pa"] .ps-solution-list li {
-  position: relative;
-  padding: 8px 0 8px 28px;
-  font-size: 0.92rem;
-  line-height: 1.45;
+body[data-product="creatine-pa"] .feature-copy h2 {
+  font-family: var(--serif);
   color: var(--hl-ink);
 }
 
-body[data-product="creatine-pa"] .ps-solution-list li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--hl-crimson);
-  color: #fff;
-  font-size: 0.72rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+body[data-product="creatine-pa"] .feature-copy .perks li {
+  line-height: 1.5;
 }
 
-body[data-product="creatine-pa"] .ps-solution-card .btn-order {
-  width: 100%;
-  margin-top: 4px;
+body[data-product="creatine-pa"] .text-link {
+  color: var(--hl-crimson-deep);
+  border-bottom-color: var(--hl-crimson-deep);
 }
 
 @media (max-width: 699px) {
