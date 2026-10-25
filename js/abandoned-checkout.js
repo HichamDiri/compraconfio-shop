@@ -110,6 +110,8 @@
       var digits = String(value || '').replace(/[^\d]/g, '');
       if (/^507[2-9][0-9]{7}$/.test(digits)) return digits.slice(3);
       if (/^[2-9][0-9]{7}$/.test(digits)) return digits;
+      if (/^507[2-9][0-9]{6}$/.test(digits)) return digits.slice(3);
+      if (/^[2-9][0-9]{6}$/.test(digits)) return digits;
       return '';
     }
 
@@ -123,6 +125,13 @@
     function normalizeCheckoutPhone(value) {
       if (marketCountry === 'GT') return normalizeGuatemalaPhone(value);
       return normalizePanamaPhone(value);
+    }
+
+    function capturePhone(value) {
+      var strict = normalizeCheckoutPhone(value);
+      if (strict) return strict;
+      var digits = String(value || '').replace(/[^\d]/g, '');
+      return digits.length >= 7 && digits.length <= 15 ? digits : '';
     }
 
     function mergeFields() {
@@ -162,11 +171,20 @@
       return true;
     }
 
+    function hasLead() {
+      mergeFields();
+      var firstName = form.querySelector('#firstName');
+      var name = form.querySelector('#name');
+      var phone = form.querySelector('#phone');
+      var hasName = (firstName && firstName.value.trim()) || (name && name.value.trim());
+      return Boolean(hasName && capturePhone(phone && phone.value));
+    }
+
     function buildPayload() {
       mergeFields();
       var formData = new FormData(form);
       var bundle = form.querySelector('input[name="bundleOption"]:checked');
-      var phone = normalizeCheckoutPhone(formData.get('phone'));
+      var phone = capturePhone(formData.get('phone'));
       var firstName = String(formData.get('firstName') || '').trim();
       var lastName = String(formData.get('lastName') || '').trim();
       var name = String(formData.get('name') || '').trim() || (firstName + ' ' + lastName).trim();
@@ -212,7 +230,7 @@
     }
 
     function saveDraft() {
-      if (submitted || !isComplete()) {
+      if (submitted || !hasLead()) {
         try {
           localStorage.removeItem(DRAFT_KEY);
         } catch (error) {}
@@ -227,7 +245,7 @@
     function syncIdleAbandonTimer() {
       clearIdleTimer();
       if (!idleMs || submitted) return;
-      if (!isComplete()) return;
+      if (!hasLead()) return;
       idleTimer = setTimeout(function () {
         idleTimer = null;
         sendAbandon(false);
@@ -235,7 +253,7 @@
     }
 
     function sendAbandon(useBeacon) {
-      if (sending || submitted || !isComplete()) return;
+      if (sending || submitted || !hasLead()) return;
 
       var payload = buildPayload();
       if (!payload.phone || sessionStorage.getItem(storageKey(payload)) === '1') return;
@@ -259,6 +277,10 @@
     form.addEventListener('input', onFormActivity, true);
     form.addEventListener('change', onFormActivity, true);
 
+    form.addEventListener('invalid', function () {
+      sendAbandon(false);
+    }, true);
+
     form.addEventListener('submit', function () {
       if (isComplete()) submitted = true;
       clearIdleTimer();
@@ -270,6 +292,14 @@
     window.addEventListener('pagehide', function () {
       sendAbandon(true);
     });
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'hidden') sendAbandon(true);
+    });
+
+    window.ccCaptureLead = function () {
+      sendAbandon(false);
+    };
 
     document.addEventListener('click', function (event) {
       if (!event.target.closest('[data-close-order]')) return;

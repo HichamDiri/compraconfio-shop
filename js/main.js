@@ -681,6 +681,14 @@ document.addEventListener('DOMContentLoaded', function() {
       return digits;
     }
 
+    if (/^507[2-9][0-9]{6}$/.test(digits)) {
+      return digits.slice(3);
+    }
+
+    if (/^[2-9][0-9]{6}$/.test(digits)) {
+      return digits;
+    }
+
     return '';
   }
 
@@ -853,12 +861,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (!normalizedPhone) {
       e.preventDefault();
+      if (typeof window.ccCaptureLead === 'function') {
+        window.ccCaptureLead();
+      }
       if (isSpanishPage()) {
         alert(phoneLenient
           ? 'Por favor ingresa un número de teléfono válido'
           : (country === 'GT'
             ? 'Por favor ingresa un número guatemalteco válido (ej: 55123456 o +50255123456)'
-            : 'Por favor ingresa un número de teléfono válido'));
+            : (country === 'PA'
+              ? 'Por favor revisa tu número de WhatsApp: debe tener 8 dígitos (ej: 6123 4567)'
+              : 'Por favor ingresa un número de teléfono válido')));
       } else {
         alert(phoneLenient
           ? 'يرجى إدخال رقم هاتف صحيح'
