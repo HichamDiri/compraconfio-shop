@@ -11,9 +11,58 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/product.css?v=20260811a">
   <link rel="stylesheet" href="/css/yesnap-creatine-women.css?v=20261025k">
+  <meta name="tiktok-pixel-id" content="DA46KJ3C77U8UMTFN63G">
+  <link rel="preconnect" href="https://analytics.tiktok.com" crossorigin>
+  <link rel="dns-prefetch" href="https://analytics.tiktok.com">
   <script src="/js/clarity.js?v=20261024" async></script>
+  <script>
+  function bootTikTokPixel() {
+    var meta = document.querySelector('meta[name="tiktok-pixel-id"]');
+    var id = meta && meta.content;
+    if (!id || window.__tiktokPixelLoaded) return;
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject = t;
+      var ttq = w[t] = w[t] || [];
+      ttq.methods = ['page', 'track', 'identify', 'instances', 'debug', 'on', 'off', 'once', 'ready', 'alias', 'group', 'enableCookie', 'disableCookie', 'holdConsent', 'revokeConsent', 'grantConsent'];
+      ttq.setAndDefer = function (target, method) {
+        target[method] = function () {
+          target.push([method].concat(Array.prototype.slice.call(arguments, 0)));
+        };
+      };
+      for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
+      ttq.load = function (pixelId, options) {
+        var src = 'https://analytics.tiktok.com/i18n/pixel/events.js';
+        ttq._i = ttq._i || {};
+        ttq._i[pixelId] = [];
+        ttq._i[pixelId]._u = src;
+        ttq._t = ttq._t || {};
+        ttq._t[pixelId] = +new Date();
+        ttq._o = ttq._o || {};
+        ttq._o[pixelId] = options || {};
+        var script = d.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src = src + '?sdkid=' + pixelId + '&lib=' + t;
+        var firstScript = d.getElementsByTagName('script')[0];
+        firstScript.parentNode.insertBefore(script, firstScript);
+      };
+    }(window, document, 'ttq');
+    window.ttq.load(id);
+    window.ttq.page();
+    window.__tiktokPixelLoaded = true;
+    function fireLpv() {
+      if (window.__tiktokLpvTracked || !window.ttq || typeof window.ttq.track !== 'function') return;
+      window.ttq.track('LandingPageView');
+      window.__tiktokLpvTracked = true;
+    }
+    if (typeof window.ttq.ready === 'function') window.ttq.ready(fireLpv);
+    setTimeout(fireLpv, 600);
+  }
+  if ('requestIdleCallback' in window) requestIdleCallback(bootTikTokPixel, { timeout: 2500 });
+  else window.addEventListener('load', bootTikTokPixel);
+  </script>
 </head>
-<body data-country="PA" data-abandon-checkout="on" data-abandon-idle-minutes="5" data-lang="es" data-brand="compraconfio" data-product="creatine-pa" data-snap-pixel="off" data-fb-pixel="off" data-thankyou="/thank-you-compraconfio-panama.html">
+<body data-country="PA" data-abandon-checkout="on" data-abandon-idle-minutes="5" data-lang="es" data-brand="compraconfio" data-product="creatine-pa" data-snap-pixel="off" data-fb-pixel="off" data-tiktok-pixel-id="DA46KJ3C77U8UMTFN63G" data-thankyou="/thank-you-compraconfio-panama.html">
 
 <div class="announce" aria-hidden="true">
   <div class="announce-track">
@@ -76,9 +125,9 @@
       <h1 class="product-title"><em>Creatina para mujeres</em> Peach Pout · 30 sobres · sabor durazno</h1>
 
       <div class="price-row">
-        <span class="price-now" id="priceNow">$39</span>
+        <span class="price-now" id="priceNow">$49</span>
         <span class="price-was" id="priceWas">$69</span>
-        <span class="price-save" id="priceSave">Ahorra 43%</span>
+        <span class="price-save" id="priceSave">Ahorra 29%</span>
       </div>
       <p class="price-note">1 Bolsa · 30 sobres · Envío gratis · Pago al recibir</p>
 
@@ -410,7 +459,7 @@
 
 <div class="sticky-bar" id="bottomSticky" aria-hidden="true">
   <div>
-    <strong id="stickyPrice">$39</strong>
+    <strong id="stickyPrice">$49</strong>
     <span id="stickyLabel">1 Bolsa · 30 sobres</span>
   </div>
   <button type="button" class="js-open-order">Ordenar</button>
@@ -440,11 +489,11 @@
         <span class="block-label">1. Elige tu oferta</span>
         <div class="bundles">
           <label class="bundle bundle-option is-selected">
-            <input type="radio" name="bundleOption" value="cc-creatine-pa-1" data-product-id="cc-creatine-pa-1" data-product-name="Creatina para mujeres Peach Pout - 1 bolsa" data-price="39" data-old-price="69" data-save="43" data-label="1 Bolsa · 30 sobres" checked>
+            <input type="radio" name="bundleOption" value="cc-creatine-pa-1" data-product-id="cc-creatine-pa-1" data-product-name="Creatina para mujeres Peach Pout - 1 bolsa" data-price="49" data-old-price="69" data-save="29" data-label="1 Bolsa · 30 sobres" checked>
             <div class="bundle-card">
               <div class="bundle-head">
                 <span class="bundle-pick"><span class="radio"></span>1 Bolsa</span>
-                <span class="bundle-cost"><strong>$39</strong><del>$69</del></span>
+                <span class="bundle-cost"><strong>$49</strong><del>$69</del></span>
               </div>
               <div class="bundle-units">
                 <span class="unit-chip"><span class="dot green"></span>30 sobres · uso según etiqueta</span>
@@ -452,28 +501,28 @@
             </div>
           </label>
           <label class="bundle bundle-option">
-            <input type="radio" name="bundleOption" value="cc-creatine-pa-2" data-product-id="cc-creatine-pa-2" data-product-name="Creatina para mujeres Peach Pout - 2 bolsas" data-price="59" data-old-price="118" data-save="50" data-label="2 Bolsas · 60 sobres">
+            <input type="radio" name="bundleOption" value="cc-creatine-pa-2" data-product-id="cc-creatine-pa-2" data-product-name="Creatina para mujeres Peach Pout - 2 bolsas" data-price="69" data-old-price="118" data-save="42" data-label="2 Bolsas · 60 sobres">
             <div class="bundle-card">
               <span class="bundle-flag">Más popular</span>
               <div class="bundle-head">
                 <span class="bundle-pick"><span class="radio"></span>2 Bolsas</span>
-                <span class="bundle-cost"><strong>$59</strong><del>$118</del></span>
+                <span class="bundle-cost"><strong>$69</strong><del>$118</del></span>
               </div>
               <div class="bundle-units">
-                <span class="unit-chip"><span class="dot green"></span>60 sobres · Ahorra $19</span>
+                <span class="unit-chip"><span class="dot green"></span>60 sobres · Ahorra $29</span>
               </div>
             </div>
           </label>
           <label class="bundle bundle-option">
-            <input type="radio" name="bundleOption" value="cc-creatine-pa-3" data-product-id="cc-creatine-pa-3" data-product-name="Creatina para mujeres Peach Pout - 3 bolsas" data-price="79" data-old-price="177" data-save="55" data-label="3 Bolsas · 90 sobres">
+            <input type="radio" name="bundleOption" value="cc-creatine-pa-3" data-product-id="cc-creatine-pa-3" data-product-name="Creatina para mujeres Peach Pout - 3 bolsas" data-price="89" data-old-price="177" data-save="50" data-label="3 Bolsas · 90 sobres">
             <div class="bundle-card">
               <span class="bundle-flag">Mejor valor</span>
               <div class="bundle-head">
                 <span class="bundle-pick"><span class="radio"></span>3 Bolsas</span>
-                <span class="bundle-cost"><strong>$79</strong><del>$177</del></span>
+                <span class="bundle-cost"><strong>$89</strong><del>$177</del></span>
               </div>
               <div class="bundle-units">
-                <span class="unit-chip"><span class="dot green"></span>90 sobres · Ahorra $38</span>
+                <span class="unit-chip"><span class="dot green"></span>90 sobres · Ahorra $58</span>
               </div>
             </div>
           </label>
@@ -507,7 +556,7 @@
 
         <div class="form-head"><span class="block-label">🚚 3. Método de envío</span></div>
         <input type="hidden" name="shipping" id="shippingCost" value="0">
-        <input type="hidden" name="total" id="orderTotal" value="39">
+        <input type="hidden" name="total" id="orderTotal" value="49">
         <div class="ship-options">
           <label class="ship is-selected">
             <input type="radio" name="shippingMethod" value="Envío gratis" data-cost="0" checked>
@@ -523,9 +572,9 @@
           </label>
         </div>
         <div class="order-summary">
-          <div class="sum-row"><span>Subtotal</span><strong id="sumSubtotal">$39</strong></div>
+          <div class="sum-row"><span>Subtotal</span><strong id="sumSubtotal">$49</strong></div>
           <div class="sum-row"><span>Envío</span><strong id="sumShipping">Gratis</strong></div>
-          <div class="sum-row is-total"><span>Total a pagar al recibir</span><strong id="sumTotal">$39</strong></div>
+          <div class="sum-row is-total"><span>Total a pagar al recibir</span><strong id="sumTotal">$49</strong></div>
         </div>
         <p class="cod-note">💵 <span><b>Pago contra entrega.</b> Pagas en efectivo cuando recibas tu pedido.</span></p>
         <button type="submit" class="btn-buy">Confirmar pedido</button>
@@ -807,6 +856,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('stickyPrice').textContent = '$' + total;
     document.getElementById('stickyLabel').textContent = bundle.dataset.label;
+    var priceNow = document.getElementById('priceNow');
+    var priceWas = document.getElementById('priceWas');
+    var priceSave = document.getElementById('priceSave');
+    if (priceNow) priceNow.textContent = '$' + price;
+    if (priceWas && bundle.dataset.oldPrice) priceWas.textContent = '$' + bundle.dataset.oldPrice;
+    if (priceSave && bundle.dataset.save) priceSave.textContent = 'Ahorra ' + bundle.dataset.save + '%';
     document.getElementById('sumSubtotal').textContent = '$' + price;
     document.getElementById('sumShipping').textContent = ship ? '$' + ship : 'Gratis';
     document.getElementById('sumTotal').textContent = '$' + total;
